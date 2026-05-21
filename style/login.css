@@ -1,0 +1,204 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(135deg,#f9eaea,#eaf6ea);
+}
+
+
+.contenedorLogin{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:100vh;
+    padding:60px;
+}
+
+
+.card{
+    width:420px;
+    background:#f3f3f3;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+
+.logoArea{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.logoArea img{
+    width:28px;
+}
+
+.logoArea span{
+    font-weight:bold;
+    color:#27ae60;
+}
+
+
+h1{
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.sub{
+    font-size:13px;
+    color:#777;
+    margin-bottom:25px;
+}
+
+.verde{
+    color:#27ae60;
+}
+
+.rosa{
+    color:#ff6fa5;
+}
+
+
+label{
+    font-size:13px;
+    font-weight:600;
+}
+
+.input{
+    display:flex;
+    align-items:center;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:25px;
+    padding:12px 15px;
+    margin:8px 0 18px;
+}
+
+.input i{
+    margin-right:10px;
+    color:#888;
+}
+
+.input input{
+    border:none;
+    outline:none;
+    width:100%;
+    font-size:14px;
+}
+
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.options a{
+    color:#ff6fa5;
+    text-decoration:none;
+}
+
+
+.btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:#a8d5a2;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#8bcf88;
+}
+
+
+.divider{
+    text-align:center;
+    margin:20px 0;
+    font-size:13px;
+    color:#777;
+}
+
+
+.social{
+    display:flex;
+    gap:10px;
+}
+
+.social button{
+    flex:1;
+    padding:10px;
+    border-radius:20px;
+    border:1px solid #ddd;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    font-size:13px;
+}
+
+
+.register{
+    margin-top:18px;
+    text-align:center;
+    font-size:13px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+}
+
+.register span{
+    color:#555;
+}
+
+.btn-register{
+    background:none;
+    border:none;
+    color:#ff6fa5;
+    font-size:13px;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.btn-register:hover{
+    text-decoration:underline;
+}
+
+
+.info{
+    width:50%;
+    text-align:center;
+}
+
+.info h2{
+    font-size:34px;
+    font-weight:700;
+    line-height:1.2;
+}
+
+.info p{
+    color:#888;
+    margin-top:15px;
+    font-size:15px;
+}
+
+
+.pig{
+    width:320px;
+    margin-top:25px;
+}
