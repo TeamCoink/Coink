@@ -12,37 +12,72 @@
     <p>¡Vamos a alcanzar tus metas!</p>
   </header>
 
-  <!-- Indicador circular -->
-  <div class="circular">
+
+  <!-- KPIs -->
+<section class="resumen">
+  <!-- Columna izquierda -->
+  <div class="resumen-izq">
+    <div class="resumen-card rosa">Saldo actual: $100</div>
+    <div class="resumen-card verde">Gastos totales: $0</div>
+    <div class="resumen-card amarillo">Total de ingresos: $100</div>
+    <div class="resumen-card rosa">Meta más cercana: Viaje</div>
+  </div>
+
+  <!-- Centro con círculo -->
+  <div class="resumen-centro">
     <div class="circle">
       <span>60% Ahorrado</span>
     </div>
   </div>
 
-  <!-- KPIs -->
-  <section class="kpis">
-    <div class="card" id="saldo">Saldo actual: $100</div>
-    <div class="card" id="gastos">Gastos totales: $0</div>
-    <div class="card" id="ingresos">Total de ingresos: $100</div>
-    <div class="card" id="meta-cercana">Meta más cercana: Viaje</div>
-  </section>
+  <!-- Derecha con cerdito -->
+  <div class="resumen-der">
+    <img src="img/oink.png" alt="Cerdito ahorro" class="cerdito">
+  </div>
+</section>
+
+
+
 
   <!-- Metas -->
-  <section class="metas">
-    <h2>Metas de ahorro</h2>
-    <div class="meta">
-      <label>Viaje</label>
-      <div class="progress"><div style="width:60%"></div></div>
+<section class="metas">
+  <h2>Metas de ahorro</h2>
+  <div class="metas-grid">
+    <!-- Card Viaje -->
+    <div class="meta-card">
+      <img src="img/viaje.jpg" alt="Viaje">
+      <div class="meta-info">
+        <h3>Viaje</h3>
+        <p>60%</p>
+      </div>
     </div>
-    <div class="meta">
-      <label>Bicicleta</label>
-      <div class="progress"><div style="width:25%"></div></div>
+
+    <!-- Card Bicicleta -->
+    <div class="meta-card">
+      <img src="img/bici.jpg" alt="Bicicleta">
+      <div class="meta-info">
+        <h3>Bicicleta</h3>
+        <p>25%</p>
+      </div>
     </div>
-    <div class="meta">
-      <label>Laptop</label>
-      <div class="progress"><div style="width:80%"></div></div>
+
+    <!-- Card Laptop -->
+    <div class="meta-card">
+      <img src="img/laptop.jpg" alt="Laptop">
+      <div class="meta-info">
+        <h3>Nueva Laptop</h3>
+        <p>80%</p>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Botones debajo de las cards -->
+  <div class="metas-botones">
+    <button class="btn rosa">Ver metas</button>
+    <button class="btn verde">Agregar ahorro</button>
+  </div>
+</section>
+
 
 
   <header>
