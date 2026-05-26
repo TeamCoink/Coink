@@ -17,7 +17,7 @@
 
 
               <div id="aprender"><li><a href="aprender.html">Aprender</a></li></div>
-              <li><a href="contactanos.html">Contactanos</a></li>
+              <li><a href="contacto.html">Contactanos</a></li>
               <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
               <div id="login"><li><a href="login.html"><button>Sign In</button></a></li></div>
               <div id="mas"><li><a href="register.html"><button>Sign Up</button></a></li></div>
