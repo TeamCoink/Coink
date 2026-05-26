@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Financiero</title>
+  <link rel="stylesheet" href="style/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a tu ahorro</h1>
+    <p>¡Vamos a alcanzar tus metas!</p>
+  </header>
+
+  <!-- Indicador circular -->
+  <div class="circular">
+    <div class="circle">
+      <span>60% Ahorrado</span>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <section class="kpis">
+    <div class="card" id="saldo">Saldo actual: $100</div>
+    <div class="card" id="gastos">Gastos totales: $0</div>
+    <div class="card" id="ingresos">Total de ingresos: $100</div>
+    <div class="card" id="meta-cercana">Meta más cercana: Viaje</div>
+  </section>
+
+  <!-- Metas -->
+  <section class="metas">
+    <h2>Metas de ahorro</h2>
+    <div class="meta">
+      <label>Viaje</label>
+      <div class="progress"><div style="width:60%"></div></div>
+    </div>
+    <div class="meta">
+      <label>Bicicleta</label>
+      <div class="progress"><div style="width:25%"></div></div>
+    </div>
+    <div class="meta">
+      <label>Laptop</label>
+      <div class="progress"><div style="width:80%"></div></div>
+    </div>
+  </section>
+
+
+  <header>
+    <h1>Calendario de Ahorro</h1>
+    <p>Selecciona un día para ver tus movimientos</p>
+  </header>
+
+  <!-- Calendario visual -->
+  <section class="calendario">
+    <h2>Abril 2026</h2>
+    <div class="calendario-grid" id="calendarioGrid">
+      <!-- Los días se generan con JS -->
+    </div>
+    <div id="detalle-dia">Selecciona un día para ver detalles</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+ <!-- Gráficas -->
+<section class="graficas">
+  <div class="grafica">
+    <h3>¡Analiza cómo has distribuido tu ahorro!</h3>
+    <canvas id="graficoPie"></canvas>
+  </div>
+  <div class="grafica">
+    <h3>Crecimiento de ahorro</h3>
+    <canvas id="graficoMensual"></canvas>
+  </div>
+</section>
+
+
+
+  <!-- Tareas -->
+  <section class="tareas">
+    <h2>Tareas</h2>
+    <ul>
+      <li>Depositar Ahorro</li>
+      <li>Revisar Presupuesto</li>
+      <li>Analizar Gastos</li>
+    </ul>
+    <button class="btn verde">Añadir Tarea</button>
+  </section>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

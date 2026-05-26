@@ -1,0 +1,251 @@
+/* Fuente moderna y amigable */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #FFF2EB;
+  color: #333;
+}
+
+/* Encabezado con gradiente rosa-amarillo */
+header {
+  background: linear-gradient(90deg, #ff6fa1, #ffd54f);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 600;
+}
+header p {
+  margin: 5px 0 0;
+  font-size: 1.1em;
+}
+
+/* Indicador circular */
+.circular {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 12px solid #4caf50; /* verde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background: #fff;
+  color: #4caf50;
+  font-size: 1.2em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* KPIs */
+.kpis {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+.card {
+  flex: 1;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Metas con barras de progreso */
+.metas {
+  margin: 20px;
+}
+.meta {
+  margin-bottom: 15px;
+}
+.meta label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+.progress {
+  background: #eee;
+  border-radius: 8px;
+  height: 18px;
+  overflow: hidden;
+}
+.progress div {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff6fa1, #ffd54f);
+}
+
+/* Calendario */
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #fdfdfd;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #ff6fa1, #ffd54f);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.calendario {
+  margin: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.calendario h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #4caf50;
+}
+
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendario-grid div {
+  background: #fff;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.calendario-grid div:hover {
+  background: #ff6fa1;
+  color: white;
+  transform: scale(1.05);
+}
+
+.calendario-grid .selected {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+#detalle-dia {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+  color: #ffd54f;
+}
+
+
+/* Botones */
+.btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ff6fa1;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #e05585;
+}
+.btn.verde {
+  background: #4caf50;
+}
+.btn.verde:hover {
+  background: #3d8b40;
+}
+
+/* Gráficas */
+.graficas {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+
+.grafica {
+  flex: 1;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Ajustar tamaño de las gráficas */
+#graficoPie {
+  width: 100% !important;   /* que se adapte al contenedor */
+  max-width: 450px;         /* límite de ancho */
+  height: 420px !important; /* mismo alto para ambas */
+  margin: 0 auto;
+}
+
+/* Gráfico lineal más pequeño */
+/* Gráfico lineal más pequeño */
+#graficoMensual {
+  width: 100% !important;   /* ocupa menos dentro del contenedor */
+  max-width: 450px;        /* límite de ancho */
+  height: 280px !important;/* más bajo que antes */
+  margin: 0 auto;
+  display: block;
+}
+
+
+
+
+/* Tareas */
+.tareas {
+  margin: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+.tareas h2 {
+  color: #ffd54f;
+  font-weight: 600;
+}
+.tareas ul {
+  list-style: none;
+  padding: 0;
+}
+.tareas li {
+  margin: 8px 0;
+  padding: 8px;
+  background: #f9f9f9;
+  border-left: 5px solid #4caf50;
+  border-radius: 5px;
+}
