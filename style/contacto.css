@@ -6,19 +6,20 @@
 }
 
 body{
-    background:#f8f3f1;
+    background-color:#ccc;
     min-height:100vh;
     display:flex;
     justify-content:center;
-    align-items:center;
-    overflow:hidden;
+    align-items:flex-start;
+    overflow-y:auto;
+    padding:20px;
 }
-
 .container{
-    width:1450px;
-    height:760px;
+    width:100%;
+    max-width:1450px;
     background:#f8f3f1;
     display:flex;
+    border-radius:20px;
     overflow:hidden;
 }
 
@@ -118,11 +119,13 @@ body{
 }
 
 .formulario{
-    width:560px;
+    width: 455px;
     background:#fff;
     border-radius:25px;
     padding:40px;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    margin: 20px;
+    margin-left: 55px;
 }
 
 /* TITULO */
@@ -170,7 +173,7 @@ label{
 .input-box{
     width:100%;
     height:58px;
-    border:2px solid #ccc;
+    border:2px solid  #ccc;
     border-radius:15px;
     display:flex;
     align-items:center;
