@@ -12,7 +12,7 @@
      <nav class="navbar">
         
         <div class="container">
-            <div class="navlogo"><a href="index.html"></a><img src="img/bb7dfa3a-1ac6-420b-b549-967e21bd4f47.png" width="200px" height="80px" alt="logo"></div>
+            <div class="navlogo"><a href="index.html"></a><img src="img/logo.png" width="200px" height="80px" alt="logo"></div>
            <ul class="navlinks">
 
 

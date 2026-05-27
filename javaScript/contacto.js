@@ -6,4 +6,4 @@ form.addEventListener("submit", function(e){
 
     alert("Mensaje enviado correctamente");
 
-});
+}); 

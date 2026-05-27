@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metas</title>
+    <link rel="stylesheet" href="style/metas.css">
+</head>
+<body>
+    <nav class="navbar">
+        
+        <div class="container">
+            <div class="navlogo"><a href="index.html"></a><img src="img/logo.png" width="200px" height="80px" alt="logo"></div>
+           <ul class="navlinks">
+
+
+              <div id="aprender"><li><a href="aprender.html">Aprender</a></li></div>
+              <li><a href="contacto.html">Contactanos</a></li>
+              <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+              <div id="login"><li><a href="login.html"><button>Sign In</button></a></li></div>
+              <div id="mas"><li><a href="register.html"><button>Sign Up</button></a></li></div>
+           </ul>
+        </div>
+    </nav>
+     
+    <section class="goals-container">
+
+    <header class="goals-header">
+        <h1>Mis metas</h1>
+        <p class="subtitle">organiza y alcanza tus objetivos</p>
+        
+        <div class="counters">
+            <span class="counter-total">0 Total</span>
+            <span class="counter-completed">0 Completadas</span>
+        </div>
+    </header>
+
+    <div class="goals-form-wrapper">
+        <form class="goals-form">
+            <div class="form-inputs">
+                <input type="text" placeholder="Escribe una nueva meta.." required>
+                <input type="text" placeholder="Monto objetivo ($)..." required>
+            </div>
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+
+    <div class="goals-list-wrapper" id="goalsListWrapper" style="display: none;">
+        <ul class="goals-list" id="goalsList">
+            </ul>
+    </div>
+
+</section>
+
+</body>
+</html>
