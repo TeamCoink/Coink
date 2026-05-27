@@ -59,6 +59,7 @@ setInterval(() => {
 }, 5000);
 
 
+
 // Calendario: mostrar detalle del día
 // Generar calendario Abril 2026
 const calendarioGrid = document.getElementById("calendarioGrid");
@@ -84,3 +85,32 @@ function seleccionarDia(dia) {
   }
 }
 
+// Meta del usuario (ejemplo: 60%)
+const metaUsuario = 60; 
+
+function animarPorcentaje(meta) {
+  let porcentaje = 0;
+  const texto = document.getElementById("porcentajeTexto");
+  const circle = document.querySelector(".circle");
+
+  const intervalo = setInterval(() => {
+    porcentaje++;
+    texto.textContent = porcentaje + "% Ahorrado";
+
+    // Cuando llega al valor de la meta, se detiene
+    if (porcentaje >= meta) {
+      clearInterval(intervalo);
+    }
+  }, 30); // velocidad de incremento
+
+  // Activar el efecto visual del círculo
+  setTimeout(() => {
+    circle.style.setProperty("--scale", meta / 100);
+    circle.querySelector("::before"); // activa el pseudo-elemento
+  }, 100);
+}
+
+// Ejecutar animación al cargar
+window.onload = () => {
+  animarPorcentaje(metaUsuario);
+};

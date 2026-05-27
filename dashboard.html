@@ -23,12 +23,10 @@
     <div class="resumen-card rosa">Meta más cercana: Viaje</div>
   </div>
 
-  <!-- Centro con círculo -->
-  <div class="resumen-centro">
-    <div class="circle">
-      <span>60% Ahorrado</span>
-    </div>
-  </div>
+<div class="circle">
+  <span id="porcentajeTexto">0% Ahorrado</span>
+</div>
+
 
   <!-- Derecha con cerdito -->
   <div class="resumen-der">
@@ -78,6 +76,38 @@
   </div>
 </section>
 
+<section class="fila-tres">
+  <!-- Pie chart -->
+  <div class="contenedor grafica" onclick="mostrarModal('graficoPie')">
+    <h3>¡Analiza cómo has distribuido tu ahorro!</h3>
+    <canvas id="graficoPie"></canvas>
+  </div>
+
+  <!-- Line chart -->
+  <div class="contenedor grafica" onclick="mostrarModal('graficoMensual')">
+    <h3>¡Revisa tu avance mensual!</h3>
+    <canvas id="graficoMensual"></canvas>
+  </div>
+
+  <!-- Tareas -->
+  <div class="contenedor tareas">
+    <h3>Tareas</h3>
+    <ul id="listaTareas">
+      <li><input type="checkbox"> Depositar ahorro</li>
+      <li><input type="checkbox"> Revisar presupuesto</li>
+      <li><input type="checkbox"> Analizar gastos</li>
+    </ul>
+    <button class="btn verde">+ Añadir tarea</button>
+  </div>
+</section>
+
+<!-- Modal para mostrar gráfica ampliada -->
+<div id="modalGrafica" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <canvas id="graficoGrande"></canvas>
+  </div>
+</div>
 
 
   <header>
@@ -94,34 +124,7 @@
     <div id="detalle-dia">Selecciona un día para ver detalles</div>
   </section>
 
-  <script src="script.js"></script>
-</body>
-</html>
 
- <!-- Gráficas -->
-<section class="graficas">
-  <div class="grafica">
-    <h3>¡Analiza cómo has distribuido tu ahorro!</h3>
-    <canvas id="graficoPie"></canvas>
-  </div>
-  <div class="grafica">
-    <h3>Crecimiento de ahorro</h3>
-    <canvas id="graficoMensual"></canvas>
-  </div>
-</section>
-
-
-
-  <!-- Tareas -->
-  <section class="tareas">
-    <h2>Tareas</h2>
-    <ul>
-      <li>Depositar Ahorro</li>
-      <li>Revisar Presupuesto</li>
-      <li>Analizar Gastos</li>
-    </ul>
-    <button class="btn verde">Añadir Tarea</button>
-  </section>
 
   <script src="dashboard.js"></script>
 </body>
