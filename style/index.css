@@ -350,11 +350,12 @@ body{
     max-width: 450px;
 }
 
+
 .etiqueta{
     display: inline-block;
     background: #f8d9cc;
     color: #ff6b8b;
-    padding: 12px 24px;
+    padding: 24px 60px;
     border-radius: 15px;
     font-weight: bold;
     margin-bottom: 25px;
@@ -391,3 +392,6 @@ p{
     max-width: 650px;
 }
 
+.etiqueta{
+  margin: 20000px;  
+}
