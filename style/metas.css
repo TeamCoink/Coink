@@ -1,0 +1,263 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lab(96.31% 3.2 4.92);
+
+}
+
+.container{
+    display: flex;
+    background-color: #FFF2EB;
+    align-items: center;
+    justify-content:  center;
+    padding: 0px 0px;
+
+}
+
+
+
+.navlinks{
+    display: inline-flex;
+    text-align: center;
+    gap: 60px;
+    list-style: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    padding-right: 60px;
+}
+
+#aprender{
+    color: #DF688A;
+    font-weight: bold;
+}
+
+.navlinks a{
+    color: rgb(107, 4, 38);
+    text-decoration: none;
+}
+
+.navlinks a:hover{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+
+}
+
+#login button{
+    background-color: #DF688A;
+    border-radius: 15px;
+    border-color: #DF688A;
+    color: #FFF2EB;
+    padding: 5px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+#mas button{
+    background-color: #fff2eb;
+    border-radius: 15px;
+    border-color: #0b7c43;
+    color: #0c0400;
+    padding: 5px 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    
+
+}
+
+.navlogo{
+    padding-right: 300px;
+    margin-bottom: 10px;
+}
+
+
+/* --- Contenedor Principal de las Metas --- */
+.goals-container {
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; 
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* --- Tarjetas Blancas con Sombra Sólida Inferior --- */
+.goals-header, 
+.goals-form-wrapper, 
+.goals-list-wrapper {
+    background-color: #FFFFFF;
+    border-radius: 32px; 
+    padding: 35px 45px;
+    box-shadow: 0 12px 0px #EFE3DB; 
+}
+
+/* --- Bloque 1: Cabecera --- */
+.goals-header h1 {
+    color: #E633AA; 
+    font-size: 3.4rem;
+    font-weight: 500;
+    margin: 0 0 6px 0;
+}
+
+.goals-header .subtitle {
+    color: #E633AA;
+    font-size: 1.4rem;
+    margin: 0 0 30px 0;
+    opacity: 0.8;
+}
+
+.counters {
+    display: flex;
+    gap: 20px;
+}
+
+.counter-total {
+    background-color: #FF0099;
+    color: #000000;
+    padding: 8px 26px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.counter-completed {
+    background: linear-gradient(to right, #929794, #2F5927); 
+    color: #000000;
+    padding: 8px 26px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* --- Bloque 2: Formulario (Fiel a la alineación y proporción original) --- */
+.goals-form {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 24px; /* Espacio ideal entre el bloque de inputs y el botón */
+}
+
+.form-inputs {
+    flex-grow: 1; /* Esto hace que los inputs se estiren a lo largo de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espaciado corto vertical para que se vean delgados y juntos */
+}
+
+.form-inputs input {
+    width: 100%;
+    padding: 8px 20px; /* Relleno ajustado para que mantengan la línea delgada original */
+    border: 1px solid #FFAEE2; 
+    border-radius: 20px;
+    font-size: 0.95rem; 
+    box-sizing: border-box;
+    outline: none;
+    color: #000000;
+}
+
+.form-inputs input::placeholder {
+    color: #111111; 
+}
+
+/* --- Botón Agregar con Animación --- */
+.goals-form button {
+    background: linear-gradient(to right, #E60087, #FA4BB1); 
+    color: #000000;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 22px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(230, 0, 135, 0.2);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Animaciones interactivas */
+.goals-form button:hover {
+    transform: translateY(-3px) scale(1.03); 
+    filter: brightness(1.05); 
+    box-shadow: 0 10px 20px rgba(230, 0, 135, 0.35);
+}
+
+.goals-form button:active {
+    transform: translateY(2px) scale(0.98); 
+    box-shadow: 0 3px 6px rgba(230, 0, 135, 0.15);
+}
+
+/* --- Estilos base listos para cuando inyectes metas dinámicas --- */
+.goal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #FBEAF4;
+}
+
+.goal-item:last-child {
+    border-bottom: none;
+}
+
+.checkbox-circle {
+    display: block;
+    width: 26px;
+    height: 26px;
+    border: 2px solid #E633AA; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.goal-content {
+    flex-grow: 1;
+}
+
+.goal-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.goal-title {
+    color: #111111;
+    font-size: 1.2rem;
+}
+
+.goal-percentage {
+    color: #E633AA;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 14px;
+    background-color: #DBDBDB; 
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #E633AA; 
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.goal-amounts {
+    font-size: 1.1rem;
+    color: #FCA1DB; 
+    font-weight: bold;
+}
