@@ -12,14 +12,14 @@ body{
     justify-content:center;
     align-items:flex-start;
     overflow-y:auto;
-    padding:20px;
+    
 }
 .container{
     width:100%;
     max-width:1450px;
     background:#f8f3f1;
     display:flex;
-    border-radius:20px;
+   
     overflow:hidden;
 }
 
@@ -32,8 +32,8 @@ body{
 }
 
 .logo{
-    width:180px;
-    margin-bottom:20px;
+    width:350px;
+   
 }
 
 .left h1{
@@ -119,13 +119,13 @@ body{
 }
 
 .formulario{
-    width: 455px;
+    width: 800px;
     background:#fff;
     border-radius:25px;
     padding:40px;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
     margin: 20px;
-    margin-left: 55px;
+    margin-right:500 px;
 }
 
 /* TITULO */
