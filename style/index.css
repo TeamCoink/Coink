@@ -351,6 +351,7 @@ body{
 }
 
 .body2{
+    margin-top: 40px;
     margin: 20px;
 }
 
@@ -362,6 +363,7 @@ body{
     padding: 15px 20px;
     border-radius: 15px;
     font-weight: bold;
+    margin-top: 20px;
     margin-bottom: 25px;
     font-size: 18px;
 }
@@ -389,20 +391,34 @@ p{
     font-size: 22px;
     line-height: 1.6;
     color: #333;
-    padding-right: 750px;
+    margin-right: 10px;
     text-align: justify;
 }
 
 .imagen img{
     width: 100%;
-    max-width: 650px;
     display: inline-flex;
+    transform: translateY(-100px);
 }
 
 .etiqueta{
-  margin: 20px;  
+  margin-left: 40px;  
 }
 
 .heroMH{
+    margin-top: 20px;
     display: flex;
+    margin-left: 25px;
+}
+
+.breadcrumb{
+     margin-left: 45px;
+     color: #186e0c;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: normal;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    color:#fa779c;
 }
