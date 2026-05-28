@@ -212,6 +212,10 @@ header p {
   background: #3d8b40;
 }
 
+.btn.verde a{
+  color: white;
+}
+
 /* Calendario */
 /* Fuente moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');

@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fff2f5;
+    font-family: 'Baloo 2', cursive;
+    padding: 15px;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo h2{
+    color: #59b363;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.pig{
+    font-size: 2rem;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.menu .active{
+    color: #f38ea7;
+}
+
+
+/* CONTENEDOR */
+
+.container{
+    width: 100%;
+    min-height: 88vh;
+
+    background:  #ffe8ee;
+
+    border-radius: 25px;
+
+    border: 2px solid #e2e1e1;
+
+    margin-top: 10px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 40px 20px;
+}
+
+/* CIRCULOS DECORACION */
+
+.container::before{
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    background: #dbeeb5;
+
+    border-radius: 50%;
+
+    top: -90px;
+    right: -90px;
+}
+
+.container::after{
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    background: #f8dfe4;
+
+    border-radius: 50%;
+
+    left: -120px;
+    top: 140px;
+}
+
+/* TITULO */
+
+.title{
+    width: 270px;
+
+    margin: auto;
+
+    background: linear-gradient(
+        to bottom,
+        #ffbfd0,
+        #ea8fa7
+    );
+
+    border-radius: 40px;
+
+    text-align: center;
+
+    padding: 12px;
+
+    box-shadow: 0 5px 8px rgba(0,0,0,.2);
+
+    position: relative;
+    z-index: 5;
+}
+
+.title h1{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* TARJETAS */
+
+.cards{
+    margin-top: 70px;
+
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+
+    flex-wrap: wrap;
+
+    position: relative;
+    z-index: 5;
+}
+
+.card input{
+    display: none;
+    
+}
+
+.card{
+    cursor: pointer;
+}
+
+.card-box{
+    width: 195px;
+    height: 192px;
+
+    background: #fff2f5;
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,.15);
+
+    transition: .3s;
+}
+
+.card-box:hover{
+    transform: translateY(-8px);
+}
+
+.card-box img{
+     width: 200px;
+    height: 175;
+    text-align: center;
+   
+}
+
+.card-box h3{
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.card input:checked + .card-box{
+    border: 4px solid #ef8aa4;
+}
+
+/* RECORDATORIO */
+
+.recordatorio{
+    width: 75%;
+
+    margin: 90px auto 0;
+
+    background: #ffd9e3;
+
+    border-radius: 20px;
+
+    padding: 18px 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    position: relative;
+    z-index: 5;
+}
+
+.icon{
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #ffd1dd;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.4rem;
+}
+
+.text h4{
+    color: #ff7395;
+    font-size: 1.2rem;
+}
+
+.text p{
+    color: #555;
+    font-size: .95rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px){
+
+    .cards{
+        gap: 25px;
+    }
+
+    .recordatorio{
+        width: 95%;
+    }
+
+}
+
+@media(max-width: 700px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .title{
+        width: 220px;
+    }
+
+    .title h1{
+        font-size: 1.7rem;
+    }
+
+}
