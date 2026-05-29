@@ -42,6 +42,16 @@
             </div>
 
             <button class="btn" type="submit" >INICIAR SESIÓN</button>
+            
+            <button onclick="iniciarSesion()">Iniciar sesión</button>
+
+            <script>
+             function iniciarSesion() {
+             localStorage.setItem("sesion", "activa");
+             window.location.href = "index.html";
+                            }
+            </script>
+
 
             <p class="divider">O continua con</p>
 

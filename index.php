@@ -149,5 +149,21 @@
  
 
   </div>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sesion = localStorage.getItem("sesion");
+
+    if (sesion === "activa") {
+        const loginBtn = document.querySelector("#login a");
+
+        if (loginBtn) {
+            loginBtn.textContent = "Sesión iniciada ✅";
+            loginBtn.href = "#";
+        }
+    }
+});
+</script>
+
  </body>
  </html>
