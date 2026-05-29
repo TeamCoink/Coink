@@ -7,13 +7,14 @@
 
 body{
     height:100vh;
-    background: linear-gradient(135deg,#f9eaea,#eaf6ea);
+     background:  #FFF2EB;
 }
 
 
 .contenedorLogin{
     display:flex;
     justify-content:space-between;
+        background:  #FFF2EB;
     align-items:center;
     height:100vh;
     padding:60px;
@@ -21,8 +22,8 @@ body{
 
 
 .card{
-    width:420px;
-    background:#f3f3f3;
+    width:400px;
+   background:  #ffffff;
     padding:40px;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
@@ -37,7 +38,7 @@ body{
 }
 
 .logoArea img{
-    width:28px;
+    width:200px;
 }
 
 .logoArea span{

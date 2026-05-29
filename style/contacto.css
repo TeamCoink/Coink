@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color:#ccc;
+    background-color:#FFF2EB;
     min-height:100vh;
     display:flex;
     justify-content:center;
@@ -17,7 +17,7 @@ body{
 .container{
     width:100%;
     max-width:1450px;
-    background:#f8f3f1;
+    background-color:  #ffe5d8;
     display:flex;
    
     overflow:hidden;
