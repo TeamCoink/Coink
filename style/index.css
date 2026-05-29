@@ -422,3 +422,33 @@ p{
     text-decoration: none;
     color:#fa779c;
 }
+
+ .tittle h2{
+    text-align: center;
+    color: #0b7c43;
+    padding-top: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container1{
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.icon{
+    margin: 60px;
+}
+
+.icon p{
+    font-size: medium;
+    text-align: justify;
+}
+
+.icon h4{
+    text-align: center ;
+}
+
+.icon img{
+    align-items: center;
+}
