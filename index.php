@@ -16,7 +16,7 @@
            <ul class="navlinks">
 
 
-              <div id="aprender"><li><a href="aprender.html">Aprender</a></li></div>
+              <div id="aprender"><li><a href="metodos.html">Aprender</a></li></div>
               <li><a href="contacto.html">Contactanos</a></li>
               <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
               <div id="login"><li><a href="login.html"><button>Sign In</button></a></li></div>
