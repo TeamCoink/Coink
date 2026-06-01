@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil - COINK</title>
+    <link rel="stylesheet" href="style/perfil.css">
+</head>
+<body>
+
+<div class="perfil-container">
+    <div class="card">
+        <h1 class="app-title">COINK</h1>
+        
+        <div class="avatar-container">
+            <img id="foto" class="foto-perfil" alt="Foto de perfil" style="display: none;">
+            <div id="iniciales" class="iniciales-perfil"></div>
+        </div>
+
+        <h2 id="nombre"></h2>
+        <p id="correo"></p>
+
+        <button class="btn-cerrar" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sesion = localStorage.getItem("sesion");
+
+    if (sesion !== "activa") {
+        window.location.href = "login.html";
+        return;
+    }
+
+    const nombre = localStorage.getItem("usuario") || "Usuario";
+    const correo = localStorage.getItem("correo") || "correo@ejemplo.com";
+    const foto = localStorage.getItem("foto");
+
+    document.getElementById("nombre").textContent = nombre;
+    document.getElementById("correo").textContent = correo;
+
+    const imgElement = document.getElementById("foto");
+    const initialsElement = document.getElementById("iniciales");
+
+    // Si el usuario tiene una foto guardada, la muestra. Si no, genera las iniciales (Ej: "EW")
+    if (foto && foto !== "null" && foto !== "") {
+        imgElement.src = foto;
+        imgElement.style.display = "block";
+        initialsElement.style.display = "none";
+    } else {
+        imgElement.style.display = "none";
+        initialsElement.style.display = "flex";
+        
+        // Toma las primeras letras del nombre y apellido
+        const palabras = nombre.trim().split(" ");
+        let iniciales = palabras[0] ? palabras[0].charAt(0).toUpperCase() : "U";
+        if (palabras.length > 1 && palabras[palabras.length - 1]) {
+            iniciales += palabras[palabras.length - 1].charAt(0).toUpperCase();
+        }
+        initialsElement.textContent = iniciales;
+    }
+});
+
+function cerrarSesion() {
+    localStorage.clear();
+    // Cambiado a index.html para mantener la consistencia con tu landing
+    window.location.href = "index.html"; 
+}
+</script>
+
+</body>
+</html>

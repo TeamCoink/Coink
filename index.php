@@ -16,10 +16,15 @@
            <ul class="navlinks">
 
 
-              <div id="aprender"><li><a href="aprender.html">Aprender</a></li></div>
+              <div id="aprender"><li><a href="metodos.html">Aprender</a></li></div>
               <li><a href="contacto.html">Contactanos</a></li>
               <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
               <div id="login"><li><a href="login.html"><button>Sign In</button></a></li></div>
+              
+              <li id="perfilLink" style="display:none;">
+              <a href="perfil.html">Mi Perfil</a>
+              </li>
+
               <div id="mas"><li><a href="register.html"><button>Sign Up</button></a></li></div>
            </ul>
         </div>
@@ -149,5 +154,36 @@
  
 
   </div>
+  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sesion = localStorage.getItem("sesion");
+
+    if (sesion === "activa") {
+        const loginBtn = document.querySelector("#login a");
+
+        if (loginBtn) {
+            loginBtn.textContent = "Sesión iniciada ";
+            loginBtn.href = "#";
+        }
+    }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sesion = localStorage.getItem("sesion");
+
+    const loginBtn = document.getElementById("login");
+    const perfilLink = document.getElementById("perfilLink");
+
+    if (sesion === "activa") {
+        if (loginBtn) loginBtn.style.display = "none";
+        if (perfilLink) perfilLink.style.display = "block";
+    }
+});
+</script>
+
+
  </body>
  </html>
