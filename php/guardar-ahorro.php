@@ -1,24 +1,25 @@
 <?php
-// Ajusta la ruta según dónde esté tu archivo conexion.php
-include 'conexion.php'; 
+include 'conexion.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Asegúrate que los "name" en tu formulario coincidan con estos
     $nombre    = $_POST['nombre'];
     $categoria = $_POST['categoria'];
-    $monto     = $_POST['monto'];   // debe coincidir con name="monto"
+    $monto     = $_POST['monto'];
     $fecha     = $_POST['fecha'];
 
-    $sql = "INSERT INTO ahorro (nombre, categoria, monto, fecha) 
-            VALUES ('$nombre', '$categoria', '$monto', '$fecha')";
 
-    if ($conexion->query($sql) === TRUE) {
+    $user_id = $_SESSION['user_id']; 
+
+    $sql = "INSERT INTO ahorro (user_id, nombre, categoria, monto, fecha) 
+            VALUES ('$user_id', '$nombre', '$categoria', '$monto', '$fecha')";
+
+    if ($conn->query($sql) === TRUE) {
         echo "✅ Ahorro agregado con éxito";
-        // header("Location: dashboard.php"); // si quieres redirigir
     } else {
-        echo "Error: " . $conexion->error;
+        echo "Error: " . $conn->error;
     }
 }
 
-$conexion->close();
+$conn->close();
 ?>
