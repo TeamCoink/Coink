@@ -1,0 +1,285 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #ffede4;
+  color: #333;
+}
+
+
+
+.piggy {
+  width: 150px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: #ff4081;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;       
+  justify-content: space-between; 
+  padding: 3rem;
+  background: #ffe4ec;      
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #ff4081;            
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  width: 400px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.mision {
+  background: #d8f3dc;          
+  padding: 3rem;
+  border-radius: 15px;          
+}
+
+.mision-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mision-text {
+  flex: 1;
+  text-align: left;
+}
+
+.mision-title {
+  color: #2d6a4f;              
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mision-text p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.mision-image {
+  flex: 1;
+  text-align: right;
+}
+
+.mision-image img {
+  width: 400px;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.vision {
+  background: #fff9db;          /* Amarillo pastel */
+  padding: 3rem;
+  border-radius: 15px;
+}
+
+.vision-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vision-image {
+  flex: 1;
+  text-align: left;
+}
+
+.vision-image img {
+  width: 400px;
+  animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.vision-text {
+  flex: 2;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.vision-title {
+  color: #f4a300;               /* Amarillo más fuerte */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.vision-text p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Animación de entrada */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+ .mision, .vision {
+  margin: 2rem auto;        
+  padding: 2rem;           
+  border-radius: 15px;      
+  max-width: 1200px;        
+}
+
+.developers {
+  padding: 3rem;
+  text-align: center;
+}
+
+.developers-title {
+  color: #ff4081;       
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem;                             
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Bordes intercalados */
+.card.pink {
+  border-top: 6px solid #ff4081;
+}
+
+.card.green {
+  border-top: 6px solid #2d6a4f;
+}
+
+.card.yellow {
+  border-top: 6px solid #f4a300;
+}
+.cta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;              /* Espacio entre los dos bloques */
+  padding: 2rem;
+  background: #fdf2e9;    /* Fondo suave */
+  border-radius: 15px;
+}
+
+.cta-block {
+  flex: 1;                /* Cada bloque ocupa la mitad */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fff;       /* Fondo blanco dentro de cada bloque */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-block.reverse {
+  flex-direction: row-reverse; /* Invierte orden: imagen izquierda, texto derecha */
+}
+
+.cta-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.cta-text h3 {
+  color: #ff4081;         /* Rosa fuerte para títulos */
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta-text p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.cta-image {
+  flex: 1;
+  text-align: center;
+}
+
+.cta-image img {
+  width: 200px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
