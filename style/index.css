@@ -1,84 +1,228 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: lab(96.31% 3.2 4.92);
-
+    background: #FFF2EB;
+    padding: 30px;
 }
 
-.container{
+/* NAVBAR */
+.navbar{
+    position: relative;
+    z-index: 9999;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 70px;
+    right: 0;
+    z-index: 10000;
+}
+
+.navbar{
+    width: 100%;
+    background: #fff7f2;
+    border-radius: 30px;
+    padding: 20px 40px;
+
     display: flex;
-    background-color: #FFF2EB;
+    justify-content: space-between;
     align-items: center;
-    justify-content:  center;
-    padding: 0px 0px;
 
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
+/* LOGO */
+.logo{
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
+.logo span{
+    color: #35b46a;
+}
 
-.navlinks{
-    display: inline-flex;
-    text-align: center;
-    gap: 60px;
+/* LINKS */
+.nav-links{
     list-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
-    padding-right: 60px;
+    display: flex;
+    gap: 40px;
 }
 
-#aprender{
-    color: #DF688A;
-    font-weight: bold;
-}
-
-.navlinks a{
-    color: rgb(107, 4, 38);
+.nav-links a{
     text-decoration: none;
+    color: #2d2d2d;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.navlinks a:hover{
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-
+.nav-links a i{
+    margin-right: 8px;
+    color: #ef8ca4;
 }
 
-#login button{
-    background-color: #DF688A;
+.nav-links a:hover{
+    color: #ef8ca4;
+}
+
+/* BOTONES */
+.signup-btn,
+.login-btn{
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-buttons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.signup-btn{
+    border: none;
+    background: #69c36b;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.signup-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(105,195,107,0.35);
+}
+
+.login-btn{
+    border: none;
+    background: #f8b3c2;
+    color: black;
+    padding: 12px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(248,179,194,0.4);
+}
+
+
+.more-btn{
+    border: 2px solid #69c36b;
+    background: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: 0.3s;
+}
+
+.more-btn:hover{
+    background: #f4fff5;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    top: 70px;
+    right: 0;
+
+    width: 280px;
+    background: white;
+    border-radius: 25px;
+
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-menu.active{
+    display: flex;
+}
+
+.dropdown-menu a{
+    text-decoration: none;
+    color: #222;
+    padding: 15px;
     border-radius: 15px;
-    border-color: #DF688A;
-    color: #FFF2EB;
-    padding: 5px 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 15px;
+    transition: 0.3s;
 
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-#mas button{
-    background-color: #fff2eb;
-    border-radius: 15px;
-    border-color: #0b7c43;
-    color: #0c0400;
-    padding: 5px 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    
-
+.dropdown-menu a:hover{
+    background: #fff3f5;
 }
 
-.navlogo{
-    padding-right: 300px;
-    margin-bottom: 10px;
+.dropdown-menu i{
+    color: #ef8ca4;
 }
 
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width: 1000px){
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
 .container2{
     position: relative;
     width: 400px;

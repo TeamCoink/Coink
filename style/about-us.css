@@ -8,7 +8,7 @@ body {
 
 
 .piggy {
-  width: 150px;
+  width: 300px;
   animation: bounce 2s infinite;
 }
 
@@ -76,7 +76,7 @@ footer {
 }
 
 .about-image img {
-  width: 400px;
+  width: 100%;
   animation: bounce 2s infinite;
 }
 
@@ -91,11 +91,7 @@ footer {
   border-radius: 15px;          
 }
 
-.mision-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 .mision-text {
   flex: 1;
@@ -135,11 +131,7 @@ footer {
   border-radius: 15px;
 }
 
-.vision-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 .vision-image {
   flex: 1;
@@ -180,6 +172,21 @@ footer {
   border-radius: 15px;      
   max-width: 1200px;        
 }
+
+.mv-row {
+  display: flex;
+  justify-content: space-between; /* Separa las dos secciones */
+  gap: 2rem;                      /* Espacio entre Misión y Visión */
+  margin: 2rem auto;
+  max-width: 1200px;              /* Limita el ancho para que no se peguen a los bordes */
+}
+
+.mv-row .mision,
+.mv-row .vision {
+  flex: 1;                        /* Cada sección ocupa la mitad */
+}
+
+
 
 .developers {
   padding: 3rem;

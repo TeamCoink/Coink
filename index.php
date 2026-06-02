@@ -5,31 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coink</title>
     <link rel="stylesheet" href="style/index.css">
+    <!-- Iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
 
+   <?php include 'components/navbar.php'; ?>
    
- </head>
- <body>
-     <nav class="navbar">
-        
-        <div class="container">
-            <div class="navlogo"><a href="index.html"></a><img src="img/logo.png" width="200px" height="80px" alt="logo"></div>
-           <ul class="navlinks">
-
-
-              <div id="aprender"><li><a href="metodos.html">Aprender</a></li></div>
-              <li><a href="contacto.html">Contactanos</a></li>
-              <li><a href="about-us.html">Sobre nosotros</a></li>
-              <div id="login"><li><a href="login.html"><button>Sign In</button></a></li></div>
-              
-              <li id="perfilLink" style="display:none;">
-              <a href="perfil.html">Mi Perfil</a>
-              </li>
-
-              <div id="mas"><li><a href="register.html"><button>Sign Up</button></a></li></div>
-           </ul>
-        </div>
-    </nav>
-
         <div class="container2">
           <img src="img/heroimage.png" alt="homepage photo" height="609vh">
           <div id="ap"><button class="button1">Aprender</button></div>
@@ -185,5 +168,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
+ <script src="javaScript/homepage.js"></script>S
  </body>
  </html>

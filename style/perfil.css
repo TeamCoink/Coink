@@ -1,0 +1,73 @@
+/* Fondo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #F7FFF6, #EAF8E6);
+    min-height: 100vh;
+}
+
+/* Contenedor */
+.perfil-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+/* Card principal */
+.card {
+    background: white;
+    width: 350px;
+    padding: 35px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Foto */
+.foto-perfil {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 6px solid #9EDC8B;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Nombre */
+.card h2 {
+    color: #3F7D58;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.card p {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+/* Botón */
+.card button {
+    background: #FFB6C1;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background: #ff9caf;
+    transform: scale(1.05);
+}
