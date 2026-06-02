@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Fondo general */
 body {
     margin: 0;
@@ -70,4 +71,102 @@ body {
 .card button:hover {
     background: #ff9caf;
     transform: scale(1.05);
+=======
+/* --- Fondo general de la página --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFF5EE; /* Fondo melocotón/crema muy claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* --- Contenedor Principal --- */
+.perfil-container {
+    padding: 20px;
+}
+
+/* --- Tarjeta con Degradado y Borde Azul --- */
+.card {
+    background: linear-gradient(to bottom, #FFE3F1, #F0A0E0); /* Degradado suave rosa a morado */
+    border: 2px solid #0084FF; /* Borde azul característico */
+    border-radius: 24px;
+    width: 380px;
+    padding: 30px 24px 40px 24px;
+    text-align: center;
+    box-shadow: 0 10px 0px #E5D5CD; /* Sombra sólida inferior idéntica a tu diseño */
+    box-sizing: border-box;
+}
+
+/* --- Título COINK --- */
+.app-title {
+    color: #FF0099; /* Rosa neón fuerte */
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+    letter-spacing: 1px;
+}
+
+/* --- Círculo del Avatar (Iniciales o Foto) --- */
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.foto-perfil, .iniciales-perfil {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Círculo morado/rosa cuando son iniciales */
+.iniciales-perfil {
+    background: linear-gradient(to bottom, #BA68E6, #E167B9);
+    color: #000000; /* Texto de las iniciales en negro */
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+
+/* --- Textos de Información --- */
+#nombre {
+    color: #000000;
+    font-size: 1.35rem;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+}
+
+#correo {
+    color: #333333;
+    font-size: 0.95rem;
+    margin: 0 0 35px 0;
+}
+
+/* --- Botón Cerrar Sesión --- */
+.btn-cerrar {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #D1C5C0;
+    border-radius: 20px;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0px #E5D5CD; /* Mini sombra sólida en el botón */
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* Animación al presionar el botón */
+.btn-cerrar:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0px #E5D5CD;
+>>>>>>> d746e6c2cea62a60f6211f3f7acc666a9d41fda9
 }

@@ -33,7 +33,6 @@
             <div class="input">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" name="password">
-                <i class="fa-regular fa-eye"></i>
             </div>
 
             <div class="options">
@@ -43,12 +42,12 @@
 
             <button class="btn" type="submit" >INICIAR SESIÓN</button>
             
-            <button onclick="iniciarSesion()">Iniciar sesión</button>
+          
 
             <script>
              function iniciarSesion() {
              localStorage.setItem("sesion", "activa");
-             window.location.href = "index.html";
+             window.location.href = "index.php";
                             }
             </script>
             
@@ -59,7 +58,7 @@
                 localStorage.setItem("correo", "cesar@gmail.com");
              localStorage.setItem("foto", "https://via.placeholder.com/150");
 
-                window.location.href = "index.php";
+                window.location.href = "index.html";
              }
             </script>
 
