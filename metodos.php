@@ -1,3 +1,5 @@
+<?php include 'components/navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,26 +8,15 @@
     <title>Métodos</title>
 
     <link rel="stylesheet" href="style/metodos.css">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- FUENTE -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
-<header class="navbar">
-
-    <!-- LOGO -->
-    <img src="img/jjiajiajai.png" class="logo">
-
-    <!-- MENU -->
-    <nav class="menu">
-        <a class="active" href="#">Aprender</a>
-        <a href="#">Contactanos</a>
-        <a href="#">Sobre Nosotros</a>
-        <a href="#">Más</a>
-    </nav>
 
 </header>
     <!-- CONTENEDOR -->
@@ -46,7 +37,7 @@
 
                 <div class="card-box">
 
-                    <a href="metodoh.html">
+                    <a href="metodoh.php">
                     <img src="img/HORMIGA 3.png">
                      </a>
 
@@ -124,6 +115,6 @@
         </section>
 
     </main>
-
+   <script src="javaScript/homepage.js"></script>
 </body>
 </html>

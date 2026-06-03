@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* Fondo general */
 body {
     margin: 0;
@@ -71,7 +71,7 @@ body {
 .card button:hover {
     background: #ff9caf;
     transform: scale(1.05);
-=======
+}
 /* --- Fondo general de la página --- */
 body {
     margin: 0;
@@ -168,5 +168,4 @@ body {
 .btn-cerrar:active {
     transform: translateY(3px);
     box-shadow: 0 1px 0px #E5D5CD;
->>>>>>> d746e6c2cea62a60f6211f3f7acc666a9d41fda9
 }

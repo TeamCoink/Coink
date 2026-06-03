@@ -9,28 +9,30 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <!-- Logo -->
         <div class="logo">
-            🐷 <span>Coink</span>
+            <a href="index.php">
+                🐷 <span>Coink</span>
+            </a>
         </div>
 
         <!-- Links -->
         <ul class="nav-links">
 
             <li>
-                <a href="learn.html">
+                <a href="metodos.php">
                     <i class="fa-solid fa-graduation-cap"></i>
                     Aprender
                 </a>
             </li>
 
             <li>
-                <a href="contacto.html">
+                <a href="contacto.php">
                     <i class="fa-regular fa-message"></i>
                     Contactanos
                 </a>
             </li>
 
             <li>
-                <a href="about-us.html">
+                <a href="about-us.php">
                     <i class="fa-solid fa-users"></i>
                     Sobre Nosotros
                 </a>
@@ -73,7 +75,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <div class="dropdown-menu" id="dropdownMenu">
 
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <i class="fa-regular fa-newspaper"></i>
                         Dashboard
                     </a>

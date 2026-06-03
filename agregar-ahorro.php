@@ -1,3 +1,5 @@
+<?php include 'components/navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Ahorro</title>
     <link rel="stylesheet" href="style/agregar-ahorro.css">
+    <link rel="stylesheet" href="style/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -22,7 +26,7 @@
       <label for="categoria">¿Para qué es el ahorro?</label>
       <input type="text" id="categoria" name="categoria" placeholder="Ingrese la categoría del ahorro" required>
 
-      <label for="cantidad">Monto:</label>
+      <label for="monto">Monto:</label>
       <input type="number" id="monto" name="monto" placeholder="Ingrese el monto del ahorro" required>
 
       <label for="fecha">Fecha:</label>
@@ -54,5 +58,6 @@
 </div>
 
 <script src="javaScript/agregar-ahorro.js"></script>
+ <script src="javaScript/homepage.js"></script>
 </body>
 </html>

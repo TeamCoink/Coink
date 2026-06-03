@@ -1,3 +1,5 @@
+<?php include 'components/navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método Hormiga</title>
    <link rel="stylesheet" href="style/index.css">
+   <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-
-     <nav class="navbar">
-        
-        <div class="container">
-            <div class="navlogo"><a href="index.html"></a><img src="img/logo.png" width="200px" height="80px" alt="logo"></div>
-           <ul class="navlinks">
-
-
-              <div id="aprender"><li><a href="metodos.html"></a>Aprender</li></div>
-              <li><a href="contacto.html"></a>Contactanos</li>
-              <li><a href=""></a>Sobre nosotros</li>
-              <div id="login"><li><a href="login.html"></a><button>Sign In</button></li></div>
-              <div id="mas"><li><a href="register.html"></a><button>Sign Up</button></li></div>
-           </ul>
-        </div>
-    </nav>
 
    
         <div class="etiqueta">
@@ -232,6 +220,6 @@
 </section>
    
          
-    
+    <script src="javaScript/homepage.js"></script>
 </body>
 </html>

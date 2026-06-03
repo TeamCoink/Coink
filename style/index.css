@@ -51,10 +51,12 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
 }
 
 .logo span{
     color: #35b46a;
+    text-decoration: none;
 }
 
 /* LINKS */

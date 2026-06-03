@@ -1,3 +1,5 @@
+<?php include 'components/navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coink - Sobre Nosotros</title>
   <link rel="stylesheet" href="style/about-us.css">
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
  <section class="about">
@@ -127,5 +132,6 @@
 
 
   <script src="script.js"></script>
+  <script src="javaScript/homepage.js"></script>
 </body>
 </html>

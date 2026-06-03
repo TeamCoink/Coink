@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,6 +9,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style/contacto.css">
+    <link rel="stylesheet" href="style/index.css">
    
 
     <!-- ICONOS -->
@@ -174,6 +176,7 @@
 </div>
 
 <script src="contacto.js"></script>
+<script src="javaScript/homepage.js"></script>
 
 </body>
 </html>

@@ -1,9 +1,15 @@
+
+<?php include 'components/navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Dashboard Financiero</title>
   <link rel="stylesheet" href="style/dashboard.css">
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -72,7 +78,7 @@
   <!-- Botones debajo de las cards -->
   <div class="metas-botones">
     <button class="btn rosa">Ver metas</button>
-    <button class="btn verde"> <a href = agregar-ahorro.html> Agregar Ahorro </a> </button>
+    <button class="btn verde"> <a href = agregar-ahorro.php> Agregar Ahorro </a> </button>
   </div>
 </section>
 
@@ -121,5 +127,6 @@
 
 
   <script src="dashboard.js"></script>
+  <script src="javaScript/homepage.js"></script>
 </body>
 </html>
