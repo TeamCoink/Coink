@@ -77,7 +77,7 @@
 
   <!-- Botones debajo de las cards -->
   <div class="metas-botones">
-    <button class="btn rosa">Ver metas</button>
+    <button class="btn rosa"><a href="metas.html" style="color: inherit; text-decoration: none;">Ver metas</a></button>
     <button class="btn verde"> <a href = agregar-ahorro.php> Agregar Ahorro </a> </button>
   </div>
 </section>
