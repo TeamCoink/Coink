@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de la Meta - COINK</title>
+    <link rel="stylesheet" href="style/metas.css"> 
+</head>
+<body>
+
+    <section class="goals-container">
+        <a href="metas.html" class="back-link">← Volver a mis metas</a>
+
+        <div class="detail-card">
+            <h1 id="detalleNombre">NOMBRE DE LA META</h1>
+            <p id="detalleMontoTotal">Meta: $0</p>
+
+            <div class="progress-label-wrapper">
+                <label>Tu Progreso...</label>
+                <span id="detallePorcentaje">0%</span>
+            </div>
+            
+            <div class="progress-bar-container detail-bar-layout">
+                <div id="detalleBarra" class="progress-bar-fill"></div>
+            </div>
+
+            <div class="amount-labels-row">
+                <span id="detalleAhorrado">$0</span>
+                <span id="detalleFalta">Falta: $0</span>
+            </div>
+
+            <form id="formAbono" onsubmit="agregarAbonoForm(event)">
+                <input type="number" id="inputAbono" placeholder="$ Cantidad a agregar..." required min="1">
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const detalleNombre = document.getElementById('detalleNombre');
+        const detalleMontoTotal = document.getElementById('detalleMontoTotal');
+        const detallePorcentaje = document.getElementById('detallePorcentaje');
+        const detalleBarra = document.getElementById('detalleBarra');
+        const detalleAhorrado = document.getElementById('detalleAhorrado');
+        const detalleFalta = document.getElementById('detalleFalta');
+        const inputAbono = document.getElementById('inputAbono');
+
+        // Recuperar el almacén total y la meta seleccionada
+        let misMetas = JSON.parse(localStorage.getItem("misMetas")) || [];
+        let metaIndex = localStorage.getItem("metaSeleccionada");
+
+        // Redirección de seguridad
+        if (metaIndex === null || !misMetas[metaIndex]) {
+            window.location.href = "metas.html";
+        }
+
+        let metaActual = misMetas[metaIndex];
+
+        function actualizarVistaDetalle() {
+            const porcentaje = metaActual.objetivo > 0 ? Math.round((metaActual.actual / metaActual.objetivo) * 100) : 0;
+            const falta = metaActual.objetivo - metaActual.actual;
+
+            detalleNombre.textContent = metaActual.nombre;
+            detalleMontoTotal.textContent = `Meta: $${metaActual.objetivo}`;
+            detallePorcentaje.textContent = `${porcentaje}%`;
+            detalleAhorrado.textContent = `$${metaActual.actual}`;
+            
+            if (falta > 0) {
+                detalleFalta.textContent = `Falta: $${falta}`;
+            } else {
+                detalleFalta.textContent = `Falta: $0 (¡Completada!)`;
+            }
+
+            // Mueve la barra rosa
+            if (detalleBarra) {
+                detalleBarra.style.width = `${Math.min(porcentaje, 100)}%`; 
+            }
+        }
+
+        // Función que se ejecuta al darle al botón "Agregar" dinero
+        window.agregarAbonoForm = function(event) {
+            event.preventDefault(); // Evita que se recargue la página
+
+            const montoAbono = parseFloat(inputAbono.value) || 0;
+            if (montoAbono <= 0) return;
+
+            // Sumar el dinero al progreso
+            metaActual.actual += montoAbono;
+
+            // Guardar en la memoria del navegador
+            misMetas[metaIndex] = metaActual;
+            localStorage.setItem("misMetas", JSON.stringify(misMetas));
+
+            // Actualizar los textos y la barra en la pantalla
+            actualizarVistaDetalle();
+            event.target.reset(); // Limpia la cajita de texto
+        };
+
+        // Mostrar los datos al cargar
+        actualizarVistaDetalle();
+    </script>
+</body>
+</html>

@@ -1,263 +1,263 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* --- Estilos Generales de Fondo --- */
+body {
+    background-color: #FFF3EB; /* Fondo crema pastel muy suave */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: lab(96.31% 3.2 4.92);
-
-}
-
-.container{
-    display: flex;
-    background-color: #FFF2EB;
-    align-items: center;
-    justify-content:  center;
-    padding: 0px 0px;
-
-}
-
-
-
-.navlinks{
-    display: inline-flex;
-    text-align: center;
-    gap: 60px;
-    list-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
-    padding-right: 60px;
-}
-
-#aprender{
-    color: #DF688A;
-    font-weight: bold;
-}
-
-.navlinks a{
-    color: rgb(107, 4, 38);
-    text-decoration: none;
-}
-
-.navlinks a:hover{
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-
-}
-
-#login button{
-    background-color: #DF688A;
-    border-radius: 15px;
-    border-color: #DF688A;
-    color: #FFF2EB;
-    padding: 5px 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-
-}
-
-#mas button{
-    background-color: #fff2eb;
-    border-radius: 15px;
-    border-color: #0b7c43;
-    color: #0c0400;
-    padding: 5px 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    
-
-}
-
-.navlogo{
-    padding-right: 300px;
-    margin-bottom: 10px;
-}
-
-
-/* --- Contenedor Principal de las Metas --- */
 .goals-container {
-    max-width: 900px; 
-    margin: 40px auto; 
-    padding: 0 20px;
+    max-width: 700px;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
-    gap: 32px; 
-    box-sizing: border-box;
-    font-family: sans-serif;
+    gap: 25px;
 }
 
-/* --- Tarjetas Blancas con Sombra Sólida Inferior --- */
+/* --- Tarjetas Estilo COINK con Sombra Sólida Rígida --- */
 .goals-header, 
 .goals-form-wrapper, 
-.goals-list-wrapper {
+.goals-list-wrapper,
+.detail-card {
     background-color: #FFFFFF;
-    border-radius: 32px; 
-    padding: 35px 45px;
-    box-shadow: 0 12px 0px #EFE3DB; 
+    border-radius: 28px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 0px #EFE3DB; /* Sombra rígida inferior característica */
+    box-sizing: border-box;
 }
 
-/* --- Bloque 1: Cabecera --- */
+/* --- Textos de Cabecera --- */
 .goals-header h1 {
-    color: #E633AA; 
-    font-size: 3.4rem;
-    font-weight: 500;
-    margin: 0 0 6px 0;
+    color: #E633AA;
+    font-size: 2.5rem;
+    margin: 0 0 5px 0;
 }
 
 .goals-header .subtitle {
     color: #E633AA;
-    font-size: 1.4rem;
-    margin: 0 0 30px 0;
+    font-size: 1.1rem;
+    margin: 0 0 25px 0;
     opacity: 0.8;
 }
 
+/* --- Contadores Superiores --- */
 .counters {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .counter-total {
-    background-color: #FF0099;
-    color: #000000;
-    padding: 8px 26px;
-    border-radius: 20px;
+    background-color: #FFBCE4;
+    color: #D6128B;
+    padding: 6px 20px;
+    border-radius: 15px;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .counter-completed {
-    background: linear-gradient(to right, #929794, #2F5927); 
-    color: #000000;
-    padding: 8px 26px;
-    border-radius: 20px;
+    background-color: #E2E2E2;
+    color: #555555;
+    padding: 6px 20px;
+    border-radius: 15px;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-/* --- Bloque 2: Formulario (Fiel a la alineación y proporción original) --- */
+/* --- Formulario de Entrada Principal --- */
 .goals-form {
     display: flex;
-    align-items: center; 
-    justify-content: space-between;
-    gap: 24px; /* Espacio ideal entre el bloque de inputs y el botón */
+    align-items: center;
+    gap: 15px;
 }
 
 .form-inputs {
-    flex-grow: 1; /* Esto hace que los inputs se estiren a lo largo de la tarjeta */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Espaciado corto vertical para que se vean delgados y juntos */
+    gap: 10px;
 }
 
-.form-inputs input {
+.form-inputs input, #inputAbono {
     width: 100%;
-    padding: 8px 20px; /* Relleno ajustado para que mantengan la línea delgada original */
-    border: 1px solid #FFAEE2; 
-    border-radius: 20px;
-    font-size: 0.95rem; 
+    padding: 12px 20px;
+    border: 2px solid #FFAEE2; /* Borde rosa original de la captura */
+    border-radius: 18px;
+    font-size: 1rem;
     box-sizing: border-box;
     outline: none;
-    color: #000000;
 }
 
-.form-inputs input::placeholder {
-    color: #111111; 
-}
-
-/* --- Botón Agregar con Animación --- */
-.goals-form button {
-    background: linear-gradient(to right, #E60087, #FA4BB1); 
-    color: #000000;
+/* Botones Rosas con Degradado Líquido */
+.goals-form button, #formAbono button {
+    background: linear-gradient(to right, #E60087, #FA4BB1);
+    color: white;
     border: none;
-    padding: 16px 40px;
-    border-radius: 22px;
-    font-size: 1.4rem;
+    padding: 14px 28px;
+    border-radius: 18px;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 6px 12px rgba(230, 0, 135, 0.2);
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(230, 0, 135, 0.15);
 }
 
-/* Animaciones interactivas */
-.goals-form button:hover {
-    transform: translateY(-3px) scale(1.03); 
-    filter: brightness(1.05); 
-    box-shadow: 0 10px 20px rgba(230, 0, 135, 0.35);
+/* --- Lista de Metas Dinámicas --- */
+.goals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.goals-form button:active {
-    transform: translateY(2px) scale(0.98); 
-    box-shadow: 0 3px 6px rgba(230, 0, 135, 0.15);
-}
-
-/* --- Estilos base listos para cuando inyectes metas dinámicas --- */
 .goal-item {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 15px 0;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 10px;
     border-bottom: 1px solid #FBEAF4;
+    transition: background 0.2s;
+    border-radius: 12px;
 }
 
-.goal-item:last-child {
-    border-bottom: none;
+.goal-item:hover {
+    background-color: #FFF9F5;
 }
 
+/* Círculo indicador de completada izquierdo */
 .checkbox-circle {
-    display: block;
-    width: 26px;
-    height: 26px;
-    border: 2px solid #E633AA; 
+    width: 22px;
+    height: 22px;
+    border: 2px solid #E633AA;
     border-radius: 50%;
-    cursor: pointer;
+}
+
+.checkbox-circle.checked {
+    background-color: #E633AA;
 }
 
 .goal-content {
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .goal-info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .goal-title {
-    color: #111111;
-    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222222;
 }
 
 .goal-percentage {
     color: #E633AA;
-    font-size: 1.05rem;
     font-weight: bold;
 }
 
+/* --- Barras de progreso --- */
 .progress-bar-container {
     width: 100%;
-    height: 14px;
-    background-color: #DBDBDB; 
+    height: 12px;
+    background-color: #E0E0E0; /* Canal gris pasivo */
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .progress-bar-fill {
     height: 100%;
-    background-color: #E633AA; 
+    background-color: #E633AA; /* Relleno rosa activo */
     border-radius: 10px;
     transition: width 0.4s ease;
+    width: 0%;
 }
 
 .goal-amounts {
-    font-size: 1.1rem;
-    color: #FCA1DB; 
+    font-size: 0.9rem;
+    color: #FA4BB1;
     font-weight: bold;
+}
+
+/* Mensaje por defecto cuando no hay metas creadas */
+.no-goals-msg {
+    text-align: center;
+    color: #E633AA;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* --- Estilos exclusivos de la pantalla Detalle-Meta --- */
+.back-link {
+    color: #E633AA;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+    transform: translateX(-4px); /* Pequeña animación interactiva al volver */
+}
+
+#detalleNombre {
+    color: #E633AA;
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+#detalleMontoTotal {
+    color: #666666;
+    margin: 0 0 25px 0;
+    font-size: 1.1rem;
+}
+
+.progress-label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.detail-bar-layout {
+    height: 16px;
+    margin-bottom: 12px;
+}
+
+.amount-labels-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+#detalleFalta {
+    color: #E633AA;
+}
+
+#formAbono {
+    display: flex;
+    gap: 15px;
+}
+
+/* Botón basurero para eliminar metas indeseadas */
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.4;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.btn-delete:hover {
+    opacity: 1;
+    transform: scale(1.15);
 }

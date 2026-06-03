@@ -1,59 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metas</title>
+    <title>Mis Metas - COINK</title>
     <link rel="stylesheet" href="style/metas.css">
-    
 </head>
 <body>
-    <nav class="navbar">
-        
-        <div class="container">
-            <div class="navlogo"><a href="index.html"></a><img src="img/logo.png" width="200px" height="80px" alt="logo"></div>
-           <ul class="navlinks">
-
-
-              <div id="aprender"><li><a href="aprender.html">Aprender</a></li></div>
-              <li><a href="contacto.html">Contactanos</a></li>
-              <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-              <div id="login"><li><a href="login.html"><button>Sign In</button></a></li></div>
-              <div id="mas"><li><a href="register.html"><button>Sign Up</button></a></li></div>
-           </ul>
-        </div>
-    </nav>
      
     <section class="goals-container">
-
-    <header class="goals-header">
-        <h1>Mis metas</h1>
-        <p class="subtitle">organiza y alcanza tus objetivos</p>
-        
-        <div class="counters">
-            <span class="counter-total">0 Total</span>
-            <span class="counter-completed">0 Completadas</span>
-        </div>
-    </header>
-
-    <div class="goals-form-wrapper">
-        <form class="goals-form">
-            <div class="form-inputs">
-                <input type="text" placeholder="Escribe una nueva meta.." required>
-                <input type="text" placeholder="Monto objetivo ($)..." required>
+        <header class="goals-header">
+            <h1>Mis Metas</h1>
+            <p class="subtitle">Organiza y alcanza tus objetivos</p>
+            
+            <div class="counters">
+                <span class="counter-total">0 total</span>
+                <span class="counter-completed">0 completadas</span>
             </div>
-            <button type="submit">Agregar</button>
-        </form>
-    </div>
+        </header>
 
-    <div class="goals-list-wrapper" id="goalsListWrapper" style="display: none;">
-        <ul class="goals-list" id="goalsList">
-            </ul>
-    </div>
+        <div class="goals-form-wrapper">
+            <form class="goals-form" onsubmit="agregarMetaForm(event)">
+                <div class="form-inputs">
+                    <input type="text" placeholder="Escribe una nueva meta..." required>
+                    <input type="number" placeholder="Monto objetivo ($)..." required min="1">
+                </div>
+                <button type="submit">+ Agregar</button>
+            </form>
+        </div>
 
-</section>
+        <div class="goals-list-wrapper" id="goalsListWrapper">
+            <ul class="goals-list" id="goalsList">
+                </ul>
+        </div>
+    </section>
 
-<script src="metas.js">  </script>
+    <script>
+        const goalsList = document.getElementById('goalsList');
+        const counterTotal = document.querySelector('.counter-total');
+        const counterCompleted = document.querySelector('.counter-completed');
 
+        let misMetas = JSON.parse(localStorage.getItem("misMetas")) || [];
+
+        function renderizarMetas() {
+            if (!goalsList) return;
+            goalsList.innerHTML = '';
+
+            if (misMetas.length === 0) {
+                goalsList.innerHTML = `<p class="no-goals-msg" style="text-align: center; color: #E633AA; font-weight: bold; margin: 15px 0;">No tienes metas aún. ¡Agrega tu primera meta!</p>`;
+                actualizarContadores();
+                return;
+            }
+
+            misMetas.forEach((meta, index) => {
+                const porcentaje = meta.objetivo > 0 ? Math.round((meta.actual / meta.objetivo) * 100) : 0;
+                const li = document.createElement('li');
+                li.className = 'goal-item';
+                li.setAttribute('onclick', `verDetalleMeta(${index})`);
+                
+                li.innerHTML = `
+                    <div class="goal-checkbox-wrapper">
+                        <div class="checkbox-circle ${meta.actual >= meta.objetivo ? 'checked' : ''}"></div>
+                    </div>
+                    <div class="goal-content" style="flex-grow: 1; cursor: pointer;">
+                        <div class="goal-info" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span class="goal-title" style="font-weight: bold; color: #222222;">${meta.nombre}</span>
+                            <span class="goal-percentage" style="color: #E633AA; font-weight: bold;">${porcentaje}%</span>
+                        </div>
+                        <div class="progress-bar-container" style="width: 100%; height: 12px; background-color: #E0E0E0; border-radius: 10px; overflow: hidden; margin-bottom: 6px;">
+                            <div class="progress-bar-fill" style="height: 100%; background-color: #E633AA; border-radius: 10px; transition: width 0.4s ease; width: ${Math.min(porcentaje, 100)}%"></div>
+                        </div>
+                        <div class="goal-amounts" style="font-size: 0.9rem; color: #FA4BB1; font-weight: bold;">
+                            $${meta.actual} / $${meta.objetivo}
+                        </div>
+                    </div>
+                    <button class="btn-delete" onclick="eliminarMeta(event, ${index})" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; opacity: 0.5;">🗑️</button>
+                `;
+                goalsList.appendChild(li);
+            });
+            actualizarContadores();
+        }
+
+        function actualizarContadores() {
+            if (counterTotal) counterTotal.textContent = `${misMetas.length} total`;
+            if (counterCompleted) {
+                const completadas = misMetas.filter(m => m.actual >= m.objetivo).length;
+                counterCompleted.textContent = `${completadas} completadas`;
+            }
+        }
+
+        window.verDetalleMeta = function(index) {
+            localStorage.setItem("metaSeleccionada", index);
+            window.location.href = "detalle-meta.html";
+        };
+
+        window.agregarMetaForm = function(event) {
+            event.preventDefault();
+            const goalsForm = event.target;
+            const inputNombre = goalsForm.querySelector('input[type="text"]');
+            const inputMonto = goalsForm.querySelector('input[type="number"]');
+
+            if (!inputNombre || !inputMonto) return;
+
+            const nuevaMeta = {
+                nombre: inputNombre.value.trim(),
+                objetivo: parseFloat(inputMonto.value) || 0,
+                actual: 0
+            };
+
+            misMetas.push(nuevaMeta);
+            localStorage.setItem("misMetas", JSON.stringify(misMetas));
+            renderizarMetas();
+            goalsForm.reset();
+        };
+
+        window.eliminarMeta = function(event, index) {
+            event.stopPropagation();
+            misMetas.splice(index, 1);
+            localStorage.setItem("misMetas", JSON.stringify(misMetas));
+            renderizarMetas();
+        };
+
+        renderizarMetas();
+    </script>
 </body>
 </html>
