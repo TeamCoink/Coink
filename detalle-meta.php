@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (!isset($_SESSION['usuario_id'])) {
@@ -15,6 +16,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <link rel="stylesheet" href="style/style.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     
 </head>
 <body>
 
@@ -101,5 +103,7 @@ if (!isset($_SESSION['usuario_id'])) {
             })
             .catch(err => console.error("Error al conectar con obtener_detalle.php:", err));
     </script>
+
+   
 </body>
 </html>

@@ -312,3 +312,42 @@ body::after {
   height: 100%;
   display: block;
 }
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px; /* ajustamos altura */
+  z-index: 1; /* waves detrás */
+  overflow: hidden;
+}
+.waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.goals-container {
+    max-width: 700px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    z-index: 2; /* El formulario y metas encima */
+}
+
+.waves {
+  position: fixed; /* mejor que absolute para que quede al fondo */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: 0; /* ondas detrás */
+  overflow: hidden;
+}
+.waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
