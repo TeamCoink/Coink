@@ -44,19 +44,27 @@ body{
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* LOGO */
+/* ===== LOGO NAVBAR ===== */
 .logo{
-    font-size: 2rem;
-    font-weight: 700;
+    flex: 0 0 auto;
+}
+
+.logo a{
     display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
 }
 
-.logo span{
-    color: #35b46a;
-    text-decoration: none;
+/* ESTA REGLA VA A GANARLE A TODO */
+.navbar .logo .logo-img{
+    width: 220px !important;
+    height: 60px !important;
+    max-width: 220px !important;
+    max-height: 60px !important;
+    min-width: 220px !important;
+
+    object-fit: contain !important;
+    display: block !important;
 }
 
 /* LINKS */
@@ -225,50 +233,63 @@ body{
         gap: 20px;
     }
 }
+/* HERO PRINCIPAL */
+/* HERO */
 .container2{
     position: relative;
-    width: 400px;
+    width: 100%;
+    max-width: 1100px; /* MUCHO más grande */
+    margin-top: 40px;
+    margin-left: 25px;
 }
 
 .container2 img{
-    width: 337%;
+    width: 120%; /* hace la imagen más grande */
+    max-width: none;
+    height: auto;
     display: block;
-    
 }
 
+/* BOTÓN APRENDER */
 .button1{
     position: absolute;
-    top: 80%;
-    left: 65%;
-    transform: translate(-80%, -80%);
-    padding: 10px 20px;
-    background-color: rgba(253, 79, 152, 0.6);
-    color: rgb(255, 255, 255);
+    bottom: 70px;
+    left: 60px;
+
+    background-color: rgba(253, 79, 152, 0.75);
+    color: white;
     border: none;
-    cursor: pointer;
     border-radius: 50px;
-    height: 40px;
-    width: 180px;
+
+    height: 50px;
+    width: 200px;
+
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 
+/* BOTÓN UNIRME */
 .button2{
     position: absolute;
-    top: 80%;
-    left:  150%;
-    transform: translate(-80%, -80%);
-    padding: 10px 20px;
-    background-color: rgba(255, 196, 108, 0.6);
+    bottom: 70px;
+    left: 430px;
+
+    background-color: rgba(255, 196, 108, 0.85);
     color: rgb(6, 97, 18);
     border: none;
-    cursor: pointer;
     border-radius: 50px;
-    height: 40px;
-    width: 180px;
+
+    height: 50px;
+    width: 200px;
+
     font-size: 20px;
     font-weight: bold;
-    
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 70px;
+    left: 620px; /* lo empuja más a la derecha */
 }
 
 #features{

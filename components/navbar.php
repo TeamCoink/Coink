@@ -7,13 +7,11 @@ if (session_status() === PHP_SESSION_NONE) {
 <header>
     <nav class="navbar">
 
-        <!-- Logo -->
         <div class="logo">
             <a href="index.php">
-                🐷 <span>Coink</span>
+                <img src="img/mini-logo.png" alt="Coink Logo" class="logo-img">
             </a>
         </div>
-
         <!-- Links -->
         <ul class="nav-links">
 
