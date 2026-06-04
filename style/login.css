@@ -38,7 +38,7 @@ body{
 }
 
 .logoArea img{
-    width:200px;
+    width: 200px;
 }
 
 .logoArea span{
@@ -182,24 +182,26 @@ label{
 
 
 .info{
-    width:50%;
+    width:80%;
     text-align:center;
+
 }
 
 .info h2{
-    font-size:34px;
+    font-size:60px;
     font-weight:700;
     line-height:1.2;
 }
 
 .info p{
     color:#888;
-    margin-top:15px;
-    font-size:15px;
-}
+    margin-top:20px;
+    font: size 20px;
 
 
 .pig{
-    width:320px;
+    width:800px;
     margin-top:25px;
+}
+
 }

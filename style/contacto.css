@@ -19,6 +19,7 @@ body{
     max-width:1450px;
     background-color:  #ffe5d8;
     display:flex;
+    border-radius: 20px;
    
     overflow:hidden;
 }
@@ -34,6 +35,7 @@ body{
 
 .logo{
     width:350px;
+    
    
    
 }
@@ -109,6 +111,7 @@ body{
     position:absolute;
     bottom:0;
     left:40px;
+    
 }
 
 /* DERECHA */
@@ -121,7 +124,7 @@ body{
 }
 
 .formulario{
-    width: 800px;
+    width: 600px;
     background:#fff;
     border-radius:25px;
     padding:40px;
@@ -244,6 +247,7 @@ textarea{
 
 .social p{
     margin-bottom:20px;
+    text-align: center;
     font-weight:bold;
     color:#333;
 }
