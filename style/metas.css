@@ -1,9 +1,9 @@
-/* --- Estilos Generales de Fondo --- */
+/* --- Estilos Generales de Fondo para Metas --- */
 body {
     background-color: #FFF3EB; /* Fondo crema pastel muy suave */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0; /* Quitamos el padding global para que el navbar pegue arriba */
 }
 
 .goals-container {
@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    padding: 0 20px; /* El espacio se lo damos al contenedor, no al body */
 }
 
 /* --- Tarjetas Estilo COINK con Sombra Sólida Rígida --- */
@@ -81,7 +82,7 @@ body {
 .form-inputs input, #inputAbono {
     width: 100%;
     padding: 12px 20px;
-    border: 2px solid #FFAEE2; /* Borde rosa original de la captura */
+    border: 2px solid #FFAEE2; /* Borde rosa original */
     border-radius: 18px;
     font-size: 1rem;
     box-sizing: border-box;
@@ -162,7 +163,7 @@ body {
 .progress-bar-container {
     width: 100%;
     height: 12px;
-    background-color: #E0E0E0; /* Canal gris pasivo */
+    background-color: #E0E0E0; 
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 6px;
@@ -170,7 +171,7 @@ body {
 
 .progress-bar-fill {
     height: 100%;
-    background-color: #E633AA; /* Relleno rosa activo */
+    background-color: #E633AA; 
     border-radius: 10px;
     transition: width 0.4s ease;
     width: 0%;
@@ -202,7 +203,7 @@ body {
 }
 
 .back-link:hover {
-    transform: translateX(-4px); /* Pequeña animación interactiva al volver */
+    transform: translateX(-4px); 
 }
 
 #detalleNombre {
@@ -248,7 +249,7 @@ body {
     gap: 15px;
 }
 
-/* Botón basurero para eliminar metas indeseadas */
+/* Botón basurero para eliminar metas */
 .btn-delete {
     background: none;
     border: none;

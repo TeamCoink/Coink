@@ -1,15 +1,37 @@
+<?php
+session_start();
+
+// CONTROL DE SEGURIDAD: Si no hay sesión activa, lo manda directo al login
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit();
+}
+
+// Capturamos el ID del usuario en sesión de forma segura para JavaScript
+$usuarioId = $_SESSION['usuario_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de la Meta - COINK</title>
+    <!-- 1. Cargamos fuentes de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 2. Cargamos el diseño del Navbar -->
+   <link rel="stylesheet" href="/coink/style/navbar.css">
+    <!-- 3. Cargamos los estilos de metas al final -->
     <link rel="stylesheet" href="style/metas.css"> 
 </head>
 <body>
 
+<?php include 'components/navbar.php'; ?>
+  
+
+
     <section class="goals-container">
-        <a href="metas.html" class="back-link">← Volver a mis metas</a>
+        <a href="metas.php" class="back-link">← Volver a mis metas</a>
 
         <div class="detail-card">
             <h1 id="detalleNombre">NOMBRE DE LA META</h1>
@@ -37,6 +59,10 @@
     </section>
 
     <script>
+        // 1. VARIABLES DE CONTROL DE SESIÓN Y DOM
+        const ID_USUARIO = "<?php echo addslashes($usuarioId); ?>";
+        const CLAVE_LOCAL = `misMetas_user_${ID_USUARIO}`;
+
         const detalleNombre = document.getElementById('detalleNombre');
         const detalleMontoTotal = document.getElementById('detalleMontoTotal');
         const detallePorcentaje = document.getElementById('detallePorcentaje');
@@ -45,17 +71,30 @@
         const detalleFalta = document.getElementById('detalleFalta');
         const inputAbono = document.getElementById('inputAbono');
 
-        // Recuperar el almacén total y la meta seleccionada
-        let misMetas = JSON.parse(localStorage.getItem("misMetas")) || [];
+        // Lógica de activación del menú desplegable "More" que tienes en tu navbar
+        const moreBtn = document.getElementById('moreBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        if (moreBtn && dropdownMenu) {
+            moreBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
+            });
+        }
+
+        // 2. RECUPERAR EL CAJÓN ESPECÍFICO DE ESTE USUARIO
+        let misMetas = JSON.parse(localStorage.getItem(CLAVE_LOCAL)) || [];
         let metaIndex = localStorage.getItem("metaSeleccionada");
 
-        // Redirección de seguridad
         if (metaIndex === null || !misMetas[metaIndex]) {
-            window.location.href = "metas.html";
+            window.location.href = "metas.php";
         }
 
         let metaActual = misMetas[metaIndex];
 
+        // 3. ACTUALIZAR INTERFAZ GRÁFICA
         function actualizarVistaDetalle() {
             const porcentaje = metaActual.objetivo > 0 ? Math.round((metaActual.actual / metaActual.objetivo) * 100) : 0;
             const falta = metaActual.objetivo - metaActual.actual;
@@ -71,32 +110,26 @@
                 detalleFalta.textContent = `Falta: $0 (¡Completada!)`;
             }
 
-            // Mueve la barra rosa
             if (detalleBarra) {
                 detalleBarra.style.width = `${Math.min(porcentaje, 100)}%`; 
             }
         }
 
-        // Función que se ejecuta al darle al botón "Agregar" dinero
+        // 4. FUNCIÓN PARA AGREGAR ABONOS
         window.agregarAbonoForm = function(event) {
-            event.preventDefault(); // Evita que se recargue la página
+            event.preventDefault();
 
             const montoAbono = parseFloat(inputAbono.value) || 0;
             if (montoAbono <= 0) return;
 
-            // Sumar el dinero al progreso
             metaActual.actual += montoAbono;
-
-            // Guardar en la memoria del navegador
             misMetas[metaIndex] = metaActual;
-            localStorage.setItem("misMetas", JSON.stringify(misMetas));
+            localStorage.setItem(CLAVE_LOCAL, JSON.stringify(misMetas));
 
-            // Actualizar los textos y la barra en la pantalla
             actualizarVistaDetalle();
-            event.target.reset(); // Limpia la cajita de texto
+            event.target.reset();
         };
 
-        // Mostrar los datos al cargar
         actualizarVistaDetalle();
     </script>
 </body>

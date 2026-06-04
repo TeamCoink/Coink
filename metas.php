@@ -1,13 +1,44 @@
+<?php
+session_start();
+
+// CONTROL DE SEGURIDAD: Si no hay sesión activa de COINK, saca al intruso al login de inmediato
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.html");
+    exit();
+}
+
+// Capturamos el ID único del usuario en sesión
+$usuarioId = $_SESSION['usuario_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Metas - COINK</title>
+    <!-- 1. Cargamos fuentes de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 2. Cargamos el diseño del Navbar -->
+  <link rel="stylesheet" href="/coink/style/navbar.css">
+    <!-- 3. Cargamos los estilos de metas al final -->
     <link rel="stylesheet" href="style/metas.css">
 </head>
 <body>
+
+<?php include 'components/navbar.php'; ?>
+    
+    <section class="goals-container">
+        <!-- Todo tu contenido existente aquí -->
+    </section>
+
+    <script>
+        // MANTÉN AQUÍ SOLO TU SCRIPT ORIGINAL DE METAS
+        // No incluyas el script del "moreBtn" aquí, ¡ya está en el navbar!
+    </script>
      
+   
+
     <section class="goals-container">
         <header class="goals-header">
             <h1>Mis Metas</h1>
@@ -30,18 +61,36 @@
         </div>
 
         <div class="goals-list-wrapper" id="goalsListWrapper">
-            <ul class="goals-list" id="goalsList">
-                </ul>
+            <ul class="goals-list" id="goalsList"></ul>
         </div>
     </section>
 
     <script>
+        // 1. CAPTURA DE SESIÓN DESDE PHP
+        const ID_USUARIO = "<?php echo addslashes($usuarioId); ?>";
+        const CLAVE_LOCAL = `misMetas_user_${ID_USUARIO}`;
+
         const goalsList = document.getElementById('goalsList');
         const counterTotal = document.querySelector('.counter-total');
         const counterCompleted = document.querySelector('.counter-completed');
 
-        let misMetas = JSON.parse(localStorage.getItem("misMetas")) || [];
+        // Lógica de activación del menú desplegable "More" que tienes en tu navbar
+        const moreBtn = document.getElementById('moreBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        if (moreBtn && dropdownMenu) {
+            moreBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
+            });
+        }
 
+        // 2. CARGA INTELIGENTE DE DATOS
+        let misMetas = JSON.parse(localStorage.getItem(CLAVE_LOCAL)) || [];
+
+        // 3. RENDERIZAR LAS TARJETAS EN PANTALLA
         function renderizarMetas() {
             if (!goalsList) return;
             goalsList.innerHTML = '';
@@ -89,11 +138,14 @@
             }
         }
 
+        // 5. SELECCIONAR META Y VER DETALLES
         window.verDetalleMeta = function(index) {
             localStorage.setItem("metaSeleccionada", index);
-            window.location.href = "detalle-meta.html";
+            localStorage.setItem("usuarioMetaActiva", ID_USUARIO);
+            window.location.href = "detalle-meta.php";
         };
 
+        // 6. ACCIÓN AL AGREGAR UNA META NUEVA
         window.agregarMetaForm = function(event) {
             event.preventDefault();
             const goalsForm = event.target;
@@ -109,15 +161,16 @@
             };
 
             misMetas.push(nuevaMeta);
-            localStorage.setItem("misMetas", JSON.stringify(misMetas));
+            localStorage.setItem(CLAVE_LOCAL, JSON.stringify(misMetas));
             renderizarMetas();
             goalsForm.reset();
         };
 
+        // 7. BORRAR UNA META DE LA LISTA
         window.eliminarMeta = function(event, index) {
             event.stopPropagation();
             misMetas.splice(index, 1);
-            localStorage.setItem("misMetas", JSON.stringify(misMetas));
+            localStorage.setItem(CLAVE_LOCAL, JSON.stringify(misMetas));
             renderizarMetas();
         };
 
