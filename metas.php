@@ -18,6 +18,38 @@ $usuarioId = $_SESSION['usuario_id'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style/metas.css">
+
+    <style>
+        .goal-item {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            position: relative;
+        }
+        .goal-content {
+            flex: 1;
+            cursor: pointer;
+        }
+        .btn-delete-meta {
+            background: none;
+            border: none;
+            color: #ff4d6a; /* Un tono rosa/rojo que combina con COINK */
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            margin-left: 10px;
+        }
+        .btn-delete-meta:hover {
+            background-color: #fff0f2;
+            color: #d6002b;
+            transform: scale(1.15);
+        }
+    </style>
 </head>
 <body>
 
@@ -73,6 +105,7 @@ $usuarioId = $_SESSION['usuario_id'];
                     li.className = 'goal-item';
                     li.innerHTML = `
                         <div class="checkbox-circle ${meta.actual >= meta.objetivo ? 'checked' : ''}"></div>
+                        
                         <div class="goal-content" onclick="verDetalle(${meta.id})">
                             <div class="goal-info">
                                 <span class="goal-title">${meta.nombre}</span>
@@ -82,7 +115,12 @@ $usuarioId = $_SESSION['usuario_id'];
                                 <div class="progress-bar-fill" style="width: ${Math.min(porcentaje, 100)}%"></div>
                             </div>
                             <span class="goal-amounts">$${meta.actual} / $${meta.objetivo}</span>
-                        </div>`;
+                        </div>
+                        
+                        <button class="btn-delete-meta" onclick="eliminarMetaForm(event, ${meta.id})" title="Eliminar meta">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    `;
                     goalsList.appendChild(li);
                 });
             }
@@ -112,6 +150,34 @@ $usuarioId = $_SESSION['usuario_id'];
         window.verDetalle = function(id) {
             localStorage.setItem("idMetaActual", id);
             window.location.href = "detalle-meta.php";
+        };
+
+        // ===============================================
+        // NUEVA FUNCIÓN: ELIMINAR META DE LA BASE DE DATOS
+        // ===============================================
+        window.eliminarMetaForm = function(event, id) {
+            // event.stopPropagation() evita que se dispare el onclick de verDetalle()
+            event.stopPropagation();
+
+            if (confirm("¿De verdad quieres eliminar esta meta?")) {
+                fetch('php/eliminar_meta.php', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ id: id })
+                })
+                .then(res => res.json())
+                .then(respuesta => {
+                    if (respuesta.success) {
+                        cargarMetas(); // Recarga la lista en tiempo real sin pestañear
+                    } else {
+                        alert("Error desde el servidor: " + (respuesta.error || "No se pudo borrar"));
+                    }
+                })
+                .catch(err => {
+                    console.error("Error en la petición fetch:", err);
+                    alert("Ocurrió un error al intentar eliminar la meta.");
+                });
+            }
         };
 
         cargarMetas();
