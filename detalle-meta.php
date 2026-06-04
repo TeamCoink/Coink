@@ -1,136 +1,105 @@
 <?php
 session_start();
-
-// CONTROL DE SEGURIDAD: Si no hay sesión activa, lo manda directo al login
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.html");
     exit();
 }
-
-// Capturamos el ID del usuario en sesión de forma segura para JavaScript
-$usuarioId = $_SESSION['usuario_id'];
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de la Meta - COINK</title>
-    <!-- 1. Cargamos fuentes de iconos -->
+    <title>Detalle de Meta - COINK</title>
+    
+    <link rel="stylesheet" href="style/style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- 2. Cargamos el diseño del Navbar -->
-    <link rel="stylesheet" href="style/navbar.css">
-    <!-- 3. Cargamos los estilos de metas al final -->
-    <link rel="stylesheet" href="style/metas.css"> 
 </head>
 <body>
 
+    <div class="bg-layer-pink"></div>
+    <div class="bg-layer-green-top"></div>
+    <div class="bg-hill-1"></div>
+    <div class="bg-hill-2"></div>
+    <div class="bg-hill-3"></div>
 
-  
-
-
-    <section class="goals-container">
-        <a href="metas.php" class="back-link">← Volver a mis metas</a>
-
-        <div class="detail-card">
-            <h1 id="detalleNombre">NOMBRE DE LA META</h1>
-            <p id="detalleMontoTotal">Meta: $0</p>
-
-            <div class="progress-label-wrapper">
-                <label>Tu Progreso...</label>
-                <span id="detallePorcentaje">0%</span>
+    <main class="main-container">
+        <div class="form-card">
+            
+            <a href="metas.php" class="back-link" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; color: #ff4da3; text-decoration: none; font-weight: 700; font-size: 14px;">
+                <i class="fa-solid fa-arrow-left"></i> Volver a mis metas
+            </a>
+            
+            <h2 id="detalleNombre" style="text-align: left; margin-bottom: 5px;">Cargando...</h2>
+            
+            <div class="input-group" style="margin-bottom: 25px;">
+                <p id="detalleMontoTotal" style="font-size: 15px; color: #666; font-weight: 600;">Meta objetivo: $0.00</p>
             </div>
             
-            <div class="progress-bar-container detail-bar-layout">
-                <div id="detalleBarra" class="progress-bar-fill"></div>
+            <div class="progress-container" style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; color: #444; margin-bottom: 6px;">
+                    <span>Progreso total</span>
+                    <span id="detallePorcentaje" style="color: #ff4da3;">0%</span>
+                </div>
+                <div style="background: #f0f0f0; height: 16px; border-radius: 25px; overflow: hidden; border: 1px solid #fae3e8;">
+                    <div id="detalleBarra" style="background-color: #ff4da3; height: 100%; width: 0%; border-radius: 25px; transition: width 0.5s ease;"></div>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; margin-bottom: 30px;">
+                <span id="detalleAhorrado" style="color: #ff4da3;">$0.00 ahorrados</span>
+                <span id="detalleFalta" style="color: #7cb342;">Falta: $0.00</span>
             </div>
 
-            <div class="amount-labels-row">
-                <span id="detalleAhorrado">$0</span>
-                <span id="detalleFalta">Falta: $0</span>
-            </div>
-
-            <form id="formAbono" onsubmit="agregarAbonoForm(event)">
-                <input type="number" id="inputAbono" placeholder="$ Cantidad a agregar..." required min="1">
-                <button type="submit">Agregar</button>
+            <form action="php/guardar-ahorro.php" method="POST" style="display: flex; gap: 12px; align-items: center; width: 100%;">
+                <input type="hidden" id="inputHiddenId" name="id">
+                
+                <div class="input-group" style="flex: 1; margin-bottom: 0;">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-dollar-sign icon-left"></i>
+                        <input type="number" name="monto" placeholder="Cantidad a sumar..." required min="1" step="any">
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit" style="margin-top: 0; width: auto; padding: 12px 28px; white-space: nowrap;">Agregar</button>
             </form>
+
         </div>
-    </section>
+    </main>
 
     <script>
-        // 1. VARIABLES DE CONTROL DE SESIÓN Y DOM
-        const ID_USUARIO = "<?php echo addslashes($usuarioId); ?>";
-        const CLAVE_LOCAL = `misMetas_user_${ID_USUARIO}`;
+        const idMeta = localStorage.getItem("idMetaActual");
 
-        const detalleNombre = document.getElementById('detalleNombre');
-        const detalleMontoTotal = document.getElementById('detalleMontoTotal');
-        const detallePorcentaje = document.getElementById('detallePorcentaje');
-        const detalleBarra = document.getElementById('detalleBarra');
-        const detalleAhorrado = document.getElementById('detalleAhorrado');
-        const detalleFalta = document.getElementById('detalleFalta');
-        const inputAbono = document.getElementById('inputAbono');
-
-        // Lógica de activación del menú desplegable "More" que tienes en tu navbar
-        const moreBtn = document.getElementById('moreBtn');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        if (moreBtn && dropdownMenu) {
-            moreBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                dropdownMenu.classList.toggle('show');
-            });
-            document.addEventListener('click', function() {
-                dropdownMenu.classList.remove('show');
-            });
-        }
-
-        // 2. RECUPERAR EL CAJÓN ESPECÍFICO DE ESTE USUARIO
-        let misMetas = JSON.parse(localStorage.getItem(CLAVE_LOCAL)) || [];
-        let metaIndex = localStorage.getItem("metaSeleccionada");
-
-        if (metaIndex === null || !misMetas[metaIndex]) {
+        if (!idMeta) {
             window.location.href = "metas.php";
         }
 
-        let metaActual = misMetas[metaIndex];
+        // Asignar el ID actual al campo oculto del formulario antes de que el usuario envíe algo
+        document.getElementById('inputHiddenId').value = idMeta;
 
-        // 3. ACTUALIZAR INTERFAZ GRÁFICA
-        function actualizarVistaDetalle() {
-            const porcentaje = metaActual.objetivo > 0 ? Math.round((metaActual.actual / metaActual.objetivo) * 100) : 0;
-            const falta = metaActual.objetivo - metaActual.actual;
+        // Cargar los datos actuales desde la base de datos
+        fetch(`php/obtener_detalle.php?id=${idMeta}`)
+            .then(res => res.json())
+            .then(meta => {
+                if (!meta || meta.error) { 
+                    window.location.href = "metas.php"; 
+                    return; 
+                }
+                
+                const actual = parseFloat(meta.actual) || 0;
+                const objetivo = parseFloat(meta.objetivo) || 0;
+                const porcentaje = objetivo > 0 ? Math.round((actual / objetivo) * 100) : 0;
+                const falta = objetivo - actual;
 
-            detalleNombre.textContent = metaActual.nombre;
-            detalleMontoTotal.textContent = `Meta: $${metaActual.objetivo}`;
-            detallePorcentaje.textContent = `${porcentaje}%`;
-            detalleAhorrado.textContent = `$${metaActual.actual}`;
-            
-            if (falta > 0) {
-                detalleFalta.textContent = `Falta: $${falta}`;
-            } else {
-                detalleFalta.textContent = `Falta: $0 (¡Completada!)`;
-            }
-
-            if (detalleBarra) {
-                detalleBarra.style.width = `${Math.min(porcentaje, 100)}%`; 
-            }
-        }
-
-        // 4. FUNCIÓN PARA AGREGAR ABONOS
-        window.agregarAbonoForm = function(event) {
-            event.preventDefault();
-
-            const montoAbono = parseFloat(inputAbono.value) || 0;
-            if (montoAbono <= 0) return;
-
-            metaActual.actual += montoAbono;
-            misMetas[metaIndex] = metaActual;
-            localStorage.setItem(CLAVE_LOCAL, JSON.stringify(misMetas));
-
-            actualizarVistaDetalle();
-            event.target.reset();
-        };
-
-        actualizarVistaDetalle();
+                document.getElementById('detalleNombre').textContent = meta.nombre;
+                document.getElementById('detalleMontoTotal').textContent = `Meta objetivo: $${objetivo.toFixed(2)}`;
+                document.getElementById('detallePorcentaje').textContent = `${porcentaje}%`;
+                document.getElementById('detalleAhorrado').textContent = `$${actual.toFixed(2)} ahorrados`;
+                document.getElementById('detalleFalta').textContent = falta > 0 ? `Falta: $${falta.toFixed(2)}` : `¡Meta lograda! 🎉`;
+                
+                document.getElementById('detalleBarra').style.width = `${Math.min(porcentaje, 100)}%`;
+            })
+            .catch(err => console.error("Error al conectar con obtener_detalle.php:", err));
     </script>
 </body>
 </html>

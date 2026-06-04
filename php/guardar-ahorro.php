@@ -1,43 +1,46 @@
 <?php
 session_start();
-include("conexion.php");
 
-// verificar si hay sesión iniciada
+// 1. Verificar si el usuario inició sesión
 if (!isset($_SESSION['usuario_id'])) {
-    die("Usuario no autenticado");
-}
-
-$usuario_id = $_SESSION['usuario_id'];
-
-// obtener datos del formulario
-$nombre = $_POST['nombre'];
-$categoria = $_POST['categoria'];
-$monto = $_POST['monto'];
-$fecha = $_POST['fecha'];
-
-// consulta SQL
-$sql = "INSERT INTO ahorros 
-(usuario_id, nombre, categoria, monto, fecha) 
-VALUES (?, ?, ?, ?, ?)";
-
-$stmt = $conn->prepare($sql);
-
-$stmt->bind_param(
-    "issds",
-    $usuario_id,
-    $nombre,
-    $categoria,
-    $monto,
-    $fecha
-);
-
-if ($stmt->execute()) {
-    header("Location: ../dashboard.php");
+    header("Location: ../login.html");
     exit();
-} else {
-    echo "Error al guardar ahorro";
 }
 
-$stmt->close();
-$conn->close();
+// 2. Conectarse a la base de datos (Ajusta 'coink' si tu base de datos se llama diferente)
+$conexion = new mysqli("localhost", "root", "", "coink");
+
+// Verificar la conexión
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
+
+// 3. Procesar los datos que mandó el formulario tradicional
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+    // Recibir el ID de la meta y el monto a sumar
+    $idMeta = isset($_POST['id']) ? intval($_POST['id']) : 0;
+    $montoAbono = isset($_POST['monto']) ? floatval($_POST['monto']) : 0;
+
+    // Si los datos son válidos, hacemos la magia matemática en la base de datos
+    if ($idMeta > 0 && $montoAbono > 0) {
+        
+        // Buscamos tu tabla de metas (asumiendo que se llama 'metas' como en tus otros archivos)
+        // Esta consulta le SUMA directamente el abono al valor actual que ya tenía guardado
+        $sql = "UPDATE metas SET actual = actual + ? WHERE id = ?";
+        
+        $stmt = $conexion->prepare($sql);
+        if ($stmt) {
+            $stmt->bind_param("di", $montoAbono, $idMeta);
+            $stmt->execute();
+            $stmt->close();
+        }
+    }
+    
+    $conexion->close();
+
+    // 4. ¡LA REDIRECCIÓN MÁGICA! Regresamos al usuario al detalle de su meta automáticamente
+    header("Location: ../detalle-meta.php");
+    exit();
+}
 ?>
