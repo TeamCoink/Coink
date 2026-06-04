@@ -17,7 +17,7 @@ if ($conexion->connect_error) {
 // 3. Procesar la petición de eliminación
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Leer los datos JSON enviados por JavaScript
-    $datos = json_parse(file_get_contents("php://input"), true);
+    $datos = json_decode(file_get_contents("php://input"), true);
     if (!$datos) {
         $datos = $_POST; // Por si acaso se envía como formulario tradicional
     }
