@@ -41,7 +41,7 @@ body {
     letter-spacing: 1px !important;
 }
 
-/* --- SOLUCIÓN DEL CÍRCULO ROTO --- */
+/* --- SOLUCIÓN DEL CÍRCULO INTERACTIVO --- */
 .avatar-container {
     display: flex !important;       
     justify-content: center !important;
@@ -50,23 +50,46 @@ body {
     height: 160px !important;       
     margin: 0 auto 25px auto !important; 
     border-radius: 50% !important;
-    overflow: hidden !important;    /* Corta la imagen rota si intenta salirse */
+    overflow: hidden !important;    /* Corta la imagen si intenta salirse */
     background: linear-gradient(to bottom, #BA68E6, #E167B9) !important; /* Tu degradado del círculo */
     border: 3px solid #FFFFFF !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
     position: relative !important;
+    cursor: pointer;
 }
 
-/* ¡MÁGICO! Escondemos por completo la imagen rota que pone el index.php */
-.foto-perfil, .avatar-container img, #foto {
-    display: none !important; /* Oculta la imagen rota para que no estorbe */
-    width: 0 !important;
-    height: 0 !important;
+/* Por defecto, la foto está oculta hasta que se suba una */
+#foto {
+    display: none;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Evita que la foto se estire fea */
+    border-radius: 50% !important;
 }
 
-/* Forzamos a que las iniciales ocupen todo el espacio redondo */
-.iniciales-perfil, #iniciales {
-    display: flex !important; /* Obligamos a las iniciales a mostrarse */
+/* Texto flotante al pasar el cursor */
+.avatar-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 5px 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 3;
+}
+
+.avatar-container:hover .avatar-overlay {
+    opacity: 1;
+}
+
+/* Estilos de las Iniciales */
+#iniciales {
+    display: flex !important; 
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
@@ -77,6 +100,15 @@ body {
     font-weight: bold !important;
     letter-spacing: 2px !important;
     border-radius: 50% !important;
+}
+
+/* --- REGLAS MÁGICAS DE CONTROL --- */
+/* Cuando el contenedor tiene la clase "con-foto", muestra la imagen y oculta la inicial */
+.avatar-container.con-foto #foto {
+    display: block !important;
+}
+.avatar-container.con-foto #iniciales {
+    display: none !important;
 }
 
 /* --- Textos de Información --- */
@@ -103,7 +135,7 @@ body {
     display: block !important;
 }
 
-/* --- Botón Cerrar Sesión Estilizado de Nuevo --- */
+/* --- Botón Cerrar Sesión Estilizado --- */
 .btn-cerrar, .card button {
     background-color: #FFFFFF !important; 
     color: #000000 !important;            

@@ -156,13 +156,36 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const sesion = localStorage.getItem("sesion");
-
     const loginBtn = document.getElementById("login");
     const perfilLink = document.getElementById("perfilLink");
 
     if (sesion === "activa") {
+        // Mantiene la lógica original del navbar que ya funciona
         if (loginBtn) loginBtn.style.display = "none";
         if (perfilLink) perfilLink.style.display = "block";
+
+        // NUEVO: Lógica segura para el círculo del Perfil
+        const nombre = localStorage.getItem("usuario") || "odaduu";
+        const foto = localStorage.getItem("foto");
+
+        const imgElement = document.getElementById("foto");
+        const initialsElement = document.getElementById("iniciales");
+
+        // Solo actúa si los elementos visuales del perfil existen en la página
+        if (imgElement && initialsElement) {
+            if (foto && foto !== "null" && foto !== "") {
+                imgElement.src = foto;
+                imgElement.style.display = "block";
+                initialsElement.style.display = "none";
+            } else {
+                imgElement.style.display = "none";
+                initialsElement.style.display = "flex";
+                
+                // Toma la primera letra del usuario en mayúscula (Ej: "O")
+                const primeraLetra = nombre.trim().charAt(0).toUpperCase();
+                initialsElement.textContent = primeraLetra || "U";
+            }
+        }
     }
 });
 </script>

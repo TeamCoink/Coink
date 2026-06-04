@@ -1,70 +1,123 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['usuario_id'])){
+    header("Location: login.html");
+    exit();
+}
+
+// Tomamos el nombre del usuario directamente desde la sesión de PHP de forma segura
+$nombreUsuario = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : 'Usuario';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Perfil - COINK</title>
+    <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/perfil.css">
 </head>
 <body>
+
+<?php include 'components/navbar.php'; ?>
 
 <div class="perfil-container">
     <div class="card">
         <h1 class="app-title">COINK</h1>
         
-        <div class="avatar-container">
+        <div class="avatar-container" onclick="document.getElementById('inputFoto').click();" title="Haz clic para cambiar tu foto">
             <img id="foto" class="foto-perfil" alt="Foto de perfil" style="display: none;">
-            <div id="iniciales" class="iniciales-perfil"></div>
+            <div id="iniciales" class="iniciales-perfil" style="display: none;"></div>
+            <div class="avatar-overlay">Cambiar foto</div>
         </div>
 
-        <h2 id="nombre"></h2>
-        <p id="correo"></p>
+        <input type="file" id="inputFoto" accept="image/*" style="display: none;" onchange="cambiarFotoPersonalizada(event)">
 
-        <button class="btn-cerrar" onclick="cerrarSesion()">Cerrar Sesión</button>
+        <h2>
+            <?php echo $_SESSION['nombre']; ?>
+        </h2>
+
+        <p>
+            Rol: <?php echo $_SESSION['rol']; ?>
+        </p>
+
+        <a href="php/logout.php">
+            <button class="btn-cerrar">
+                Cerrar sesión
+            </button>
+        </a>
     </div>
 </div>
 
 <script>
+// Guardamos el nombre del usuario que viene de PHP para calcular las iniciales
+const nombreParaInicial = "<?php echo addslashes($nombreUsuario); ?>";
+
 document.addEventListener("DOMContentLoaded", function() {
-    const sesion = localStorage.getItem("sesion");
+    actualizarAvatar();
+});
 
-    if (sesion !== "activa") {
-        window.location.href = "login.html";
-        return;
-    }
-
-    const nombre = localStorage.getItem("usuario") || "Usuario";
-    const correo = localStorage.getItem("correo") || "correo@ejemplo.com";
-    const foto = localStorage.getItem("foto");
-
-    document.getElementById("nombre").textContent = nombre;
-    document.getElementById("correo").textContent = correo;
-
+// FUNCIÓN UNIFICADA: Controla si se pinta la foto o el círculo morado con iniciales
+function actualizarAvatar() {
+    const fotoGuardada = localStorage.getItem("foto_perfil_personalizada");
     const imgElement = document.getElementById("foto");
     const initialsElement = document.getElementById("iniciales");
 
-    // Si el usuario tiene una foto guardada, la muestra. Si no, genera las iniciales (Ej: "EW")
-    if (foto && foto !== "null" && foto !== "") {
-        imgElement.src = foto;
-        imgElement.style.display = "block";
-        initialsElement.style.display = "none";
-    } else {
-        imgElement.style.display = "none";
-        initialsElement.style.display = "flex";
-        
-        
-        const palabras = nombre.trim().split(" ");
-        let iniciales = palabras[0] ? palabras[0].charAt(0).toUpperCase() : "U";
-        if (palabras.length > 1 && palabras[palabras.length - 1]) {
-            iniciales += palabras[palabras.length - 1].charAt(0).toUpperCase();
+    if (imgElement && initialsElement) {
+        if (fotoGuardada && fotoGuardada !== "null" && fotoGuardada !== "") {
+            // 1. Si el usuario ya subió una foto personalizada, la fuerza a mostrarse ganándole al CSS
+            imgElement.src = fotoGuardada;
+            imgElement.style.setProperty("display", "block", "important");
+            initialsElement.style.setProperty("display", "none", "important");
+        } else {
+            // 2. Si no tiene foto, genera automáticamente el avatar con su inicial (Ej: "O")
+            imgElement.style.setProperty("display", "none", "important");
+            initialsElement.style.setProperty("display", "flex", "important");
+            
+            // Saca la primera letra de tu nombre en mayúsculas
+            const primeraLetra = nombreParaInicial.trim().charAt(0).toUpperCase();
+            initialsElement.textContent = primeraLetra || "U";
         }
-        initialsElement.textContent = iniciales;
     }
-});
+}
 
-function cerrarSesion() {
-    localStorage.clear();
-    // Cambiado a index.html para mantener la consistencia con tu landing
-    window.location.href = "index.php"; 
+function actualizarAvatar() {
+    const fotoGuardada = localStorage.getItem("foto_perfil_personalizada");
+    const container = document.querySelector(".avatar-container");
+    const imgElement = document.getElementById("foto");
+    const initialsElement = document.getElementById("iniciales");
+
+    if (container && imgElement && initialsElement) {
+        if (fotoGuardada && fotoGuardada !== "null" && fotoGuardada !== "") {
+            // 1. Si el usuario tiene una foto asignada
+            imgElement.src = fotoGuardada;
+            container.classList.add("con-foto"); // Activa las reglas CSS de visualización
+        } else {
+            // 2. Si no tiene foto, remueve la clase y calcula la inicial automáticamente
+            container.classList.remove("con-foto");
+            
+            const primeraLetra = nombreParaInicial.trim().charAt(0).toUpperCase();
+            initialsElement.textContent = primeraLetra || "U";
+        }
+    }
+}
+
+function cambiarFotoPersonalizada(event) {
+    const archivo = event.target.files[0];
+    if (!archivo) return;
+
+    const lector = new FileReader();
+    lector.onload = function(e) {
+        const urlImagenBase64 = e.target.result;
+        
+        // Guarda los datos de la imagen directamente en el almacenamiento local
+        localStorage.setItem("foto_perfil_personalizada", urlImagenBase64);
+        
+        // Refresca visualmente el estado del contenedor
+        actualizarAvatar();
+    };
+    lector.readAsDataURL(archivo);
 }
 </script>
 
