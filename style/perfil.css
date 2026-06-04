@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #FFF5EE !important; /* Fondo melocotón/crema muy claro */
+    background-color: #ffd6e4 !important; /* Fondo melocotón/crema muy claro */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: block !important; /* Eliminamos cualquier flex residual del body */
 }

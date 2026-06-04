@@ -38,9 +38,7 @@ $nombreUsuario = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : 'Usuario';
             <?php echo $_SESSION['nombre']; ?>
         </h2>
 
-        <p class="user-role">
-            Rol: <?php echo $_SESSION['rol']; ?>
-        </p>
+      
 
         <a href="php/logout.php">
             <button class="btn-cerrar">
