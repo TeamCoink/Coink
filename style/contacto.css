@@ -19,6 +19,7 @@ body{
     max-width:1450px;
     background-color:  #ffe5d8;
     display:flex;
+    border-radius: 20px;
    
     overflow:hidden;
 }
