@@ -20,13 +20,13 @@ $usuarioId = $_SESSION['usuario_id'];
     <!-- 1. Cargamos fuentes de iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 2. Cargamos el diseño del Navbar -->
-   <link rel="stylesheet" href="/coink/style/navbar.css">
+    <link rel="stylesheet" href="style/navbar.css">
     <!-- 3. Cargamos los estilos de metas al final -->
     <link rel="stylesheet" href="style/metas.css"> 
 </head>
 <body>
 
-<?php include 'components/navbar.php'; ?>
+
   
 
 
