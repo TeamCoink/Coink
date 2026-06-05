@@ -44,7 +44,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <!-- Usuario logueado -->
                 <a href="perfil.php" class="signup-btn">
-                    👤 <?php echo $_SESSION['nombre']; ?>
+                     <?php echo $_SESSION['nombre']; ?>
                 </a>
 
                 <a href="php/logout.php" class="login-btn">
@@ -58,7 +58,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     Sign Up
                 </a>
 
-                <a href="login.html" class="login-btn">
+                <a href="login.php" class="login-btn">
                     Login
                 </a>
 
