@@ -28,10 +28,12 @@
             } 
             exit(); 
         } else { 
-            echo "Contraseña incorrecta"; 
+          header("Location: ../login.php?error=password");
+            exit();
             } 
     } else { 
-        echo "Usuario no encontrado"; 
+        header("Location: ../login.php?error=email");
+        exit(); 
     } 
 } 
 ?>
