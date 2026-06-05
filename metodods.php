@@ -25,100 +25,114 @@
             <a href="metodos.php">Aprender</a>
             <span>></span>
 
-            <a href="metodoh.php">Metodo Hormiga</a>
+            <a href="metodods.php">Metodo de sobres</a>
             
         </div>
      <div class="heroMH">
         <div class="body2">
         
           <h1>
-                <span class="verde">Método</span>
-                <span class="rosa1">Hormiga</span>
+                <span class="verde">Método de</span>
+                <span class="rosa1">sobres</span>
             </h1>
 
-            <h3>Pequeños ahorros, grandes resultados</h3>
+            <h3>Organiza tu dinero, alcanza tus metas</h3>
 
             <p>
-                El método Hormiga consiste en ahorrar pequeñas cantidades 
-                de dinero de forma constante. Así, poco a poco, tu dinero 
-                crece sin que lo sientas. 
+               El método de sobres te ayuda a distribuir tu dinero en diferentes categorías para que gastes con propósito y evites gastos innecesarios.
             </p>
 
     </div>
 
-        <div class="imagen">
-            <img src="img/hormiga.png" alt="Método Hormiga" width="740px">
+        <div class="imagen2">
+            <img src="img/sobresC.png" alt="Método de sobres" width="640px">
         </div>
 
         </div>
 
         <section class="funcionamiento">
 
-        <h2>¿Cómo funciona?</h2>
+    <h2>¿Cómo funciona?</h2>
 
-        <div class="pasos">
+    <div class="pasos">
 
         
 
         <div class="paso">
             <div class="circulo">
-                <img src="img/iconH1.png" alt="">
+                <img src="img/sobrre(1).png" alt="" height="100px" width="100px">
             </div>
 
           <div class="linea"></div>   
 
             <span class="numero">1</span>
 
-            <h3>Ahorra de a poco</h3>
+            <h3>Define categorías</h3>
 
             <p>
-                Guarda desde $10, $20 o lo que puedas cada día.
+                 Piensa en que vas a gastar: alimentación, transporte, ocio, etc.
             </p>
         </div>
 
         <div class="paso">
             <div class="circulo rosa">
-                <img src="img/iconH2.png" alt="">
+                <img src="img/sobre(2)).png" alt="" height="100px" width="100px">
             </div>
 
              <div class="linea"></div>
 
             <span class="numero">2</span>
 
-            <h3>Sé constante</h3>
+            <h3>Asigna tu dinero</h3>
 
             <p>
-               Hazlo cada semana y practica tu constancia.
+                Distribuye tu dinero en efectivo en sobres según cada categoría.
             </p>
         </div>
 
         <div class="paso">
             <div class="circulo amarillo">
-                <img src="img/iconoH3.png" alt="">
+                <img src="img/sobre(3)!.png" alt="" height="100px" width="100px">
             </div>
 
              <div class="linea"></div>
 
             <span class="numero">3</span>
 
-            <h3>Tu dinero crece</h3>
+            <h3>Gasta de ese sobre</h3>
 
             <p>
-                Esas pequeñas cantidades se acumulan con el tiempo.
+               Usa solo el dinero del sobre correspondiente de cada categoría.
             </p>
         </div>
 
         <div class="paso">
             <div class="circulo">
-                <img src="img/iconH4.png" alt="">
+                <img src="img/sobre(4)).png" alt="" height="95px" width="95px">
             </div>
 
+             <div class="linea"></div>
+
             <span class="numero">4</span>
+
+            <h3>Evita pasar el límite</h3>
+
+            <p>
+                Cuando se acabe el dinero del sobre, espera el próximo periodo.
+            </p>
+        </div>
+
+         <div class="paso">
+            <div class="circulo rosa">
+                <img src="img/sobre(5).png" alt="" height="115px" width="115px">
+            </div>
+
+            <span class="numero">5</span>
 
             <h3>Alcanza tus metas</h3>
 
             <p>
-                Úsalo para emergencias, viajes o cursos.
+                Con disciplina verás resultados y lograrás tus objetivos.
             </p>
         </div>
 

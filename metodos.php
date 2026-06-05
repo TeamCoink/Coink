@@ -38,8 +38,8 @@
                 <div class="card-box">
 
                     <a href="metodoh.php">
-                    <img src="img/HORMIGA 3.png">
-                     </a>
+                        <img src="img/HORMIGA 3.png">
+                    </a>
 
                      <h3>Hormiga</h3>
 
@@ -51,10 +51,13 @@
             <label class="card">
 
                 <input type="radio" name="metodo">
-
+                
                 <div class="card-box">
 
-                    <img src="img/META 2.png">
+                    <a href="metodom.php">
+                        <img src="img/META 2.png">
+                    </a>
+                    
 
                     <h3>METAS</h3>
 
@@ -84,7 +87,10 @@
 
                 <div class="card-box">
 
-                    <img src="img/img sobres.png">
+                    <a href="metodods.php">
+                        <img src="img/img sobres.png">
+                    </a>
+                    
 
                     <h3>SOBRES</h3>
 

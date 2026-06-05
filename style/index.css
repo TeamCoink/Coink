@@ -564,9 +564,9 @@ p{
 }
 
 .imagen img{
-    width: 660px;
+    width: 610px;
     display: inline-flex;
-    transform: translateY(-65px);
+    transform: translateY(-95px);
 }
 
 .etiqueta{
@@ -598,7 +598,7 @@ p{
     color: #0b7c43;
     padding-top: 35px;
     font-family: Verdana, Geneva, Tahoma, sans-serifv;
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .container1{
@@ -638,8 +638,7 @@ p{
     padding: 5px 5%;
     text-align: center;
     background-color: white;
-    margin: 20px;
-    margin-top: 2px;
+    margin: 5px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 25px;
@@ -651,8 +650,8 @@ p{
 
 .funcionamiento h2{
     color: #3f6b2d;
-    font-size: 40px;
-    margin-bottom: 60px;
+    font-size: 35px;
+    margin-bottom: 30px;
 }
 
 .pasos{
@@ -665,9 +664,9 @@ p{
 .linea{
     position: absolute;
     top: 60px;
-    right: -110px;
-    width: 65%;
-    border-top: 3px dashed #ce3c63;
+    right: -90px;
+    width: 55%;
+    border-top: 5px dashed #ce3c63;
     z-index: 0;
 }
 
@@ -678,9 +677,9 @@ p{
 }
 
 .circulo{
-    width: 150px;
-    height: 150px;
-    background: #e1ecc3;
+    width: 130px;
+    height: 130px;
+    background: #c8e47d;
     border-radius: 50%;
     margin: auto;
     display: flex;
@@ -689,15 +688,15 @@ p{
 }
 
 .rosa{
-    background: #fddce4;
+    background: #ffabc0;
 }
 
 .amarillo{
-    background: #fff1c9;
+    background: #ffde83;
 }
 
 .circulo img{
-    width: 140px;
+    width: 110px;
     
 }
 
@@ -715,12 +714,13 @@ p{
 }
 
 .paso h3{
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 10px;
     color: #222;
 }
 
 .paso p{
+    font-size: 17px;
     color: #666;
     line-height: 1.6;
 }
@@ -769,15 +769,15 @@ p{
 }
 
 #example h2{
-    color: #DF688A;
+    color: #ff5f92;
     font-size: 35px;
-    
+    margin-bottom: 5PX;    
 }
 
 .ejemplos{
    
     margin-top: 20px;
-    background-color: #f1ebb6;
+    background-color: #fcf6c3;
     padding-left: 35px;
     padding-right: 35px;
     padding-top: 15px;
@@ -808,23 +808,23 @@ p{
 
 .sign1 p{
     position: absolute;
-    top: 1515px;
-    left: 232px;
+    top: 1345px;
+    left: 262px;
     color: #ce3c63;
     font-weight: bolder;
 }
 
 .sign2 p{
     position: absolute;
-    top: 1515px;
-    left: 450px;
+    top: 1345px;
+    left: 480px;
     color: #ce3c63;
     font-weight: bolder;
 }
 
 .result{
     position: absolute;
-    top: 1400px;
+    top: 1145px;
     left: 750px;
 }
 
@@ -889,6 +889,13 @@ p{
     font-size: 14px;
     color: #666;
     line-height: 1.4;
+}
+
+/*Imagen de metodo de sobres*/
+.imagen2 img{
+    width: 680px;
+    display: inline-flex;
+    transform: translateY(-5px);
 }
 
 
