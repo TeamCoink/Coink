@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método Hormiga</title>
-   <link rel="stylesheet" href="style/index.css">
+   <link rel="stylesheet" href="style/metodods.css">
    <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -142,46 +142,68 @@
 
 </section>
 
-<div id="example">
+<div id="example2">
         <h2>Ejemplo Práctico</h2>
         <p>Sí ahorras $20 dólares al día por un año</p>
 
     </div>
 
-<section id="examples">
+<section id="examples2">
     
     
-    <div class="ejemplos">
-        <img src="img/example1.png" alt="">
-        <h3>$20</h3>
-        <p>diarios</p>
+    <div class="ejemplos2">
+        <img src="img/examplesS1.png" alt="">
+        <h3>Comida</h3>
+        <p>$3000</p>
     </div>
 
     <div class="sign1">
-        <p>x</p>
+        <p>+</p>
     </div>
 
-    <div class="ejemplos">
+    <div class="ejemplos2">
 
         <div id="imagen2">
-            <img src="img/example2.png" alt="" width="650px">
+            <img src="img/examplesS2.png" alt="" width="650px">
         </div>
         
-        <h3>365</h3>
-        <p>días</p>
+        <h3>Transporte</h3>
+        <p>$2000</p>
     </div>
 
     <div class="sign2">
-        <p>=</p>
+        <p>+</p>
     </div>
 
-    <div class="ejemplos">
-        <img src="img/example3.png" alt="">
-        <h3>$7,300</h3>
-        <p>en un año</p>
+    <div class="ejemplos2">
+        <img src="img/examplesS3.png" alt="">
+        <h3>Ocio</h3>
+        <p>$1500</p>
     </div>
 
-      <div class="result">
+    <div class="sign3">
+        <p>+</p>
+    </div>
+
+    
+    <div class="ejemplos2">
+        <img src="img/examplesS4.png" alt="">
+        <h3>Ahorro</h3>
+        <p>$3500</p>
+    </div>
+
+    <div class="sign4">
+        <p>+</p>
+    </div>
+
+    
+    <div class="ejemplos2">
+        <img src="img/examplesS5.png" alt="">
+        <h3>Urgencias</h3>
+        <p>$2000</p>
+    </div>
+
+      <div class="result2">
             <img src="img/result1.png" alt="" width="550px">
     </div>
 

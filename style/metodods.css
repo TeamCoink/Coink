@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
@@ -290,238 +292,6 @@ body{
     left: 620px; /* lo empuja más a la derecha */
 }
 
-#features{
-    margin-top: 0;
-    background-color: #cdeec3;
-    display: flex;
-    gap: 80px;
-    padding-bottom: 20px;
-    padding-left:
-}
-
-.cards{
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-}
-
-.cards p{
-    font-weight: 500;
-    font-size: large;
-    color: #3b3837;
-}
-
-.cards h3{
-    font-weight: bolder;
-    font-size: larger;
-}
-
-.contenedor{
- display: flex;
-}
-
-.texto{
-    margin-top: 80px;
-    margin-right: 80px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-}
-
-.texto p{
-    font-size: 20px;
-    text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.texto h1{
-    font-size: 50px;
-}
-
-.button3{
-    margin-top: 50px;
-    position: absolute;
-    top: 200%;
-    left: 44.5%;
-    transform: translate(-80%, -80%);
-    padding: 10px 20px;
-    background-color: rgba(253, 79, 152, 0.6);
-    color: rgb(255, 255, 255);
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    height: 40px;
-    width: 190px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.c{
-    color:  #60A34B;
-    gap: 0px;
-}
-
-.o{
-    color: #73C55A;
-    gap: 0px;
-}
-
-.i{
-   color: #D2C986 ;
-   gap: opx;
-}
-
-.n{
-    color: #FFAAB8;
-    gap: 0px;
-}
-
-.k{
-    color: #FF769D;
-    gap: 0px;
-}
-
-
-.cards2{
-    padding: 15px;
-}
-
-#beneficios h1{
-    text-align: center;
-    color: #0b7c43;
-    font-size: 50px;
-    margin-bottom: 15px;
-
-}
-
-.linea1{
-    width: 180px;
-    height: 4px;
-    background-color: pink;
-    border-radius: 10px;
-    margin-left: 585px;
-}
-
-.cards2 img{
-    margin-bottom: 10px;
-}
-
-.cards2{
-    width: 300px;
-    text-align: justify;
-    background-color: white;
-    border-radius: 15px;
-    display: inline-block;
-    margin: 20px;
-    margin-left: 80px;
-    margin-right: 20px;
-    font-size: 20px;
-}
-
-.hero2 img{
-    align-items: center;
-}
-
-.button4{
-    margin-top: 100px;
-    position: absolute;
-    top: 380%;
-    left: 90%;
-    transform: translate(-80%, -80%);
-    padding: 10px 20px;
-    background-color: #518741;
-    color: rgb(255, 255, 255);
-    border: none;
-    cursor: pointer;
-    border-radius: 50px;
-    height: 60px;
-    width: 190px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#recursos h1{
-    margin-top: 35px;
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 90px;
-}
-
-.cards3{
-    border-radius: 15px;
-}
-
-.texto1{
-    display: inline-block;
-    text-align: justify;
-    padding: 5px;
-    position: absolute;
-    top: 427%;
-}
-
-.texto2{
-    display: inline-block;
-    text-align: justify;
-    padding: 5px;
-    position: absolute;
-    top: 467%;
-}
-
-.texto3{
-    display: inline-block;
-    text-align: justify;
-    padding: 5px;
-    position: absolute;
-    top:504%;
-}
-
-.texto1 h3{
-    font-size: 23px;
-    padding-left: 10px;
-}
-
-.texto1 p{
-    font-size: 20px;
-    text-align: justify;
-    padding-left: 10px;
-}
-
-.texto2 h3{
-    font-size: 23px;
-    padding-left: 10px;
-}
-
-.texto2 p{
-    font-size: 20px;
-    text-align: justify;
-    padding-left: 10px;
-}
-
-.texto3 h3{
-    font-size: 23px;
-    padding-left: 10px;
-}
-
-.texto3 p{
-    font-size: 20px;
-    text-align: justify;
-    padding-left: 10px;
-}
-
-#recursos img{
-    padding-left: 25px;
-}
-
-.texto{
-    max-width: 450px;
-}
-
-.body2{
-    margin-top: 40px;
-    margin: 20px;
-}
-
-
 .etiqueta{
     display: inline-block;
     background: #f8d9cc;
@@ -756,23 +526,23 @@ p{
 
 /*Ejemplo*/
 
-#example{
+#example2{
     margin-top: 70px;
     margin-left: 45px;
 }
 
-#examples{
+#examples2{
     margin-left: 45px;
     display: flex;
 }
 
-#example h2{
+#example2 h2{
     color: #ff5f92;
     font-size: 35px;
     margin-bottom: 5PX;    
 }
 
-.ejemplos{
+.ejemplos2{
    
     margin-top: 20px;
     background-color: #fcf6c3;
@@ -791,15 +561,15 @@ p{
     height: 125px;
 }
 
-.ejemplos h3{
+.ejemplos2 h3{
     text-align: center;
 }
 
-.ejemplos p{
+.ejemplos2 p{
     text-align: center;
 }
 
-.ejemplos img{
+.ejemplos2 img{
     width:110px; 
  
 }
@@ -815,19 +585,35 @@ p{
 .sign2 p{
     position: absolute;
     top: 1345px;
-    left: 480px;
+    left: 500px;
+    color: #ce3c63;
+    font-weight: bolder;
+}
+
+.sign3 p{
+    position: absolute;
+    top: 1345px;
+    left: 710px;
+    color: #ce3c63;
+    font-weight: bolder;
+}
+
+.sign4 p{
+    position: absolute;
+    top: 1345px;
+    left: 920px;
     color: #ce3c63;
     font-weight: bolder;
 }
 
 .result{
     position: absolute;
-    top: 1145px;
+    top: 1945px;
     left: 750px;
 }
 
 .result img{
-    border-radius: 25px;
+    border-radius: 45px;
 }
 
 .tips-hormiga{
