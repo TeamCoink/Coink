@@ -23,7 +23,7 @@ body {
 .card {
     background: linear-gradient(to bottom, #FFE3F1, #F0A0E0) !important; /* Degradado suave rosa a morado */
     border: 2px solid #0084FF !important; /* Borde azul característico */
-    border-radius: 24px !important;
+    border-radius: 20px !important;
     width: 380px !important;
     padding: 30px 24px 40px 24px !important;
     text-align: center !important;
@@ -49,7 +49,7 @@ body {
     width: 160px !important;        /* Forzamos el tamaño del círculo */
     height: 160px !important;       
     margin: 0 auto 25px auto !important; 
-    border-radius: 50% !important;
+    border-radius: 20% !important;
     overflow: hidden !important;    /* Corta la imagen si intenta salirse */
     background: linear-gradient(to bottom, #BA68E6, #E167B9) !important; /* Tu degradado del círculo */
     border: 3px solid #FFFFFF !important;
@@ -64,7 +64,7 @@ body {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important; /* Evita que la foto se estire fea */
-    border-radius: 50% !important;
+    border-radius: 20% !important;
 }
 
 /* Texto flotante al pasar el cursor */
@@ -99,7 +99,7 @@ body {
     font-size: 3rem !important;
     font-weight: bold !important;
     letter-spacing: 2px !important;
-    border-radius: 50% !important;
+    border-radius: 20% !important;
 }
 
 /* --- REGLAS MÁGICAS DE CONTROL --- */

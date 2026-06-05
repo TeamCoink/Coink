@@ -48,7 +48,7 @@ header p {
 
 .resumen-card {
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 20px;
   color: white;
   font-weight: 600;
   text-align: center;
@@ -72,7 +72,7 @@ header p {
 .circle {
   width: 250px;
   height: 250px;
-  border-radius: 50%;
+  border-radius: 20%;
   border: 12px solid #4caf50;
   display: flex;
   align-items: center;
@@ -92,7 +92,7 @@ header p {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 20%;
   clip-path: circle(50%);
   background: rgba(76,175,80,0.2);
   transform: scale(0); /* empieza vacío */
@@ -119,7 +119,7 @@ header p {
   flex: 1;
   background: #fff;
   padding: 50px;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   font-weight: 500;
   text-align: center;
@@ -191,7 +191,7 @@ header p {
 .btn {
   padding: 10px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -247,7 +247,7 @@ header h1 {
   margin: 20px;
   background: #fff;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
@@ -265,7 +265,7 @@ header h1 {
 
 .calendario-grid div {
   background: #fff;
-  border-radius: 6px;
+  border-radius: 20px;
   padding: 12px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -298,7 +298,7 @@ header h1 {
   margin-top: 10px;
   padding: 10px 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   background: #ff6fa1;
   color: white;
   cursor: pointer;
@@ -330,7 +330,7 @@ header h1 {
 .grafica {
   flex: 1;
   background: #fff;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
@@ -362,7 +362,7 @@ header h1 {
 .modal-contenido {
   background: #fff;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 20px;
   width: 80%;
   max-width: 700px;
   text-align: center;
@@ -397,7 +397,7 @@ header h1 {
 .contenedor {
   flex: 1;
   background: #fff;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
@@ -428,7 +428,7 @@ header h1 {
 .modal-contenido {
   background: #fff;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 20px;
   width: 80%;
   max-width: 700px;
   text-align: center;
@@ -467,7 +467,7 @@ header h1 {
   background: #f9f9f9;
   margin-bottom: 10px;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -492,7 +492,7 @@ header h1 {
   color: white;
   padding: 10px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -508,7 +508,7 @@ header h1 {
   color: white;
   padding: 10px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
