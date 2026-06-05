@@ -21,6 +21,16 @@
         <h1>¡Bienvenido de <span class="verde">vuelta!</span></h1>
         <p class="sub">Inicia sesión para continuar ahorrando</p>
 
+        <?php if(isset($_GET['error'])): ?>
+    <?php if($_GET['error'] == 'email'): ?>
+        <div class="alerta">❌ Correo incorrecto</div>
+    <?php endif; ?>
+
+    <?php if($_GET['error'] == 'password'): ?>
+        <div class="alerta">❌ Contraseña incorrecta</div>
+    <?php endif; ?>
+<?php endif; ?>
+
         <form method="POST" action="php/login.php">
 
             <label>Correo electrónico</label>

@@ -205,3 +205,14 @@ label{
 }
 
 }
+
+.alerta{
+    background:#ffe5e5;
+    color:#d63031;
+    border:1px solid #ffb3b3;
+    padding:12px;
+    border-radius:10px;
+    margin:15px 0;
+    text-align:center;
+    font-weight:bold;
+}
