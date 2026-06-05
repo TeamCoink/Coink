@@ -47,7 +47,7 @@
 
             <div>
                 <h3>Correo electrónico</h3>
-                <p>hola@coink.com</p>
+                <p>proyecto@coink.com</p>
             </div>
 
         </div>
@@ -60,7 +60,7 @@
 
             <div>
                 <h3>Teléfono</h3>
-                <p>+57 300 123 4567</p>
+                <p>+503 7019-2828</p>
             </div>
 
         </div>
@@ -79,7 +79,7 @@
         </div>
 
         <!-- CERDITO -->
-        <img src="img/pig.png" class="pig">
+        <img src="" class="pig">
 
     </div>
 

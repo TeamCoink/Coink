@@ -55,7 +55,7 @@ body{
     text-decoration: none;
 }
 
-/* ESTA REGLA VA A GANARLE A TODO */
+
 .navbar .logo .logo-img{
     width: 220px !important;
     height: 60px !important;
@@ -298,6 +298,7 @@ body{
     display: flex;
     gap: 80px;
     padding-bottom: 20px;
+    padding-left:
 }
 
 .cards{
@@ -395,7 +396,7 @@ body{
 
 }
 
-.linea{
+.linea1{
     width: 180px;
     height: 4px;
     background-color: pink;
@@ -823,7 +824,7 @@ p{
 
 .result{
     position: absolute;
-    top: 1300px;
+    top: 1400px;
     left: 750px;
 }
 

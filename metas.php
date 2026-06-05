@@ -1,3 +1,5 @@
+<?php include 'components/navbar.php'; ?>
+
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -18,6 +20,9 @@ $usuarioId = $_SESSION['usuario_id'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style/metas.css">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         .goal-item {
@@ -77,6 +82,18 @@ $usuarioId = $_SESSION['usuario_id'];
             <ul class="goals-list" id="goalsList"></ul>
         </div>
     </section>
+
+    <div class="waves">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#4caf50" fill-opacity="1" 
+                d="M0,160L60,165.3C120,171,240,181,360,176C480,171,600,149,720,160C840,171,960,213,1080,213.3C1200,213,1320,171,1380,149.3L1440,128L1440,320L0,320Z"></path>
+            <path fill="#81c784" fill-opacity="0.7" 
+                d="M0,192L80,186.7C160,181,320,171,480,176C640,181,800,203,960,213.3C1120,224,1280,224,1360,224L1440,224L1440,320L0,320Z"></path>
+            <path fill="#a5d6a7" fill-opacity="0.5" 
+                d="M0,224L60,213.3C120,203,240,181,360,176C480,171,600,181,720,192C840,203,960,213,1080,213.3C1200,213,1320,203,1380,197.3L1440,192L1440,320L0,320Z"></path>
+        </svg>
+    </div>
+
 
     <script>
         const goalsList = document.getElementById('goalsList');
@@ -182,5 +199,6 @@ $usuarioId = $_SESSION['usuario_id'];
 
         cargarMetas();
     </script>
+     <script src="javaScript/homepage.js"></script>
 </body>
 </html>

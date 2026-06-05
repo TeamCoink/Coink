@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coink</title>
     <link rel="stylesheet" href="style/index.css">
-    <!-- Iconos -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -78,7 +77,7 @@
     
 
     <h1>Beneficios</h1>
-    <div class="linea"></div>
+    <div class="linea1"></div>
 
     <div class="cards2">
         <img src="img/agenda.jpg" alt="" width="300" height="207"><br>
