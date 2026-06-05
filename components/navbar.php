@@ -67,7 +67,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="dropdown">
 
                 <button class="more-btn" id="moreBtn">
-                    More
+                    Más
                     <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
@@ -78,25 +78,6 @@ if (session_status() === PHP_SESSION_NONE) {
                         Dashboard
                     </a>
 
-                    <a href="#">
-                        <i class="fa-regular fa-circle-question"></i>
-                        Preguntas Frecuentes
-                    </a>
-
-                    <a href="#">
-                        <i class="fa-solid fa-bullhorn"></i>
-                        Novedades
-                    </a>
-
-                    <a href="#">
-                        <i class="fa-regular fa-envelope"></i>
-                        Newsletter
-                    </a>
-
-                    <a href="#">
-                        <i class="fa-solid fa-gear"></i>
-                        Configuración
-                    </a>
 
                 </div>
             </div>
