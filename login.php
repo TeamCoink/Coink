@@ -87,10 +87,11 @@
 
             
             <div class="register">
-                <span>¿No tienes cuenta?</span>
-                <button class="btn-register" href="register.html">Regístrate aquí ></button>
+             <span>¿No tienes cuenta?</span>
+                 <a href="register.html" class="btn-register">
+                    Regístrate aquí >
+                 </a>
             </div>
-
         </form>
 
     </section>
