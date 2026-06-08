@@ -144,15 +144,15 @@
 
 <div id="example2">
         <h2>Ejemplo Práctico</h2>
-        <p>Sí ahorras $20 dólares al día por un año</p>
+        <p>Sí recibes 12,000 al mes, podrías distribuirlo así</p>
 
-    </div>
+</div>
 
 <section id="examples2">
     
     
-    <div class="ejemplos2">
-        <img src="img/examplesS1.png" alt="">
+    <div class="sobrex">
+        <img src="img/botiquin.png" alt="">
         <h3>Comida</h3>
         <p>$3000</p>
     </div>
@@ -161,13 +161,9 @@
         <p>+</p>
     </div>
 
-    <div class="ejemplos2">
-
-        <div id="imagen2">
-            <img src="img/examplesS2.png" alt="" width="650px">
-        </div>
-        
-        <h3>Transporte</h3>
+    <div class="sobrex">
+        <img src="img/alcancia.png" alt="" >
+        <h3>Pasaje</h3>
         <p>$2000</p>
     </div>
 
@@ -175,8 +171,8 @@
         <p>+</p>
     </div>
 
-    <div class="ejemplos2">
-        <img src="img/examplesS3.png" alt="">
+    <div class="sobrex">
+        <img src="img/billetera.png" alt="" >
         <h3>Ocio</h3>
         <p>$1500</p>
     </div>
@@ -186,8 +182,8 @@
     </div>
 
     
-    <div class="ejemplos2">
-        <img src="img/examplesS4.png" alt="">
+    <div class="sobrex">
+        <img src="img/autoV.png" alt="" >
         <h3>Ahorro</h3>
         <p>$3500</p>
     </div>
@@ -197,14 +193,14 @@
     </div>
 
     
-    <div class="ejemplos2">
-        <img src="img/examplesS5.png" alt="">
+    <div class="sobrex">
+        <img src="img/palomitas.png" alt="">
         <h3>Urgencias</h3>
         <p>$2000</p>
     </div>
 
       <div class="result2">
-            <img src="img/result1.png" alt="" width="550px">
+            <img src="img/resultS.png" alt="" width="330px">
     </div>
 
 </section>
@@ -219,8 +215,8 @@
             <img src="img/tip2.png" alt="Billetera">
 
             <div class="tip-text">
-                <h3>Separa tu dinero apenas lo recibas.</h3>
-                <p>Págate a ti primero.</p>
+                <h3>Usa efectivo.</h3>
+                <p>siempre que sea posible.</p>
             </div>
         </div>
 
@@ -228,26 +224,26 @@
             <img src="img/tip1.png" alt="Campana">
 
             <div class="tip-text">
-                <h3>Usa recordatorios o alarmas.</h3>
-                <p>Así no se te olvida ahorrar.</p>
+                <h3>Se realista.</h3>
+                <p>con tus asignaciones.</p>
             </div>
         </div>
 
         <div class="tip-card">
-            <img src="img/tip3.png" alt="Frasco">
+            <img src="img/agendaS.png" alt="Frasco">
 
             <div class="tip-text">
-                <h3>Usa una alcancía o cuenta de ahorro.</h3>
-                <p>Que sea tu "casa de las hormigas".</p>
+                <h3>Revisa y ajusta.</h3>
+                <p>tus osbres cada mes.</p>
             </div>
         </div>
 
         <div class="tip-card">
-            <img src="img/tip4.png" alt="Trofeo">
+            <img src="img/dardoS.png" alt="Trofeo">
 
             <div class="tip-text">
-                <h3>Celebra tus avances.</h3>
-                <p>Cada paso cuenta.</p>
+                <h3>Se constante</h3>
+                <p>y disciplinado.</p>
             </div>
         </div>
 

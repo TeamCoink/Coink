@@ -822,7 +822,7 @@ p{
 
 .result{
     position: absolute;
-    top: 1145px;
+    top: 1197px;
     left: 750px;
 }
 
@@ -843,16 +843,16 @@ p{
 }
 
 .tips-container{
-    margin-left: -100px;
+    margin-left: -40px;
     margin-right: -35px;
     display: flex;
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .tip-card{
-    width: 270px;
+    width: 280px;
     min-height: 110px;
     background: #fff;
     border: 1px solid #f4d7df;
@@ -889,11 +889,6 @@ p{
     line-height: 1.4;
 }
 
-/*Imagen de metodo de sobres*/
-.imagen2 img{
-    width: 680px;
-    display: inline-flex;
-    transform: translateY(-5px);
-}
+
 
 

@@ -168,7 +168,7 @@
     </div>
 
       <div class="result">
-            <img src="img/result1.png" alt="" width="550px">
+            <img src="img/result1.png" alt="" width="485px">
     </div>
 
 </section>
