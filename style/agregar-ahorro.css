@@ -22,7 +22,7 @@ body {
 .contenedor-form {
   background: #fff;
   padding: 40px; /* más espacio interno */
-  border-radius: 70px; /* bordes más suaves */
+  border-radius: 20px; /* bordes más suaves */
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
   max-width: 500px;
   width: 100%;
@@ -49,7 +49,7 @@ form input {
   margin-top: 5px;
   margin-bottom: 12px; /* más espacio entre inputs */
   border: 2px solid #ff6fa1; /* contorno rosado */
-  border-radius: 40px; /* border-radius más suave */
+  border-radius: 20px; /* border-radius más suave */
   font-size: 15px;
 }
 
@@ -66,7 +66,7 @@ form input {
   color: #333;
   border: none;
   padding: 12px 24px;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   font-weight: 600;
 }
@@ -75,7 +75,7 @@ form input {
   color: #fff;               /* texto blanco */
   border: none;
   padding: 12px 24px;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   font-weight: 600;
   text-decoration: none;     /* quitar subrayado */

@@ -171,7 +171,7 @@ body{
 
     width: 280px;
     background: white;
-    border-radius: 25px;
+    border-radius: 20px;
 
     padding: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
@@ -191,7 +191,7 @@ body{
     text-decoration: none;
     color: #222;
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 20px;
     transition: 0.3s;
 
     display: flex;
@@ -257,7 +257,7 @@ body{
     background-color: rgba(253, 79, 152, 0.75);
     color: white;
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
 
     height: 50px;
     width: 200px;
@@ -276,7 +276,7 @@ body{
     background-color: rgba(255, 196, 108, 0.85);
     color: rgb(6, 97, 18);
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
 
     height: 50px;
     width: 200px;
@@ -349,7 +349,7 @@ body{
     color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 20px;
     height: 40px;
     width: 190px;
     font-size: 20px;
@@ -398,7 +398,7 @@ body{
     width: 180px;
     height: 4px;
     background-color: pink;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-left: 585px;
 }
 
@@ -410,7 +410,7 @@ body{
     width: 300px;
     text-align: justify;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 20px;
     display: inline-block;
     margin: 20px;
     margin-left: 80px;
@@ -433,7 +433,7 @@ body{
     color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 20px;
     height: 60px;
     width: 190px;
     font-size: 20px;
@@ -448,7 +448,7 @@ body{
 }
 
 .cards3{
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 .texto1{
@@ -639,7 +639,7 @@ p{
     margin: 5px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-radius: 25px;
+    border-radius: 20px;
     border-style: solid ;
     border-color: #f8d9cc;
     border-width: 2px;
@@ -678,7 +678,7 @@ p{
     width: 130px;
     height: 130px;
     background: #c8e47d;
-    border-radius: 50%;
+    border-radius: 20%;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -703,7 +703,7 @@ p{
     height: 30px;
     background: #ff5f92;
     color: white;
-    border-radius: 50%;
+    border-radius: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -743,7 +743,7 @@ p{
 
 .funcionamiento{
     background: white;
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 50px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     transition: all 0.4s ease;
@@ -780,7 +780,7 @@ p{
     padding-right: 35px;
     padding-top: 15px;
     margin-right: 30px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 80px;
  
 
@@ -827,7 +827,7 @@ p{
 }
 
 .result img{
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
 .tips-hormiga{
@@ -856,7 +856,7 @@ p{
     min-height: 110px;
     background: #fff;
     border: 1px solid #f4d7df;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 10px;
     display: flex;
     align-items: center;

@@ -77,7 +77,7 @@ label{
     align-items:center;
     background:#fff;
     border:1px solid #ddd;
-    border-radius:25px;
+    border-radius:20px;
     padding:12px 15px;
     margin:8px 0 18px;
 }
@@ -113,7 +113,7 @@ label{
     width:100%;
     padding:12px;
     border:none;
-    border-radius:25px;
+    border-radius:20px;
     background:#a8d5a2;
     font-weight:bold;
     cursor:pointer;
@@ -211,7 +211,7 @@ label{
     color:#d63031;
     border:1px solid #ffb3b3;
     padding:12px;
-    border-radius:10px;
+    border-radius:20px;
     margin:15px 0;
     text-align:center;
     font-weight:bold;

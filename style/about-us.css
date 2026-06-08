@@ -27,7 +27,7 @@ body {
 .card {
   background: white;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
@@ -88,7 +88,7 @@ footer {
 .mision {
   background: #d8f3dc;          
   padding: 3rem;
-  border-radius: 15px;          
+  border-radius: 20px;          
 }
 
 
@@ -128,7 +128,7 @@ footer {
 .vision {
   background: #fff9db;          /* Amarillo pastel */
   padding: 3rem;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 
@@ -169,7 +169,7 @@ footer {
  .mision, .vision {
   margin: 2rem auto;        
   padding: 2rem;           
-  border-radius: 15px;      
+  border-radius: 20px;      
   max-width: 1200px;        
 }
 
@@ -208,14 +208,14 @@ footer {
 .card {
   background: white;
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
 .card img {
   width: 80px;
-  border-radius: 50%;
+  border-radius: 20%;
   margin-bottom: 1rem;
 }
 
@@ -241,7 +241,7 @@ footer {
   gap: 2rem;              /* Espacio entre los dos bloques */
   padding: 2rem;
   background: #fdf2e9;    /* Fondo suave */
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 .cta-block {
@@ -251,7 +251,7 @@ footer {
   justify-content: space-between;
   padding: 1rem;
   background: #fff;       /* Fondo blanco dentro de cada bloque */
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
