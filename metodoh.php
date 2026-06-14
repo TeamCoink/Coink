@@ -40,7 +40,7 @@
 
             <p>
                 El método Hormiga consiste en ahorrar pequeñas cantidades 
-                de dinero de forma constante. Así, poco a poco, tu dinero 
+                de dinero que parecen insignificantes de forma constante. Así, poco a poco, tu dinero 
                 crece sin que lo sientas. 
             </p>
 

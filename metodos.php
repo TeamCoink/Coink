@@ -54,7 +54,7 @@
                 
                 <div class="card-box">
 
-                    <a href="metodom.php">
+                    <a href="dmetas.php">
                         <img src="img/META 2.png">
                     </a>
                     

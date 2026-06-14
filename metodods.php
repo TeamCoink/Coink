@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Hormiga</title>
+    <title>Método de Sobres</title>
    <link rel="stylesheet" href="style/metodods.css">
    <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,73 +13,73 @@
 <body>
 
    
-        <div class="etiqueta">
-            Método de ahorro
-        </div>
+<div class="etiqueta">
+    Método de ahorro
+</div>
 
-        <div class="breadcrumb">
+<div class="breadcrumb">
             
-            <a href="index.php">Inicio</a>
-            <span>></span>
+    <a href="index.php">Inicio</a>
+    <span>></span>
 
-            <a href="metodos.php">Aprender</a>
-            <span>></span>
+    <a href="metodos.php">Aprender</a>
+    <span>></span>
 
-            <a href="metodods.php">Metodo de sobres</a>
+    <a href="metodods.php">Metodo de sobres</a>
             
-        </div>
-     <div class="heroMH">
-        <div class="body2">
+ </div>
+
+<div class="heroMH">
+    <div class="body2">
         
-          <h1>
-                <span class="verde">Método de</span>
-                <span class="rosa1">sobres</span>
-            </h1>
+        <h1>
+            <span class="verde">Método de</span>
+            <span class="rosa1">sobres</span>
+        </h1>
 
-            <h3>Organiza tu dinero, alcanza tus metas</h3>
+        <h3>Organiza tu dinero, alcanza tus metas</h3>
 
-            <p>
-               El método de sobres te ayuda a distribuir tu dinero en diferentes categorías para que gastes con propósito y evites gastos innecesarios.
-            </p>
+        <p>
+            El método de sobres te ayuda a distribuir tu dinero en diferentes categorías para que gastes con propósito y evites gastos innecesarios.
+        </p>
 
     </div>
 
-        <div class="imagen2">
-            <img src="img/sobresC.png" alt="Método de sobres" width="640px">
-        </div>
+    <div class="imagen2">
+        <img src="img/sobresC.png" alt="Método de sobres" width="640px">
+    </div>
 
-        </div>
+    </div>
 
-        <section class="funcionamiento">
+<section class="funcionamiento">
 
     <h2>¿Cómo funciona?</h2>
 
-    <div class="pasos">
+    <div class="pasos"> 
 
-        
-
-        <div class="paso">
-            <div class="circulo">
-                <img src="img/sobrre(1).png" alt="" height="100px" width="100px">
-            </div>
-
-          <div class="linea"></div>   
-
-            <span class="numero">1</span>
-
-            <h3>Define categorías</h3>
-
-            <p>
-                 Piensa en que vas a gastar: alimentación, transporte, ocio, etc.
-            </p>
+    <div class="paso">
+        <div class="circulo">
+            <img src="img/sobrre(1).png" alt="" height="100px" width="100px">
         </div>
 
-        <div class="paso">
-            <div class="circulo rosa">
-                <img src="img/sobre(2)).png" alt="" height="100px" width="100px">
-            </div>
+        <div class="linea"></div>   
 
-             <div class="linea"></div>
+        <span class="numero">1</span>
+
+        <h3>Define categorías</h3>
+
+        <p>
+            Piensa en que vas a gastar: alimentación, transporte, ocio, etc.
+        </p>
+
+    </div>
+
+    <div class="paso">
+        <div class="circulo rosa">
+            <img src="img/sobre(2)).png" alt="" height="100px" width="100px">
+        </div>
+
+        <div class="linea"></div>
 
             <span class="numero">2</span>
 
@@ -88,6 +88,7 @@
             <p>
                 Distribuye tu dinero en efectivo en sobres según cada categoría.
             </p>
+            
         </div>
 
         <div class="paso">
