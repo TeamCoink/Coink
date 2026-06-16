@@ -1,520 +1,415 @@
-/* Fuente moderna y amigable */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-body {
-  background-color: #ffede4; /* tono pastel suave */
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Encabezado con gradiente rosa-amarillo */
-/* Encabezado en rosa sólido */
-header {
-  background: #ff6fa1; /* rosa sólido */
-  color: white;
-  text-align: center;
-  padding: 25px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-header h1 {
-  margin: 0;
-  font-size: 2em;
-  font-weight: 600;
-}
-header p {
-  margin: 5px 0 0;
-  font-size: 1.1em;
-}
-
-
-/* Contenedor principal */
-.resumen {
-  display: flex;
-  justify-content: space-around; /* separa columnas de forma equilibrada */
-  align-items: center;
-  margin: 40px auto;
-  max-width: 1000px;
-}
-
-/* Columna izquierda */
-.resumen-izq {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;                 /* más espacio entre cards */
-  align-items: flex-start;
-}
-
-.resumen-card {
-  padding: 10px 14px;
-  border-radius: 20px;
-  color: white;
-  font-weight: 600;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-size: 0.9em;
-  width: 160px;              /* un poco más ancho para balance */
-}
-
-/* Colores personalizados */
-.rosa {
-  background: #ff6fa1;
-}
-.verde {
-  background: #4caf50;
-}
-.amarillo {
-  background: #ffd54f;
-  color: #333;
-}
 
-.circle {
-  width: 250px;
-  height: 250px;
-  border-radius: 20%;
-  border: 12px solid #4caf50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  background: #fff;
-  color: #4caf50;
-  font-size: 1.1em;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  position: relative;
-  overflow: hidden;
-}
+/* =======================
+   TOAST NOTIFICATION
+======================= */
+
+.toast{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: #BFD8B8;
+    color: #2f5233;
+    padding: 16px 24px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    font-size: 15px;
+    font-weight: 600;
+    z-index: 9999;
 
-/* Efecto de relleno circular */
-.circle::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 20%;
-  clip-path: circle(50%);
-  background: rgba(76,175,80,0.2);
-  transform: scale(0); /* empieza vacío */
-  transform-origin: center;
-  transition: transform 2s ease-out; /* animación suave */
+    animation: slideIn 0.4s ease;
 }
 
+@keyframes slideIn{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 
-/* Derecha con cerdito */
-.resumen-der {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.cerdito {
-  width: 310px;              /* tamaño equilibrado */
-  height: auto;
-  margin-left: 20px;         /* separación del círculo */
+
+.dashboard{
+    padding: 40px;
+    padding-top: 90px;
 }
 
 
-.card {
-  flex: 1;
-  background: #fff;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  font-weight: 500;
-  text-align: center;
-}
+.top-dashboard{ 
+    display: grid;
 
-/* Metas con barras de progreso */
-.metas {
-  margin: 30px auto;
-  text-align: center; /* centra el título */
-}
+    grid-template-columns:
+        250px
+        minmax(500px, 1fr)
+        230px;
 
-.metas h2 {
-  margin-bottom: 20px;
-  color: #4caf50;
-  font-weight: 600;
-}
+    gap: 28px;
 
-.metas-grid {
-  display: flex;
-  gap: 80px;
-  justify-content: center;
-  margin-bottom: 20px;
+    align-items: start;
 }
 
-.meta-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 180px;
-  text-align: center;
-  transition: 0.3s;
-  cursor: pointer;
-}
 
-.meta-card:hover {
-  transform: scale(1.05);
-}
 
-.meta-card img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-}
 
-.meta-info {
-  padding: 10px;
-}
 
-.meta-info h3 {
-  margin: 0;
-  font-size: 1.1em;
-  color: #ff6fa1;
-}
+/* =========================
+   LEFT CARDS DASHBOARD
+========================= */
 
-.meta-info p {
-  margin: 5px 0 0;
-  font-weight: bold;
-  color: #4caf50;
-}
+.left-cards{
+    width: 250px;
 
-/* Botones */
-.metas-botones {
-  display: flex;
-  justify-content: center;
-  gap: 15px; /* separación entre botones */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
+
+.mini-card{
+    width: 100%;
+    min-height: 95px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 16px 18px;
 
-.btn {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-  color: white;
+    border-radius: 24px;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+
+    transition: 0.3s ease;
 }
 
-.btn.rosa {
-  background: #ff6fa1;
+.mini-card:hover{
+    transform: translateY(-4px);
 }
-.btn.rosa:hover {
-  background: #e05585;
+
+/* CONTENEDOR DEL ICONO */
+
+.icon-box{
+    width: 60px;
+    height: 60px;
+
+    min-width: 60px;
+
+    border: 2px solid #4E9F5A;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255,255,255,0.4);
 }
 
-.btn.verde {
-  background: #4caf50;
+.icon{
+    font-size: 1.8rem;
 }
-.btn.verde:hover {
-  background: #3d8b40;
+
+/* INFO CARD */
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex: 1;
 }
+
+.card-info h4{
+    font-size: 14px;
+    font-weight: 600;
+    color: #4B4B4B;
 
-.btn.verde a{
-  color: white;
+    margin-bottom: 5px;
 }
 
-/* Calendario */
-/* Fuente moderna */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.card-info p{
+    font-size: 22px;
+    font-weight: bold;
+    color: #2D2D2D;
 
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: #fdfdfd;
-  color: #333;
+    margin: 0;
 }
 
-header {
-  background: linear-gradient(90deg, #ff6fa1);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.meta-name{
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
-  font-weight: 600;
+
+/* COLORES COINK */
+
+.pink{
+    background: #F8C8D2;
 }
 
-.calendario {
-  margin: 20px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 20px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+.green{
+    background: #D7EDC3;
 }
 
-.calendario h2 {
-  text-align: center;
-  margin-bottom: 15px;
-  color: #4caf50;
+.yellow{
+    background: #FFE79C;
 }
 
-.calendario-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
+.pastel{
+    background: #FFD6E5;
 }
+
 
-.calendario-grid div {
-  background: #fff;
-  border-radius: 20px;
-  padding: 12px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: 0.3s;
+/* =========================
+   CHART CARD
+========================= */
+
+
+.chart-card{
+    flex: 1;
+
+    background: #fff;
+
+    border-radius: 30px;
+
+    padding: 25px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+    height: 470px;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.calendario-grid div:hover {
-  background: #ff6fa1;
-  color: white;
-  transform: scale(1.05);
+
+
+.chart-header{
+    margin-bottom: 20px;
 }
 
-.calendario-grid .selected {
-  background: #4caf50;
-  color: white;
-  font-weight: bold;
+.chart-header h2{
+    font-size: 24px;
+    color: #2f2f2f;
+    margin-bottom: 6px;
 }
 
-#detalle-dia {
-  margin-top: 15px;
-  text-align: center;
-  font-weight: 500;
-  color: #ffd54f;
+.chart-header p{
+    color: #777;
+    font-size: 14px;
 }
 
 
-/* Botones */
-.btn {
-  margin-top: 10px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 20px;
-  background: #ff6fa1;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+#savingsChart{
+    width: 100% !important;
+    height: 320px !important;
 }
-.btn:hover {
-  background: #e05585;
+
+/* =========================
+   TOP DASHBOARD
+========================= */
+
+.top-dashboard{
+    display: grid;
+
+    grid-template-columns:
+        250px
+        minmax(500px, 1fr)
+        220px;
+
+    gap: 28px;
+
+    align-items: start;
 }
-.btn.verde {
-  background: #4caf50;
+
+
+/* =========================
+   PANEL DERECHO
+========================= */
+
+.right-panel{
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
 }
-.btn.verde:hover {
-  background: #3d8b40;
+
+/* CARD DEL CERDITO */
+.coink-mascot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
 }
 
-/* Gráficas */
-/* Fila de gráficas */
-.fila-graficas {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 30px;
-  margin: 30px auto;
-  max-width: 1000px;
+.coink-mascot img{
+    width: 250px;
+
+    object-fit: contain;
+
+    transition: .3s ease;
+
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
 }
 
-/* Contenedor de cada gráfica */
-.grafica {
-  flex: 1;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: center;
-  cursor: pointer; /* clickable */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 350px; /* mismo alto que tareas */
+.coink-mascot img:hover{
+    transform: scale(1.06) rotate(-2deg);
 }
+
+/* BOTONES */
+
+.dashboard-buttons{
+    display: flex;
+    flex-direction: column;
 
-/* Ajuste de los canvas */
-.grafica canvas {
-  width: 100% !important;
-  height: 250px !important;
+    gap: 14px;
 }
+
+.dashboard-btn{
+    text-decoration: none;
+
+    padding: 16px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    font-weight: 600;
+
+    transition: .3s ease;
 
-/* Modal */
-.modal {
-  display: none; /* oculto por defecto */
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 
-.modal-contenido {
-  background: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
+.dashboard-btn:hover{
+    transform: translateY(-4px);
 }
 
-.modal-contenido canvas {
-  width: 100% !important;
-  height: 400px !important; /* más grande */
+/* PALETA COINK */
+
+.ahorro-btn{
+    background: #D9EDBF;
+    color: #356B35;
 }
 
-.cerrar {
-  position: absolute;
-  top: 20px; right: 30px;
-  font-size: 2em;
-  cursor: pointer;
-  color: #333;
+.meta-btn{
+    background: #F8C8D2;
+    color: #8A5060;
 }
 
 
+/* =========================
+   CALENDARIO
+========================= */
 
-/* Fila de 3 contenedores */
-.fila-tres {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 30px;
-  margin: 30px auto;
-  max-width: 1200px;
+.calendar-section{
+    margin-top: 45px;
 }
 
-/* Contenedor genérico */
-.contenedor {
-  flex: 1;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 350px; /* mismo alto para todos */
-}
+.calendar-card{
+    background: white;
 
-/* Gráficas */
-.grafica canvas {
-  width: 100% !important;
-  height: 250px !important; /* proporción adecuada */
-}
+    border-radius: 32px;
 
-/* Modal */
-.modal {
-  display: none; /* oculto por defecto */
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
+    padding: 28px;
+
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
 }
+
+.calendar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.modal-contenido {
-  background: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  position: relative;
-  animation: fadeIn 0.4s ease; /* animación suave */
+    margin-bottom: 25px;
 }
 
-.modal-contenido canvas {
-  width: 100% !important;
-  height: 400px !important; /* más grande */
+.calendar-header h2{
+    font-size: 26px;
+    color: #2F2F2F;
 }
 
-.cerrar {
-  position: absolute;
-  top: 15px; right: 20px;
-  font-size: 2em;
-  cursor: pointer;
-  color: #333;
+.calendar-header p{
+    color: #777;
+    font-size: 14px;
 }
 
-/* Animación */
-@keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.9);}
-  to {opacity: 1; transform: scale(1);}
+.calendar-navigation{
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
+
+.calendar-navigation button{
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #D9EDBF;
+
+    cursor: pointer;
 
+    font-size: 18px;
 
-/* Tareas */
-.tareas ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
+    transition: .3s ease;
 }
 
-.tareas li {
-  background: #f9f9f9;
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 500;
-  transition: 0.3s;
+.calendar-navigation button:hover{
+    transform: scale(1.08);
 }
 
-.tareas li.checked {
-  text-decoration: line-through;
-  color: #999;
-  background: #e0e0e0;
+#monthYear{
+    min-width: 150px;
+    text-align: center;
 }
 
-.tareas li input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
+
+/* GRID CALENDARIO */
+
+#calendar{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 12px;
 }
+
+/* DIAS */
+
+.day{
+    min-height: 90px;
 
-/* Botón añadir tarea */
-.btn.verde {
-  background: #4caf50;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+    border-radius: 20px;
+
+    background: #FFF9E9;
+
+    padding: 10px;
+
+    transition: .3s ease;
 }
 
-.btn.verde:hover {
-  background: #3d8b40;
+.day:hover{
+    transform: translateY(-4px);
 }
 
-/* Botón añadir tarea */
-.btn.verde {
-  background: #4caf50;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+.day-number{
+    font-weight: bold;
 }
 
-.btn.verde:hover {
-  background: #3d8b40;
+.has-saving{
+    background: #D9EDBF;
 }
 
+.has-saving::after{
+    content: "💰";
+
+    display: block;
+
+    margin-top: 8px;
+}
