@@ -208,7 +208,7 @@
 
 <section class="tips-hormiga">
 
-    <h2>Tips para aplicar el Método Hormiga</h2>
+    <h2>Tips para aplicar el Método de sobres</h2>
 
     <div class="tips-container">
 

@@ -556,6 +556,14 @@ p{
     margin-right: 30px;
     border-radius: 20px;
     margin-bottom: 80px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+
+    transition:0.5s ease;
+}
+
+.ejemplos:hover{
+    transform:translateY(-8px);
 }
 
 .ejemplos h3{

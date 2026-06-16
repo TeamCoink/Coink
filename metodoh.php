@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método Hormiga</title>
-   <link rel="stylesheet" href="style/index.css">
+   <link rel="stylesheet" href="style/metodoh.css">
    <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -47,7 +47,7 @@
     </div>
 
         <div class="imagen">
-            <img src="img/hormiga.png" alt="Método Hormiga" width="740px">
+            <img src="img/hormiguita.png" alt="Método Hormiga" width="800px">
         </div>
 
         </div>
@@ -167,8 +167,8 @@
         <p>en un año</p>
     </div>
 
-      <div class="result">
-            <img src="img/result1.png" alt="" width="485px">
+    <div class="result">
+        <img src="img/result1.png" alt="" width="485px">
     </div>
 
 </section>

@@ -72,7 +72,10 @@
 
                 <div class="card-box">
 
-                    <img src="img/img invertido.png">
+                    <a href="metodoInv.php">
+                        <img src="img/img invertido.png">
+                    </a>
+                    
 
                     <h3>INVERTIDO</h3>
 
