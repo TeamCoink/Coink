@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <div class="logo">
             <a href="index.php">
-                <img src="img/mini-logo.png" alt="Coink Logo" class="logo-img" >
+                <img src="img/123repetido.png" alt="Coink Logo" class="logo-img" >
             </a>
         </div>
         <!-- Links -->

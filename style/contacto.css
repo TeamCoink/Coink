@@ -12,17 +12,56 @@ body{
     justify-content:center;
     align-items:flex-start;
     overflow-y:auto;
-    
 }
+
 .container{
     width:100%;
-    max-width:1450px;
-    background-color:  #ffe5d8;
+    max-width:1250px;
+    background-color: #FFF2EB ;
     display:flex;
     border-radius: 20px;
    
     overflow:hidden;
 }
+
+
+.boton-regresar{
+    width: 40px;
+    height: 40px;
+
+    background-color: #FFF2EB ; 
+    color: black; 
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    left: 20px; /* Mueve el botón a la derecha */
+
+    transition: transform 0.2s ease,
+                border-radius 0.2s ease;
+}
+
+.boton-regresar:hover{
+    transform: scale(1.1);
+    border-radius: 18px;
+}
+
+.boton-regresar:active{
+    transform: scale(0.95);
+}
+
+
+
 
 /* IZQUIERDA */
 
@@ -34,7 +73,9 @@ body{
 }
 
 .logo{
-    width:350px;
+    width:250px;
+    display: flex;
+    
     
    
    
@@ -42,6 +83,7 @@ body{
 
 .left h1{
     font-size:48px;
+    gap: 30px;
     margin-bottom:20px;
     color:#111;
 }
