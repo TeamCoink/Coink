@@ -303,60 +303,79 @@
 
 
 /* =========================
-   CALENDARIO
+   CALENDARIO COINK
 ========================= */
 
 .calendar-section{
-    margin-top: 45px;
+    margin-top: 50px;
 }
 
 .calendar-card{
     background: white;
 
-    border-radius: 32px;
+    border-radius: 35px;
 
-    padding: 28px;
+    padding: 35px;
 
     box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+
+    width: 100%;
+
+    box-sizing: border-box;
 }
+
+/* HEADER */
 
 .calendar-header{
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    margin-bottom: 25px;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
 }
 
 .calendar-header h2{
-    font-size: 26px;
-    color: #2F2F2F;
+    font-size: 34px;
+
+    color: #1f1f1f;
+
+    margin-bottom: 8px;
 }
 
 .calendar-header p{
     color: #777;
-    font-size: 14px;
+    font-size: 16px;
 }
+
+/* NAV */
 
 .calendar-navigation{
     display: flex;
+
     align-items: center;
-    gap: 15px;
+
+    gap: 18px;
 }
 
 .calendar-navigation button{
-    width: 42px;
-    height: 42px;
+    width: 52px;
+    height: 52px;
 
     border: none;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
     background: #D9EDBF;
 
     cursor: pointer;
 
-    font-size: 18px;
+    font-size: 22px;
 
     transition: .3s ease;
 }
@@ -366,41 +385,75 @@
 }
 
 #monthYear{
-    min-width: 150px;
+    font-size: 28px;
+    font-weight: 700;
+
+    min-width: 180px;
+
     text-align: center;
 }
 
-
-/* GRID CALENDARIO */
+/* GRID */
 
 #calendar{
+
     display: grid;
+
     grid-template-columns: repeat(7, 1fr);
 
-    gap: 12px;
+    gap: 14px;
+
+    width: 100%;
 }
 
-/* DIAS */
+/* NOMBRES DIAS */
+
+.week-day{
+    text-align: center;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+/* CELDAS */
 
 .day{
-    min-height: 90px;
 
-    border-radius: 20px;
+    aspect-ratio: 1/1;
 
     background: #FFF9E9;
 
-    padding: 10px;
+    border-radius: 26px;
+
+    padding: 12px;
+
+    box-sizing: border-box;
 
     transition: .3s ease;
+
+    position: relative;
+
+    min-height: 95px;
 }
 
 .day:hover{
     transform: translateY(-4px);
 }
 
+/* NUMERO */
+
 .day-number{
+    font-size: 20px;
+
     font-weight: bold;
+
+    color: #333;
 }
+
+/* DIAS CON AHORRO */
 
 .has-saving{
     background: #D9EDBF;
@@ -409,7 +462,210 @@
 .has-saving::after{
     content: "💰";
 
-    display: block;
+    position: absolute;
 
-    margin-top: 8px;
+    bottom: 12px;
+    right: 12px;
+
+    font-size: 22px;
+}
+
+/* =========================
+   DETALLES DEL CALENDARIO
+========================= */
+
+.calendar-details{
+
+    margin-top: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #FFF9E9,
+        #FFF5F7
+    );
+
+    border-radius: 30px;
+
+    padding: 28px;
+
+    border: 3px solid #FFE79C;
+
+    box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+
+.details-header{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    flex-wrap: wrap;
+}
+
+.details-header h3{
+
+    font-size: 28px;
+
+    color: #356B35;
+
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selected-date{
+
+    background: #F8C8D2;
+
+    color: #7D5360;
+
+    padding: 10px 18px;
+
+    border-radius: 16px;
+
+    font-weight: 600;
+
+    box-shadow: 0 4px 10px rgba(248,200,210,0.35);
+}
+
+/* CARD DE AHORRO */
+
+.saving-item{
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+
+    transition: .25s ease;
+}
+
+.saving-item:hover{
+    transform: translateY(-3px);
+}
+
+/* IZQUIERDA */
+
+.saving-left{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.saving-icon{
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 18px;
+
+    background: #D9EDBF;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,0.06);
+}
+
+.saving-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.saving-name{
+
+    font-weight: 700;
+
+    font-size: 17px;
+
+    color: #333;
+}
+
+.saving-category{
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+/* MONTO */
+
+.saving-amount{
+
+    background: #D9EDBF;
+
+    color: #356B35;
+
+    padding: 10px 16px;
+
+    border-radius: 16px;
+
+    font-weight: bold;
+
+    font-size: 17px;
+}
+
+/* TOTAL */
+
+.total-day{
+
+    margin-top: 24px;
+
+    background: #F8C8D2;
+
+    border-radius: 26px;
+
+    padding: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 5px 15px rgba(248,200,210,0.25);
+}
+
+.total-day span{
+
+    color: #7D5360;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+.total-money{
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #356B35;
 }

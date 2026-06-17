@@ -21,11 +21,15 @@
 
 <div class="container">
 
+<button class="boton-regresar" onclick="history.back()">
+    <i class="fa-solid fa-angles-left"></i>
+</button>
+
     <!-- IZQUIERDA -->
     <div class="left">
 
         <!-- LOGO -->
-        <img src="img/jjiajiajai.png" class="logo">
+        <img src="img/123repetido.png" class="logo">
 
         <h1>
             ¡Estamos aquí para

@@ -27,7 +27,7 @@ body{
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 30px;
+    padding:  50px;
 }
 
 /* LOGO */
@@ -67,9 +67,13 @@ body{
 
     border: 2px solid #e2e1e1;
 
+
+
     margin-top: 10px;
 
     position: relative;
+
+    border-radius: 30px;
 
     overflow: hidden;
 
@@ -88,7 +92,7 @@ body{
 
     background: #dbeeb5;
 
-    border-radius: 20%;
+    border-radius: 20px;
 
     top: -90px;
     right: -90px;
@@ -188,7 +192,7 @@ body{
 
 .card-box img{
      width: 200px;
-    height: 175;
+    height: 150;
     text-align: center;
    
 }

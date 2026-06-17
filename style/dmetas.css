@@ -31,7 +31,7 @@ body{
 
 .navbar{
     width: 100%;
-    background: #447402;
+    background: #fff7f2;
     border-radius: 30px;
     padding: 20px 40px;
 
@@ -74,7 +74,7 @@ body{
 
 .nav-links a{
     text-decoration: none;
-    color: #fdfcfc;
+    color: black;
     font-size: 1rem;
     font-weight: 500;
     transition: 0.3s;
