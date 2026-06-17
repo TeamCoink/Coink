@@ -12,18 +12,18 @@
 
    <?php include 'components/navbar.php'; ?>
    
-        <div class="container2">
-          <img src="img/heroimage.png" alt="homepage photo" height="609vh">
-          <div id="ap"><button class="button1">Aprender</button></div>
-          <div id="un"><button class="button2">Unirme</button></div>
-        </div>
+    <div class="container2">
+        <img src="img/heroimage.png" alt="homepage photo" >
+        <div id="ap"><button class="button1">Aprender</button></div>
+        <div id="un"><button class="button2">Unirme</button></div>
+    </div>
 
 
     <div id="introduccion">
         <img src="" alt="">
     </div>
 
-  <div id="features">
+  <section id="features">
     <div class="cards">
         <img src="img/librito.png" alt="" width="250px">
         <h3>Aprender</h3>
@@ -48,7 +48,7 @@
         <p>Haz crecer tu dinero de manera rapidas</p>
     </div>
 
-  </div>
+</section>
     
 
   <div id="coink">
