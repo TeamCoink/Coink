@@ -61,6 +61,46 @@
     </div>
 
 </section>
+
+<section class="about-coink">
+
+    <div id="book-img">
+        <img src="img/libroverde.png" alt="icono" width="550px">
+    </div>
+
+    <div class="texto">
+        <h1>¿Qué es 
+            <span class="c">C</span><span class="o">o</span><span class="i">i</span><span class="n">n</span><span class="k">k</span>
+        ?</h1><br>
+        <p>Somos una plataforma de educación financiera que busca ayudarte a comprender el dinero, aprender a administrar tus ingresos y que puedas usar Coink como una  herramienta para mejorar tu vida, ofreciendote herramientas que te ayudaran a que veas como tu dinero crece de manera inteligente. </p>
+
+        <div id="knowmore"><button class="button3">Conoce más →</button></div>
+
+    </div>
+
+</section>
+
+<section id="beneficios">
+    
+    <h1>Beneficios</h1>
+    <div class="linea1"></div>
+
+    <div class="cards">
+        <img src="img/agenda.jpg" alt="" width="270" height="187"><br>
+        <p>Coink te brinda distintos métodos de ahorro que se ajustan a tus necesidades</p>
+    </div>
+
+    <div class="cards">
+        <img src="img/planta.jpg" alt="" width="270"><br>
+        <p>Crea tus propias metas y compartelas con tus amigos y familia</p>
+    </div>
+
+    <div class="cards">
+        <img src="img/chart.jpg" alt="" width="270" height="189"><br>
+        <p>Conoce el progreso diario y mensual de como llevas tus ahorros</p>
+    </div>
+    
+</section>
     
 </body>
 </html>

@@ -316,7 +316,7 @@ body{
     font-size: larger;
 }
 
-.contenedor{
+.about-coink{
  display: flex;
 }
 
@@ -382,7 +382,7 @@ body{
 }
 
 
-.cards2{
+.cards{
     padding: 15px;
 }
 
@@ -402,11 +402,11 @@ body{
     margin-left: 585px;
 }
 
-.cards2 img{
+.cards img{
     margin-bottom: 10px;
 }
 
-.cards2{
+.cards{
     width: 300px;
     text-align: justify;
     background-color: white;
