@@ -117,6 +117,31 @@ while($fila = $resultGrafica->fetch_assoc()){
     $datosAhorro[$indice] = $fila['total'];
 }
 
+// ============================
+// DATOS CALENDARIO
+// ============================
+
+$sqlCalendario = "
+SELECT 
+    DATE(fecha) AS fecha,
+    SUM(monto) AS total
+FROM ahorros
+WHERE usuario_id = ?
+GROUP BY DATE(fecha)
+";
+
+$stmtCalendario = $conn->prepare($sqlCalendario);
+$stmtCalendario->bind_param("i", $usuarioId);
+$stmtCalendario->execute();
+
+$resultCalendario = $stmtCalendario->get_result();
+
+$ahorrosPorDia = [];
+
+while($fila = $resultCalendario->fetch_assoc()){
+
+    $ahorrosPorDia[$fila['fecha']] = $fila['total'];
+}
 
 
 
@@ -247,7 +272,6 @@ while($fila = $resultGrafica->fetch_assoc()){
     <canvas id="savingsChart"></canvas>
 
 </div>
-
 <!-- PANEL DERECHO -->
 <div class="right-panel">
 
@@ -270,6 +294,10 @@ while($fila = $resultGrafica->fetch_assoc()){
         </a>
 
     </div>
+
+</div>
+
+<!-- ESTE DIV FALTABA -->
 </div>
 
 
@@ -277,33 +305,45 @@ while($fila = $resultGrafica->fetch_assoc()){
 
     <div class="calendar-card">
 
-            <div class="calendar-header">
+        <div class="calendar-header">
 
-                <div>
-                    <h2>Calendario de ahorro 📅</h2>
-                    <p>Consulta tus movimientos diarios</p>
-                </div>
+            <div>
+                <h2>Calendario de ahorro 📅</h2>
+                <p>Consulta tus movimientos diarios</p>
+            </div>
 
-                <div class="calendar-navigation">
+            <div class="calendar-navigation">
 
-                    <button id="prevMonth">
-                        ←
-                    </button>
+                <button id="prevMonth">
+                    ←
+                </button>
 
-                    <h3 id="monthYear"></h3>
+                <h3 id="monthYear"></h3>
 
-                    <button id="nextMonth">
-                        →
-                    </button>
-
-                </div>
+                <button id="nextMonth">
+                    →
+                </button>
 
             </div>
 
+        </div>
+
         <div id="calendar"></div>
 
+        <div class="calendar-details" id="calendarDetails">
+
+            <h3>Selecciona un día 📅</h3>
+
+            <p>
+                Haz click en un día con ahorro para ver
+                los detalles 💰
+            </p>
+
+        </div>
+
     </div>
-    </section>
+
+</section>
 
 </section>
      
@@ -488,6 +528,219 @@ new Chart(ctx, {
         }
     }
 });
+</script>
+
+<script>
+
+const calendar = document.getElementById('calendar');
+const monthYear = document.getElementById('monthYear');
+
+const prevMonth = document.getElementById('prevMonth');
+const nextMonth = document.getElementById('nextMonth');
+
+const savingsData =
+<?php echo json_encode($ahorrosPorDia); ?>;
+
+let currentDate = new Date();
+
+const meses = [
+    'Enero', 'Febrero', 'Marzo',
+    'Abril', 'Mayo', 'Junio',
+    'Julio', 'Agosto', 'Septiembre',
+    'Octubre', 'Noviembre', 'Diciembre'
+];
+
+function renderCalendar(){
+
+    calendar.innerHTML = '';
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    monthYear.textContent =
+        `${meses[month]} ${year}`;
+
+    const firstDay =
+        new Date(year, month, 1).getDay();
+
+    const daysInMonth =
+        new Date(year, month + 1, 0).getDate();
+
+    // Encabezados días
+    const diasSemana = [
+        'L','M','M','J','V','S','D'
+    ];
+
+    diasSemana.forEach(day => {
+
+        const dayName =
+            document.createElement('div');
+
+        dayName.innerHTML =
+            `<strong>${day}</strong>`;
+
+        calendar.appendChild(dayName);
+    });
+
+    // Espacios vacíos
+    for(let i = 0; i < firstDay; i++){
+
+        const empty =
+            document.createElement('div');
+
+        calendar.appendChild(empty);
+    }
+
+    // Días reales
+    for(let day = 1; day <= daysInMonth; day++){
+
+        const dayElement =
+            document.createElement('div');
+
+        dayElement.classList.add('day');
+
+        const fechaCompleta =
+            `${year}-${String(month + 1)
+            .padStart(2,'0')}-${String(day)
+            .padStart(2,'0')}`;
+
+        const ahorro =
+            savingsData[fechaCompleta];
+
+        if(ahorro){
+
+            dayElement.classList.add(
+                'has-saving'
+            );
+
+            dayElement.title =
+                `+$${ahorro} ahorrados 💰`;
+
+            dayElement.style.cursor = "pointer";
+
+            dayElement.addEventListener('click', () => {
+
+                cargarDetalleDia(fechaCompleta);
+
+        });
+}
+        dayElement.innerHTML = `
+            <div class="day-number">
+                ${day}
+            </div>
+        `;
+
+        calendar.appendChild(dayElement);
+    }
+}
+
+prevMonth.addEventListener('click', () => {
+
+    currentDate.setMonth(
+        currentDate.getMonth() - 1
+    );
+
+    renderCalendar();
+});
+
+nextMonth.addEventListener('click', () => {
+
+    currentDate.setMonth(
+        currentDate.getMonth() + 1
+    );
+
+    renderCalendar();
+});
+
+renderCalendar();
+
+async function cargarDetalleDia(fecha){
+
+    const panel =
+        document.getElementById(
+            'calendarDetails'
+        );
+
+    const response =
+        await fetch(
+            `php/obtener-ahorros-dia.php?fecha=${fecha}`
+        );
+
+    const data =
+        await response.json();
+
+    let total = 0;
+
+    let html = `
+        <div class="details-header">
+
+            <h3>
+                💰 Movimientos del día
+            </h3>
+
+            <div class="selected-date">
+                ${fecha}
+            </div>
+
+        </div>
+    `;
+
+    data.forEach(ahorro => {
+
+        total += parseFloat(
+            ahorro.monto
+        );
+
+        html += `
+            <div class="saving-item">
+
+                <div class="saving-left">
+
+                    <div class="saving-icon">
+                        💰
+                    </div>
+
+                    <div class="saving-info">
+
+                        <div class="saving-name">
+                            ${ahorro.nombre}
+                        </div>
+
+                        <div class="saving-category">
+                            ${ahorro.categoria}
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="saving-amount">
+                    +$${parseFloat(
+                        ahorro.monto
+                    ).toFixed(2)}
+                </div>
+
+            </div>
+        `;
+    });
+
+    html += `
+        <div class="total-day">
+
+            <span>
+                Total ahorrado del día
+            </span>
+
+            <div class="total-money">
+                $${total.toFixed(2)}
+            </div>
+
+        </div>
+    `;
+
+    panel.innerHTML = html;
+}
+
 </script>
 
 
