@@ -33,7 +33,7 @@
       <input type="date" id="fecha" name="fecha" required>
 
       <div class="acciones">
-        <button type="submit" class="btn amarillo"><a href="dashboard.php">Agregar</button>
+        <button type="submit" class="btn amarillo">Agregar</button>
         <button type="reset" class="btn verde"><a href="dashboard.php">Cancelar</a></button>
       </div>
     </form>
