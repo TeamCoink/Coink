@@ -1,104 +1,99 @@
-<?php
-session_start();
-
-if(!isset($_SESSION['usuario_id'])){
-    header("Location: login.html");
-    exit();
-}
-
-// Tomamos el nombre del usuario directamente desde la sesión de PHP de forma segura
-$nombreUsuario = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : 'Usuario';
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Perfil - COINK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/perfil.css">
 </head>
 <body>
 
-<?php include 'components/navbar.php'; ?>
-
-<div class="perfil-container">
+<div class="perfil-container" id="perfil-wrapper" data-usuario-id="<?php echo $_SESSION['usuario_id']; ?>">
     <div class="card">
+        
+        <div class="portada-container" onclick="triggerInput('inputPortada', event)" title="Haz clic para cambiar la portada">
+            <img id="portada-img" alt="Foto de portada" style="display: none;">
+            <div id="portada-vacia"></div>
+            <button class="btn-eliminar-portada" id="btnDeletePortada" onclick="eliminarPortada(event)" title="Eliminar portada">×</button>
+        </div>
+        <input type="file" id="inputPortada" accept="image/*" style="display: none;" onchange="cambiarPortada(event)">
+
         <h1 class="app-title">COINK</h1>
         
-        <div class="avatar-container" onclick="document.getElementById('inputFoto').click();" title="Haz clic para cambiar tu foto">
-            <img id="foto" class="foto-perfil" alt="Foto de perfil" style="display: none;">
-            <div id="iniciales" class="iniciales-perfil" style="display: none;"></div>
-            <div class="avatar-overlay">Cambiar foto</div>
+        <div class="avatar-wrapper">
+            <div class="avatar-container" onclick="triggerInput('inputFoto', event)" title="Haz clic para cambiar tu foto">
+                <img id="foto" alt="Foto de perfil">
+                <div id="iniciales"></div>
+                <div class="avatar-overlay">Cambiar</div>
+            </div>
+            <button class="btn-eliminar-foto" id="btnDeleteFoto" onclick="eliminarFotoPerfil(event)" title="Eliminar foto">×</button>
         </div>
-
         <input type="file" id="inputFoto" accept="image/*" style="display: none;" onchange="cambiarFotoPersonalizada(event)">
 
-        <h2>
-            <?php echo $_SESSION['nombre']; ?>
-        </h2>
+        <h2 class="username-title"><?php echo $_SESSION['nombre']; ?></h2>
+        
+        <p class="user-bio" id="userBio" contenteditable="true" onblur="guardarBiografia()" title="Haz clic para editar tu descripción">Haz clic aquí para agregar una descripción sobre ti...</p>
 
-        <p>
-            Rol: <?php echo $_SESSION['rol']; ?>
-        </p>
-
-        <a href="php/logout.php">
-            <button class="btn-cerrar">
-                Cerrar sesión
-            </button>
+        <a href="php/logout.php" class="logout-link">
+            <button class="btn-cerrar">Cerrar sesión</button>
         </a>
+
+        <div class="social-footer">
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-threads"></i></a>
+        </div>
     </div>
 </div>
 
 <script>
-// Guardamos el nombre del usuario que viene de PHP para calcular las iniciales
-const nombreParaInicial = "<?php echo addslashes($nombreUsuario); ?>";
+// Obtenemos el ID dinámicamente del contenedor
+const usuarioId = document.getElementById('perfil-wrapper').dataset.usuarioId;
+const nombreParaInicial = "<?php echo $_SESSION['nombre']; ?>";
 
 document.addEventListener("DOMContentLoaded", function() {
     actualizarAvatar();
+    actualizarPortada();
+    cargarBiografia();
 });
 
-// FUNCIÓN UNIFICADA: Controla si se pinta la foto o el círculo morado con iniciales
-function actualizarAvatar() {
-    const fotoGuardada = localStorage.getItem("foto_perfil_personalizada");
-    const imgElement = document.getElementById("foto");
-    const initialsElement = document.getElementById("iniciales");
+function triggerInput(idInput, event) {
+    if (event.target.tagName !== 'BUTTON') {
+        document.getElementById(idInput).click();
+    }
+}
 
-    if (imgElement && initialsElement) {
-        if (fotoGuardada && fotoGuardada !== "null" && fotoGuardada !== "") {
-            // 1. Si el usuario ya subió una foto personalizada, la fuerza a mostrarse ganándole al CSS
-            imgElement.src = fotoGuardada;
-            imgElement.style.setProperty("display", "block", "important");
-            initialsElement.style.setProperty("display", "none", "important");
-        } else {
-            // 2. Si no tiene foto, genera automáticamente el avatar con su inicial (Ej: "O")
-            imgElement.style.setProperty("display", "none", "important");
-            initialsElement.style.setProperty("display", "flex", "important");
-            
-            // Saca la primera letra de tu nombre en mayúsculas
-            const primeraLetra = nombreParaInicial.trim().charAt(0).toUpperCase();
-            initialsElement.textContent = primeraLetra || "U";
-        }
+// FUNCIONES CON EL ID CONCATENADO
+function cargarBiografia() {
+    const bioGuardada = localStorage.getItem("biografia_usuario_" + usuarioId);
+    const bioElement = document.getElementById("userBio");
+    if (bioElement && bioGuardada) bioElement.textContent = bioGuardada;
+}
+
+function guardarBiografia() {
+    const bioElement = document.getElementById("userBio");
+    if (bioElement) {
+        localStorage.setItem("biografia_usuario_" + usuarioId, bioElement.textContent.trim());
     }
 }
 
 function actualizarAvatar() {
-    const fotoGuardada = localStorage.getItem("foto_perfil_personalizada");
+    const fotoGuardada = localStorage.getItem("foto_perfil_personalizada_" + usuarioId);
     const container = document.querySelector(".avatar-container");
     const imgElement = document.getElementById("foto");
     const initialsElement = document.getElementById("iniciales");
+    const btnDelete = document.getElementById("btnDeleteFoto");
 
     if (container && imgElement && initialsElement) {
-        if (fotoGuardada && fotoGuardada !== "null" && fotoGuardada !== "") {
-            // 1. Si el usuario tiene una foto asignada
+        if (fotoGuardada) {
             imgElement.src = fotoGuardada;
-            container.classList.add("con-foto"); // Activa las reglas CSS de visualización
+            container.classList.add("con-foto");
+            if(btnDelete) btnDelete.style.display = "flex";
         } else {
-            // 2. Si no tiene foto, remueve la clase y calcula la inicial automáticamente
             container.classList.remove("con-foto");
-            
-            const primeraLetra = nombreParaInicial.trim().charAt(0).toUpperCase();
-            initialsElement.textContent = primeraLetra || "U";
+            if(btnDelete) btnDelete.style.display = "none";
+            initialsElement.textContent = nombreParaInicial.trim().charAt(0).toUpperCase();
         }
     }
 }
@@ -106,18 +101,73 @@ function actualizarAvatar() {
 function cambiarFotoPersonalizada(event) {
     const archivo = event.target.files[0];
     if (!archivo) return;
-
     const lector = new FileReader();
     lector.onload = function(e) {
-        const urlImagenBase64 = e.target.result;
-        
-        // Guarda los datos de la imagen directamente en el almacenamiento local
-        localStorage.setItem("foto_perfil_personalizada", urlImagenBase64);
-        
-        // Refresca visualmente el estado del contenedor
-        actualizarAvatar();
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300; canvas.height = 300;
+            canvas.getContext('2d').drawImage(img, 0, 0, 300, 300);
+            const urlOptimizada = canvas.toDataURL('image/jpeg', 0.8);
+            localStorage.setItem("foto_perfil_personalizada_" + usuarioId, urlOptimizada);
+            actualizarAvatar();
+        };
+        img.src = e.target.result;
     };
     lector.readAsDataURL(archivo);
+}
+
+function eliminarFotoPerfil(event) {
+    event.stopPropagation();
+    if(confirm("¿Seguro?")) {
+        localStorage.removeItem("foto_perfil_personalizada_" + usuarioId);
+        actualizarAvatar();
+    }
+}
+
+function actualizarPortada() {
+    const portadaGuardada = localStorage.getItem("foto_portada_personalizada_" + usuarioId);
+    const imgPortada = document.getElementById("portada-img");
+    const divVacio = document.getElementById("portada-vacia");
+    const btnDelete = document.getElementById("btnDeletePortada");
+
+    if (portadaGuardada) {
+        imgPortada.src = portadaGuardada;
+        imgPortada.style.display = "block";
+        divVacio.style.display = "none";
+        if(btnDelete) btnDelete.style.display = "flex";
+    } else {
+        imgPortada.style.display = "none";
+        divVacio.style.display = "block";
+        if(btnDelete) btnDelete.style.display = "none";
+    }
+}
+
+function cambiarPortada(event) {
+    const archivo = event.target.files[0];
+    if (!archivo) return;
+    const lector = new FileReader();
+    lector.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 600; canvas.height = 250;
+            canvas.getContext('2d').drawImage(img, 0, 0, 600, 250);
+            const urlOptimizada = canvas.toDataURL('image/jpeg', 0.8);
+            localStorage.setItem("foto_portada_personalizada_" + usuarioId, urlOptimizada);
+            actualizarPortada();
+        };
+        img.src = e.target.result;
+    };
+    lector.readAsDataURL(archivo);
+}
+
+function eliminarPortada(event) {
+    event.stopPropagation();
+    if(confirm("¿Seguro?")) {
+        localStorage.removeItem("foto_portada_personalizada_" + usuarioId);
+        actualizarPortada();
+    }
 }
 </script>
 
