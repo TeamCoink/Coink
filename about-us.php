@@ -36,7 +36,7 @@
       <!-- Texto a la izquierda -->
       <div class="mision-text">
         <h2 class="mision-title">Nuestra Misión</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra neque eu auctor lobortis. Sed fermentum sit amet massa et blandit. Cras ac libero risus. Pellentesque finibus rutrum pretium. Proin ac iaculis.</p>
+        <p>"Empoderar a los jóvenes de 15 a 24 años en la gestión de sus finanzas personales a través de una plataforma digital intuitiva y accesible. Buscamos transformar la educación financiera y el hábito del ahorro en una experiencia sencilla, atractiva y cotidiana, brindando las herramientas necesarias para que construyan un futuro económico sólido y responsable."</p>
       </div>
       <!-- Imagen a la derecha -->
       <div class="mision-image">
@@ -54,7 +54,7 @@
       <!-- Texto a la derecha -->
       <div class="vision-text">
         <h2 class="vision-title">Nuestra Visión</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra neque eu auctor lobortis. Sed fermentum sit amet massa et blandit. Cras ac libero risus. Pellentesque finibus rutrum pretium. Proin ac iaculis.</p>
+        <p>"Ser la plataforma líder en educación financiera para jóvenes, reconocida por su impacto positivo en el desarrollo económico y la toma de decisiones financieras responsables."</p>
       </div>
     </div>
   </section>

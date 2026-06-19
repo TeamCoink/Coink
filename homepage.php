@@ -101,6 +101,43 @@
     </div>
     
 </section>
+
+<section class="hero2">
+    <img src="img/planta2.jpg" alt="" height="620vh">
+    <div id="start"><button class="button4">Comienza Ya!</button></div>
+</section>
+
+<section id="recursos">
+    <h1>¡De <span class="c">C</span><span class="o">o</span><span class="i">i</span><span class="n">n</span><span class="k">k</span> para ti!</h1>
+
+    <div class="cards3">
+        <img src="img/mujer.jpg" alt="" width="350">
+        <div class="texto1">
+             <h3>Presupuesto y sus beneficios</h3><br>
+             <p>¡Descubre que es un presupuesto y <br> que beneficios trae consigo!</p>
+        </div>
+      
+    </div>
+
+    <div class="cards3">
+        <img src="img/hombtr.jpg" alt="" width="350">
+        <div class="texto2">
+            <h3>¿Deseo o necesidad?</h3><br>
+            <p>Identifica si tu siguiente compra es <br> un solo un deseo o realmente lo <br> necesitas</p>
+        </div>
+        
+    </div>
+
+    <div class="cards3">
+        <img src="img/hombre2.jpeg" alt="" width="350">
+        <div class="texto3">
+            <h3>Ahorro inteligente</h3><br>
+            <p>Aprende a ahorrar correctamente y que <br> metodos se ajustan a tí</p>
+        </div>
+       
+    </div>
+
+</section>
     
 </body>
 </html>

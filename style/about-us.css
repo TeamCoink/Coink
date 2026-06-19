@@ -95,7 +95,7 @@ footer {
 
 .mision-text {
   flex: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .mision-title {
@@ -111,16 +111,16 @@ footer {
 
 .mision-image {
   flex: 1;
-  text-align: right;
+  text-align: center;
 }
 
 .mision-image img {
   width: 400px;
-  animation: fadeInRight 1.5s ease-in-out;
+  animation: fadeInCenter 1.5s ease-in-out;
 }
 
 /* Animación de entrada */
-@keyframes fadeInRight {
+@keyframes fadeInCenter {
   from { opacity: 0; transform: translateX(50px); }
   to { opacity: 1; transform: translateX(0); }
 }
@@ -135,17 +135,17 @@ footer {
 
 .vision-image {
   flex: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .vision-image img {
   width: 400px;
-  animation: fadeInLeft 1.5s ease-in-out;
+  animation: fadeInCenter 1.5s ease-in-out;
 }
 
 .vision-text {
   flex: 2;
-  text-align: left;
+  text-align: center;
   padding-left: 2rem;
 }
 
@@ -161,7 +161,7 @@ footer {
 }
 
 /* Animación de entrada */
-@keyframes fadeInLeft {
+@keyframes fadeInCenter {
   from { opacity: 0; transform: translateX(-50px); }
   to { opacity: 1; transform: translateX(0); }
 }

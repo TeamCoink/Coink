@@ -18,7 +18,7 @@ $usuarioId = $_SESSION['usuario_id'];
 $nombreUsuario = $_SESSION['nombre'];
 
 
-$guardado = isset($_GET['guardado']);
+$guardado = $_GET['guardado'] ?? '';
 
 
 // ============================
@@ -118,6 +118,67 @@ while($fila = $resultGrafica->fetch_assoc()){
 }
 
 // ============================
+<<<<<<< HEAD
+// DATOS CALENDARIO
+// ============================
+
+$sqlCalendario = "
+SELECT 
+    DATE(fecha) AS fecha,
+    SUM(monto) AS total
+FROM ahorros
+WHERE usuario_id = ?
+GROUP BY DATE(fecha)
+";
+
+$stmtCalendario = $conn->prepare($sqlCalendario);
+$stmtCalendario->bind_param("i", $usuarioId);
+$stmtCalendario->execute();
+
+$resultCalendario = $stmtCalendario->get_result();
+
+$ahorrosPorDia = [];
+
+while($fila = $resultCalendario->fetch_assoc()){
+
+    $ahorrosPorDia[$fila['fecha']] = $fila['total'];
+=======
+// GASTOS POR MES
+// ============================
+
+$sqlGraficaGastos = "
+SELECT
+    MONTH(fecha) AS mes,
+    SUM(monto) AS total
+FROM gastos
+WHERE usuario_id = ?
+GROUP BY MONTH(fecha)
+ORDER BY MONTH(fecha)
+";
+
+$stmtGraficaGastos = $conn->prepare($sqlGraficaGastos);
+$stmtGraficaGastos->bind_param("i", $usuarioId);
+$stmtGraficaGastos->execute();
+
+$resultGraficaGastos =
+    $stmtGraficaGastos->get_result();
+
+$datosGastos =
+    array_fill(0, 12, 0);
+
+while($fila =
+    $resultGraficaGastos->fetch_assoc()){
+
+    $indice = $fila['mes'] - 1;
+
+    $datosGastos[$indice] =
+        $fila['total'];
+>>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
+}
+
+
+
+// ============================
 // DATOS CALENDARIO
 // ============================
 
@@ -143,8 +204,51 @@ while($fila = $resultCalendario->fetch_assoc()){
     $ahorrosPorDia[$fila['fecha']] = $fila['total'];
 }
 
+// ============================
+// TOTAL GASTADO
+// ============================
 
+$sqlGastos = "
+SELECT SUM(monto) AS total
+FROM gastos
+WHERE usuario_id = ?
+";
 
+$stmtGastos = $conn->prepare($sqlGastos);
+$stmtGastos->bind_param("i", $usuarioId);
+$stmtGastos->execute();
+
+$resultGastos = $stmtGastos->get_result();
+$dataGastos = $resultGastos->fetch_assoc();
+
+$totalGastado = $dataGastos['total'] ?? 0;
+$balance = $totalAhorro - $totalGastado;
+
+// ============================
+// GASTOS POR DIA
+// ============================
+
+$sqlGastosDia = "
+SELECT
+    DATE(fecha) AS fecha,
+    SUM(monto) AS total
+FROM gastos
+WHERE usuario_id = ?
+GROUP BY DATE(fecha)
+";
+
+$stmtGastosDia = $conn->prepare($sqlGastosDia);
+$stmtGastosDia->bind_param("i", $usuarioId);
+$stmtGastosDia->execute();
+
+$resultGastosDia = $stmtGastosDia->get_result();
+
+$gastosPorDia = [];
+
+while($fila = $resultGastosDia->fetch_assoc()){
+
+    $gastosPorDia[$fila['fecha']] = $fila['total'];
+}
 
 
 ?>
@@ -157,17 +261,26 @@ while($fila = $resultCalendario->fetch_assoc()){
     <title>Dashboard</title>
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/dashboard.css">
+     <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     
 </head>
 <body>
     
+<?php if($guardado == 'ahorro'): ?>
 
-  <?php if($guardado): ?>
-      <div class="toast" id="toast">
-          ✅ Ahorro guardado correctamente
-      </div>
-  <?php endif; ?>
+    <div class="toast" id="toast">
+        ✅ Ahorro guardado correctamente
+    </div>
 
+<?php elseif($guardado == 'gasto'): ?>
+
+    <div class="toast" id="toast">
+        💸 Gasto registrado correctamente
+    </div>
+
+<?php endif; ?>
 
 <section class="dashboard">
 
@@ -183,11 +296,11 @@ while($fila = $resultCalendario->fetch_assoc()){
           </div>
 
           <div class="card-info">
-              <h4>Saldo actual</h4>
+             <h4>Balance actual</h4>
 
-              <p>
-                  $<?php echo number_format($totalAhorro, 2); ?>
-              </p>
+                <p>
+                    $<?php echo number_format($balance, 2); ?>
+                </p>
           </div>
 
       </div>
@@ -215,15 +328,15 @@ while($fila = $resultCalendario->fetch_assoc()){
       <div class="mini-card yellow">
 
           <div class="icon-box">
-              <span class="icon">🎯</span>
+              <span class="icon">💸</span>
           </div>
 
           <div class="card-info">
-              <h4>Metas activas</h4>
+              <h4>Total gastado</h4>
 
-              <p>
-                  <?php echo $totalMetas; ?>
-              </p>
+                <p>
+                    $<?php echo number_format($totalGastado, 2); ?>
+                </p>
           </div>
 
       </div>
@@ -265,8 +378,8 @@ while($fila = $resultCalendario->fetch_assoc()){
 <div class="chart-card">
 
     <div class="chart-header">
-        <h2>Crecimiento de ahorro</h2>
-        <p>Tus ahorros durante los últimos meses 📈</p>
+        <h2>Resumen financiero</h2>
+        <p>Compara tus ahorros y gastos mes a mes 💰</p>
     </div>
 
     <canvas id="savingsChart"></canvas>
@@ -288,6 +401,11 @@ while($fila = $resultCalendario->fetch_assoc()){
             ➕ Agregar ahorro
         </a>
 
+        <a href="agregar-gasto.php"
+            class="dashboard-btn gasto-btn">
+            💸 Agregar gasto
+        </a>
+
         <a href="metas.php"
            class="dashboard-btn meta-btn">
             🎯 Ver metas
@@ -297,7 +415,10 @@ while($fila = $resultCalendario->fetch_assoc()){
 
 </div>
 
+<<<<<<< HEAD
 <!-- ESTE DIV FALTABA -->
+=======
+>>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
 </div>
 
 
@@ -402,36 +523,53 @@ new Chart(ctx, {
             'Dic'
         ],
 
-        datasets: [{
+        datasets: [
 
-            label: 'Ahorros',
+{
+    label: 'Ahorros',
 
-            data: <?php echo json_encode($datosAhorro); ?>,
+    data: <?php echo json_encode($datosAhorro); ?>,
 
-            borderColor: '#F4A6B8',
+    borderColor: '#7BC96F',
 
-            backgroundColor: gradient,
+    backgroundColor: 'rgba(123,201,111,0.15)',
 
-            fill: true,
+    fill: false,
 
-            borderWidth: 4,
+    borderWidth: 4,
 
-            tension: 0.45,
+    tension: 0.45,
 
-            pointRadius: 7,
+    pointRadius: 6,
 
-            pointHoverRadius: 10,
+    pointBackgroundColor: '#FFE89A',
 
-            pointBackgroundColor: '#FFE89A',
+    pointBorderColor: '#4E9F5A'
+},
 
-            pointBorderColor: '#4E9F5A',
+{
+    label: 'Gastos',
 
-            pointBorderWidth: 2,
+    data: <?php echo json_encode($datosGastos); ?>,
 
-            pointHoverBorderWidth: 3,
+    borderColor: '#F4A6B8',
 
-            pointHoverBackgroundColor: '#FFD66B'
-        }]
+    backgroundColor: 'rgba(244,166,184,0.15)',
+
+    fill: false,
+
+    borderWidth: 4,
+
+    tension: 0.45,
+
+    pointRadius: 6,
+
+    pointBackgroundColor: '#FFD6E5',
+
+    pointBorderColor: '#F4A6B8'
+}
+
+]
     },
 
     options: {
@@ -445,11 +583,23 @@ new Chart(ctx, {
         },
 
         plugins: {
-
             legend: {
-                display: false
-            },
 
+                display: true,
+
+                position: 'top',
+
+                labels: {
+
+                    usePointStyle: true,
+
+                    padding: 20,
+
+                    font: {
+                        size: 13
+                    }
+                }
+            },
             tooltip: {
 
                 backgroundColor: '#ffffff',
@@ -541,6 +691,12 @@ const nextMonth = document.getElementById('nextMonth');
 const savingsData =
 <?php echo json_encode($ahorrosPorDia); ?>;
 
+<<<<<<< HEAD
+=======
+const expenseData =
+<?php echo json_encode($gastosPorDia); ?>;
+
+>>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
 let currentDate = new Date();
 
 const meses = [
@@ -607,6 +763,7 @@ function renderCalendar(){
         const ahorro =
             savingsData[fechaCompleta];
 
+<<<<<<< HEAD
         if(ahorro){
 
             dayElement.classList.add(
@@ -633,6 +790,56 @@ function renderCalendar(){
         calendar.appendChild(dayElement);
     }
 }
+=======
+        const gasto =
+            expenseData[fechaCompleta];
+
+        if(ahorro && gasto){
+
+            dayElement.classList.add('has-both');
+
+            dayElement.title =
+                `💰 Ahorro: $${ahorro}
+        💸 Gasto: $${gasto}`;
+
+        }
+        else if(ahorro){
+
+            dayElement.classList.add('has-saving');
+
+            dayElement.title =
+                `💰 Ahorro: $${ahorro}`;
+
+        }
+        else if(gasto){
+
+            dayElement.classList.add('has-expense');
+
+            dayElement.title =
+                `💸 Gasto: $${gasto}`;
+        }
+                dayElement.innerHTML = `
+                    <div class="day-number">
+                        ${day}
+                    </div>
+                `;
+
+                if(ahorro || gasto){
+
+                dayElement.style.cursor = "pointer";
+
+                dayElement.addEventListener('click', () => {
+
+                    cargarDetalleDia(fechaCompleta);
+
+                });
+
+            }
+
+                calendar.appendChild(dayElement);
+            }
+        }
+>>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
 
 prevMonth.addEventListener('click', () => {
 
