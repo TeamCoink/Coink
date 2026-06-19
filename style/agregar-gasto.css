@@ -1,0 +1,105 @@
+.formulario-gasto{
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 120px 40px 40px;
+}
+
+/* FORM */
+
+.contenedor-form{
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 35px;
+
+    width: 450px;
+
+    box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+form h2{
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #F4A6B8;
+}
+
+label{
+
+    display: block;
+
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    color: #555;
+}
+
+input{
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 18px;
+
+    border: 2px solid #eee;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+input:focus{
+    border-color: #F8C8D2;
+}
+
+/* BOTON */
+
+.btn-gasto{
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 20px;
+
+    background: #F8C8D2;
+
+    color: #7D5360;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.btn-gasto:hover{
+    transform: translateY(-3px);
+}
+
+/* CERDITO */
+
+.gasto-img img{
+    width: 280px;
+}

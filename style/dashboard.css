@@ -283,6 +283,8 @@
     transition: .3s ease;
 
     box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+
+    color: inherit; /* importante */
 }
 
 .dashboard-btn:hover{
@@ -299,6 +301,16 @@
 .meta-btn{
     background: #F8C8D2;
     color: #8A5060;
+}
+
+.gasto-btn{
+    background: #FFE79C; /* amarillo pastel */
+
+    color: #8A6B00 !important;
+
+    text-decoration: none;
+
+    display: block;
 }
 
 
@@ -459,6 +471,7 @@
     background: #D9EDBF;
 }
 
+
 .has-saving::after{
     content: "💰";
 
@@ -468,6 +481,26 @@
     right: 12px;
 
     font-size: 22px;
+}
+
+.has-expense::after{
+    content: "💸";
+
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+
+    font-size: 22px;
+}
+
+.has-both::after{
+    content: "💰💸";
+
+    position: absolute;
+    bottom: 10px;
+    right: 8px;
+
+    font-size: 18px;
 }
 
 /* =========================
