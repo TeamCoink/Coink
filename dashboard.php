@@ -775,7 +775,7 @@ function renderCalendar(){
 
                 calendar.appendChild(dayElement);
             }
-    }
+     }
 
 prevMonth.addEventListener('click', () => {
 

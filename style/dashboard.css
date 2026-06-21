@@ -505,6 +505,8 @@
     font-size: 22px;
 }
 
+
+
 .has-expense::after{
     content: "💸";
 
@@ -517,13 +519,14 @@
 
 .has-both::after{
     content: "💰💸";
-
+  
     position: absolute;
     bottom: 10px;
     right: 8px;
 
     font-size: 18px;
 }
+
 
 /* =========================
    DETALLES DEL CALENDARIO
