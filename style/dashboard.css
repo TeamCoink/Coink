@@ -469,7 +469,29 @@
 
 .has-saving{
     background: #D9EDBF;
+    border: 2px solid #8CCB74;
 }
+
+.has-expense{
+    background: #FFD6E5;
+    border: 2px solid #F4A6B8;
+}
+
+.has-both{
+    background: #FFE79C;
+    border: 2px solid #F5C84C;
+}
+
+.has-saving:hover,
+.has-expense:hover,
+.has-both:hover{
+
+    transform: translateY(-4px) scale(1.03);
+
+    cursor: pointer;
+}
+
+
 
 
 .has-saving::after{
@@ -701,4 +723,38 @@
     font-weight: bold;
 
     color: #356B35;
+}
+
+/* =========================
+   DIA VACIO
+========================= */
+
+.empty-day{
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.empty-icon{
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+}
+
+.empty-day h3{
+
+    color: #4E9F5A;
+
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+.empty-day p{
+
+    color: #777;
+
+    line-height: 1.6;
 }

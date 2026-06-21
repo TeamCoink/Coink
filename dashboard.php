@@ -688,11 +688,13 @@ function renderCalendar(){
 
     const daysInMonth =
         new Date(year, month + 1, 0).getDate();
+ 
 
     // Encabezados días
     const diasSemana = [
         'L','M','M','J','V','S','D'
     ];
+ 
 
     diasSemana.forEach(day => {
 
@@ -763,8 +765,6 @@ function renderCalendar(){
                     </div>
                 `;
 
-                if(ahorro || gasto){
-
                 dayElement.style.cursor = "pointer";
 
                 dayElement.addEventListener('click', () => {
@@ -773,11 +773,9 @@ function renderCalendar(){
 
                 });
 
-            }
-
                 calendar.appendChild(dayElement);
             }
-        }
+    }
 
 prevMonth.addEventListener('click', () => {
 
@@ -814,6 +812,28 @@ async function cargarDetalleDia(fecha){
     const data =
         await response.json();
 
+        if(data.length === 0){
+
+    panel.innerHTML = `
+        <div class="empty-day">
+
+            <div class="empty-icon">
+                📅
+            </div>
+
+            <h3>Sin movimientos</h3>
+
+            <p>
+                No registraste ahorros ni gastos
+                este día 🐷
+            </p>
+
+        </div>
+    `;
+
+    return;
+}
+
     let total = 0;
 
     let html = `
@@ -830,11 +850,13 @@ async function cargarDetalleDia(fecha){
         </div>
     `;
 
-    data.forEach(ahorro => {
+    data.forEach(item => {
 
-        total += parseFloat(
-            ahorro.monto
-        );
+        if(item.tipo === 'ahorro'){
+            total += parseFloat(item.monto);
+        }else{
+            total -= parseFloat(item.monto);
+        }
 
         html += `
             <div class="saving-item">
@@ -842,17 +864,17 @@ async function cargarDetalleDia(fecha){
                 <div class="saving-left">
 
                     <div class="saving-icon">
-                        💰
+                        ${item.tipo === 'ahorro' ? '💰' : '💸'}
                     </div>
 
                     <div class="saving-info">
 
                         <div class="saving-name">
-                            ${ahorro.nombre}
+                            ${item.nombre}
                         </div>
 
                         <div class="saving-category">
-                            ${ahorro.categoria}
+                            ${item.categoria}
                         </div>
 
                     </div>
@@ -860,9 +882,7 @@ async function cargarDetalleDia(fecha){
                 </div>
 
                 <div class="saving-amount">
-                    +$${parseFloat(
-                        ahorro.monto
-                    ).toFixed(2)}
+                   ${item.tipo === 'ahorro' ? '+' : '-'}$${parseFloat(item.monto).toFixed(2)}
                 </div>
 
             </div>
@@ -888,6 +908,7 @@ async function cargarDetalleDia(fecha){
 
 </script>
 
+ <script src="javaScript/homepage.js"></script>
 
 </body>
 </html>
