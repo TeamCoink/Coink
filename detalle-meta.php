@@ -54,7 +54,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 <span id="detalleFalta" style="color: #7cb342;">Falta: $0.00</span>
             </div>
 
-            <form action="php/guardar-ahorro.php" method="POST" style="display: flex; gap: 12px; align-items: center; width: 100%;">
+            <form action="php/agregar_dinero_meta.php" method="POST" style="display: flex; gap: 12px; align-items: center; width: 100%;">
                 <input type="hidden" id="inputHiddenId" name="id">
                 
                 <div class="input-group" style="flex: 1; margin-bottom: 0;">

@@ -25,6 +25,8 @@
     width: 450px;
 
     box-shadow: 0 10px 24px rgba(0,0,0,.06);
+
+    border: 2px solid #D9EDBF;
 }
 
 form h2{
@@ -33,7 +35,7 @@ form h2{
 
     margin-bottom: 25px;
 
-    color: #F4A6B8;
+    color: #ff6fa1;
 }
 
 label{
@@ -45,7 +47,7 @@ label{
 
     font-weight: 600;
 
-    color: #555;
+    color: #4caf50;
 }
 
 input{
@@ -56,24 +58,42 @@ input{
 
     border-radius: 18px;
 
-    border: 2px solid #eee;
+    border: 2px solid #ff6fa1;
+
+    background: #FFFDF8;
 
     outline: none;
 
     font-size: 15px;
+
+    transition: .3s ease;
 }
 
 input:focus{
-    border-color: #F8C8D2;
+
+    border-color: #4E9F5A;
+
+    box-shadow: 0 0 0 4px rgba(78,159,90,.15);
 }
 
 /* BOTON */
 
-.btn-gasto{
+/* CONTENEDOR BOTONES */
 
-    width: 100%;
+.acciones{
+
+    display: flex;
+
+    gap: 12px;
 
     margin-top: 25px;
+}
+
+/* GUARDAR */
+
+.btn-gasto{
+
+    flex: 1;
 
     border: none;
 
@@ -81,9 +101,9 @@ input:focus{
 
     border-radius: 20px;
 
-    background: #F8C8D2;
+    background: #FFE79C;
 
-    color: #7D5360;
+    color: #6B5A20;
 
     font-size: 16px;
 
@@ -95,11 +115,90 @@ input:focus{
 }
 
 .btn-gasto:hover{
+
+    background: #FFD96A;
+
+    transform: translateY(-3px);
+}
+
+/* CANCELAR */
+
+.btn-cancelar{
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    padding: 16px;
+
+    border-radius: 20px;
+
+    background: #D9EDBF;
+
+    color: #356B35;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: .3s ease;
+}
+
+.btn-cancelar:hover{
+
+    background: #CBE7AB;
+
+    transform: translateY(-3px);
+}
+
+
+
+.btn-gasto:hover{
+
+    background: #FFD96A;
+
     transform: translateY(-3px);
 }
 
 /* CERDITO */
 
 .gasto-img img{
-    width: 280px;
+
+    width: 480px;
+
+    filter: drop-shadow(
+        0 10px 20px rgba(0,0,0,.10)
+    );
+}
+
+/* WAVES */
+
+.waves{
+
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 320px;
+
+    z-index: -1;
+
+    overflow: hidden;
+}
+
+.waves svg{
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
 }
