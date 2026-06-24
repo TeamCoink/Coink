@@ -48,18 +48,18 @@ if (session_status() === PHP_SESSION_NONE) {
                 </a>
 
                 <a href="php/logout.php" class="login-btn">
-                    Logout
+                    Cerrar Sesion
                 </a>
 
             <?php else: ?>
 
                 <!-- Usuario NO logueado -->
                 <a href="./register.html" class="signup-btn">
-                    Sign Up
+                    Rgistrarse
                 </a>
 
                 <a href="login.php" class="login-btn">
-                    Login
+                    Iniciar sesion
                 </a>
 
             <?php endif; ?>
@@ -67,7 +67,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="dropdown">
 
                 <button class="more-btn" id="moreBtn">
-                    More
+                    Más
                     <i class="fa-solid fa-chevron-down"></i>
                 </button>
 
