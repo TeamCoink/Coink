@@ -54,12 +54,12 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php else: ?>
 
                 <!-- Usuario NO logueado -->
-                <a href="./register.html" class="signup-btn">
-                    Rgistrarse
+                <a href="./login.php" class="signup-btn">
+                     Iniciar sesion
                 </a>
 
-                <a href="login.php" class="login-btn">
-                    Iniciar sesion
+                <a href="register.html" class="login-btn">
+                    Registarte
                 </a>
 
             <?php endif; ?>
@@ -76,6 +76,11 @@ if (session_status() === PHP_SESSION_NONE) {
                     <a href="dashboard.php">
                         <i class="fa-regular fa-newspaper"></i>
                         Dashboard
+                    </a>
+
+                    <a href="planes.php">
+                        <i class="fa-solid fa-money-bill"></i>
+                        Planes
                     </a>
 
                     

@@ -202,3 +202,72 @@ input:focus{
 
     display: block;
 }
+
+@media (max-width: 768px) {
+  
+  .formulario-gasto {
+    flex-direction: column;   
+    align-items: center;
+    gap: 30px;
+    padding: 60px 20px 20px; 
+  }
+
+  /* Formulario */
+  .contenedor-form {
+    width: 100%;
+    max-width: 90%;           
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  form h2 {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Botones */
+  .acciones {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  .btn-gasto,
+  .btn-cancelar {
+    width: 100%;             
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  /* Imagen cerdito */
+  .gasto-img img {
+    width: 250px;             
+    margin-top: 20px;
+  }
+
+
+  .waves {
+    height: 200px;            
+  }
+}
+
+@media (max-width: 480px) {
+  form h2 {
+    font-size: 18px;
+  }
+
+  .contenedor-form {
+    padding: 15px;
+  }
+
+  .gasto-img img {
+    width: 200px;
+  }
+}

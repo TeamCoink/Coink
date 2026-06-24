@@ -180,3 +180,75 @@ form input {
 
     display: block;
 }
+
+
+@media (max-width: 768px) {
+
+  .formulario-ahorro,
+  .formulario-gasto {
+    flex-direction: column;   
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  /* Formularios */
+  .contenedor-form {
+    padding: 20px;           
+    max-width: 90%;           
+  }
+
+  form h2 {
+    font-size: 20px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  form input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Botones */
+  .acciones {
+    flex-direction: column;   
+    gap: 10px;
+  }
+
+  .btn.amarillo,
+  .btn.verde,
+  .btn-gasto,
+  .btn-cancelar {
+    width: 100%;             
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  /* Imagen cerdito/gasto */
+  .cerdito img{
+    max-width: 250px;        
+    margin-top: 20px;
+  }
+
+  /* Waves */
+  .waves {
+    height: 200px;            
+  }
+}
+
+@media (max-width: 480px) {
+  form h2 {
+    font-size: 18px;
+  }
+
+  .contenedor-form {
+    padding: 15px;
+  }
+
+  .cerdito img,
+  .gasto-img img {
+    max-width: 200px;
+  }
+}

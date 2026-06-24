@@ -698,8 +698,10 @@ function renderCalendar(){
 
     diasSemana.forEach(day => {
 
-        const dayName =
-            document.createElement('div');
+       const dayName =
+        document.createElement('div');
+
+        dayName.classList.add('week-day');
 
         dayName.innerHTML =
             `<strong>${day}</strong>`;
