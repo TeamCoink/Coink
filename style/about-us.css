@@ -290,3 +290,141 @@ footer {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
+
+.footer {
+  background: #ffe4ec; /* rosado pastel suave */
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  color: #ff4081;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ICONOS */
+.footer-social {
+  margin: 1.5rem 0;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 1.4rem;
+  color: white;
+  background: #ff4081;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.footer-social a:hover {
+  background: #e60073;
+  transform: scale(1.2);
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  /* Texto más pequeño */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* ABOUT */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-image {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* MISIÓN Y VISIÓN */
+  .mv-row {
+    flex-direction: column;
+  }
+
+  .mision,
+  .vision {
+    width: 100%;
+  }
+
+  .mision-image img,
+  .vision-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* CARDS (DESARROLLADORES) */
+  .cards {
+    grid-template-columns: 1fr; /* una columna en móviles */
+  }
+
+  /* CTA */
+  .cta-row {
+    flex-direction: column;
+  }
+
+  .cta-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-block.reverse {
+    flex-direction: column;
+  }
+
+  .cta-image img {
+    width: 150px;
+  }
+
+  /* Piggy image */
+  .piggy {
+    width: 200px;
+  }
+  
+
+
+.footer-logo {
+  font-size: 1.5rem;
+}
+
+.footer-social a {
+  font-size: 1.2rem;
+  padding: 8px;
+}
+
+
+}
+

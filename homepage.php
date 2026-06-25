@@ -29,6 +29,10 @@
             <a href="login.php" class="btn-secondary">Unirme</a>
         </div>
     </div>
+   
+
+</body>
+</html>
 
     <div class="hero-image">
         <img src="img/pigH.png" alt="Cerdito Coink" width="1000px">
@@ -61,6 +65,61 @@
     </div>
 
 </section>
+<<<<<<< HEAD
+<footer class="coink-footer">
+        <div class="footer-wrapper">
+            
+            <!-- Columna 1: Branding -->
+            <div class="footer-column brand-info">
+               <img src="img/logoB.png" alt="Logo Coink" class="footer-logo-img">
+                <p>La herramienta financiera diseñada para que los jóvenes dominen su dinero y cumplan sus sueños desde hoy.</p>
+            </div>
+
+            <!-- Columna 2: Plataforma -->
+            <div class="footer-column">
+                <h4>Plataforma</h4>
+                <ul>
+                    
+                    <li><a href="#"><i class="fa-solid fa-trophy"></i> Retos</a></li>
+                    <li><a href="#"><i class="fa-solid fa-star"></i> Metas</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Educación -->
+            <div class="footer-column">
+                <h4>Aprende</h4>
+                <ul>
+                    <li><a href="metodos.php"><i class="fa-solid fa-wallet"></i> Metodos</a></li>
+                    <li><a href="#">Guías</a></li>
+                    <li><a href="#">Glosario</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Seguridad -->
+            <div class="footer-column">
+                <h4>Seguridad</h4>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="footer-line">
+
+        <!-- Parte baja -->
+        <div class="footer-credits">
+            <p>&copy; 2026 Coink. Hecho con 💚 para la próxima generación financiera.</p>
+            <div class="footer-social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+=======
 
 <section class="about-coink">
 
@@ -138,6 +197,7 @@
     </div>
 
 </section>
+>>>>>>> 69daa716c7441a5929b9c62a951928fca94bb51e
     
 </body>
 </html>

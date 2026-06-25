@@ -407,6 +407,140 @@ body{
 .feature h3{
     font-weight: bolder;
     font-size: larger;
+<<<<<<< HEAD
+}
+.footer-logo-img {
+    width: 130px;        
+    height: auto;        
+    display: block;      
+    margin-bottom: 18px; 
+    object-fit: contain; 
+}
+
+.coink-footer {
+    background: #fff7f2; /* El mismo fondo claro y limpio de tu navbar */
+    border-radius: 30px; /* Consistencia con las curvas de tu diseño */
+    padding: 50px 40px 30px 40px;
+    margin-top: 50px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05); /* Misma sombra suave de tu navbar */
+}
+
+.footer-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-column.brand-info {
+    flex: 1.5; /* Un toque más de espacio para la intro */
+}
+
+.footer-column.brand-info p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.footer-title-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #69c36b; /* Tu color verde característico de los botones */
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.footer-column h4 {
+    color: #2d2d2d;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover con tu color rosa llamativo */
+.footer-column ul li a:hover,
+.footer-social-links a:hover {
+    color: #fd468c; 
+    transform: translateX(3px); /* Efecto de movimiento hacia la derecha */
+}
+
+.footer-column ul li a i {
+    color: #F48BB4; /* Iconos con tu rosa pastel del botón */
+    font-size: 0.9rem;
+}
+
+.footer-line {
+    border: 0;
+    border-top: 1px solid #f3e5dc; /* Línea sutil que combina con tu fondo #FFF2EB */
+    margin: 30px 0 20px 0;
+}
+
+.footer-credits {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-links a {
+    color: #2d2d2d;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-credits {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+=======
     color: #282928;
 }
 
@@ -641,3 +775,4 @@ body{
 }
 
 
+>>>>>>> 69daa716c7441a5929b9c62a951928fca94bb51e
