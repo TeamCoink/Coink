@@ -379,15 +379,16 @@ body{
 }
 
 #features{
-    margin-left: -50px;
+    margin-left: -30px;
     margin-right: -30px;
-    background-color: #cdeec3;
+    background-color: #c0dfb6;
     display: flex;
-    gap: 80px;
-    padding-top: 20px;
-    padding-bottom: 5px;
+    gap: 70px;
+    padding-top: 5px;
+    padding-bottom: 10px;
     padding-left: 70px;
     padding-right: 70px;
+    border: #c0dfb6 solid 2px;
    
 }
 
@@ -400,10 +401,243 @@ body{
 .feature p{
     font-weight: 500;
     font-size: large;
-    color: #3b3837;
+    color: #524f4e;
 }
 
 .feature h3{
     font-weight: bolder;
     font-size: larger;
+    color: #282928;
 }
+
+.feature img{
+    transition: all 0.3s ease;
+}
+
+.feature img:hover{
+    transform: scale(1.12);
+}
+
+.about-coink{
+    margin-top: 50px;
+    display: flex;
+}
+
+.about-coink img{
+    margin-top: -55px;
+}
+
+.texto{
+    margin-top: 80px;
+    margin-right: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.texto p{
+    font-size: 20px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.texto h1{
+    font-size: 50px;
+}
+
+.button3{
+    margin-top: 50px;
+    position: absolute;
+    top: 210%;
+    left: 54%;
+    transform: translate(-80%, -80%);
+    padding: 5px 10px;
+    background-color: rgba(253, 79, 152, 0.6);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+    height: 40px;
+    width: 190px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.c{
+    color:  #60A34B;
+    gap: 0px;
+}
+
+.o{
+    color: #73C55A;
+    gap: 0px;
+}
+
+.i{
+   color: #D2C986 ;
+   gap: opx;
+}
+
+.n{
+    color: #FFAAB8;
+    gap: 0px;
+}
+
+.k{
+    color: #FF769D;
+    gap: 0px;
+}
+
+.cards{
+    padding: 15px;
+}
+
+#beneficios h1{
+    text-align: center;
+    color: #0b7c43;
+    font-size: 50px;
+    margin-bottom: 10px;
+
+}
+
+.linea1{
+    width: 180px;
+    height: 4px;
+    background-color: pink;
+    border-radius: 20px;
+    margin-left: 555px;
+    margin-bottom: 30px;
+}
+
+.cards img{
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.cards{
+    margin-top: 40px;
+    width: 300px;
+    text-align: justify;
+    background-color: white;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 20px;
+    margin-left: 80px;
+    margin-right: 20px;
+    font-size: 20px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+
+    transition:0.5s ease;
+}
+
+.cards:hover{
+    transform:translateY(-10px);
+}
+
+.hero2 img{
+    margin-top: 50px; 
+    align-items: center;
+}
+
+.button4{
+    margin-top: 100px;
+    position: absolute;
+    top: 393%;
+    left: 87%;
+    transform: translate(-80%, -80%);
+    padding: 10px 20px;
+    background-color: #518741;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 60px;
+    width: 190px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#recursos h1{
+    margin-top: 35px;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.cards3{
+    border-radius: 20px;
+}
+
+.texto1{
+    display: inline-block;
+    text-align: justify;
+    padding: 5px;
+    position: absolute;
+    top: 455%;
+}
+
+.texto2{
+    display: inline-block;
+    text-align: justify;
+    padding: 5px;
+    position: absolute;
+    top: 492%;
+}
+
+.texto3{
+    display: inline-block;
+    text-align: justify;
+    padding: 5px;
+    position: absolute;
+    top:530%;
+}
+
+.texto1 h3{
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+.texto1 p{
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 10px;
+}
+
+.texto2 h3{
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+.texto2 p{
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 10px;
+}
+
+.texto3 h3{
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+.texto3 p{
+    font-size: 20px;
+    text-align: justify;
+    padding-left: 10px;
+}
+
+#recursos img{
+    padding-left: 25px;
+}
+
+.texto{
+    max-width: 450px;
+}
+
+.body2{
+    margin-top: 40px;
+    margin: 20px;
+}
+
+

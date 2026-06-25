@@ -52,8 +52,6 @@
     
 
   <div id="coink">
-    <img src="" alt="">
-
     <div class="contenedor">
 
     <div id="coink">
@@ -73,29 +71,29 @@
 
   </div>
 
-  <div id="beneficios">
+  <section id="beneficios">
     
 
     <h1>Beneficios</h1>
     <div class="linea1"></div>
 
-    <div class="cards2">
+    <div class="cards">
         <img src="img/agenda.jpg" alt="" width="300" height="207"><br>
         <p>Coink te brinda distintos métodos de ahorro que se ajustan a tus necesidades</p>
     </div>
 
-    <div class="cards2">
+    <div class="cards">
         <img src="img/planta.jpg" alt="" width="300"><br>
         <p>Puedes crear metas individuales o con tus amigos y familiares de tu elección</p>
     </div>
 
-    <div class="cards2">
+    <div class="cards">
         <img src="img/chart.jpg" alt="" width="300" height="207"><br>
         <p>Conoce el progreso diario y mensual de como llevas tus ahorros</p>
     </div>
 
 
-  </div>
+</section>
 
   <div class="hero2">
     <img src="img/planta2.jpg" alt="" height="655vh">

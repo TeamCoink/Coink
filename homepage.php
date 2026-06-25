@@ -61,6 +61,83 @@
     </div>
 
 </section>
+
+<section class="about-coink">
+
+    <div id="book-img">
+        <img src="img/libroverde.png" alt="icono" width="550px">
+    </div>
+
+    <div class="texto">
+        <h1>¿Qué es 
+            <span class="c">C</span><span class="o">o</span><span class="i">i</span><span class="n">n</span><span class="k">k</span>
+        ?</h1><br>
+        <p>Somos una plataforma de educación financiera que busca ayudarte a comprender el dinero, aprender a administrar tus ingresos y que puedas usar Coink como una  herramienta para mejorar tu vida, ofreciendote herramientas que te ayudaran a que veas como tu dinero crece de manera inteligente. </p>
+
+        <div id="knowmore"><button class="button3">Conoce más →</button></div>
+
+    </div>
+
+</section>
+
+<section id="beneficios">
+    
+    <h1>Beneficios</h1>
+    <div class="linea1"></div>
+
+    <div class="cards">
+        <img src="img/agenda.jpg" alt="" width="270" height="187"><br>
+        <p>Coink te brinda distintos métodos de ahorro que se ajustan a tus necesidades</p>
+    </div>
+
+    <div class="cards">
+        <img src="img/planta.jpg" alt="" width="270"><br>
+        <p>Crea tus propias metas y compartelas con tus amigos y familia</p>
+    </div>
+
+    <div class="cards">
+        <img src="img/chart.jpg" alt="" width="270" height="189"><br>
+        <p>Conoce el progreso diario y mensual de como llevas tus ahorros</p>
+    </div>
+    
+</section>
+
+<section class="hero2">
+    <img src="img/planta2.jpg" alt="" height="620vh">
+    <div id="start"><button class="button4">Comienza Ya!</button></div>
+</section>
+
+<section id="recursos">
+    <h1>¡De <span class="c">C</span><span class="o">o</span><span class="i">i</span><span class="n">n</span><span class="k">k</span> para ti!</h1>
+
+    <div class="cards3">
+        <img src="img/mujer.jpg" alt="" width="350">
+        <div class="texto1">
+             <h3>Presupuesto y sus beneficios</h3><br>
+             <p>¡Descubre que es un presupuesto y <br> que beneficios trae consigo!</p>
+        </div>
+      
+    </div>
+
+    <div class="cards3">
+        <img src="img/hombtr.jpg" alt="" width="350">
+        <div class="texto2">
+            <h3>¿Deseo o necesidad?</h3><br>
+            <p>Identifica si tu siguiente compra es <br> un solo un deseo o realmente lo <br> necesitas</p>
+        </div>
+        
+    </div>
+
+    <div class="cards3">
+        <img src="img/hombre2.jpeg" alt="" width="350">
+        <div class="texto3">
+            <h3>Ahorro inteligente</h3><br>
+            <p>Aprende a ahorrar correctamente y que <br> metodos se ajustan a tí</p>
+        </div>
+       
+    </div>
+
+</section>
     
 </body>
 </html>
