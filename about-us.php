@@ -133,5 +133,25 @@
 
   <script src="script.js"></script>
   <script src="javaScript/homepage.js"></script>
+  
+<footer class="footer">
+  <div class="footer-content">
+
+    <h2 class="footer-logo">CoinK</h2>
+    <p class="footer-text">💰 Ahorra inteligente, vive mejor.</p>
+
+    <div class="footer-social">
+      #<i class="fab fa-facebook-f"></i></a>
+      #<i class="fab fa-instagram"></i></a>
+      #<i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 CoinK | Todos los derechos reservados
+    </p>
+
+  </div>
+</footer>
+
 </body>
 </html>

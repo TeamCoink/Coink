@@ -292,6 +292,45 @@ footer {
 }
 
 
+.footer {
+  background: #ff4081;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  margin-bottom: 1rem;
+}
+
+.footer-social {
+  margin: 1rem 0;
+}
+
+.footer-social a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ffe4ec;
+  transform: scale(1.2);
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+
+
 @media (max-width: 768px) {
 
   /* Texto más pequeño */
@@ -362,5 +401,14 @@ footer {
   .piggy {
     width: 200px;
   }
+  
+.footer-social a {
+  font-size: 1.3rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+}
+
 }
 
