@@ -290,3 +290,77 @@ footer {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
+
+@media (max-width: 768px) {
+
+  /* Texto más pequeño */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* ABOUT */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-image {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* MISIÓN Y VISIÓN */
+  .mv-row {
+    flex-direction: column;
+  }
+
+  .mision,
+  .vision {
+    width: 100%;
+  }
+
+  .mision-image img,
+  .vision-image img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* CARDS (DESARROLLADORES) */
+  .cards {
+    grid-template-columns: 1fr; /* una columna en móviles */
+  }
+
+  /* CTA */
+  .cta-row {
+    flex-direction: column;
+  }
+
+  .cta-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-block.reverse {
+    flex-direction: column;
+  }
+
+  .cta-image img {
+    width: 150px;
+  }
+
+  /* Piggy image */
+  .piggy {
+    width: 200px;
+  }
+}
+
