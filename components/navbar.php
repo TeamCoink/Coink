@@ -52,38 +52,48 @@ if (session_status() === PHP_SESSION_NONE) {
     </nav>
 
     <script>
-    (function() {
-        function actualizarAvatarAlInstante() {
-            const usuarioId = "<?php echo isset($_SESSION['usuario_id']) ? $_SESSION['usuario_id'] : ''; ?>";
-            const fotoGuardada = localStorage.getItem("foto_perfil_personalizada_" + usuarioId);
-            
-            const navImg = document.getElementById('nav-avatar-img');
-            const navInitials = document.getElementById('nav-avatar-initials');
+(function() {
+    function actualizarAvatarAlInstante() {
+        const usuarioId = "<?php echo isset($_SESSION['usuario_id']) ? $_SESSION['usuario_id'] : ''; ?>";
+        const fotoGuardada = localStorage.getItem("foto_perfil_personalizada_" + usuarioId);
+        
+        const navImg = document.getElementById('nav-avatar-img');
+        const navInitials = document.getElementById('nav-avatar-initials');
+        const profileLink = document.querySelector('.navbar-profile-link');
 
-            if (fotoGuardada && navImg) {
-                navImg.src = fotoGuardada;
-                navImg.style.setProperty('display', 'block', 'important');
-                navImg.style.setProperty('width', '35px', 'important');
-                navImg.style.setProperty('height', '35px', 'important');
-                navImg.style.setProperty('border-radius', '50%', 'important');
-                navImg.style.setProperty('object-fit', 'cover', 'important');
-                navImg.style.setProperty('position', 'absolute', 'important');
-                navImg.style.setProperty('z-index', '999', 'important');
-                
-                if (navInitials) navInitials.style.setProperty('display', 'none', 'important');
-            } else if (navInitials) {
-                if (navImg) navImg.style.setProperty('display', 'none', 'important');
-                navInitials.style.setProperty('display', 'flex', 'important');
-            }
+        // 1. Limpiamos el estilo del enlace para quitar el subrayado y color extraño
+        if (profileLink) {
+            profileLink.style.setProperty('text-decoration', 'none', 'important');
+            profileLink.style.setProperty('color', 'inherit', 'important');
+            profileLink.style.setProperty('display', 'inline-flex', 'important');
+            profileLink.style.setProperty('align-items', 'center', 'important');
+            profileLink.style.setProperty('gap', '10px', 'important'); // Espacio entre foto y texto
         }
 
-        window.addEventListener('load', actualizarAvatarAlInstante);
-        window.addEventListener('storage', function(e) {
-            if (e.key === "foto_perfil_personalizada_<?php echo isset($_SESSION['usuario_id']) ? $_SESSION['usuario_id'] : ''; ?>") {
-                actualizarAvatarAlInstante();
-            }
-        });
-        window.addEventListener('fotoActualizada', actualizarAvatarAlInstante);
-    })();
-    </script>
+        if (fotoGuardada && navImg) {
+            navImg.src = fotoGuardada;
+            navImg.style.setProperty('display', 'block', 'important');
+            navImg.style.setProperty('width', '35px', 'important');
+            navImg.style.setProperty('height', '35px', 'important');
+            navImg.style.setProperty('border-radius', '50%', 'important');
+            navImg.style.setProperty('object-fit', 'cover', 'important');
+            navImg.style.setProperty('position', 'relative', 'important'); // Quitamos absolute para que fluya
+            navImg.style.setProperty('z-index', '1', 'important');
+            
+            if (navInitials) navInitials.style.setProperty('display', 'none', 'important');
+        } else if (navInitials) {
+            if (navImg) navImg.style.setProperty('display', 'none', 'important');
+            navInitials.style.setProperty('display', 'flex', 'important');
+        }
+    }
+
+    window.addEventListener('load', actualizarAvatarAlInstante);
+    window.addEventListener('storage', function(e) {
+        if (e.key === "foto_perfil_personalizada_<?php echo isset($_SESSION['usuario_id']) ? $_SESSION['usuario_id'] : ''; ?>") {
+            actualizarAvatarAlInstante();
+        }
+    });
+    window.addEventListener('fotoActualizada', actualizarAvatarAlInstante);
+})();
+</script>
 </header>

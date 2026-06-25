@@ -200,9 +200,6 @@ document.addEventListener("DOMContentLoaded", function() {
  <script src="javaScript/homepage.js"></script>
 
 
-
-
-
 <footer class="footer">
   <div class="footer-container">
 
@@ -221,12 +218,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   </div>
 </footer>
-``
-
-
-
-
-
     
 </body>
 </html>
