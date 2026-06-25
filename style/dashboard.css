@@ -283,6 +283,8 @@
     transition: .3s ease;
 
     box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+
+    color: inherit; /* importante */
 }
 
 .dashboard-btn:hover{
@@ -299,6 +301,16 @@
 .meta-btn{
     background: #F8C8D2;
     color: #8A5060;
+}
+
+.gasto-btn{
+    background: #FFE79C; /* amarillo pastel */
+
+    color: #8A6B00 !important;
+
+    text-decoration: none;
+
+    display: block;
 }
 
 
@@ -457,7 +469,30 @@
 
 .has-saving{
     background: #D9EDBF;
+    border: 2px solid #8CCB74;
 }
+
+.has-expense{
+    background: #FFD6E5;
+    border: 2px solid #F4A6B8;
+}
+
+.has-both{
+    background: #FFE79C;
+    border: 2px solid #F5C84C;
+}
+
+.has-saving:hover,
+.has-expense:hover,
+.has-both:hover{
+
+    transform: translateY(-4px) scale(1.03);
+
+    cursor: pointer;
+}
+
+
+
 
 .has-saving::after{
     content: "💰";
@@ -469,6 +504,29 @@
 
     font-size: 22px;
 }
+
+
+
+.has-expense::after{
+    content: "💸";
+
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+
+    font-size: 22px;
+}
+
+.has-both::after{
+    content: "💰💸";
+  
+    position: absolute;
+    bottom: 10px;
+    right: 8px;
+
+    font-size: 18px;
+}
+
 
 /* =========================
    DETALLES DEL CALENDARIO
@@ -668,4 +726,424 @@
     font-weight: bold;
 
     color: #356B35;
+}
+
+/* =========================
+   DIA VACIO
+========================= */
+
+.empty-day{
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.empty-icon{
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+}
+
+.empty-day h3{
+
+    color: #4E9F5A;
+
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+.empty-day p{
+
+    color: #777;
+
+    line-height: 1.6;
+}
+
+
+@media  (max-width: 1024px){
+
+    .top-dashboard{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:25px;
+    }
+
+    /* CARDS */
+
+    .left-cards{
+
+        display:grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:16px;
+
+        width:100%;
+
+        max-width:none;
+    }
+
+
+
+
+    /* CERDITO + BOTONES */
+
+    
+    .right-panel{
+
+        display:grid;
+
+        grid-template-columns:
+            220px
+            1fr;
+
+        gap:25px;
+
+        align-items:center;
+    }
+
+    
+    .coink-mascot img{
+
+        width:220px;
+    }
+
+
+     .dashboard-buttons{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:14px;
+    }
+
+    .dashboard-btn{
+
+        width:100%;
+        box-sizing:border-box;
+    }
+
+   
+
+    .chart-card{
+
+        margin-top:25px;
+
+        width:100%;
+    }
+
+    #calendar{
+
+        gap: 8px;
+    }
+
+    .day{
+
+        min-height: 70px;
+
+        border-radius: 18px;
+
+        padding: 8px;
+    }
+
+    .day-number{
+
+        font-size: 16px;
+    }
+
+    .has-saving::after,
+    .has-expense::after{
+
+        font-size: 16px;
+
+        bottom: 6px;
+        right: 6px;
+    }
+
+    .has-both::after{
+
+        font-size: 13px;
+
+        bottom: 6px;
+        right: 6px;
+    }
+
+
+}
+
+
+
+@media (max-width: 768px){
+
+    .dashboard{
+
+        padding: 15px;
+    }
+
+    .top-dashboard{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:20px;
+    }
+
+    .left-cards{
+
+        width:100%;
+    }
+
+    .right-panel{
+
+        width:100%;
+
+        align-items:center;
+    }
+
+    .dashboard-buttons{
+
+        width:100%;
+
+        align-items:center;
+    }
+
+    .dashboard-btn{
+
+        width:90%;
+
+        max-width:350px;
+    }
+
+     .mini-card{
+
+
+
+        width: 100%;
+     }
+
+
+
+    .coink-mascot{
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:center;
+    }
+
+
+    .actions-section{
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .pig-container{
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .dashboard-actions{
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    /* GRAFICA */
+
+    .chart-card{
+
+        width: 100%;
+
+        min-height: 320px;
+    }
+
+    .chart-container{
+
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    /* CALENDARIO */
+
+    .calendar-header{
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    .calendar-navigation{
+
+        justify-content: center;
+    }
+
+    .calendar-container{
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .calendar-details{
+
+        width: 100%;
+    }
+
+    #calendar{
+
+        gap: 4px;
+    }
+
+    .day{
+
+        aspect-ratio: auto;
+
+        min-height: 38px;
+
+        height: 38px;
+
+        border-radius: 10px;
+
+        padding: 2px;
+    }
+
+    .day-number{
+
+        font-size: 13px;
+    }
+
+
+    .has-saving::after,
+    .has-expense::after{
+
+        font-size: 14px;
+
+        bottom: 4px;
+        right: 4px;
+    }
+
+    .has-both::after{
+
+        font-size: 11px;
+
+        bottom: 4px;
+        right: 4px;
+    }
+
+}
+
+
+
+@media (max-width: 480px){
+
+    .dashboard{
+
+        padding: 10px;
+    }
+
+    .left-cards{
+
+        grid-template-columns: 1fr;
+    }
+
+    .mini-card{
+
+        padding: 15px;
+    }
+
+    .card-info h4{
+
+        font-size: 14px;
+    }
+
+    .card-info p{
+
+        font-size: 18px;
+    }
+
+    .chart-header h2{
+
+        font-size: 18px;
+    }
+
+    .chart-header p{
+
+        font-size: 12px;
+    }
+
+    .coink-mascot img{
+
+        width: 120px;
+    }
+
+    .dashboard-btn{
+
+        padding: 14px;
+    }
+
+    #calendar{
+
+        font-size: 11px;
+    }
+
+    @media (max-width: 480px){
+
+    #calendar{
+
+        gap: 4px;
+    }
+
+    .day{
+
+        min-height: 42px;
+
+        border-radius: 10px;
+
+        padding: 4px;
+    }
+
+    .day-number{
+
+        font-size: 12px;
+    }
+
+    .has-saving::after,
+    .has-expense::after{
+
+        font-size: 11px;
+    }
+
+    .has-both::after{
+
+        font-size: 9px;
+    }
+
+}
 }
