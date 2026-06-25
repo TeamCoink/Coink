@@ -118,31 +118,6 @@ while($fila = $resultGrafica->fetch_assoc()){
 }
 
 // ============================
-<<<<<<< HEAD
-// DATOS CALENDARIO
-// ============================
-
-$sqlCalendario = "
-SELECT 
-    DATE(fecha) AS fecha,
-    SUM(monto) AS total
-FROM ahorros
-WHERE usuario_id = ?
-GROUP BY DATE(fecha)
-";
-
-$stmtCalendario = $conn->prepare($sqlCalendario);
-$stmtCalendario->bind_param("i", $usuarioId);
-$stmtCalendario->execute();
-
-$resultCalendario = $stmtCalendario->get_result();
-
-$ahorrosPorDia = [];
-
-while($fila = $resultCalendario->fetch_assoc()){
-
-    $ahorrosPorDia[$fila['fecha']] = $fila['total'];
-=======
 // GASTOS POR MES
 // ============================
 
@@ -173,7 +148,6 @@ while($fila =
 
     $datosGastos[$indice] =
         $fila['total'];
->>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
 }
 
 
@@ -415,10 +389,6 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
 </div>
 
-<<<<<<< HEAD
-<!-- ESTE DIV FALTABA -->
-=======
->>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
 </div>
 
 
@@ -691,12 +661,9 @@ const nextMonth = document.getElementById('nextMonth');
 const savingsData =
 <?php echo json_encode($ahorrosPorDia); ?>;
 
-<<<<<<< HEAD
-=======
 const expenseData =
 <?php echo json_encode($gastosPorDia); ?>;
 
->>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
 let currentDate = new Date();
 
 const meses = [
@@ -721,16 +688,20 @@ function renderCalendar(){
 
     const daysInMonth =
         new Date(year, month + 1, 0).getDate();
+ 
 
     // Encabezados días
     const diasSemana = [
         'L','M','M','J','V','S','D'
     ];
+ 
 
     diasSemana.forEach(day => {
 
-        const dayName =
-            document.createElement('div');
+       const dayName =
+        document.createElement('div');
+
+        dayName.classList.add('week-day');
 
         dayName.innerHTML =
             `<strong>${day}</strong>`;
@@ -763,34 +734,6 @@ function renderCalendar(){
         const ahorro =
             savingsData[fechaCompleta];
 
-<<<<<<< HEAD
-        if(ahorro){
-
-            dayElement.classList.add(
-                'has-saving'
-            );
-
-            dayElement.title =
-                `+$${ahorro} ahorrados 💰`;
-
-            dayElement.style.cursor = "pointer";
-
-            dayElement.addEventListener('click', () => {
-
-                cargarDetalleDia(fechaCompleta);
-
-        });
-}
-        dayElement.innerHTML = `
-            <div class="day-number">
-                ${day}
-            </div>
-        `;
-
-        calendar.appendChild(dayElement);
-    }
-}
-=======
         const gasto =
             expenseData[fechaCompleta];
 
@@ -824,8 +767,6 @@ function renderCalendar(){
                     </div>
                 `;
 
-                if(ahorro || gasto){
-
                 dayElement.style.cursor = "pointer";
 
                 dayElement.addEventListener('click', () => {
@@ -834,12 +775,9 @@ function renderCalendar(){
 
                 });
 
-            }
-
                 calendar.appendChild(dayElement);
             }
-        }
->>>>>>> 7a10959a183ff475a3780423ee820fe4962b3c32
+     }
 
 prevMonth.addEventListener('click', () => {
 
@@ -876,6 +814,28 @@ async function cargarDetalleDia(fecha){
     const data =
         await response.json();
 
+        if(data.length === 0){
+
+    panel.innerHTML = `
+        <div class="empty-day">
+
+            <div class="empty-icon">
+                📅
+            </div>
+
+            <h3>Sin movimientos</h3>
+
+            <p>
+                No registraste ahorros ni gastos
+                este día 🐷
+            </p>
+
+        </div>
+    `;
+
+    return;
+}
+
     let total = 0;
 
     let html = `
@@ -892,11 +852,13 @@ async function cargarDetalleDia(fecha){
         </div>
     `;
 
-    data.forEach(ahorro => {
+    data.forEach(item => {
 
-        total += parseFloat(
-            ahorro.monto
-        );
+        if(item.tipo === 'ahorro'){
+            total += parseFloat(item.monto);
+        }else{
+            total -= parseFloat(item.monto);
+        }
 
         html += `
             <div class="saving-item">
@@ -904,17 +866,17 @@ async function cargarDetalleDia(fecha){
                 <div class="saving-left">
 
                     <div class="saving-icon">
-                        💰
+                        ${item.tipo === 'ahorro' ? '💰' : '💸'}
                     </div>
 
                     <div class="saving-info">
 
                         <div class="saving-name">
-                            ${ahorro.nombre}
+                            ${item.nombre}
                         </div>
 
                         <div class="saving-category">
-                            ${ahorro.categoria}
+                            ${item.categoria}
                         </div>
 
                     </div>
@@ -922,9 +884,7 @@ async function cargarDetalleDia(fecha){
                 </div>
 
                 <div class="saving-amount">
-                    +$${parseFloat(
-                        ahorro.monto
-                    ).toFixed(2)}
+                   ${item.tipo === 'ahorro' ? '+' : '-'}$${parseFloat(item.monto).toFixed(2)}
                 </div>
 
             </div>
@@ -950,6 +910,7 @@ async function cargarDetalleDia(fecha){
 
 </script>
 
+ <script src="javaScript/homepage.js"></script>
 
 </body>
 </html>
