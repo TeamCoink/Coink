@@ -89,6 +89,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <!-- Usuario logueado -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7068702b4bb0da15e074f5f41d784d360fecc7e4
                <a href="perfil.php" class="navbar-profile-link">
     <div class="navbar-avatar-wrapper">
         <img src="" alt="Avatar" id="nav-avatar-img" class="navbar-avatar-img" style="display: none;">
@@ -102,6 +105,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <span class="navbar-user-role">Mi Perfil</span>
     </div>
 </a>
+<<<<<<< HEAD
 =======
 
                 <a href="perfil.php" class="signup-btn">
@@ -110,17 +114,15 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 </a>
 >>>>>>> 73dec414130276ac49266622c9624f1dbab62ea8
+=======
+>>>>>>> 7068702b4bb0da15e074f5f41d784d360fecc7e4
 
 
 
                 <a href="php/logout.php" class="login-btn">
-<<<<<<< HEAD
 
                     Logout
 
-=======
-                    Cerrar Sesion
->>>>>>> f94a2c30a9ba5fae00eeb6420f19885d7dd441e6
                 </a>
 
 
@@ -130,7 +132,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
                 <!-- Usuario NO logueado -->
-<<<<<<< HEAD
 
                 <a href="./register.html" class="signup-btn">
 
@@ -144,14 +145,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
                     Login
 
-=======
-                <a href="./login.php" class="signup-btn">
-                     Iniciar sesion
-                </a>
-
-                <a href="register.html" class="login-btn">
-                    Registarte
->>>>>>> f94a2c30a9ba5fae00eeb6420f19885d7dd441e6
                 </a>
 
 
@@ -165,13 +158,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
                 <button class="more-btn" id="moreBtn">
-<<<<<<< HEAD
 
                     More
 
-=======
-                    Más
->>>>>>> f94a2c30a9ba5fae00eeb6420f19885d7dd441e6
                     <i class="fa-solid fa-chevron-down"></i>
 
                 </button>
@@ -190,20 +179,11 @@ if (session_status() === PHP_SESSION_NONE) {
 
                     </a>
 
-<<<<<<< HEAD
 
 
                    
 
 
-=======
-                    <a href="planes.php">
-                        <i class="fa-solid fa-money-bill"></i>
-                        Planes
-                    </a>
-
-                    
->>>>>>> f94a2c30a9ba5fae00eeb6420f19885d7dd441e6
 
                 </div>
 
@@ -218,6 +198,9 @@ if (session_status() === PHP_SESSION_NONE) {
     </nav>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7068702b4bb0da15e074f5f41d784d360fecc7e4
                 <script>
 (function() {
     function actualizarAvatarAlInstante() {
@@ -261,6 +244,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 </header>
 
+<<<<<<< HEAD
 =======
 </header>
 >>>>>>> 73dec414130276ac49266622c9624f1dbab62ea8
+=======
+>>>>>>> 7068702b4bb0da15e074f5f41d784d360fecc7e4

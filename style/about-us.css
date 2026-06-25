@@ -293,41 +293,53 @@ footer {
 
 
 .footer {
-  background: #ff4081;
-  color: white;
+  background: #ffe4ec; /* rosado pastel suave */
   text-align: center;
   padding: 2rem 1rem;
+  margin-top: 3rem;
 }
 
 .footer-logo {
   font-size: 2rem;
+  color: #ff4081;
   margin-bottom: 0.5rem;
 }
 
 .footer-text {
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #555;
 }
 
+/* ICONOS */
 .footer-social {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .footer-social a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 1.4rem;
   color: white;
-  margin: 0 10px;
-  font-size: 1.5rem;
+  background: #ff4081;
+  padding: 10px;
+  border-radius: 50%;
   transition: 0.3s;
 }
 
+/* HOVER */
 .footer-social a:hover {
-  color: #ffe4ec;
+  background: #e60073;
   transform: scale(1.2);
 }
 
+/* COPYRIGHT */
 .footer-copy {
   font-size: 0.9rem;
-  opacity: 0.8;
+  color: #666;
 }
+
+
+
 
 
 
@@ -402,13 +414,17 @@ footer {
     width: 200px;
   }
   
-.footer-social a {
-  font-size: 1.3rem;
-}
+
 
 .footer-logo {
   font-size: 1.5rem;
 }
+
+.footer-social a {
+  font-size: 1.2rem;
+  padding: 8px;
+}
+
 
 }
 
