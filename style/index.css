@@ -761,48 +761,57 @@ body{
     color: #888 !important; 
 }
 
+
+
+  
 .footer {
-  background: #ffe4ec; /* rosado pastel suave */
-  text-align: center;
-  padding: 2rem 1rem;
+  background: #e7cfd3 !important;
+  text-align: center !important;
+
+  padding: 40px 20px;
   margin-top: 3rem;
+  text-align: center;
 }
 
+.footer-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* LOGO */
 .footer-logo {
   font-size: 2rem;
-  color: #ff4081;
-  margin-bottom: 0.5rem;
+  color: #ff4d6d;
+  margin-bottom: 8px;
 }
 
+/* TEXTO */
 .footer-text {
-  font-size: 1rem;
   color: #555;
+  margin-bottom: 20px;
 }
 
 /* ICONOS */
-.footer-social {
-  margin: 1.5rem 0;
-}
-
 .footer-social a {
   display: inline-block;
-  margin: 0 8px;
-  font-size: 1.4rem;
+  margin: 0 10px;
+  font-size: 1.2rem;
   color: white;
-  background: #ff4081;
-  padding: 10px;
+  background: #ff4d6d;
+  padding: 12px;
   border-radius: 50%;
   transition: 0.3s;
 }
 
 /* HOVER */
 .footer-social a:hover {
-  background: #e60073;
-  transform: scale(1.2);
+  transform: scale(1.15);
+  background: #e63b5c;
 }
 
 /* COPYRIGHT */
 .footer-copy {
+  margin-top: 20px;
   font-size: 0.9rem;
   color: #666;
 }
@@ -991,15 +1000,14 @@ body{
         display: flex;
         justify-content: center;
     }
-    .footer-logo {
-  font-size: 1.5rem;
-}
+   
 
-.footer-social a {
-  font-size: 1.2rem;
-  padding: 8px;
-}
 
-}
 
+
+
+
+ 
+
+ }
 
