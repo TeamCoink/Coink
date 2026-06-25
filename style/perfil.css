@@ -1,15 +1,13 @@
-/* ==========================================
-   1. FONDO GENERAL DE LA PÁGINA
-   ========================================== */
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f6f9 !important; /* Gris claro muy limpio para que resalte la tarjeta */
+    background-color: #FFF2EB !important; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: block !important;
 }
 
-/* --- Contenedor que centra la tarjeta en pantalla --- */
+
 .perfil-container {
     display: flex !important;
     justify-content: center !important;
@@ -20,25 +18,21 @@ body {
     width: 100% !important;
 }
 
-/* ==========================================
-   2. ESTRUCTURA DE LA TARJETA (CARD)
-   ========================================== */
+
 .card {
-    background-color: #FFFFFF !important; /* Blanco limpio estilo red social */
+    background-color: #FFFFFF !important; 
     border: 1px solid #e1e8ed !important;
     border-radius: 24px !important;
     width: 380px !important;
     text-align: center !important;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important; /* Sombra sutil moderna */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important; 
     box-sizing: border-box !important;
-    overflow: hidden !important; /* Fuerza a la portada a respetar las esquinas redondeadas */
+    overflow: hidden !important; 
     position: relative !important;
     padding-bottom: 0px !important;
 }
 
-/* ==========================================
-   3. CUADRO DE PORTADA (BANNER SUPERIOR)
-   ========================================== */
+
 .portada-container {
     width: 100% !important;
     height: 130px !important;
@@ -55,15 +49,15 @@ body {
 #portada-vacia {
     width: 100% !important;
     height: 100% !important;
-    background-color: #f5eedc !important; /* El tono beige suave por defecto */
+    background-color: #f5eedc !important; 
 }
 
-/* --- Título COINK Flotante --- */
+
 .app-title {
     position: absolute !important;
     top: 15px !important;
     left: 20px !important;
-    color: #FF0099 !important; /* Tu rosa fuerte corporativo */
+    color: #FF0099 !important; 
     font-size: 1.3rem !important;
     font-weight: 800 !important;
     margin: 0 !important;
@@ -71,14 +65,12 @@ body {
     z-index: 5;
 }
 
-/* ==========================================
-   4. FOTO DE PERFIL SUPERPUESTA (AVATAR)
-   ========================================== */
+
 .avatar-wrapper {
     position: relative !important;
     width: 110px !important;
     height: 110px !important;
-    margin: -55px auto 15px auto !important; /* Margen negativo para subir el círculo sobre la portada */
+    margin: -55px auto 15px auto !important; 
     z-index: 10;
 }
 
@@ -88,7 +80,7 @@ body {
     border-radius: 50% !important; /* Completamente redondo */
     overflow: hidden !important;
     background: #e1e8ed !important;
-    border: 4px solid #FFFFFF !important; /* Borde blanco grueso que separa de la portada */
+    border: 4px solid #FFFFFF !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
     position: relative !important;
     cursor: pointer;
@@ -113,12 +105,12 @@ body {
     font-weight: bold !important;
 }
 
-/* Regla para alternar cuando hay foto cargada en LocalStorage */
+
 .avatar-container.con-foto #foto {
     display: block !important;
 }
 
-/* Texto flotante al pasar el mouse por el avatar */
+
 .avatar-overlay {
     position: absolute;
     bottom: 0;
@@ -137,9 +129,7 @@ body {
     opacity: 1;
 }
 
-/* ==========================================
-   5. BOTONES DE ELIMINAR (LAS "X")
-   ========================================== */
+
 .btn-eliminar-portada, .btn-eliminar-foto {
     position: absolute !important;
     background: rgba(255, 255, 255, 0.9) !important;
@@ -175,15 +165,13 @@ body {
     border-color: #ff4d4d !important;
 }
 
-/* ==========================================
-   6. TEXTOS E INFORMACIÓN
-   ========================================== */
+
 .username-title {
     color: #14171a !important;
     font-size: 1.4rem !important;
     font-weight: 700 !important;
     margin: 5px 0 2px 0 !important;
-    text-transform: uppercase; /* Asegura que el nombre resalte bien */
+    text-transform: uppercase; 
 }
 
 .user-bio {
@@ -194,9 +182,7 @@ body {
     max-width: 85% !important;
 }
 
-/* ==========================================
-   7. BOTÓN CERRAR SESIÓN (MINIMALISTA)
-   ========================================== */
+
 .logout-link {
     text-decoration: none !important;
     display: inline-block !important;
@@ -204,7 +190,7 @@ body {
 }
 
 .btn-cerrar {
-    background-color: #14171a !important; /* Botón negro/oscuro elegante */
+    background-color: #14171a !important; 
     color: #FFFFFF !important;
     border: none !important;
     border-radius: 20px !important;
@@ -223,16 +209,14 @@ body {
     transform: scale(0.96) !important;
 }
 
-/* ==========================================
-   8. BARRA INFERIOR DE REDES SOCIALES
-   ========================================== */
+
 .social-footer {
     border-top: 1px solid #e1e8ed !important;
     background-color: #fafbfb !important;
     padding: 20px 0 !important;
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important; /* Alinea verticalmente */
+    align-items: center !important; 
     gap: 35px !important;
 }
 
@@ -240,10 +224,10 @@ body {
     color: #14171a !important;
     font-size: 1.5rem !important;
     text-decoration: none !important;
-    display: flex !important;    /* Cambiado para forzar el renderizado */
+    display: flex !important;    
     align-items: center !important;
     justify-content: center !important;
-    width: 30px !important;      /* Dimensiones fijas para que sean visibles */
+    width: 30px !important;      
     height: 30px !important;
     transition: all 0.2s ease !important;
 }
@@ -253,14 +237,22 @@ body {
     transform: scale(1.2) !important;
 }
 
-/* Esto fuerza a que cualquier elemento de navegación dentro de perfil desaparezca */
-.perfil-container + .navbar, 
-header, 
-nav, 
-.navbar-container, 
-#navbar {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    overflow: hidden !important;
+/* Asegúrate de añadir esto en el CSS de tu navbar (navbar.css o el principal) */
+#nav-avatar-img {
+    width: 35px; /* o el tamaño que tenga tu avatar */
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none; /* Empezamos oculto */
+}
+
+#nav-avatar-initials {
+    display: flex; /* Empezamos visible */
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #BA68E6;
+    color: white;
 }

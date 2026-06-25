@@ -1,17 +1,17 @@
-// 1. Capturar los elementos de la pantalla principal basados exactamente en tu HTML
+
 const goalsForm = document.querySelector('.goals-form');
 const goalsList = document.getElementById('goalsList');
 const counterTotal = document.querySelector('.counter-total');
 const counterCompleted = document.querySelector('.counter-completed');
 
-// 2. Cargar metas guardadas en localStorage o empezar vacío
+
 let misMetas = JSON.parse(localStorage.getItem("misMetas")) || [];
 
 // 3. Función principal para dibujar las metas en la pantalla
 function renderizarMetas() {
-    if (!goalsList) return; // Seguridad por si no encuentra el elemento
+    if (!goalsList) return; 
     
-    // Limpiamos la lista para evitar que se dupliquen las tarjetas anteriores
+  
     goalsList.innerHTML = '';
 
     // Si no hay metas, muestra el mensaje rosa de aviso
@@ -55,7 +55,7 @@ function renderizarMetas() {
     actualizarContadores();
 }
 
-// 4. Función para actualizar los contadores superiores ("0 total", "0 completadas")
+
 function actualizarContadores() {
     if (counterTotal) counterTotal.textContent = `${misMetas.length} total`;
     if (counterCompleted) {

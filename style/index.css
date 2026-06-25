@@ -527,3 +527,77 @@ body{
     margin: 20px;
 }
 
+/* ==========================================================
+   ESTILOS DEFINITIVOS: PERFIL EN EL NAVBAR
+   ========================================================== */
+
+.navbar-profile-link {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    gap: 12px !important;
+    padding: 6px 18px !important;
+    border-radius: 50px !important;
+    transition: background 0.3s ease !important;
+    color: #2d2d2d !important;
+}
+
+.navbar-profile-link:hover { 
+    background: rgba(0,0,0,0.05) !important; 
+}
+
+.navbar-avatar-wrapper {
+    width: 40px !important; 
+    height: 40px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: transparent !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+}
+
+.navbar-avatar-img { 
+    width: 40px !important; 
+    height: 40px !important; 
+    object-fit: cover !important; 
+    object-position: center !important; 
+    display: block !important;
+    pointer-events: none !important; /* Evita interferencia al pasar el mouse */
+}
+
+.navbar-avatar-initials {
+    width: 40px !important; 
+    height: 40px !important;
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important;
+    background: linear-gradient(135deg, #BA68E6, #E167B9) !important;
+    color: white !important; 
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 50% !important;
+}
+
+.navbar-user-info { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    line-height: 1.2 !important; 
+}
+
+.navbar-username { 
+    font-weight: 600 !important; 
+    font-size: 0.95rem !important; 
+    color: #333 !important;
+}
+
+.navbar-user-role { 
+    font-size: 0.75rem !important; 
+    color: #888 !important; 
+}
