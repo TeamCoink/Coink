@@ -41,10 +41,10 @@ $usuarioId = $_SESSION['usuario_id'];
         
         <h2 class="username-title"><?php echo htmlspecialchars($nombreUsuario); ?></h2>
         
-        <!-- BIOGRAFÍA -->
+       
         <p class="user-bio" id="userBio" contenteditable="true" onblur="guardarBiografia()">Haz clic aquí para agregar una descripción...</p>
         
-        <!-- SESIÓN Y SOCIAL -->
+        
         <a href="php/logout.php" class="logout-link"><button class="btn-cerrar">Cerrar sesión</button></a>
 
         <div class="social-footer">
@@ -71,7 +71,7 @@ function triggerInput(idInput, event) {
     if (event.target.tagName !== 'BUTTON') document.getElementById(idInput).click();
 }
 
-// LÓGICA BIOGRAFÍA
+
 function cargarBiografia() {
     const bioGuardada = localStorage.getItem(KEY_BIO);
     const bioElement = document.getElementById("userBio");
@@ -81,7 +81,7 @@ function guardarBiografia() {
     localStorage.setItem(KEY_BIO, document.getElementById("userBio").textContent.trim());
 }
 
-// LÓGICA FOTO AVATAR
+
 function actualizarAvatar() {
     const fotoGuardada = localStorage.getItem(KEY_FOTO);
     const imgElement = document.getElementById("foto");
@@ -116,7 +116,7 @@ function eliminarFotoPerfil(event) {
     actualizarAvatar();
 }
 
-// LÓGICA PORTADA
+
 function actualizarPortada() {
     const portadaGuardada = localStorage.getItem(KEY_PORTADA);
     const imgPortada = document.getElementById("portada-img");

@@ -123,17 +123,17 @@ if (session_status() === PHP_SESSION_NONE) {
         }
     }
 
-    // 1. Ejecutar al cargar la página
+    
     window.addEventListener('load', actualizarAvatarAlInstante);
 
-    // 2. ESCUCHA MÁGICA: Esto detecta cambios en el localStorage en cualquier pestaña/página
+    
     window.addEventListener('storage', function(e) {
         if (e.key === "foto_perfil_personalizada_<?php echo isset($_SESSION['usuario_id']) ? $_SESSION['usuario_id'] : ''; ?>") {
             actualizarAvatarAlInstante();
         }
     });
 
-    // 3. Mantener el evento personalizado por si acaso
+    
     window.addEventListener('fotoActualizada', actualizarAvatarAlInstante);
 })();
 </script>

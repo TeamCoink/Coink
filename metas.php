@@ -85,7 +85,7 @@ $usuarioId = $_SESSION['usuario_id'];
 
     <div class="waves">
         <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#4caf50" fill-opacity="1" 
+            <path fill="#28742b" fill-opacity="1" 
                 d="M0,160L60,165.3C120,171,240,181,360,176C480,171,600,149,720,160C840,171,960,213,1080,213.3C1200,213,1320,171,1380,149.3L1440,128L1440,320L0,320Z"></path>
             <path fill="#81c784" fill-opacity="0.7" 
                 d="M0,192L80,186.7C160,181,320,171,480,176C640,181,800,203,960,213.3C1120,224,1280,224,1360,224L1440,224L1440,320L0,320Z"></path>
