@@ -670,3 +670,154 @@ th:nth-child(3){
     animation:bouncePig 2.5s infinite;
 }
 
+/* =========================
+   MEDIA QUERIES PARA PLANES
+========================= */
+@media (max-width: 768px) {
+  /* HERO */
+  .hero-planes {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 20px 40px;
+    gap: 30px;
+  }
+
+  .hero-texto h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .hero-texto p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-pig {
+    width: 220px;
+  }
+
+  .floating-card {
+    font-size: 0.8rem;
+    padding: 10px 14px;
+  }
+
+  .card-1 {
+    top: 20px;
+    left: 10px;
+  }
+
+  .card-2 {
+    bottom: 20px;
+    right: 10px;
+  }
+
+  /* PLANES GRID */
+  .planes-section {
+    padding: 60px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .planes-grid {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .plan-card {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 25px 20px;
+  }
+
+  .plan-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .precio span {
+    font-size: 2rem;
+  }
+
+  /* TABLA DE COMPARACIÓN */
+  .comparison {
+    padding: 60px 20px;
+  }
+
+  .comparison h2 {
+    font-size: 1.8rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    font-size: 0.9rem;
+    min-width: 600px;
+  }
+
+  /* CTA */
+  .cta-planes {
+    padding: 60px 20px;
+  }
+
+  .cta-content {
+    padding: 30px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-cta {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .cta-pig {
+    width: 140px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-texto h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-texto p {
+    font-size: 0.9rem;
+  }
+
+  .plan-card {
+    padding: 20px 15px;
+  }
+
+  .plan-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .precio span {
+    font-size: 1.6rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-pig {
+    width: 120px;
+  }
+}
