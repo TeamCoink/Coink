@@ -48,7 +48,7 @@
 </div>
 
 <script>
-// Obtenemos el ID dinámicamente del contenedor
+
 const usuarioId = document.getElementById('perfil-wrapper').dataset.usuarioId;
 const nombreParaInicial = "<?php echo $_SESSION['nombre']; ?>";
 
@@ -64,7 +64,7 @@ function triggerInput(idInput, event) {
     }
 }
 
-// FUNCIONES CON EL ID CONCATENADO
+
 function cargarBiografia() {
     const bioGuardada = localStorage.getItem("biografia_usuario_" + usuarioId);
     const bioElement = document.getElementById("userBio");

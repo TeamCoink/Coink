@@ -1,19 +1,19 @@
-/* --- Estilos Generales de Fondo para Metas --- */
+
 body {
-    background-color: #FFF3EB; /* Fondo crema pastel muy suave */
+    background-color: #FFF3EB; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
-    padding: 0; /* Quitamos el padding global para que el navbar pegue arriba */
+    padding: 0; 
 }
 
-/* ===== ONDAS DECORATIVAS VERDES ===== */
+
 
 body {
     position: relative;
     overflow-x: hidden;
 }
 
-/* Onda superior */
+
 body::before {
     content: "";
     position: fixed;
@@ -26,7 +26,7 @@ body::before {
     z-index: -1;
 }
 
-/* Ondas inferiores */
+
 body::after {
     content: "";
     position: fixed;
@@ -47,10 +47,10 @@ body::after {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    padding: 0 20px; /* El espacio se lo damos al contenedor, no al body */
+    padding: 0 20px; 
 }
 
-/* --- Tarjetas Estilo COINK con Sombra Sólida Rígida --- */
+
 .goals-header, 
 .goals-form-wrapper, 
 .goals-list-wrapper,
@@ -58,11 +58,11 @@ body::after {
     background-color: #FFFFFF;
     border-radius: 20px;
     padding: 30px 40px;
-    box-shadow: 0 10px 0px #EFE3DB; /* Sombra rígida inferior característica */
+    box-shadow: 0 10px 0px #EFE3DB; 
     box-sizing: border-box;
 }
 
-/* --- Textos de Cabecera --- */
+
 .goals-header h1 {
     color: #E633AA;
     font-size: 2.5rem;
@@ -76,7 +76,7 @@ body::after {
     opacity: 0.8;
 }
 
-/* --- Contadores Superiores --- */
+
 .counters {
     display: flex;
     gap: 15px;
@@ -100,7 +100,7 @@ body::after {
     font-size: 0.9rem;
 }
 
-/* --- Formulario de Entrada Principal --- */
+
 .goals-form {
     display: flex;
     align-items: center;
@@ -117,14 +117,14 @@ body::after {
 .form-inputs input, #inputAbono {
     width: 100%;
     padding: 12px 20px;
-    border: 2px solid #FFAEE2; /* Borde rosa original */
+    border: 2px solid #FFAEE2; 
     border-radius: 20px;
     font-size: 1rem;
     box-sizing: border-box;
     outline: none;
 }
 
-/* Botones Rosas con Degradado Líquido */
+
 .goals-form button, #formAbono button {
     background: linear-gradient(to right, #E60087, #FA4BB1);
     color: white;
@@ -137,7 +137,7 @@ body::after {
     box-shadow: 0 4px 10px rgba(230, 0, 135, 0.15);
 }
 
-/* --- Lista de Metas Dinámicas --- */
+
 .goals-list {
     list-style: none;
     padding: 0;
@@ -161,7 +161,7 @@ body::after {
     background-color: #FFF9F5;
 }
 
-/* Círculo indicador de completada izquierdo */
+
 .checkbox-circle {
     width: 22px;
     height: 22px;
@@ -194,7 +194,7 @@ body::after {
     font-weight: bold;
 }
 
-/* --- Barras de progreso --- */
+
 .progress-bar-container {
     width: 100%;
     height: 12px;
@@ -218,7 +218,7 @@ body::after {
     font-weight: bold;
 }
 
-/* Mensaje por defecto cuando no hay metas creadas */
+
 .no-goals-msg {
     text-align: center;
     color: #E633AA;
@@ -226,7 +226,7 @@ body::after {
     margin: 15px 0;
 }
 
-/* --- Estilos exclusivos de la pantalla Detalle-Meta --- */
+
 .back-link {
     color: #E633AA;
     text-decoration: none;
@@ -284,7 +284,7 @@ body::after {
     gap: 15px;
 }
 
-/* Botón basurero para eliminar metas */
+
 .btn-delete {
     background: none;
     border: none;
@@ -303,8 +303,8 @@ body::after {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 220px; /* ajustamos altura */
-  z-index: 1; /* waves detrás */
+  height: 220px; 
+  z-index: 1; 
   overflow: hidden;
 }
 .waves svg {
@@ -317,8 +317,8 @@ body::after {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 220px; /* ajustamos altura */
-  z-index: 1; /* waves detrás */
+  height: 220px; 
+  z-index: 1; 
   overflow: hidden;
 }
 .waves svg {
@@ -334,16 +334,16 @@ body::after {
     flex-direction: column;
     gap: 25px;
     position: relative;
-    z-index: 2; /* El formulario y metas encima */
+    z-index: 2; 
 }
 
 .waves {
-  position: fixed; /* mejor que absolute para que quede al fondo */
+  position: fixed; 
   bottom: 0;
   left: 0;
   width: 100%;
   height: 220px;
-  z-index: 0; /* ondas detrás */
+  z-index: 0; 
   overflow: hidden;
 }
 .waves svg {

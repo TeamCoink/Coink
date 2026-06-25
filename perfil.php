@@ -1,15 +1,9 @@
 <?php
 session_start();
-
-if(!isset($_SESSION['usuario_id'])){
-    header("Location: login.php");
-    exit();
-}
-
+if(!isset($_SESSION['usuario_id'])){ header("Location: login.php"); exit(); }
 $nombreUsuario = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : 'Usuario';
-$usuarioId = $_SESSION['usuario_id']; // Obtenemos el ID único aquí
+$usuarioId = $_SESSION['usuario_id']; 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,37 +14,38 @@ $usuarioId = $_SESSION['usuario_id']; // Obtenemos el ID único aquí
     <link rel="stylesheet" href="style/perfil.css">
 </head>
 <body>
-
 <?php include 'components/navbar.php'; ?>
 
 <div class="perfil-container">
     <div class="card">
-        <div class="portada-container" onclick="triggerInput('inputPortada', event)" title="Haz clic para cambiar la portada">
-            <img id="portada-img" alt="Foto de portada" style="display: none;">
+        <!-- PORTADA -->
+        <div class="portada-container" onclick="triggerInput('inputPortada', event)">
+            <img id="portada-img" alt="Portada" style="display: none;">
             <div id="portada-vacia"></div>
-            <button class="btn-eliminar-portada" id="btnDeletePortada" onclick="eliminarPortada(event)" title="Eliminar portada">×</button>
+            <button class="btn-eliminar-portada" id="btnDeletePortada" onclick="eliminarPortada(event)">×</button>
         </div>
         <input type="file" id="inputPortada" accept="image/*" style="display: none;" onchange="cambiarPortada(event)">
-
+        
         <h1 class="app-title">COINK</h1>
         
+        <!-- AVATAR -->
         <div class="avatar-wrapper">
-            <div class="avatar-container" onclick="triggerInput('inputFoto', event)" title="Haz clic para cambiar tu foto">
+            <div class="avatar-container" onclick="triggerInput('inputFoto', event)">
                 <img id="foto" alt="Foto de perfil">
                 <div id="iniciales"></div>
                 <div class="avatar-overlay">Cambiar</div>
             </div>
-            <button class="btn-eliminar-foto" id="btnDeleteFoto" onclick="eliminarFotoPerfil(event)" title="Eliminar foto">×</button>
+            <button class="btn-eliminar-foto" id="btnDeleteFoto" onclick="eliminarFotoPerfil(event)">×</button>
         </div>
         <input type="file" id="inputFoto" accept="image/*" style="display: none;" onchange="cambiarFotoPersonalizada(event)">
-
+        
         <h2 class="username-title"><?php echo htmlspecialchars($nombreUsuario); ?></h2>
         
-        <p class="user-bio" id="userBio" contenteditable="true" onblur="guardarBiografia()" title="Haz clic para editar tu descripción">Haz clic aquí para agregar una descripción sobre ti...</p>
-
-        <a href="php/logout.php" class="logout-link">
-            <button class="btn-cerrar">Cerrar sesión</button>
-        </a>
+        <!-- BIOGRAFÍA -->
+        <p class="user-bio" id="userBio" contenteditable="true" onblur="guardarBiografia()">Haz clic aquí para agregar una descripción...</p>
+        
+        <!-- SESIÓN Y SOCIAL -->
+        <a href="php/logout.php" class="logout-link"><button class="btn-cerrar">Cerrar sesión</button></a>
 
         <div class="social-footer">
             <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -61,9 +56,10 @@ $usuarioId = $_SESSION['usuario_id']; // Obtenemos el ID único aquí
 </div>
 
 <script>
-// ID único para diferenciar datos por usuario
-const usuarioId = "<?php echo $usuarioId; ?>"; 
-const nombreParaInicial = "<?php echo addslashes($nombreUsuario); ?>";
+const usuarioId = "<?php echo $usuarioId; ?>";
+const KEY_FOTO = "foto_perfil_personalizada_" + usuarioId;
+const KEY_PORTADA = "portada_" + usuarioId;
+const KEY_BIO = "biografia_" + usuarioId;
 
 document.addEventListener("DOMContentLoaded", function() {
     actualizarAvatar();
@@ -72,117 +68,81 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function triggerInput(idInput, event) {
-    if (event.target.tagName !== 'BUTTON') {
-        document.getElementById(idInput).click();
-    }
+    if (event.target.tagName !== 'BUTTON') document.getElementById(idInput).click();
 }
 
-// Funciones con el ID del usuario concatenado
+// LÓGICA BIOGRAFÍA
 function cargarBiografia() {
-    const bioGuardada = localStorage.getItem("biografia_" + usuarioId);
+    const bioGuardada = localStorage.getItem(KEY_BIO);
     const bioElement = document.getElementById("userBio");
     if (bioElement && bioGuardada) bioElement.textContent = bioGuardada;
 }
-
 function guardarBiografia() {
-    const bioElement = document.getElementById("userBio");
-    if (bioElement) {
-        localStorage.setItem("biografia_" + usuarioId, bioElement.textContent.trim());
-    }
+    localStorage.setItem(KEY_BIO, document.getElementById("userBio").textContent.trim());
 }
 
+// LÓGICA FOTO AVATAR
 function actualizarAvatar() {
-    const fotoGuardada = localStorage.getItem("foto_perfil_" + usuarioId);
-    const container = document.querySelector(".avatar-container");
+    const fotoGuardada = localStorage.getItem(KEY_FOTO);
     const imgElement = document.getElementById("foto");
+    const container = document.querySelector(".avatar-container");
     const initialsElement = document.getElementById("iniciales");
-    const btnDelete = document.getElementById("btnDeleteFoto");
-
-    if (container && imgElement && initialsElement) {
-        if (fotoGuardada) {
-            imgElement.src = fotoGuardada;
-            container.classList.add("con-foto");
-            if(btnDelete) btnDelete.style.display = "flex";
-        } else {
-            container.classList.remove("con-foto");
-            if(btnDelete) btnDelete.style.display = "none";
-            initialsElement.textContent = nombreParaInicial.charAt(0).toUpperCase();
-        }
+    
+    if (fotoGuardada) {
+        imgElement.src = fotoGuardada;
+        imgElement.style.display = "block";
+        container.classList.add("con-foto");
+        initialsElement.style.display = "none";
+    } else {
+        imgElement.style.display = "none";
+        container.classList.remove("con-foto");
+        initialsElement.style.display = "flex";
+        initialsElement.textContent = "<?php echo strtoupper(substr($nombreUsuario, 0, 1)); ?>";
     }
 }
-
 function cambiarFotoPersonalizada(event) {
-    const archivo = event.target.files[0];
-    if (!archivo) return;
-    const lector = new FileReader();
-    lector.onload = function(e) {
-        const img = new Image();
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            canvas.width = 300; canvas.height = 300;
-            canvas.getContext('2d').drawImage(img, 0, 0, 300, 300);
-            const url = canvas.toDataURL('image/jpeg', 0.8);
-            localStorage.setItem("foto_perfil_" + usuarioId, url);
-            actualizarAvatar();
-        };
-        img.src = e.target.result;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        localStorage.setItem(KEY_FOTO, e.target.result);
+        window.dispatchEvent(new Event('fotoActualizada'));
+        actualizarAvatar();
     };
-    lector.readAsDataURL(archivo);
+    reader.readAsDataURL(event.target.files[0]);
 }
-
 function eliminarFotoPerfil(event) {
     event.stopPropagation();
-    if(confirm("¿Eliminar foto?")) {
-        localStorage.removeItem("foto_perfil_" + usuarioId);
-        actualizarAvatar();
-    }
+    localStorage.removeItem(KEY_FOTO);
+    window.dispatchEvent(new Event('fotoActualizada'));
+    actualizarAvatar();
 }
 
+// LÓGICA PORTADA
 function actualizarPortada() {
-    const portadaGuardada = localStorage.getItem("portada_" + usuarioId);
+    const portadaGuardada = localStorage.getItem(KEY_PORTADA);
     const imgPortada = document.getElementById("portada-img");
     const divVacio = document.getElementById("portada-vacia");
-    const btnDelete = document.getElementById("btnDeletePortada");
-
     if (portadaGuardada) {
         imgPortada.src = portadaGuardada;
         imgPortada.style.display = "block";
         divVacio.style.display = "none";
-        if(btnDelete) btnDelete.style.display = "flex";
     } else {
         imgPortada.style.display = "none";
         divVacio.style.display = "block";
-        if(btnDelete) btnDelete.style.display = "none";
     }
 }
-
 function cambiarPortada(event) {
-    const archivo = event.target.files[0];
-    if (!archivo) return;
-    const lector = new FileReader();
-    lector.onload = function(e) {
-        const img = new Image();
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            canvas.width = 600; canvas.height = 250;
-            canvas.getContext('2d').drawImage(img, 0, 0, 600, 250);
-            const url = canvas.toDataURL('image/jpeg', 0.8);
-            localStorage.setItem("portada_" + usuarioId, url);
-            actualizarPortada();
-        };
-        img.src = e.target.result;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        localStorage.setItem(KEY_PORTADA, e.target.result);
+        actualizarPortada();
     };
-    lector.readAsDataURL(archivo);
+    reader.readAsDataURL(event.target.files[0]);
 }
-
 function eliminarPortada(event) {
     event.stopPropagation();
-    if(confirm("¿Eliminar portada?")) {
-        localStorage.removeItem("portada_" + usuarioId);
-        actualizarPortada();
-    }
+    localStorage.removeItem(KEY_PORTADA);
+    actualizarPortada();
 }
 </script>
-
 </body>
 </html>

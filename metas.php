@@ -38,7 +38,7 @@ $usuarioId = $_SESSION['usuario_id'];
         .btn-delete-meta {
             background: none;
             border: none;
-            color: #ff4d6a; /* Un tono rosa/rojo que combina con COINK */
+            color: #ff4d6a; 
             font-size: 18px;
             cursor: pointer;
             padding: 10px;
@@ -169,11 +169,9 @@ $usuarioId = $_SESSION['usuario_id'];
             window.location.href = "detalle-meta.php";
         };
 
-        // ===============================================
-        // NUEVA FUNCIÓN: ELIMINAR META DE LA BASE DE DATOS
-        // ===============================================
+       
         window.eliminarMetaForm = function(event, id) {
-            // event.stopPropagation() evita que se dispare el onclick de verDetalle()
+            
             event.stopPropagation();
 
             if (confirm("¿De verdad quieres eliminar esta meta?")) {
@@ -185,7 +183,7 @@ $usuarioId = $_SESSION['usuario_id'];
                 .then(res => res.json())
                 .then(respuesta => {
                     if (respuesta.success) {
-                        cargarMetas(); // Recarga la lista en tiempo real sin pestañear
+                        cargarMetas(); 
                     } else {
                         alert("Error desde el servidor: " + (respuesta.error || "No se pudo borrar"));
                     }
