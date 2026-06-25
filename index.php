@@ -1,4 +1,5 @@
 <?php include 'components/navbar.php'; ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -196,6 +197,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
  <script src="javaScript/homepage.js"></script>
+
+ <footer class="footer">
+  <div class="footer-container">
+
+    <h2 class="footer-logo">🐷 CoinK</h2>
+    <p class="footer-text">Ahorra inteligente, vive mejor 💰</p>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 CoinK · Todos los derechos reservados
+    </p>
+
+  </div>
+</footer>
     
 </body>
 </html>

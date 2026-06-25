@@ -688,10 +688,7 @@ body{
     margin: 20px;
 }
 
-<<<<<<< HEAD
-/* ==========================================================
-   ESTILOS DEFINITIVOS: PERFIL EN EL NAVBAR
-   ========================================================== */
+
 
 .navbar-profile-link {
     display: flex !important;
@@ -763,7 +760,53 @@ body{
     font-size: 0.75rem !important; 
     color: #888 !important; 
 }
-=======
+
+.footer {
+  background: #ffe4ec; /* rosado pastel suave */
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  color: #ff4081;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ICONOS */
+.footer-social {
+  margin: 1.5rem 0;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 1.4rem;
+  color: white;
+  background: #ff4081;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.footer-social a:hover {
+  background: #e60073;
+  transform: scale(1.2);
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  font-size: 0.9rem;
+  color: #666;
+}
+
 
     @media screen and (max-width: 425px){
 
@@ -948,7 +991,15 @@ body{
         display: flex;
         justify-content: center;
     }
+    .footer-logo {
+  font-size: 1.5rem;
+}
+
+.footer-social a {
+  font-size: 1.2rem;
+  padding: 8px;
+}
+
 }
 
 
->>>>>>> 7068702b4bb0da15e074f5f41d784d360fecc7e4
