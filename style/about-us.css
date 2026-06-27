@@ -183,7 +183,7 @@ footer {
 
 .mv-row .mision,
 .mv-row .vision {
-  flex: 1;                        /* Cada sección ocupa la mitad */
+  flex: 1;                        
 }
 
 
@@ -292,52 +292,65 @@ footer {
 }
 
 
-.footer {
-  background: #ffe4ec; /* rosado pastel suave */
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
+.footer{
+    background:#ffe4ec;
+    padding:15px 40px;
+    margin-top:40px;
+    border-radius: 30px;
 }
 
-.footer-logo {
-  font-size: 2rem;
-  color: #ff4081;
-  margin-bottom: 0.5rem;
+.footer-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
 }
 
-.footer-text {
-  font-size: 1rem;
-  color: #555;
+.footer-logo img{
+    width:170px;
+    height:auto;
+    margin-top:45px; 
 }
 
-/* ICONOS */
-.footer-social {
-  margin: 1.5rem 0;
+.footer-text{
+    font-size:18px;
+    color:#444;
+    margin:0;
+    font-weight:500;
 }
 
-.footer-social a {
-  display: inline-block;
-  margin: 0 8px;
-  font-size: 1.4rem;
-  color: white;
-  background: #ff4081;
-  padding: 10px;
-  border-radius: 50%;
-  transition: 0.3s;
+.footer-social{
+    display:flex;
+    gap:12px;
 }
 
-/* HOVER */
-.footer-social a:hover {
-  background: #e60073;
-  transform: scale(1.2);
+.footer-social a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#ff4081;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:.3s;
+    margin-top:45px; 
 }
 
-/* COPYRIGHT */
-.footer-copy {
-  font-size: 0.9rem;
-  color: #666;
+.footer-social a:hover{
+    background:#e60073;
+    transform:scale(1.1);
 }
 
+.footer-copy{
+    width:100%;
+    text-align:center;
+    margin-top:15px;
+    color:#666;
+    font-size:14px;
+}
 
 
 
@@ -423,6 +436,23 @@ footer {
 .footer-social a {
   font-size: 1.2rem;
   padding: 8px;
+}
+
+.footer-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.footer-logo img{
+    width:140px;
+}
+
+.footer-text{
+    font-size:16px;
+}
+
+.footer-copy{
+    margin-top:10px;
 }
 
 
