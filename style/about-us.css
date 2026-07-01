@@ -292,12 +292,14 @@ footer {
 }
 
 
+
 .footer {
-  background: #ffe4ec; /* rosado pastel suave */
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 3rem;
+    width: 100%;
+    background: #f85d7f;
+    position: relative; /* o simplemente elimina position */
+    margin-top: 50px;
 }
+
 
 .footer-logo {
   font-size: 2rem;

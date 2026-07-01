@@ -763,14 +763,12 @@ body{
 
 
 
-  
-.footer {
-  background: #e7cfd3 !important;
-  text-align: center !important;
 
-  padding: 40px 20px;
-  margin-top: 3rem;
-  text-align: center;
+.footer {
+    width: 100%;
+    background: #f85d7f;
+    position: relative; 
+    margin-top: 50px;
 }
 
 .footer-container {
