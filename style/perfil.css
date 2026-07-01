@@ -53,17 +53,7 @@ body {
 }
 
 
-.app-title {
-    position: absolute !important;
-    top: 15px !important;
-    left: 20px !important;
-    color: #FF0099 !important; 
-    font-size: 1.3rem !important;
-    font-weight: 800 !important;
-    margin: 0 !important;
-    letter-spacing: 0.5px !important;
-    z-index: 5;
-}
+
 
 
 .avatar-wrapper {

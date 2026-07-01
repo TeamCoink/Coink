@@ -44,7 +44,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     Más <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="dashboard.php"><i class="fa-regular fa-newspaper"></i> Dashboard</a>
+                    <a href="dashboard.php">Dashboard</a>
                     <a href="planes.php"><i class="fa-solid fa-money-bill"></i> Planes</a>
                 </div>
             </div>

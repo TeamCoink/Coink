@@ -14,11 +14,11 @@ $usuarioId = $_SESSION['usuario_id'];
     <link rel="stylesheet" href="style/perfil.css">
 </head>
 <body>
-<?php include 'components/navbar.php'; ?>
+
 
 <div class="perfil-container">
     <div class="card">
-        <!-- PORTADA -->
+      
         <div class="portada-container" onclick="triggerInput('inputPortada', event)">
             <img id="portada-img" alt="Portada" style="display: none;">
             <div id="portada-vacia"></div>
@@ -26,9 +26,9 @@ $usuarioId = $_SESSION['usuario_id'];
         </div>
         <input type="file" id="inputPortada" accept="image/*" style="display: none;" onchange="cambiarPortada(event)">
         
-        <h1 class="app-title">COINK</h1>
         
-        <!-- AVATAR -->
+        
+      
         <div class="avatar-wrapper">
             <div class="avatar-container" onclick="triggerInput('inputFoto', event)">
                 <img id="foto" alt="Foto de perfil">
