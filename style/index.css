@@ -524,7 +524,7 @@ body{
     border-radius: 10px;
 }
 
-.cards{
+.cards-beneficios{
     width: 300px;
     text-align: justify;
     background-color: white;
@@ -689,6 +689,12 @@ body{
 }
 
 
+<<<<<<< HEAD
+=======
+/* ==========================================================
+   ESTILOS DEFINITIVOS: PERFIL EN EL NAVBAR
+   ========================================================== */
+>>>>>>> ee17bc4f5d5662e4bd873746e24c6d2d3a676059
 
 .navbar-profile-link {
     display: flex !important;
@@ -760,6 +766,7 @@ body{
     font-size: 0.75rem !important; 
     color: #888 !important; 
 }
+<<<<<<< HEAD
 
 
 
@@ -814,6 +821,8 @@ body{
   color: #666;
 }
 
+=======
+>>>>>>> ee17bc4f5d5662e4bd873746e24c6d2d3a676059
 
     @media screen and (max-width: 425px){
 
@@ -1000,6 +1009,7 @@ body{
     }
    
 
+<<<<<<< HEAD
 
 
 
@@ -1009,3 +1019,5 @@ body{
 
  }
 
+=======
+>>>>>>> ee17bc4f5d5662e4bd873746e24c6d2d3a676059
