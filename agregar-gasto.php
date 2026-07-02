@@ -1,4 +1,5 @@
 <?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -109,6 +110,6 @@
   </svg>
 </div>
 
-
+ <script src="javaScript/navbar-mobile.js"></script>
 </body>
 </html>

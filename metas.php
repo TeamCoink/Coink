@@ -1,4 +1,5 @@
 <?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
 
 <?php
 if (session_status() === PHP_SESSION_NONE) {
@@ -198,5 +199,6 @@ $usuarioId = $_SESSION['usuario_id'];
         cargarMetas();
     </script>
      <script src="javaScript/homepage.js"></script>
+     <script src="javaScript/navbar-mobile.js"></script>
 </body>
 </html>

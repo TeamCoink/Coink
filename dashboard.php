@@ -1,7 +1,8 @@
 <?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
+
+
 <?php
-
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -258,183 +259,201 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
 <section class="dashboard">
 
-<div class= "top-dashboard">
-   
-  <div class="left-cards">
+    <div class= "top-dashboard">
+    
+    <div class="left-cards">
 
-      <!-- Saldo actual -->
-      <div class="mini-card pink">
+        <!-- Saldo actual -->
+        <div class="mini-card pink">
 
-          <div class="icon-box">
-              <span class="icon">💸</span>
-          </div>
-
-          <div class="card-info">
-             <h4>Balance actual</h4>
-
-                <p>
-                    $<?php echo number_format($balance, 2); ?>
-                </p>
-          </div>
-
-      </div>
-
-
-      <!-- Total ahorrado -->
-      <div class="mini-card green">
-
-          <div class="icon-box">
-              <span class="icon">💰</span>
-          </div>
-
-          <div class="card-info">
-              <h4>Total ahorrado</h4>
-
-              <p>
-                  $<?php echo number_format($totalAhorro, 2); ?>
-              </p>
-          </div>
-
-      </div>
-
-
-      <!-- Metas activas -->
-      <div class="mini-card yellow">
-
-          <div class="icon-box">
-              <span class="icon">💸</span>
-          </div>
-
-          <div class="card-info">
-              <h4>Total gastado</h4>
-
-                <p>
-                    $<?php echo number_format($totalGastado, 2); ?>
-                </p>
-          </div>
-
-      </div>
-
-
-      <!-- Meta más cercana -->
-      <div class="mini-card pastel">
-
-          <div class="icon-box">
-              <span class="icon">🌴</span>
-          </div>
-
-          <div class="card-info">
-
-              <h4>Meta más cercana</h4>
-
-              <?php if($metaTop): ?>
-
-                  <span class="meta-name">
-                      <?php echo $metaTop['nombre']; ?>
-                  </span>
-
-                  <p>
-                      <?php echo round($metaTop['porcentaje']); ?>%
-                  </p>
-
-              <?php else: ?>
-
-                  <p>Sin metas</p>
-
-              <?php endif; ?>
-
-          </div>
-    </div>
-</div>
-
-
-<!-- GRAFICA CENTRAL -->
-<div class="chart-card">
-
-    <div class="chart-header">
-        <h2>Resumen financiero</h2>
-        <p>Compara tus ahorros y gastos mes a mes 💰</p>
-    </div>
-
-    <canvas id="savingsChart"></canvas>
-
-</div>
-<!-- PANEL DERECHO -->
-<div class="right-panel">
-
-    <!-- CERDITO -->
-    <div class="coink-mascot">
-        <img src="img/coink3.png" alt="Coink Mascota">
-    </div>
-
-    <!-- BOTONES -->
-    <div class="dashboard-buttons">
-
-        <a href="agregar-ahorro.php"
-           class="dashboard-btn ahorro-btn">
-            ➕ Agregar ahorro
-        </a>
-
-        <a href="agregar-gasto.php"
-            class="dashboard-btn gasto-btn">
-            💸 Agregar gasto
-        </a>
-
-        <a href="metas.php"
-           class="dashboard-btn meta-btn">
-            🎯 Ver metas
-        </a>
-
-    </div>
-
-</div>
-
-</div>
-
-
-<section class="calendar-section">
-
-    <div class="calendar-card">
-
-        <div class="calendar-header">
-
-            <div>
-                <h2>Calendario de ahorro 📅</h2>
-                <p>Consulta tus movimientos diarios</p>
+            <div class="icon-box">
+                <span class="icon">💸</span>
             </div>
 
-            <div class="calendar-navigation">
+            <div class="card-info">
+                <h4>Balance actual</h4>
 
-                <button id="prevMonth">
-                    ←
-                </button>
-
-                <h3 id="monthYear"></h3>
-
-                <button id="nextMonth">
-                    →
-                </button>
-
+                    <p>
+                        $<?php echo number_format($balance, 2); ?>
+                    </p>
             </div>
 
         </div>
 
-        <div id="calendar"></div>
 
-        <div class="calendar-details" id="calendarDetails">
+        <!-- Total ahorrado -->
+        <div class="mini-card green">
 
-            <h3>Selecciona un día 📅</h3>
+            <div class="icon-box">
+                <span class="icon">💰</span>
+            </div>
 
-            <p>
-                Haz click en un día con ahorro para ver
-                los detalles 💰
-            </p>
+            <div class="card-info">
+                <h4>Total ahorrado</h4>
+
+                <p>
+                    $<?php echo number_format($totalAhorro, 2); ?>
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Metas activas -->
+        <div class="mini-card yellow">
+
+            <div class="icon-box">
+                <span class="icon">💸</span>
+            </div>
+
+            <div class="card-info">
+                <h4>Total gastado</h4>
+
+                    <p>
+                        $<?php echo number_format($totalGastado, 2); ?>
+                    </p>
+            </div>
+
+        </div>
+
+
+        <!-- Meta más cercana -->
+        <div class="mini-card pastel">
+
+            <div class="icon-box">
+                <span class="icon">🌴</span>
+            </div>
+
+            <div class="card-info">
+
+                <h4>Meta más cercana</h4>
+
+                <?php if($metaTop): ?>
+
+                    <span class="meta-name">
+                        <?php echo $metaTop['nombre']; ?>
+                    </span>
+
+                    <p>
+                        <?php echo round($metaTop['porcentaje']); ?>%
+                    </p>
+
+                <?php else: ?>
+
+                    <p>Sin metas</p>
+
+                <?php endif; ?>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- GRAFICA CENTRAL -->
+    <div class="chart-card">
+
+        <div class="chart-header">
+            <h2>Resumen financiero</h2>
+            <p>Compara tus ahorros y gastos mes a mes 💰</p>
+        </div>
+
+        <canvas id="savingsChart"></canvas>
+
+    </div>
+    <!-- PANEL DERECHO -->
+    <div class="right-panel">
+
+        <!-- CERDITO -->
+        <div class="coink-mascot">
+            <img src="img/coink3.png" alt="Coink Mascota">
+        </div>
+
+        <!-- BOTONES -->
+        <div class="dashboard-buttons">
+
+            <a href="agregar-ahorro.php"
+            class="dashboard-btn ahorro-btn">
+                ➕ Agregar ahorro
+            </a>
+
+            <a href="agregar-gasto.php"
+                class="dashboard-btn gasto-btn">
+                💸 Agregar gasto
+            </a>
+
+            <a href="metas.php"
+            class="dashboard-btn meta-btn">
+                🎯 Ver metas
+            </a>
 
         </div>
 
     </div>
 
-</section>
+    </div>
+
+
+    <section class="calendar-section">
+
+        <div class="calendar-card">
+
+            <div class="calendar-header">
+
+                <div>
+
+                    <h2>Calendario de ahorro 📅</h2>
+
+                    <p>Consulta tus movimientos diarios</p>
+
+                </div>
+
+                <div class="calendar-navigation">
+
+                    <button id="prevMonth">
+                        ←
+                    </button>
+
+                    <h3 id="monthYear"></h3>
+
+                    <button id="nextMonth">
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="calendar-content">
+
+                <div class="calendar-left">
+
+                    <div id="calendar"></div>
+
+                </div>
+
+                <div
+                    class="calendar-details"
+                    id="calendarDetails">
+
+                    <div class="calendar-placeholder">
+
+                        <div class="placeholder-icon">
+                            📅
+                        </div>
+
+                        <h3>Selecciona un día</h3>
+
+                        <p>
+                            Haz clic en cualquier fecha del calendario
+                            para visualizar los movimientos registrados.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
 </section>
      
@@ -456,11 +475,9 @@ if(toast){
 
 }
 </script>
-
+ <script src="javaScript/navbar-mobile.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
@@ -474,7 +491,7 @@ gradient.addColorStop(1, 'rgba(217, 237, 191, 0.12)');
 
 new Chart(ctx, {
 
-    type: 'line',
+    type: 'bar',
 
     data: {
 
@@ -495,57 +512,61 @@ new Chart(ctx, {
 
         datasets: [
 
-{
-    label: 'Ahorros',
+            {
+                label: '💰 Ahorros',
 
-    data: <?php echo json_encode($datosAhorro); ?>,
+                data: <?php echo json_encode($datosAhorro); ?>,
 
-    borderColor: '#7BC96F',
+                backgroundColor: '#B8E6A3',
 
-    backgroundColor: 'rgba(123,201,111,0.15)',
+                borderColor: '#7BC96F',
 
-    fill: false,
+                borderWidth: 2,
 
-    borderWidth: 4,
+                borderRadius: 12,
 
-    tension: 0.45,
+                borderSkipped: false,
 
-    pointRadius: 6,
+                maxBarThickness: 35
+            },
 
-    pointBackgroundColor: '#FFE89A',
+            {
+                label: '💸 Gastos',
 
-    pointBorderColor: '#4E9F5A'
-},
+                data: <?php echo json_encode($datosGastos); ?>,
 
-{
-    label: 'Gastos',
+                backgroundColor: '#F8C8D2',
 
-    data: <?php echo json_encode($datosGastos); ?>,
+                borderColor: '#F4A6B8',
 
-    borderColor: '#F4A6B8',
+                borderWidth: 2,
 
-    backgroundColor: 'rgba(244,166,184,0.15)',
+                borderRadius: 12,
 
-    fill: false,
+                borderSkipped: false,
 
-    borderWidth: 4,
+                maxBarThickness: 35
+            }
 
-    tension: 0.45,
-
-    pointRadius: 6,
-
-    pointBackgroundColor: '#FFD6E5',
-
-    pointBorderColor: '#F4A6B8'
-}
-
-]
+        ]
     },
 
     options: {
 
         responsive: true,
         maintainAspectRatio: false,
+
+        datasets:{
+
+            bar:{
+
+                categoryPercentage:0.6,
+
+                barPercentage:0.8
+
+            }
+
+        },
 
         interaction: {
             intersect: false,
@@ -588,11 +609,13 @@ new Chart(ctx, {
 
                 displayColors: false,
 
-                callbacks: {
+                callbacks:{
 
-                    label: function(context){
-                        return '$' + context.raw + ' ahorrados 💰';
-                    }
+                        label:function(context){
+
+                            return context.dataset.label + ': $' + context.raw;
+
+                        }
                 }
             }
         },
@@ -842,7 +865,7 @@ async function cargarDetalleDia(fecha){
         <div class="details-header">
 
             <h3>
-                💰 Movimientos del día
+                💰 Movimientos 
             </h3>
 
             <div class="selected-date">
