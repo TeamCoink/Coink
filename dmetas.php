@@ -1,5 +1,9 @@
+
 <?php include 'components/navbar.php'; ?>
 <?php include 'components/navbar-mobile.php'; ?>
+
+<?php include 'components/navbar.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

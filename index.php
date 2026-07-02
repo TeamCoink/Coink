@@ -4,12 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
 </head>
 <body>
 
@@ -165,18 +167,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const perfilLink = document.getElementById("perfilLink");
 
     if (sesion === "activa") {
-        // Mantiene la lógica original del navbar que ya funciona
         if (loginBtn) loginBtn.style.display = "none";
         if (perfilLink) perfilLink.style.display = "block";
 
-        // NUEVO: Lógica segura para el círculo del Perfil
+       
         const nombre = localStorage.getItem("usuario") || "odaduu";
         const foto = localStorage.getItem("foto");
 
         const imgElement = document.getElementById("foto");
         const initialsElement = document.getElementById("iniciales");
 
-        // Solo actúa si los elementos visuales del perfil existen en la página
+      
         if (imgElement && initialsElement) {
             if (foto && foto !== "null" && foto !== "") {
                 imgElement.src = foto;
@@ -186,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 imgElement.style.display = "none";
                 initialsElement.style.display = "flex";
                 
-                // Toma la primera letra del usuario en mayúscula (Ej: "O")
                 const primeraLetra = nombre.trim().charAt(0).toUpperCase();
                 initialsElement.textContent = primeraLetra || "U";
             }
@@ -197,7 +197,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
  <script src="javaScript/homepage.js"></script>
+
  <script src="javaScript/navbar-mobile.js"></script>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <h2 class="footer-logo">🐷 CoinK</h2>
+    <p class="footer-text">Ahorra inteligente, vive mejor 💰</p>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 CoinK · Todos los derechos reservados
+    </p>
+
+  </div>
+</footer>
     
 </body>
 </html>
