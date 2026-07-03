@@ -1,4 +1,9 @@
-w<?php include 'components/navbar.php'; ?>
+
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
+
+<?php include 'components/navbar.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -220,5 +225,6 @@ w<?php include 'components/navbar.php'; ?>
    
          
     <script src="javaScript/homepage.js"></script>
+     <script src="javaScript/navbar-mobile.js"></script>
 </body>
 </html>
