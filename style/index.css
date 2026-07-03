@@ -524,7 +524,7 @@ body{
     border-radius: 10px;
 }
 
-.cards{
+.cards-beneficios{
     width: 300px;
     text-align: justify;
     background-color: white;
@@ -688,10 +688,13 @@ body{
     margin: 20px;
 }
 
-<<<<<<< HEAD
+
+
+
 /* ==========================================================
    ESTILOS DEFINITIVOS: PERFIL EN EL NAVBAR
    ========================================================== */
+
 
 .navbar-profile-link {
     display: flex !important;
@@ -763,7 +766,62 @@ body{
     font-size: 0.75rem !important; 
     color: #888 !important; 
 }
-=======
+
+
+
+
+
+.footer {
+    width: 100%;
+    background: #f85d7f;
+    position: relative; 
+    margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* LOGO */
+.footer-logo {
+  font-size: 2rem;
+  color: #ff4d6d;
+  margin-bottom: 8px;
+}
+
+/* TEXTO */
+.footer-text {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ICONOS */
+.footer-social a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  color: white;
+  background: #ff4d6d;
+  padding: 12px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.footer-social a:hover {
+  transform: scale(1.15);
+  background: #e63b5c;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
 
     @media screen and (max-width: 425px){
 
@@ -948,7 +1006,17 @@ body{
         display: flex;
         justify-content: center;
     }
-}
+   
 
 
->>>>>>> 7068702b4bb0da15e074f5f41d784d360fecc7e4
+
+
+
+
+
+ 
+
+ }
+
+
+

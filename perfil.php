@@ -12,23 +12,20 @@ $usuarioId = $_SESSION['usuario_id'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
 </head>
 <body>
 
-
 <div class="perfil-container">
     <div class="card">
-      
         <div class="portada-container" onclick="triggerInput('inputPortada', event)">
             <img id="portada-img" alt="Portada" style="display: none;">
             <div id="portada-vacia"></div>
             <button class="btn-eliminar-portada" id="btnDeletePortada" onclick="eliminarPortada(event)">×</button>
         </div>
-        <input type="file" id="inputPortada" accept="image/*" style="display: none;" onchange="cambiarPortada(event)">
+        <input type="file" id="inputPortada" accept="image/*" style="display: none;" onchange="iniciarRecorte(event, 'portada')">
         
-        
-        
-      
         <div class="avatar-wrapper">
             <div class="avatar-container" onclick="triggerInput('inputFoto', event)">
                 <img id="foto" alt="Foto de perfil">
@@ -37,16 +34,27 @@ $usuarioId = $_SESSION['usuario_id'];
             </div>
             <button class="btn-eliminar-foto" id="btnDeleteFoto" onclick="eliminarFotoPerfil(event)">×</button>
         </div>
-        <input type="file" id="inputFoto" accept="image/*" style="display: none;" onchange="cambiarFotoPersonalizada(event)">
+        <input type="file" id="inputFoto" accept="image/*" style="display: none;" onchange="iniciarRecorte(event, 'avatar')">
         
         <h2 class="username-title"><?php echo htmlspecialchars($nombreUsuario); ?></h2>
-        
-       
-        <p class="user-bio" id="userBio" contenteditable="true" onblur="guardarBiografia()">Haz clic aquí para agregar una descripción...</p>
-        
-        
-        <a href="php/logout.php" class="logout-link"><button class="btn-cerrar">Cerrar sesión</button></a>
+        <p class="user-bio" id="userBio">Haz clic aquí para agregar una descripción...</p>
+                   
+        <div class="user-details">
+    <span id="userLocation"><i class="fa-solid fa-location-dot"></i> El Salvador</span>
+    <span id="userJoinDate"><i class="fa-solid fa-calendar-days"></i> Se unió en Julio 2026</span>
+</div>
 
+<div class="tags-container" id="tagsContainer"></div>
+                    
+
+            
+        
+        <div class="actions-container">
+            <a href="php/logout.php" style="text-decoration:none;"><button class="btn-cerrar">Cerrar sesión</button></a>
+            <button onclick="document.getElementById('modalEditar').style.display='block'" class="btn-editar">Editar Perfil</button>
+        </div>
+
+        
         <div class="social-footer">
             <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -56,93 +64,185 @@ $usuarioId = $_SESSION['usuario_id'];
 </div>
 
 <script>
+
 const usuarioId = "<?php echo $usuarioId; ?>";
 const KEY_FOTO = "foto_perfil_personalizada_" + usuarioId;
 const KEY_PORTADA = "portada_" + usuarioId;
 const KEY_BIO = "biografia_" + usuarioId;
+const KEY_TAGS = "tags_" + usuarioId;
+
+let cropper = null; 
+let tipoActual = ''; 
 
 document.addEventListener("DOMContentLoaded", function() {
     actualizarAvatar();
     actualizarPortada();
     cargarBiografia();
+    
+   
+    const nombreGuardado = localStorage.getItem("nombre_usuario_" + usuarioId);
+    if (nombreGuardado) document.querySelector('.username-title').textContent = nombreGuardado;
+
+   
+    const locGuardada = localStorage.getItem("ubicacion_" + usuarioId);
+    if (locGuardada) document.getElementById('userLocation').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${locGuardada}`;
+
+   
+    const tagsGuardadas = localStorage.getItem(KEY_TAGS);
+    if (tagsGuardadas) {
+        const container = document.getElementById('tagsContainer');
+        container.innerHTML = '';
+        tagsGuardadas.split(',').forEach(tag => {
+            if (tag.trim() !== "") {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.textContent = '#' + tag.trim();
+                container.appendChild(span);
+            }
+        });
+    }
 });
 
 function triggerInput(idInput, event) {
-    if (event.target.tagName !== 'BUTTON') document.getElementById(idInput).click();
+    if (event.target.tagName !== 'BUTTON') {
+        const input = document.getElementById(idInput);
+        input.value = ''; // <--- ESTO ES LA CLAVE: limpia el valor para permitir re-selección
+        input.click();
+    }
 }
 
-
-function cargarBiografia() {
-    const bioGuardada = localStorage.getItem(KEY_BIO);
-    const bioElement = document.getElementById("userBio");
-    if (bioElement && bioGuardada) bioElement.textContent = bioGuardada;
+function iniciarRecorte(event, tipo) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    tipoActual = tipo;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.getElementById('imgRecorte');
+        img.src = e.target.result;
+        
+        // Destruir cualquier instancia previa antes de mostrar el modal
+        if (cropper) {
+            cropper.destroy();
+            cropper = null;
+        }
+        
+        document.getElementById('modalRecorte').style.display = 'block';
+        
+        // Inicializar nuevo cropper
+        cropper = new Cropper(img, {
+            aspectRatio: tipo === 'avatar' ? 1 : 2.5,
+            viewMode: 1,
+            ready: function() {
+                // Esto asegura que se ajuste bien al nuevo tamaño
+                cropper.setData({ width: 500, height: 200 }); 
+            }
+        });
+    };
+    reader.readAsDataURL(file);
 }
-function guardarBiografia() {
-    localStorage.setItem(KEY_BIO, document.getElementById("userBio").textContent.trim());
+
+function guardarRecorte() {
+    if (!cropper) return;
+    const dataUrl = cropper.getCroppedCanvas().toDataURL('image/jpeg');
+    if (tipoActual === 'avatar') {
+        localStorage.setItem(KEY_FOTO, dataUrl);
+        actualizarAvatar();
+    } else {
+        localStorage.setItem(KEY_PORTADA, dataUrl);
+        actualizarPortada();
+    }
+    cerrarRecorte();
 }
 
+function cerrarRecorte() {
+    document.getElementById('modalRecorte').style.display = 'none';
+    if (cropper) { cropper.destroy(); cropper = null; }
+}
 
 function actualizarAvatar() {
-    const fotoGuardada = localStorage.getItem(KEY_FOTO);
-    const imgElement = document.getElementById("foto");
-    const container = document.querySelector(".avatar-container");
-    const initialsElement = document.getElementById("iniciales");
-    
-    if (fotoGuardada) {
-        imgElement.src = fotoGuardada;
-        imgElement.style.display = "block";
-        container.classList.add("con-foto");
-        initialsElement.style.display = "none";
-    } else {
-        imgElement.style.display = "none";
-        container.classList.remove("con-foto");
-        initialsElement.style.display = "flex";
-        initialsElement.textContent = "<?php echo strtoupper(substr($nombreUsuario, 0, 1)); ?>";
-    }
+    const foto = localStorage.getItem(KEY_FOTO);
+    const img = document.getElementById("foto");
+    const init = document.getElementById("iniciales");
+    if (foto) { img.src = foto; img.style.display = "block"; init.style.display = "none"; }
+    else { img.style.display = "none"; init.style.display = "flex"; init.textContent = "<?php echo strtoupper(substr($nombreUsuario, 0, 1)); ?>"; }
 }
-function cambiarFotoPersonalizada(event) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        localStorage.setItem(KEY_FOTO, e.target.result);
-        window.dispatchEvent(new Event('fotoActualizada'));
-        actualizarAvatar();
-    };
-    reader.readAsDataURL(event.target.files[0]);
-}
-function eliminarFotoPerfil(event) {
-    event.stopPropagation();
-    localStorage.removeItem(KEY_FOTO);
-    window.dispatchEvent(new Event('fotoActualizada'));
-    actualizarAvatar();
-}
-
 
 function actualizarPortada() {
-    const portadaGuardada = localStorage.getItem(KEY_PORTADA);
-    const imgPortada = document.getElementById("portada-img");
-    const divVacio = document.getElementById("portada-vacia");
-    if (portadaGuardada) {
-        imgPortada.src = portadaGuardada;
-        imgPortada.style.display = "block";
-        divVacio.style.display = "none";
-    } else {
-        imgPortada.style.display = "none";
-        divVacio.style.display = "block";
-    }
+    const port = localStorage.getItem(KEY_PORTADA);
+    const img = document.getElementById("portada-img");
+    const div = document.getElementById("portada-vacia");
+    if (port) { img.src = port; img.style.display = "block"; div.style.display = "none"; }
+    else { img.style.display = "none"; div.style.display = "block"; }
 }
-function cambiarPortada(event) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        localStorage.setItem(KEY_PORTADA, e.target.result);
-        actualizarPortada();
-    };
-    reader.readAsDataURL(event.target.files[0]);
+
+function eliminarFotoPerfil(e) { e.stopPropagation(); localStorage.removeItem(KEY_FOTO); actualizarAvatar(); }
+function eliminarPortada(e) { e.stopPropagation(); localStorage.removeItem(KEY_PORTADA); actualizarPortada(); }
+function guardarBiografia() { localStorage.setItem(KEY_BIO, document.getElementById("userBio").textContent.trim()); }
+function cargarBiografia() { const bio = localStorage.getItem(KEY_BIO); if(bio) document.getElementById("userBio").textContent = bio; }
+
+function guardarTodo() {
+    try {
+        const nameInput = document.getElementById('editName');
+        if (nameInput && nameInput.value.trim() !== "") {
+            localStorage.setItem("nombre_usuario_" + usuarioId, nameInput.value);
+            document.querySelector('.username-title').textContent = nameInput.value;
+        }
+        const bioInput = document.getElementById('editBio');
+        if (bioInput && bioInput.value.trim() !== "") {
+            localStorage.setItem(KEY_BIO, bioInput.value);
+            document.getElementById("userBio").textContent = bioInput.value;
+        }
+        const locInput = document.getElementById('editLocation');
+        if (locInput) {
+            localStorage.setItem("ubicacion_" + usuarioId, locInput.value);
+            document.getElementById('userLocation').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${locInput.value}`;
+        }
+        const tagsInput = document.getElementById('editTags');
+        const container = document.getElementById('tagsContainer');
+        if (container) {
+            container.innerHTML = '';
+            if (tagsInput && tagsInput.value.trim() !== "") {
+                localStorage.setItem(KEY_TAGS, tagsInput.value);
+                tagsInput.value.split(',').forEach(tag => {
+                    if (tag.trim() !== "") {
+                        const span = document.createElement('span');
+                        span.className = 'tag';
+                        span.textContent = '#' + tag.trim();
+                        container.appendChild(span);
+                    }
+                });
+            } else { localStorage.removeItem(KEY_TAGS); }
+        }
+        document.getElementById('modalEditar').style.display = 'none';
+    } catch (e) { console.error(e); }
 }
-function eliminarPortada(event) {
-    event.stopPropagation();
-    localStorage.removeItem(KEY_PORTADA);
-    actualizarPortada();
-}
+
+
 </script>
+
+<div id="modalEditar" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+  <div style="background:white; margin:15% auto; padding:20px; width:300px; border-radius:20px; text-align:center;">
+    
+    <h3>Editar Perfil</h3>
+    <input type="text" id="editName" placeholder="Tu nombre">
+    <textarea id="editBio" placeholder="Tu bio"></textarea>
+    <input type="text" id="editLocation" placeholder="Tu ubicación (ej: El Salvador)">
+<textarea id="editTags" placeholder="Tus intereses (separados por coma, ej: Diseño, Dev, COINK)"></textarea>
+   <button onclick="guardarTodo()" class="btn-guardar">Guardar</button>
+    <button onclick="document.getElementById('modalEditar').style.display='none'">Cancelar</button>
+  </div>
+</div>
+
+<div id="modalRecorte" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000;">
+    <div style="background:white; margin:5% auto; padding:20px; width:80%; max-width:500px; border-radius:20px; text-align:center;">
+        <h3>Ajustar imagen</h3>
+        <div style="max-height: 300px; overflow: hidden;"><img id="imgRecorte" style="max-width: 100%;"></div>
+        <br>
+        <button onclick="guardarRecorte()">Aplicar</button>
+        <button onclick="cerrarRecorte()">Cancelar</button>
+    </div>
+</div>
+
 </body>
 </html>

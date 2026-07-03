@@ -3,12 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
 </head>
 <body>
 
@@ -196,6 +198,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
  <script src="javaScript/homepage.js"></script>
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <h2 class="footer-logo">🐷 CoinK</h2>
+    <p class="footer-text">Ahorra inteligente, vive mejor 💰</p>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 CoinK · Todos los derechos reservados
+    </p>
+
+  </div>
+</footer>
     
 </body>
 </html>

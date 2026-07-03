@@ -1,4 +1,4 @@
-<?php include 'components/navbar.php'; ?>
+w<?php include 'components/navbar.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
