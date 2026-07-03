@@ -196,15 +196,15 @@ label{
 .info p{
     color:#888;
     margin-top:20px;
-    font: size 20px;
-
+    font-size: 20px;
+}
 
 .pig{
     width:800px;
     margin-top:25px;
 }
 
-}
+
 
 .alerta{
     background:#ffe5e5;
@@ -215,4 +215,37 @@ label{
     margin:15px 0;
     text-align:center;
     font-weight:bold;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .contenedorLogin {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .info h2 {
+        font-size: 26px;
+    }
+
+    .logoArea img {
+        width: 120px;
+    }
+
+    .input {
+        padding: 10px 12px;
+    }
+
+    .btn {
+        padding: 10px;
+    }
+
+    .pig {
+        max-width: 250px;
+    }
 }

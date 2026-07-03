@@ -291,9 +291,6 @@ footer {
   to { opacity: 1; transform: scale(1); }
 }
 
-
-<<<<<<< HEAD
-
 .footer {
     width: 100%;
     background: #f85d7f;
@@ -306,7 +303,7 @@ footer {
   font-size: 2rem;
   color: #ff4081;
   margin-bottom: 0.5rem;
-=======
+}
 .footer{
     background:#ffe4ec;
     padding:15px 40px;
@@ -320,7 +317,7 @@ footer {
     justify-content:space-between;
     flex-wrap:wrap;
     gap:20px;
->>>>>>> ee17bc4f5d5662e4bd873746e24c6d2d3a676059
+
 }
 
 .footer-logo img{
@@ -372,6 +369,9 @@ footer {
 
 
 
+
+
+
 @media (max-width: 768px) {
 
   /* Texto más pequeño */
@@ -415,7 +415,7 @@ footer {
     max-width: 300px;
   }
 
-  /* CARDS (DESARROLLADORES) */
+  
   .cards {
     grid-template-columns: 1fr; /* una columna en móviles */
   }
@@ -470,6 +470,182 @@ footer {
 .footer-copy{
     margin-top:10px;
 }
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .about-container {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .about-image img {
+    max-width: 350px;
+  }
+
+  .mv-row {
+    flex-direction: column;
+  }
+
+  .mision,
+  .vision {
+    width: 100%;
+  }
+
+  .mision-image img,
+  .vision-image img {
+    width: 300px;
+  }
+
+  .developers {
+    padding: 2rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-row {
+    flex-direction: column;
+  }
+
+  .cta-block {
+    width: 100%;
+  }
+
+  .cta-image img {
+    width: 180px;
+  }
+
+  .footer-container {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  body {
+    padding: 0;
+  }
+
+  .about-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .about-image img {
+    max-width: 220px;
+  }
+
+  .piggy {
+    width: 180px;
+  }
+
+  .mision,
+  .vision {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .mision-title,
+  .vision-title {
+    font-size: 1.3rem;
+  }
+
+  .mision-text p,
+  .vision-text p {
+    font-size: 0.9rem;
+  }
+
+  .mision-image img,
+  .vision-image img {
+    max-width: 180px;
+  }
+
+  .developers {
+    padding: 1.5rem 1rem;
+  }
+
+  .developers-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card img {
+    width: 60px;
+  }
+
+  .cta-row {
+    padding: 0.8rem;
+    gap: 1rem;
+  }
+
+  .cta-block {
+    padding: 1rem;
+  }
+
+  .cta-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .cta-text p {
+    font-size: 0.9rem;
+  }
+
+  .cta-image img {
+    width: 120px;
+  }
+
+  .footer {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .footer-logo img {
+    width: 120px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+
+  .footer-social a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+  }
+}
+
 
 
 }

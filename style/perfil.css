@@ -256,3 +256,76 @@ body {
     background-color: #BA68E6;
     color: white;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .perfil-container {
+        padding: 10px ;
+        min-height: auto ;
+    }
+
+    .card {
+        width: 100% ;
+        max-width: 350px ;
+        border-radius: 18px ;
+    }
+
+    .portada-container {
+        height: 110px ;
+    }
+
+    .app-title {
+        font-size: 1.1rem ;
+        left: 15px ;
+        top: 12px ;
+    }
+
+    .avatar-wrapper {
+        width: 90px ;
+        height: 90px ;
+        margin-top: -45px ;
+    }
+
+    #iniciales {
+        font-size: 1.8rem ;
+    }
+
+    .username-title {
+        font-size: 1.2rem ;
+        padding: 0 10px ;
+        word-break: break-word;
+    }
+
+    .user-bio {
+        font-size: 0.85rem ;
+        max-width: 90% ;
+        margin-bottom: 15px ;
+    }
+
+    .btn-cerrar {
+        width: 85% ;
+        padding: 12px ;
+        font-size: 0.9rem ;
+    }
+
+    .social-footer {
+        gap: 25px ;
+        padding: 15px 0 ;
+    }
+
+    .social-footer a {
+        font-size: 1.3rem ;
+    }
+
+    .btn-eliminar-portada {
+        top: 10px ;
+        right: 10px ;
+    }
+
+    .btn-eliminar-foto {
+        width: 22px ;
+        height: 22px ;
+        font-size: 12px ;
+    }
+}
