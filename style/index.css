@@ -1,12 +1,11 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
 }
 
 body{
@@ -219,14 +218,20 @@ body{
         transform: translateY(0);
     }
 }
-@media (max-width: 992px){
 
+/* RESPONSIVE */
+@media(max-width: 1000px){
     .navbar{
-        display: none !important;
+        flex-direction: column;
+        gap: 20px;
     }
 
+    .nav-links{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
-
 /* HERO PRINCIPAL */
 /* HERO */
 .hero-content{
@@ -518,7 +523,7 @@ body{
     border-radius: 10px;
 }
 
-.cards-beneficios{
+.cards{
     width: 300px;
     text-align: justify;
     background-color: white;
@@ -561,116 +566,72 @@ body{
     font-weight: bold;
 }
 
+#recursos{
+    width: 90%;
+    max-width: 1300px;
+    margin: 100px auto;
+}
+
 #recursos h1{
-    margin-top: 15px;
-    font-size: 50px;
     text-align: center;
-    margin-bottom: 90px;
-    
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+
+.cards-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.cards3{
+    width: 340px;
 }
 
 
-
-.cards3{
-    display: inline-table ;
-    margin-left: 80px;
-    margin-right: 300px;
+.cards3 img{
+    width: 100%;
+    border-radius: 25px;
+    display: block;
 }
 
-.cards3{
+.cards4 img{
     border-radius: 20px;
 }
 
-.cards3 img{
-    position: absolute;
-    top: 440%;
+.cards-texto{
+    margin-top: 25px;
 }
 
-.texto1{
-    padding: 5px;
-    position: absolute;
-    top: 480%;
-    align-items: center;
-}
-
-.texto2{
-    padding: 5px;
-    position: absolute;
-    top: 479.3%;
-    align-items: center;
-}
-
-.texto3{
-    padding: 5px;
-    position: absolute;
-    top: 479.3%;
-    align-items: center;
-}
-
-
-.texto1 h3{
+.cards-texto h3{
+    text-align: center;
     font-size: 21px;
-    padding-left: 10px;
-    margin-left: 15px;
+    margin-bottom: 15px;
 }
 
-.texto2 h3{
-    font-size: 21px;
-    padding-left: 10px;
-    margin-left: 50px;
-}
-
-.texto3 h3{
-    font-size: 21px;
-    padding-left: 10px;
-    margin-left: 80px;
-}
-
-.texto1 p{
-    font-size: 18px;
+.cards-texto p{
     text-align: justify;
-    padding-left: 10px;
-    margin-left: 10px;
-}
-
-.texto2 h3{
-    font-size: 23px;
-    padding-left: 10px;
-}
-
-.texto2 p{
-    font-size: 18px;
-    text-align: justify;
-    padding-left: 10px;
-    margin-left: 15px;
-}
-
-.texto3 h3{
-    font-size: 23px;
-    padding-left: 10px;
-}
-
-.texto3 p{
-    font-size: 18px;
-    text-align: justify;
-    padding-left: 10px;
-    margin-left: 15px;
-}
-
-#recursos img{
-    margin-bottom: 2px;
-    padding-left: 25px;
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    margin-left: 5px;
 }
 
 .more-bttn{
-    text-decoration-color: #086b27;
+    display: inline-block;
     text-decoration: none;
     color: #086b27;
-    background-color: white;
-    border: #086b27 solid 2px;
+    border: 2px solid #086b27;
+    padding: 8px 18px;
     border-radius: 10px;
-    padding: 5px 10px;
+    transition: .3s;
+}
 
+.more-bttn:hover{
+    background:#086b27;
+    color:white;
 }
 
 .texto{
@@ -682,19 +643,7 @@ body{
     margin: 20px;
 }
 
-<<<<<<< HEAD
-=======
 
-
-
-
-/* ==========================================================
-   ESTILOS DEFINITIVOS: PERFIL EN EL NAVBAR
-   ========================================================== */
-
-
-
->>>>>>> c7031e3a388472a78d269f93613a21cee01c1965
 
 .navbar-profile-link {
     display: flex !important;
@@ -766,72 +715,6 @@ body{
     font-size: 0.75rem !important; 
     color: #888 !important; 
 }
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> c7031e3a388472a78d269f93613a21cee01c1965
-
-
-
-
-.footer {
-    width: 100%;
-    background: #f85d7f;
-    position: relative; 
-    margin-top: 50px;
-}
-
-.footer-container {
-  max-width: 900px;
-  margin: auto;
-}
-
-/* LOGO */
-.footer-logo {
-  font-size: 2rem;
-  color: #ff4d6d;
-  margin-bottom: 8px;
-}
-
-/* TEXTO */
-.footer-text {
-  color: #555;
-  margin-bottom: 20px;
-}
-
-/* ICONOS */
-.footer-social a {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  color: white;
-  background: #ff4d6d;
-  padding: 12px;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-/* HOVER */
-.footer-social a:hover {
-  transform: scale(1.15);
-  background: #e63b5c;
-}
-
-/* COPYRIGHT */
-.footer-copy {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> c7031e3a388472a78d269f93613a21cee01c1965
 
     @media screen and (max-width: 425px){
 
@@ -948,47 +831,9 @@ body{
         height: auto;
     }
 
-    /* recursos */
-    #recursos h1{
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-
-    .cards3{
-        display: block;
-        margin: 30px auto;
-        text-align: center;
-    }
-
-    .cards3 img{
-        position: static;
-        width: 90%;
-        max-width: 320px;
-        padding: 0;
-    }
-
-    .texto1,
-    .texto2,
-    .texto3{
-        position: static;
-        padding: 15px;
-    }
-
-    .texto1 h3,
-    .texto2 h3,
-    .texto3 h3{
-        margin: 0;
-        padding: 0;
-        font-size: 1.2rem;
-    }
-
-    .texto1 p,
-    .texto2 p,
-    .texto3 p{
-        margin: 10px 0;
-        padding: 0;
-        text-align: center;
-    }
+   /*recursos*/
+  
+}
 
     /*botones*/
 
@@ -1019,22 +864,11 @@ body{
    
 
 
-<<<<<<< HEAD
-}
-=======
 
->>>>>>> c7031e3a388472a78d269f93613a21cee01c1965
 
- 
 
 
  
 
+ }
 
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> c7031e3a388472a78d269f93613a21cee01c1965

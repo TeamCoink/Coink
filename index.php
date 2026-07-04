@@ -113,19 +113,21 @@
 <section id="recursos">
     <h1>¡De <span class="c">C</span><span class="o">o</span><span class="i">i</span><span class="n">n</span><span class="k">k</span> para ti!</h1>
 
-    <div class="cards3">
+    <div class="cards-container">
+
+         <div class="cards3">
         <img src="img/mujer.jpg" alt="" width="350">
-        <div class="texto1">
+        <div class="cards-texto">
              <h3>Presupuesto y sus beneficios</h3><br>
-             <p>¡Descubre que es un presupuesto y <br> que beneficios trae consigo!</p> <br>
-             <p ><a href="" class="more-bttn">Ver más</a></p>
+             <p>¡Descubre que es un presupuesto <br> y que beneficios trae consigo!</p> <br>
+             <p ><a href="diferencias.php" class="more-bttn">Ver más</a></p>
         </div>
       
     </div>
 
-    <div class="cards3">
-        <img src="img/hombtr.jpg" alt="" width="320">
-        <div class="texto2">
+    <div class="cards4">
+        <img src="img/hombtr.jpg" alt="" width="310">
+        <div class="cards-texto">
             <h3>¿Deseo o necesidad?</h3><br>
             <p>Identifica si tu siguiente compra  <br> es un deseo o una necesidad</p> <br>
             <p ><a href="" class="more-bttn">Ver más</a></p>
@@ -135,13 +137,15 @@
 
     <div class="cards3">
         <img src="img/hombre2.jpeg" alt="" width="350">
-        <div class="texto3">
+        <div class="cards-texto">
             <h3>Ahorro inteligente</h3><br>
             <p>Aprende a ahorrar correctamente <br> y que metodos se ajustan a tí</p> <br>
             <p ><a href="" class="more-bttn">Ver más</a></p>
         </div>
        
     </div>
+    </div>
+   
 
 </section>
 
