@@ -23,19 +23,19 @@ body {
     background-color: #FFFFFF !important; 
     border: 1px solid #e1e8ed !important;
     border-radius: 24px !important;
-    width: 380px !important;
-    text-align: center !important;
+    width: 950px !important;
+    text-align: left !important;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important; 
     box-sizing: border-box !important;
     overflow: hidden !important; 
     position: relative !important;
-    padding-bottom: 0px !important;
+ 
 }
 
 
 .portada-container {
     width: 100% !important;
-    height: 130px !important;
+    height: 180px !important;
     position: relative !important;
     cursor: pointer;
 }
@@ -53,24 +53,14 @@ body {
 }
 
 
-.app-title {
-    position: absolute !important;
-    top: 15px !important;
-    left: 20px !important;
-    color: #FF0099 !important; 
-    font-size: 1.3rem !important;
-    font-weight: 800 !important;
-    margin: 0 !important;
-    letter-spacing: 0.5px !important;
-    z-index: 5;
-}
+
 
 
 .avatar-wrapper {
     position: relative !important;
     width: 110px !important;
     height: 110px !important;
-    margin: -55px auto 15px auto !important; 
+    margin: -55px 0 15px 30px !important; 
     z-index: 10;
 }
 
@@ -170,7 +160,7 @@ body {
     color: #14171a !important;
     font-size: 1.4rem !important;
     font-weight: 700 !important;
-    margin: 5px 0 2px 0 !important;
+    margin: 10px 0 2px 30px !important;
     text-transform: uppercase; 
 }
 
@@ -178,8 +168,9 @@ body {
     color: #657786 !important;
     font-size: 0.9rem !important;
     line-height: 1.4 !important;
-    margin: 0 auto 20px auto !important;
+    margin: 0  0 20px 30px !important;
     max-width: 85% !important;
+    text-align: left !important;
 }
 
 
@@ -257,6 +248,7 @@ body {
     color: white;
 }
 
+<<<<<<< HEAD
 
 @media screen and (max-width: 768px) {
 
@@ -412,3 +404,153 @@ body {
         height: 30px;
     }
 }
+=======
+.actions-container {
+    display: flex !important;
+    justify-content: flex-start !important; /* Cambiado de flex-end a flex-start */
+    gap: 10px !important;
+    padding: 0 30px 20px 30px !important; /* Mantiene el margen de 30px a la izquierda para alinear con el texto */
+}
+
+/* Forzar igualdad total en el contenedor actions-container */
+.actions-container .btn-cerrar, 
+.actions-container .btn-editar {
+    padding: 10px 0 !important; /* Quitamos el padding horizontal lateral */
+    width: 140px !important;    /* Asignamos un ancho fijo igual para ambos */
+    border-radius: 20px !important;
+    font-size: 0.9rem !important;
+    font-weight: bold !important;
+    border: none !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+/* Colores específicos */
+.btn-cerrar {
+    background-color: #14171a !important; 
+    color: #FFFFFF !important;
+}
+
+.btn-editar {
+    background-color: #e1e8ed !important;
+    color: #14171a !important;
+}
+
+
+/* Estilo Glassmorphism para el modal */
+#modalEditar > div {
+    /* Fondo semi-transparente */
+    background: rgba(255, 255, 255, 0.7) !important;
+    /* Efecto de desenfoque */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    padding: 30px !important;
+    width: 90% !important;
+    max-width: 400px !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+#modalEditar h3 {
+    margin-top: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+
+#modalEditar input, 
+#modalEditar textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+
+#modalEditar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    background: rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+    z-index: 9999 !important;
+}
+
+
+#modalEditar > div {
+   
+    background: rgba(255, 255, 255, 0.7) !important;
+    
+   
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    
+    
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    
+    margin: 15% auto;
+    padding: 30px;
+    width: 300px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Estilo para los detalles (ubicación y fecha) */
+.user-details {
+    color: #657786;
+    font-size: 0.85rem;
+    margin: 10px 0 15px 30px;
+    display: flex;
+    gap: 15px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.user-details i {
+    margin-right: 5px;
+    color: #1da1f2; /* Un toque de color azul para los íconos */
+}
+
+/* Estilo para los "tags" (etiquetas) */
+.tags-container {
+    margin: 10px 0 20px 30px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap; /* Para que si agregas muchas, bajen de línea */
+}
+
+.tag {
+    background: rgba(29, 161, 242, 0.1); /* Fondo azul muy suave */
+    color: #1da1f2;
+    padding: 5px 14px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background: rgba(29, 161, 242, 0.2);
+}
+
+.user-details { color: #657786; font-size: 0.85rem; margin: 10px 0 15px 30px; display: flex; gap: 15px; }
+.tags-container { margin: 10px 0 20px 30px; display: flex; gap: 8px; flex-wrap: wrap; }
+.tag { background: #e1e8ed; color: #14171a; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
+>>>>>>> c7031e3a388472a78d269f93613a21cee01c1965

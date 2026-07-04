@@ -228,6 +228,6 @@
    
          
     <script src="javaScript/homepage.js"></script>
-     <script src="javaScript/navbar-mobile.js"></script>
+    <script src="javaScript/navbar-mobile.js"></script>
 </body>
 </html>
