@@ -354,12 +354,54 @@ body::after {
 
 
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .goals-container {
+        max-width: 90%;
+    }
+
+    .goals-header,
+    .goals-form-wrapper,
+    .goals-list-wrapper,
+    .detail-card {
+        padding: 25px 30px;
+    }
+
+    .goals-header h1 {
+        font-size: 2rem;
+    }
+
+    .goals-form {
+        gap: 10px;
+    }
+
+    #detalleNombre {
+        font-size: 1.8rem;
+    }
+
+    .waves {
+        height: 180px;
+    }
+
+    body::before {
+        width: 500px;
+        height: 500px;
+    }
+
+    body::after {
+        width: 700px;
+        height: 700px;
+    }
+}
+
+
+
 @media screen and (max-width: 768px) {
 
     .goals-container {
-        margin: 15px auto;
-        padding: 0 12px;
-        gap: 15px;
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 20px auto;
     }
 
     .goals-header,
@@ -367,7 +409,6 @@ body::after {
     .goals-list-wrapper,
     .detail-card {
         padding: 20px;
-        border-radius: 15px;
     }
 
     .goals-header h1 {
@@ -375,8 +416,7 @@ body::after {
         text-align: center;
     }
 
-    .goals-header .subtitle {
-        font-size: 0.95rem;
+    .subtitle {
         text-align: center;
     }
 
@@ -385,23 +425,14 @@ body::after {
         gap: 10px;
     }
 
-    .counter-total,
-    .counter-completed {
-        text-align: center;
-    }
-
-    .goals-form {
+    .goals-form,
+    #formAbono {
         flex-direction: column;
-        align-items: stretch;
     }
 
-    .goals-form button {
+    .goals-form button,
+    #formAbono button {
         width: 100%;
-    }
-
-    .goal-item {
-        padding: 12px 8px;
-        gap: 10px;
     }
 
     .goal-info {
@@ -409,54 +440,22 @@ body::after {
         gap: 5px;
     }
 
-    .goal-title {
-        font-size: 0.95rem;
-    }
-
+    .goal-title,
     .goal-percentage {
-        font-size: 0.9rem;
-    }
-
-    .goal-amounts {
-        font-size: 0.8rem;
+        text-align: left;
     }
 
     #detalleNombre {
         font-size: 1.5rem;
-        word-break: break-word;
     }
 
     #detalleMontoTotal {
         font-size: 1rem;
     }
 
-    .progress-label-wrapper {
-        font-size: 0.85rem;
-    }
-
+    .progress-label-wrapper,
     .amount-labels-row {
         font-size: 0.85rem;
-        margin-bottom: 20px;
-    }
-
-    #formAbono {
-        flex-direction: column;
-    }
-
-    #inputAbono {
-        width: 100%;
-    }
-
-    #formAbono button {
-        width: 100%;
-    }
-
-    .back-link {
-        font-size: 1rem;
-    }
-
-    .btn-delete {
-        font-size: 1rem;
     }
 
     .waves {
@@ -464,14 +463,34 @@ body::after {
     }
 
     body::before {
-        width: 400px;
-        height: 400px;
-        left: -150px;
+        width: 350px;
+        height: 350px;
+        left: -120px;
     }
 
     body::after {
-        width: 500px;
-        height: 500px;
-        right: -200px;
+        width: 450px;
+        height: 450px;
+        right: -180px;
     }
 }
+
+
+
+@media screen and (max-*idth: 480px) {
+
+    .goals-contain*r {
+        padding: 0 10px;
+    }*
+    .goals-header,
+    .goals-for*-wrapper,
+    .goals-list-wrapper,*    .detail-card {
+        padding* 15px;
+        border-radius: 15px*
+    }
+
+    .goals-header h1 {
+   *    font-size: 1.4rem;
+    }
+
+

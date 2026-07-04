@@ -1,4 +1,5 @@
 <?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!DOCTYPE html>
@@ -161,6 +162,6 @@
 </footer>
 
 
-
+ <script src="javaScript/navbar-mobile.js"></script>
 </body>
 </html>

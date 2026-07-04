@@ -249,3 +249,103 @@ label{
         max-width: 250px;
     }
 }
+
+
+
+@media screen and (max-width: 768px) {
+
+    body{
+        padding: 15px;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .left,
+    .right{
+        width: 100%;
+    }
+
+    .left{
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo{
+        width: 180px;
+        margin: 0 auto 20px;
+    }
+
+    .left h1{
+        font-size: 32px;
+    }
+
+    .descripcion{
+        width: 100%;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .info{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .icon{
+        margin-right: 0;
+        width: 65px;
+        height: 65px;
+        font-size: 24px;
+    }
+
+    .info h3{
+        font-size: 20px;
+    }
+
+    .info p{
+        font-size: 16px;
+    }
+
+    .pig{
+        position: static;
+        width: 220px;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .formulario{
+        width: 100%;
+        padding: 25px;
+        margin: 10px;
+    }
+
+    .titulo{
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .titulo h2{
+        font-size: 28px;
+    }
+
+    .double{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .circle{
+        margin-right: 0;
+    }
+
+    .boton-regresar{
+        left: 0;
+        margin-bottom: 15px;
+    }
+
+    .social-icons{
+        flex-wrap: wrap;
+    }
+}

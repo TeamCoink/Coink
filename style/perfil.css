@@ -329,3 +329,86 @@ body {
         font-size: 12px ;
     }
 }
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .perfil-container {
+        padding: 20px !important;
+    }
+
+    .card {
+        width: 450px !important;
+    }
+
+    .portada-container {
+        height: 150px !important;
+    }
+
+    .username-title {
+        font-size: 1.5rem !important;
+    }
+
+    .social-footer {
+        gap: 25px !important;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .card {
+        max-width: 100% !important;
+        border-radius: 15px !important;
+    }
+
+    .portada-container {
+        height: 90px !important;
+    }
+
+    .app-title {
+        font-size: 1rem !important;
+        top: 10px !important;
+        left: 10px !important;
+    }
+
+    .avatar-wrapper {
+        width: 75px !important;
+        height: 75px !important;
+        margin-top: -38px !important;
+    }
+
+    #iniciales {
+        font-size: 1.5rem !important;
+    }
+
+    .username-title {
+        font-size: 1rem !important;
+    }
+
+    .user-bio {
+        font-size: 0.8rem !important;
+    }
+
+    .btn-cerrar {
+        width: 100% !important;
+        padding: 10px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .social-footer {
+        gap: 15px !important;
+    }
+
+    .social-footer a {
+        font-size: 1.1rem !important;
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    #nav-avatar-img,
+    #nav-avatar-initials {
+        width: 30px;
+        height: 30px;
+    }
+}
