@@ -105,9 +105,32 @@
     
 </section>
 
-<section class="hero2">
-    <img src="img/planta2.jpg" alt="" height="620vh">
-    <div id="start"><button class="button4">Comienza Ya!</button></div>
+<section class="cta">
+
+    <div class="cta-image">
+        <img src="img/macetita.png" alt="Planta creciendo" width="520px">
+    </div>
+
+    <div class="cta-content">
+
+        <h1>
+            Únete hoy a <br>
+            Coink <span>e invierte</span> <br>
+            en ti mismo <br>
+            mañana.
+        </h1>
+
+        <p>
+            Empieza a construir ahora la vida financiera
+            que siempre has querido.
+        </p>
+
+        <a href="#" class="cta-btn">
+            ¡Comienza ya!
+        </a>
+
+    </div>
+
 </section>
 
 <section id="recursos">
@@ -116,8 +139,8 @@
     <div class="cards-container">
 
          <div class="cards3">
-        <img src="img/mujer.jpg" alt="" width="350">
-        <div class="cards-texto">
+            <img src="img/mujer.jpg" alt="" width="350">
+            <div class="cards-texto">
              <h3>Presupuesto y sus beneficios</h3><br>
              <p>¡Descubre que es un presupuesto <br> y que beneficios trae consigo!</p> <br>
              <p ><a href="diferencias.php" class="more-bttn">Ver más</a></p>
