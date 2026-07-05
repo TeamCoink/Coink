@@ -19,7 +19,7 @@
                 $_SESSION['nombre'] = $usuario['nombre']; 
                 $_SESSION['rol'] = $usuario['rol']; 
 
-// REDIRECCIONES (IMPORTANTE POR LA CARPETA /php) 
+
 
             if ($usuario['rol'] == 'admin') { 
                 header("Location: ../admin/dashboard.php"); 

@@ -28,7 +28,7 @@
 
     <div class="budget-mascot">
 
-        <img src="img/cerdito_presupuesto.png"
+        <img src="img/oink.png"
              alt="Cerdito Coink">
 
     </div>
@@ -113,7 +113,7 @@
 
 </section>
 
-<section class="categories-section" >
+<section id="categoriesSection" >
 
     <div class="section-title">
 
@@ -206,15 +206,15 @@
 
         </div>
 
-    </div>
+    </div> 
+
 
     <div class="budget-save-section">
 
-        <button id="saveBudget">
+       <button class="save-budget-btn" id="saveBudget">
 
             <i class="fa-solid fa-floppy-disk"></i>
-
-            Guardar mi presupuesto
+            Guardar presupuesto
 
         </button>
 
@@ -280,7 +280,9 @@
 
             <div class="progress-bar">
 
-                <div class="progress-fill"></div>
+               <div class="progress-fill"
+                    id="summaryProgressFill">
+                </div>
 
             </div>
 
@@ -312,15 +314,45 @@
 
 <section class="coink-health-section" id="budgetAnalysis">
 
-    <div class="analysis-loading" id="analysisLoading">
+    <div class="analysis-start" id="analysisStart">
 
-        <img src="img/coink5.png" alt="Coink">
+        <img src="img/acostado.png" alt="Coink">
 
-        <h2>Analizando...</h2>
+        <h2>
+            ¿Listo para conocer tu diagnóstico?
+        </h2>
 
         <p>
 
-            Estoy preparando algunas recomendaciones para ti.
+            Coink analizará tu presupuesto y te dará recomendaciones para administrar mejor tu dinero.
+
+        </p>
+
+        <button id="analyzeBudget">
+
+             Analizar con Coink
+
+        </button>
+
+        <p id="analysisWarning" class="analysis-warning">
+
+        </p>
+
+    </div>
+
+    <div class="analysis-loading" id="analysisLoading">
+
+        <img src="img/coink3.png" alt="Coink">
+
+        <h2 id="loadingTitle">
+
+            Analizando categorías...
+
+        </h2>
+
+        <p id="loadingText">
+
+            Estoy revisando cómo distribuiste tu dinero.
 
         </p>
 
@@ -331,7 +363,6 @@
 
         <div class="health-header">
 
-            <img src="img/coink5.png" alt="Coink">
 
             <div>
 
@@ -347,7 +378,7 @@
 
         </div>
 
-        <div class="health-stars">
+        <div class="health-stars" id="healthStars">
 
             ⭐⭐⭐⭐⭐
 
@@ -365,7 +396,7 @@
 
         </p>
 
-        <div class="health-checks">
+        <div class="health-checks" id="healthChecks">
 
             <div class="health-item">
 
@@ -387,9 +418,20 @@
 
         </div>
 
+        <div class="coink-recommendations">
+
+            <h3>💡 Recomendaciones de Coink</h3>
+
+            <div id="recommendationsList">
+
+            </div>
+
+        </div>
+
     </div>
 
 </section>
+
 <div class="category-modal" id="categoryModal">
 
     <div class="category-box">

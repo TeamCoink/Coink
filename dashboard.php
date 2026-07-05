@@ -22,9 +22,6 @@ $nombreUsuario = $_SESSION['nombre'];
 $guardado = $_GET['guardado'] ?? '';
 
 
-// ============================
-// TOTAL AHORRADO
-// ============================
 
 $sqlAhorro = "
 SELECT SUM(monto) AS total
@@ -42,9 +39,7 @@ $dataAhorro = $resultAhorro->fetch_assoc();
 $totalAhorro = $dataAhorro['total'] ?? 0;
 
 
-// ============================
-// TOTAL METAS
-// ============================
+
 
 $sqlMetas = "
 SELECT COUNT(*) AS total_metas
@@ -62,9 +57,6 @@ $dataMetas = $resultMetas->fetch_assoc();
 $totalMetas = $dataMetas['total_metas'];
 
 
-// ============================
-// META MÁS AVANZADA
-// ============================
 
 $sqlMetaTop = "
 SELECT nombre, objetivo, actual,
@@ -82,10 +74,6 @@ $stmtTop->execute();
 $resultTop = $stmtTop->get_result();
 $metaTop = $resultTop->fetch_assoc();
 
-
-// ============================
-// GRAFICA DE AHORROS POR MES
-// ============================
 
 $sqlGrafica = "
 SELECT 
@@ -118,9 +106,7 @@ while($fila = $resultGrafica->fetch_assoc()){
     $datosAhorro[$indice] = $fila['total'];
 }
 
-// ============================
-// GASTOS POR MES
-// ============================
+
 
 $sqlGraficaGastos = "
 SELECT
@@ -153,9 +139,6 @@ while($fila =
 
 
 
-// ============================
-// DATOS CALENDARIO
-// ============================
 
 $sqlCalendario = "
 SELECT 
@@ -179,9 +162,6 @@ while($fila = $resultCalendario->fetch_assoc()){
     $ahorrosPorDia[$fila['fecha']] = $fila['total'];
 }
 
-// ============================
-// TOTAL GASTADO
-// ============================
 
 $sqlGastos = "
 SELECT SUM(monto) AS total
@@ -199,9 +179,7 @@ $dataGastos = $resultGastos->fetch_assoc();
 $totalGastado = $dataGastos['total'] ?? 0;
 $balance = $totalAhorro - $totalGastado;
 
-// ============================
-// GASTOS POR DIA
-// ============================
+
 
 $sqlGastosDia = "
 SELECT
@@ -299,7 +277,7 @@ while($fila = $resultGastosDia->fetch_assoc()){
         </div>
 
 
-        <!-- Metas activas -->
+     
         <div class="mini-card yellow">
 
             <div class="icon-box">
@@ -317,7 +295,6 @@ while($fila = $resultGastosDia->fetch_assoc()){
         </div>
 
 
-        <!-- Meta más cercana -->
         <div class="mini-card pastel">
 
             <div class="icon-box">
@@ -349,7 +326,6 @@ while($fila = $resultGastosDia->fetch_assoc()){
     </div>
 
 
-    <!-- GRAFICA CENTRAL -->
     <div class="chart-card">
 
         <div class="chart-header">
@@ -360,15 +336,51 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <canvas id="savingsChart"></canvas>
 
     </div>
-    <!-- PANEL DERECHO -->
+    
     <div class="right-panel">
 
-        <!-- CERDITO -->
-        <div class="coink-mascot">
-            <img src="img/coink3.png" alt="Coink Mascota">
+        
+        <div class="coink-assistant">
+
+            <img
+                src="img/coink5.png"
+                alt="Coink"
+                class="assistant-img">
+
+            <div class="assistant-card">
+
+                <h3 id="assistantTitle">
+
+                    Hola 👋
+
+                </h3>
+
+                <p id="assistantMessage">
+
+                    Estoy revisando tu presupuesto...
+
+                </p>
+
+                <div class="assistant-stars"
+                    id="assistantStars">
+
+                    ⭐⭐⭐⭐⭐
+
+                </div>
+
+                <button
+                    class="assistant-btn"
+                    onclick="window.location.href='presupuesto.php'">
+
+                    Ver análisis completo →
+
+                </button>
+
+            </div>
+
         </div>
 
-        <!-- BOTONES -->
+      
         <div class="dashboard-buttons">
 
             <a href="agregar-ahorro.php"

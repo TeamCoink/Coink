@@ -1159,6 +1159,12 @@
 
 #budgetAnalysis{
 
+    display:block;
+
+}
+
+#analysisLoading{
+
     display:none;
 
 }
@@ -1223,3 +1229,205 @@
 
 }
 
+.health-animate{
+
+    animation: healthAppear .45s ease;
+
+}
+
+@keyframes healthAppear{
+
+    0%{
+
+        opacity:0;
+        transform:translateY(12px) scale(.97);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+.health-good{
+
+    border:3px solid #69C36B;
+
+    box-shadow:0 15px 35px rgba(105,195,107,.18);
+
+}
+
+.health-medium{
+
+    border:3px solid #FFD76A;
+
+    box-shadow:0 15px 35px rgba(255,215,106,.18);
+
+}
+
+.health-warning{
+
+    border:3px solid #F4A261;
+
+    box-shadow:0 15px 35px rgba(244,162,97,.18);
+
+}
+
+.health-danger{
+
+    border:3px solid #F47C7C;
+
+    box-shadow:0 15px 35px rgba(244,124,124,.18);
+
+}
+
+.shake{
+
+    animation: shake .4s;
+
+    border:2px solid #F47C7C !important;
+
+}
+
+@keyframes shake{
+
+    0%{transform:translateX(0);}
+    20%{transform:translateX(-6px);}
+    40%{transform:translateX(6px);}
+    60%{transform:translateX(-4px);}
+    80%{transform:translateX(4px);}
+    100%{transform:translateX(0);}
+
+}
+
+.analysis-start{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:20px;
+
+    text-align:center;
+
+    padding:60px 40px;
+
+}
+
+.analysis-start img{
+
+    width:140px;
+
+}
+
+.analysis-start button{
+
+    background:#69C36B;
+
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:14px 28px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.analysis-start button:hover{
+
+    transform:translateY(-3px);
+
+    background:#58AE5A;
+
+}
+
+.analysis-warning{
+
+    margin-top:15px;
+
+    color:#E49C00;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.analysis-warning.show{
+
+    opacity:1;
+
+}
+
+.coink-recommendations{
+
+    margin-top:30px;
+
+    border-top:1px solid #E8E8E8;
+
+    padding-top:25px;
+
+}
+
+.coink-recommendations h3{
+
+    color:#356B35;
+
+    margin-bottom:18px;
+
+}
+
+.recommendation{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:flex-start;
+
+    margin-bottom:15px;
+
+    padding:14px;
+
+    background:#F8FFF7;
+
+    border-radius:14px;
+
+}
+
+.recommendation span{
+
+    font-size:22px;
+
+}
+
+.recommendation p{
+
+    margin:0;
+
+    color:#555;
+
+    line-height:1.5;
+
+}

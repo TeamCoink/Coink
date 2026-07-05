@@ -47,6 +47,8 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="dashboard.php">Dashboard</a>
                     <a href="planes.php"><i class="fa-solid fa-money-bill"></i> Planes</a>
+                     <a href="planes.php"><i class="fa-solid fa-money-bill"></i>Presupuesto</a>
+
                 </div>
             </div>
         </div>
