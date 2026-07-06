@@ -109,7 +109,7 @@
             y cumple tus sueños
         </p>
 
-        <img src="img/cerditohome.png" class="pig">
+        <img src="img/nuevocerdo.png" class="pig">
 
     </section>
 

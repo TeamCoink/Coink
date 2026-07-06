@@ -45,8 +45,10 @@ if (session_status() === PHP_SESSION_NONE) {
                     Más <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="dashboard.php">Dashboard</a>
+                    <a href="dashboard.php"><i class="fa-solid fa-chart-area"></i>Dashboard</a>
                     <a href="planes.php"><i class="fa-solid fa-money-bill"></i> Planes</a>
+                     <a href="planes.php"><i class="fa-solid fa-piggy-bank"></i>Presupuesto</a>
+
                 </div>
             </div>
         </div>
@@ -62,13 +64,13 @@ if (session_status() === PHP_SESSION_NONE) {
         const navInitials = document.getElementById('nav-avatar-initials');
         const profileLink = document.querySelector('.navbar-profile-link');
 
-        // 1. Limpiamos el estilo del enlace para quitar el subrayado y color extraño
+       
         if (profileLink) {
             profileLink.style.setProperty('text-decoration', 'none', 'important');
             profileLink.style.setProperty('color', 'inherit', 'important');
             profileLink.style.setProperty('display', 'inline-flex', 'important');
             profileLink.style.setProperty('align-items', 'center', 'important');
-            profileLink.style.setProperty('gap', '10px', 'important'); // Espacio entre foto y texto
+            profileLink.style.setProperty('gap', '10px', 'important'); 
         }
 
         if (fotoGuardada && navImg) {
@@ -78,7 +80,7 @@ if (session_status() === PHP_SESSION_NONE) {
             navImg.style.setProperty('height', '35px', 'important');
             navImg.style.setProperty('border-radius', '50%', 'important');
             navImg.style.setProperty('object-fit', 'cover', 'important');
-            navImg.style.setProperty('position', 'relative', 'important'); // Quitamos absolute para que fluya
+            navImg.style.setProperty('position', 'relative', 'important'); 
             navImg.style.setProperty('z-index', '1', 'important');
             
             if (navInitials) navInitials.style.setProperty('display', 'none', 'important');

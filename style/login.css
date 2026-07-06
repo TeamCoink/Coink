@@ -2,33 +2,33 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
     height:100vh;
-     background:  #FFF2EB;
+    background:#FFF2EB;
 }
-
 
 .contenedorLogin{
     display:flex;
     justify-content:space-between;
-        background:  #FFF2EB;
     align-items:center;
     height:100vh;
-    padding:60px;
+    padding:40px 70px;
+    gap:60px;
+    overflow:hidden;
+    background:#FFF2EB;
 }
-
 
 .card{
-    width:400px;
-   background:  #ffffff;
+    width:380px;
+    flex-shrink:0;
+    background:#fff;
     padding:40px;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
-
 
 .logoArea{
     display:flex;
@@ -38,14 +38,13 @@ body{
 }
 
 .logoArea img{
-    width: 200px;
+    width:200px;
 }
 
 .logoArea span{
     font-weight:bold;
     color:#27ae60;
 }
-
 
 h1{
     font-size:22px;
@@ -65,7 +64,6 @@ h1{
 .rosa{
     color:#ff6fa5;
 }
-
 
 label{
     font-size:13px;
@@ -92,8 +90,8 @@ label{
     outline:none;
     width:100%;
     font-size:14px;
+    background:transparent;
 }
-
 
 .options{
     display:flex;
@@ -107,7 +105,6 @@ label{
     color:#ff6fa5;
     text-decoration:none;
 }
-
 
 .btn{
     width:100%;
@@ -124,14 +121,12 @@ label{
     background:#8bcf88;
 }
 
-
 .divider{
     text-align:center;
     margin:20px 0;
     font-size:13px;
     color:#777;
 }
-
 
 .social{
     display:flex;
@@ -150,8 +145,12 @@ label{
     gap:8px;
     cursor:pointer;
     font-size:13px;
+    transition:.3s;
 }
 
+.social button:hover{
+    background:#f8f8f8;
+}
 
 .register{
     margin-top:18px;
@@ -180,31 +179,33 @@ label{
     text-decoration:underline;
 }
 
-
 .info{
-    width:80%;
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
-
 }
 
 .info h2{
-    font-size:60px;
+    font-size:52px;
     font-weight:700;
-    line-height:1.2;
+    line-height:1.15;
+    margin-bottom:15px;
 }
 
 .info p{
-    color:#888;
-    margin-top:20px;
-    font-size: 20px;
+    color:#777;
+    font-size:20px;
+    margin-bottom:25px;
 }
 
 .pig{
-    width:800px;
-    margin-top:25px;
+    width:430px;
+    max-width:100%;
+    height:auto;
+    display:block;
 }
-
-
 
 .alerta{
     background:#ffe5e5;
@@ -217,135 +218,66 @@ label{
     font-weight:bold;
 }
 
+@media(max-width:900px){
 
-@media screen and (max-width: 480px) {
-
-    .contenedorLogin {
-        padding: 15px;
+    .contenedorLogin{
+        flex-direction:column;
+        justify-content:center;
+        height:auto;
+        padding:30px 20px;
+        gap:30px;
     }
 
-    .card {
-        padding: 20px;
-        border-radius: 15px;
-    }
-
-    .info h2 {
-        font-size: 26px;
-    }
-
-    .logoArea img {
-        width: 120px;
-    }
-
-    .input {
-        padding: 10px 12px;
-    }
-
-    .btn {
-        padding: 10px;
-    }
-
-    .pig {
-        max-width: 250px;
-    }
-}
-
-
-
-@media screen and (max-width: 768px) {
-
-    body{
-        padding: 15px;
-    }
-
-    .container{
-        flex-direction: column;
-    }
-
-    .left,
-    .right{
-        width: 100%;
-    }
-
-    .left{
-        padding: 20px;
-        text-align: center;
-    }
-
-    .logo{
-        width: 180px;
-        margin: 0 auto 20px;
-    }
-
-    .left h1{
-        font-size: 32px;
-    }
-
-    .descripcion{
-        width: 100%;
-        font-size: 16px;
-        line-height: 26px;
+    .card{
+        width:100%;
+        max-width:400px;
     }
 
     .info{
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
+        width:100%;
     }
 
-    .icon{
-        margin-right: 0;
-        width: 65px;
-        height: 65px;
-        font-size: 24px;
-    }
-
-    .info h3{
-        font-size: 20px;
+    .info h2{
+        font-size:38px;
     }
 
     .info p{
-        font-size: 16px;
+        font-size:17px;
     }
 
     .pig{
-        position: static;
-        width: 220px;
-        margin: 20px auto;
-        display: block;
+        width:280px;
+    }
+}
+
+@media(max-width:480px){
+
+    .card{
+        padding:25px;
     }
 
-    .formulario{
-        width: 100%;
-        padding: 25px;
-        margin: 10px;
+    .logoArea img{
+        width:150px;
     }
 
-    .titulo{
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
+    .info h2{
+        font-size:30px;
     }
 
-    .titulo h2{
-        font-size: 28px;
+    .info p{
+        font-size:15px;
     }
 
-    .double{
-        flex-direction: column;
-        gap: 0;
+    .pig{
+        width:220px;
     }
 
-    .circle{
-        margin-right: 0;
+    .social{
+        flex-direction:column;
     }
 
-    .boton-regresar{
-        left: 0;
-        margin-bottom: 15px;
-    }
-
-    .social-icons{
-        flex-wrap: wrap;
+    .register{
+        flex-direction:column;
+        gap:3px;
     }
 }

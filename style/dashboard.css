@@ -1,7 +1,4 @@
 
-/* =======================
-   TOAST NOTIFICATION
-======================= */
 
 .toast{
     position: fixed;
@@ -51,14 +48,6 @@
     align-items: start;
 }
 
-
-
-
-
-/* =========================
-   LEFT CARDS DASHBOARD
-========================= */
-
 .left-cards{
     width: 250px;
 
@@ -88,7 +77,6 @@
     transform: translateY(-4px);
 }
 
-/* CONTENEDOR DEL ICONO */
 
 .icon-box{
     width: 60px;
@@ -110,7 +98,6 @@
     font-size: 1.8rem;
 }
 
-/* INFO CARD */
 
 .card-info{
     display: flex;
@@ -143,8 +130,6 @@
 }
 
 
-/* COLORES COINK */
-
 .pink{
     background: #F8C8D2;
 }
@@ -160,12 +145,6 @@
 .pastel{
     background: #FFD6E5;
 }
-
-
-/* =========================
-   CHART CARD
-========================= */
-
 
 .chart-card{
     flex: 1;
@@ -208,10 +187,6 @@
     height: 320px !important;
 }
 
-/* =========================
-   TOP DASHBOARD
-========================= */
-
 .top-dashboard{
     display: grid;
 
@@ -225,11 +200,6 @@
     align-items: start;
 }
 
-
-/* =========================
-   PANEL DERECHO
-========================= */
-
 .right-panel{
     display: flex;
     flex-direction: column;
@@ -237,7 +207,6 @@
     gap: 18px;
 }
 
-/* CARD DEL CERDITO */
 .coink-mascot{
     display: flex;
     justify-content: center;
@@ -259,8 +228,6 @@
 .coink-mascot img:hover{
     transform: scale(1.06) rotate(-2deg);
 }
-
-/* BOTONES */
 
 .dashboard-buttons{
     display: flex;
@@ -284,7 +251,7 @@
 
     box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 
-    color: inherit; /* importante */
+    color: inherit; 
 }
 
 .dashboard-btn:hover{
@@ -304,7 +271,7 @@
 }
 
 .gasto-btn{
-    background: #FFE79C; /* amarillo pastel */
+    background: #FFE79C; 
 
     color: #8A6B00 !important;
 
@@ -314,9 +281,6 @@
 }
 
 
-/* =========================
-   CALENDARIO COINK
-========================= */
 
 .calendar-section{
     margin-top: 50px;
@@ -336,7 +300,6 @@
     box-sizing: border-box;
 }
 
-/* HEADER */
 
 .calendar-header{
     display: flex;
@@ -365,7 +328,7 @@
     font-size: 16px;
 }
 
-/* NAV */
+
 
 .calendar-navigation{
     display: flex;
@@ -405,7 +368,6 @@
     text-align: center;
 }
 
-/* GRID */
 
 #calendar{
 
@@ -418,8 +380,6 @@
     width: 100%;
 }
 
-/* NOMBRES DIAS */
-
 .week-day{
     text-align: center;
 
@@ -430,7 +390,6 @@
     margin-bottom: 10px;
 }
 
-/* CELDAS */
 
 .day{
 
@@ -455,8 +414,6 @@
     transform: translateY(-4px);
 }
 
-/* NUMERO */
-
 .day-number{
     font-size: 20px;
 
@@ -465,7 +422,6 @@
     color: #333;
 }
 
-/* DIAS CON AHORRO */
 
 .has-saving{
     background: #D9EDBF;
@@ -491,9 +447,6 @@
     cursor: pointer;
 }
 
-
-
-
 .has-saving::after{
     content: "💰";
 
@@ -504,8 +457,6 @@
 
     font-size: 22px;
 }
-
-
 
 .has-expense::after{
     content: "💸";
@@ -574,10 +525,6 @@
     box-sizing: border-box;
 }
 
-/* =========================
-   DETALLES DEL CALENDARIO
-========================= */
-
 .calendar-placeholder{
 
     display:flex;
@@ -643,8 +590,6 @@
     box-shadow: 0 10px 24px rgba(0,0,0,0.05);
 }
 
-/* HEADER */
-
 .details-header{
 
     display: flex;
@@ -686,8 +631,6 @@
     box-shadow: 0 4px 10px rgba(248,200,210,0.35);
 }
 
-/* CARD DE AHORRO */
-
 .saving-item{
 
     background: white;
@@ -713,7 +656,6 @@
     transform: translateY(-3px);
 }
 
-/* IZQUIERDA */
 
 .saving-left{
 
@@ -764,8 +706,6 @@
     font-size: 14px;
 }
 
-/* MONTO */
-
 .saving-amount{
 
     background: #D9EDBF;
@@ -780,8 +720,6 @@
 
     font-size: 17px;
 }
-
-/* TOTAL */
 
 .total-day{
 
@@ -819,10 +757,6 @@
 
     color: #356B35;
 }
-
-/* =========================
-   DIA VACIO
-========================= */
 
 .empty-day{
 
@@ -940,8 +874,6 @@
         gap:25px;
     }
 
-    /* CARDS */
-
     .left-cards{
 
         display:grid;
@@ -955,12 +887,6 @@
 
         max-width:none;
     }
-
-
-
-
-    /* CERDITO + BOTONES */
-
     
     .right-panel{
 
@@ -999,8 +925,6 @@
         box-sizing:border-box;
     }
 
-   
-
     .chart-card{
 
         margin-top:25px;
@@ -1034,8 +958,6 @@
         justify-content: center;
     }
 
-    /* Calendario arriba y reportes abajo */
-
     .calendar-content{
 
         display: flex;
@@ -1064,8 +986,6 @@
 
         padding: 25px;
     }
-
-    /* Calendario */
 
     #calendar{
 
@@ -1108,8 +1028,6 @@
         right: 4px;
     }
 
-    /* Reportes */
-
     .details-header{
 
         display: flex;
@@ -1140,8 +1058,6 @@
     }
 
 }
-
-
 
 @media (max-width: 768px){
 
@@ -1231,8 +1147,6 @@
 
         align-items: center;
     }
-
-    /* GRAFICA */
 
     .chart-card{
 
@@ -1378,8 +1292,6 @@
         right: 2px;
     }
 
-    /* Reportes */
-
     .details-header{
 
         flex-direction: column;
@@ -1412,8 +1324,6 @@
         text-align: center;
     }
 }
-
-
 
 @media (max-width: 480px){
 
@@ -1591,8 +1501,6 @@
         bottom: 2px;
         right: 2px;
     }
-
-    /* Reportes */
 
     .details-header{
 

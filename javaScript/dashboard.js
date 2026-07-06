@@ -1,18 +1,4 @@
-// Pie chart
-const ctxPie = document.getElementById("graficoPie").getContext("2d");
-new Chart(ctxPie, {
-  type: "pie",
-  data: {
-    labels: ["Ocio", "Hogar", "Ahorro"],
-    datasets: [{
-      data: [40, 35, 25],
-      backgroundColor: ["#ff6fa1", "#4caf50", "#ffd54f"]
-    }]
-  }
-});
 
-// Line chart
-// Line chart con animación
 const ctxMensual = document.getElementById("graficoMensual").getContext("2d");
 const lineChart = new Chart(ctxMensual, {
   type: "line",
@@ -24,13 +10,13 @@ const lineChart = new Chart(ctxMensual, {
       borderColor: "#4caf50",
       backgroundColor: "rgba(76,175,80,0.2)",
       fill: true,
-      tension: 0.3   // suaviza la curva
+      tension: 0.3   
     }]
   },
   options: {
     animation: {
-      duration: 1500,   // animación más lenta
-      easing: "easeOutBounce" // efecto rebote
+      duration: 1500,  
+      easing: "easeOutBounce" 
     },
     plugins: {
       tooltip: {
@@ -45,7 +31,7 @@ const lineChart = new Chart(ctxMensual, {
   }
 });
 
-// Ejemplo: actualizar datos cada 5 segundos
+
 setInterval(() => {
   lineChart.data.datasets[0].data = [
     Math.floor(Math.random() * 500),
@@ -60,8 +46,6 @@ setInterval(() => {
 
 
 
-// Calendario: mostrar detalle del día
-// Generar calendario Abril 2026
 const calendarioGrid = document.getElementById("calendarioGrid");
 for (let dia = 1; dia <= 30; dia++) {
   const cell = document.createElement("div");
@@ -71,13 +55,13 @@ for (let dia = 1; dia <= 30; dia++) {
 }
 
 function seleccionarDia(dia) {
-  // Quitar selección previa
+  
   document.querySelectorAll(".calendario-grid div").forEach(c => c.classList.remove("selected"));
-  // Marcar día seleccionado
+  
   const cell = [...document.querySelectorAll(".calendario-grid div")].find(c => c.innerText == dia);
   cell.classList.add("selected");
 
-  // Ejemplo de datos por día
+
   if (dia === 15) {
     document.getElementById("detalle-dia").innerText = "Ingresado: $100 | Gastado: $0 | Total: $100";
   } else {
@@ -85,7 +69,7 @@ function seleccionarDia(dia) {
   }
 }
 
-// Meta del usuario (ejemplo: 60%)
+
 const metaUsuario = 60; 
 
 function animarPorcentaje(meta) {
@@ -97,20 +81,74 @@ function animarPorcentaje(meta) {
     porcentaje++;
     texto.textContent = porcentaje + "% Ahorrado";
 
-    // Cuando llega al valor de la meta, se detiene
+   
     if (porcentaje >= meta) {
       clearInterval(intervalo);
     }
-  }, 30); // velocidad de incremento
-
-  // Activar el efecto visual del círculo
+  }, 30); 
   setTimeout(() => {
     circle.style.setProperty("--scale", meta / 100);
     circle.querySelector("::before"); // activa el pseudo-elemento
   }, 100);
 }
 
-// Ejecutar animación al cargar
+
 window.onload = () => {
   animarPorcentaje(metaUsuario);
 };
+
+function actualizarAsistente(){
+
+    if(presupuesto.porcentaje<=60){
+
+        assistantTitle.textContent=
+        "¡Excelente trabajo!";
+
+        assistantMessage.textContent=
+        "Todavía tienes bastante dinero disponible para ahorrar.";
+
+        assistantStars.textContent=
+        "⭐⭐⭐⭐⭐";
+
+    }
+
+    else if(presupuesto.porcentaje<=80){
+
+        assistantTitle.textContent=
+        "¡Vas muy bien!";
+
+        assistantMessage.textContent=
+        "Tu presupuesto sigue equilibrado, pero intenta guardar un poco más.";
+
+        assistantStars.textContent=
+        "⭐⭐⭐⭐";
+
+    }
+
+    else if(presupuesto.porcentaje<=100){
+
+        assistantTitle.textContent=
+        "Presupuesto ajustado";
+
+        assistantMessage.textContent=
+        "Ya has utilizado gran parte de tu ingreso este mes.";
+
+        assistantStars.textContent=
+        "⭐⭐⭐";
+
+    }
+
+    else{
+
+        assistantTitle.textContent=
+        "¡Cuidado!";
+
+        assistantMessage.textContent=
+        "Has sobrepasado tu presupuesto. Revisa tus gastos.";
+
+        assistantStars.textContent=
+        "⭐";
+
+    }
+
+}
