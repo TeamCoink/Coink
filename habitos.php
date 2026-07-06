@@ -55,7 +55,7 @@
     <img src="img/plant-jar.png" alt="" width="200px">
 
     <div class="e-text">
-        <h3>Pequeños hábitos, grandes resultados</h3>
+        <h3>Pequeños hábitos, <br> grandes resultados</h3>
         <p>La clave esta en la constancia. Dedica  <br>  unos minutos cada día a tus finanzas <br> y verás  como tu futuro cambia.</p>
     </div>
 

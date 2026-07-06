@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Coink</title>
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -77,7 +77,7 @@
         ?</h1><br>
         <p>Somos una plataforma de educación financiera que busca ayudarte a comprender el dinero, aprender a administrar tus ingresos y que puedas usar Coink como una  herramienta para mejorar tu vida, ofreciendote herramientas que te ayudaran a que veas como tu dinero crece de manera inteligente. </p>
 
-        <div id="knowmore"><button class="button3">Conoce más →</button></div>
+        <div id="knowmore"><button class="button3"><a href="about-us.php">Conoce más →</a></button></div>
 
     </div>
 
@@ -125,7 +125,7 @@
             que siempre has querido.
         </p>
 
-        <a href="#" class="cta-btn">
+        <a href="register.html" class="cta-btn">
             ¡Comienza ya!
         </a>
 

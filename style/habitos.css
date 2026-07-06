@@ -250,14 +250,14 @@ body{
 #hero-content h1{
     color: #477934;
     font-size: 35px;
-    margin-left: 22px;
+    margin-left: 15px;
 }
 
 .text-down p{
     color: #222;
     font-size: 35px;
     margin-bottom: 20px;
-    margin-left: 22px;
+    margin-left: 15px;
 }
 
 .post-info{
@@ -265,7 +265,7 @@ body{
     align-items: center;
     gap: 35px;
     margin: 20px 0;
-    margin-left: 22px;
+    margin-left: 15px;
 }
 
 .info-item{
@@ -289,13 +289,13 @@ body{
     margin-bottom: 25px;
     border-radius: 20px;
     margin-top: 15px;
-    margin-left: 22px;
+    margin-left: 5px;
 }
 
 p{
     font-size: 20px;
     margin-bottom: 20px;
-    margin-left: 22px;
+    margin-left: 15px;
 }
 
 .clave{
@@ -303,7 +303,7 @@ p{
     background-color: #cff1c7;
     border-radius: 20px;
     gap: 40px;
-    margin-left: 22px;
+    margin-left: 15px;
 }
 
 .e-text{

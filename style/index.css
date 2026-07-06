@@ -472,6 +472,11 @@ body{
     font-weight: bold;
 }
 
+.button3 a{
+    color: white;
+    text-decoration: none;
+}
+
 
 .c{
     color:  #60A34B;
@@ -947,5 +952,5 @@ body{
 
  
 
- }
+ 
 
