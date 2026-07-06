@@ -141,8 +141,8 @@
          <div class="cards3">
             <img src="img/mujer.jpg" alt="" width="350">
             <div class="cards-texto">
-             <h3>Presupuesto y sus beneficios</h3><br>
-             <p>¡Descubre que es un presupuesto <br> y que beneficios trae consigo!</p> <br>
+             <h3>¿Ahorrar o Invertir?  <br> Diferencias y como empezar</h3><br>
+             <p>Conoce las diferencias entre ahorrar e invertir y cual te conviene más</p> <br>
              <p ><a href="diferencias.php" class="more-bttn">Ver más</a></p>
         </div>
       
@@ -161,9 +161,9 @@
     <div class="cards3">
         <img src="img/hombre2.jpeg" alt="" width="350">
         <div class="cards-texto">
-            <h3>Ahorro inteligente</h3><br>
-            <p>Aprende a ahorrar correctamente <br> y que metodos se ajustan a tí</p> <br>
-            <p ><a href="" class="more-bttn">Ver más</a></p>
+            <h3>10 hábitos financieros que cambiaran tu vida</h3><br>
+            <p>Descubre los 10 hábitos de los que nadie habla para mejorar tus finanzas</p> <br>
+            <p ><a href="habitos.php" class="more-bttn">Ver más</a></p>
         </div>
        
     </div>

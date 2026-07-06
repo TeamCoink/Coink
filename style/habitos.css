@@ -235,7 +235,7 @@ body{
 .breadcrumb{
     margin-top: 40px;
      margin-left: 22px;
-     color: #186e0c ;
+     color: #fa779c;
      font-family: Verdana, Geneva, Tahoma, sans-serif;
      font-weight: normal;
      margin-bottom: 20px;
@@ -244,18 +244,20 @@ body{
 
 .breadcrumb a{
     text-decoration: none;
-    color:#fa779c;
+    color:#1d850f;
 }
 
 #hero-content h1{
-    color: #eb396b;
+    color: #477934;
     font-size: 35px;
+    margin-left: 22px;
 }
 
 .text-down p{
     color: #222;
     font-size: 35px;
     margin-bottom: 20px;
+    margin-left: 22px;
 }
 
 .post-info{
@@ -263,6 +265,7 @@ body{
     align-items: center;
     gap: 35px;
     margin: 20px 0;
+    margin-left: 22px;
 }
 
 .info-item{
@@ -272,7 +275,7 @@ body{
 }
 
 .info-item i{
-    color: #f58cab;
+    color: #3e7433;
     font-size: 18px;
 }
 
@@ -286,205 +289,41 @@ body{
     margin-bottom: 25px;
     border-radius: 20px;
     margin-top: 15px;
+    margin-left: 22px;
 }
 
 p{
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 22px;
 }
 
-#save-meaning{
-    color: rgb(43, 42, 42);
-}
-
-#save-meaning h2{
-    color: #eb396b;
-    text-align: left;
-    font-size: 26px;
-    margin-top: 40px;
-    
-}
-
-.save-meaning p{
-    text-align: justify;
-}
-
-.section2 {
+.clave{
     display: flex;
-    gap: 70px;
-}
-
-.example{
-    display: flex;
-    background-color: #fffdfd;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 2px;
-    padding-top: 10px;
-    border-radius: 30px;
-    border: solid rgb(248, 173, 186) 3px;
-    color: rgb(73, 73, 73);
-    margin-right: 40px;
-    width: 700px;
-    
-}
-
-.example h3{
-    color: #eb396b;
-}
-
-.function{
-    display: flex;
-    gap: 30px;
-    background-color: white;
-    width: 700px;
-    margin-right: 5px;
-    padding: 20px 20px;
-    border-radius: 30px;
-    border: rgb(248, 173, 186)solid 3px;
-}
-
-.tittle1 {
-    color: #eb396b;
-}
-
-.function ul{
-    margin-top: 20px;
-    font-size: 19px;
-    padding-left: 30px ;
-}
-
-.function li{
-    padding-left: 10px;
-    color: #222;
-}
-
-.invest-meaning{
-     color: rgb(43, 42, 42);
-}
-
-#invest-meaning h2{
-    color: #eb396b;
-    text-align: left;
-    font-size: 26px;
-    margin-top: 40px;
-    
-}
-
-.comparison{
-    width: 90%;
-    max-width: 1000px;
-    margin-top: 60px;
-    margin-left: 1px ;
-    text-align: center;
-}
-
-.comparison h2{
-    text-align: left;
-    font-size: 26px;
-    margin-bottom: 5px;
-    color: #eb396b;
-}
-
-
-table{
-    margin-top: 10px;
-    width: 1260px;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
-}
-
-thead{
-    background: #ffd2dd;
-}
-
-thead th{
-    padding: 18px;
-    color: #eb396b;
-    font-size: 20px;
-}
-
-tbody td{
-    padding: 18px;
-    border-bottom: 1px solid #eee;
-    color: #555;
-    font-size: 18px;
-}
-
-tbody tr:last-child td{
-    border-bottom: none;
-}
-
-tbody td:first-child{
-    font-weight: bold;
-    background: #fff8f8;
-}
-
-.choice h2{
-    margin-top: 60px;
-    color: #eb396b;
-    font-size: 26px;
-    margin-bottom: 30px;
-
-}
-
-.cards{
-    display: flex;
-    gap: 60px;
-}
-
-.card{
-    margin-top: 40px;
-    background-color: #fff;
-    border: solid 2px #f8b3c2;
+    background-color: #cff1c7;
     border-radius: 20px;
-    width: 470px;
-    padding: 10px;
-    padding-left: 15px;
+    gap: 40px;
+    margin-left: 22px;
 }
 
-.cards img{
-    margin-top: 50px;
+.e-text{
+    margin-top: 70px;
 }
 
-.card i{
-    color: #186e0c;
-}
-.card h4{
-    font-size: 22px;
-    color: #f14777;
-    text-align: center;
-    margin-bottom: 15px;
+.e-text h3{
+    color: #3e7433;
+    font-size: 21px;
 }
 
-.card p{
-    color: #3b3b3b;
-}  
-
-.text-right{
-    margin-top: 40px;
-    width: 455px;
+.e-text p{
+    margin-left: 2px;
     text-align: justify;
 }
 
-.advice{
-    display: flex;
-    gap: 40px;
-    margin-top: 60px;
-    background-color: #fffefe;
-    padding: 15px 15px;
-    border-radius: 20px;    
+.check-list ul{
+    margin-top: 70px;
 }
 
-.advice h4{
-    margin-top: 30px;
-    font-size: 20px;    
-    color: rgba(4, 92, 8, 0.973);
-}
-
-.advice p{
-    color: #313131;
+.check-list i{
+    color: #1d850f;
 }
