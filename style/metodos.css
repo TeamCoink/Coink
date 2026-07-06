@@ -10,7 +10,7 @@ body{
     padding:15px;
 }
 
-.container{
+.metodos-container{
     width:100%;
     min-height:88vh;
     background:linear-gradient(180deg,#ffe8ee,#fff3f7);
@@ -66,7 +66,7 @@ body{
     letter-spacing:1px;
 }
 
-.cards{
+.metodos-cards{
     display:flex;
     justify-content:center;
     gap:40px;
@@ -167,7 +167,6 @@ body{
 }
 
 a{
-<<<<<<< HEAD
     text-decoration: none;
     color: inherit;
 }
@@ -322,60 +321,4 @@ a{
         font-size: 0.85rem;
     }
 }
-s
-=======
-    text-decoration:none;
-    color:inherit;
-}
 
-@media(max-width:1000px){
-
-.cards{
-    gap:25px;
-}
-
-.card-box{
-    width:190px;
-    height:220px;
-}
-
-.card-box img{
-    width:130px;
-}
-
-.recordatorio{
-    width:95%;
-}
-
-}
-
-@media(max-width:700px){
-
-.container{
-    padding:35px 20px;
-}
-
-.title{
-    width:240px;
-}
-
-.title h1{
-    font-size:1.8rem;
-}
-
-.card-box{
-    width:170px;
-    height:205px;
-}
-
-.card-box img{
-    width:115px;
-}
-
-.recordatorio{
-    flex-direction:column;
-    text-align:center;
-}
-
-}
->>>>>>> c7031e3a388472a78d269f93613a21cee01c1965
