@@ -351,3 +351,146 @@ body::after {
   height: 100%;
   display: block;
 }
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .goals-container {
+        max-width: 90%;
+    }
+
+    .goals-header,
+    .goals-form-wrapper,
+    .goals-list-wrapper,
+    .detail-card {
+        padding: 25px 30px;
+    }
+
+    .goals-header h1 {
+        font-size: 2rem;
+    }
+
+    .goals-form {
+        gap: 10px;
+    }
+
+    #detalleNombre {
+        font-size: 1.8rem;
+    }
+
+    .waves {
+        height: 180px;
+    }
+
+    body::before {
+        width: 500px;
+        height: 500px;
+    }
+
+    body::after {
+        width: 700px;
+        height: 700px;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .goals-container {
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .goals-header,
+    .goals-form-wrapper,
+    .goals-list-wrapper,
+    .detail-card {
+        padding: 20px;
+    }
+
+    .goals-header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    .counters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .goals-form,
+    #formAbono {
+        flex-direction: column;
+    }
+
+    .goals-form button,
+    #formAbono button {
+        width: 100%;
+    }
+
+    .goal-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .goal-title,
+    .goal-percentage {
+        text-align: left;
+    }
+
+    #detalleNombre {
+        font-size: 1.5rem;
+    }
+
+    #detalleMontoTotal {
+        font-size: 1rem;
+    }
+
+    .progress-label-wrapper,
+    .amount-labels-row {
+        font-size: 0.85rem;
+    }
+
+    .waves {
+        height: 120px;
+    }
+
+    body::before {
+        width: 350px;
+        height: 350px;
+        left: -120px;
+    }
+
+    body::after {
+        width: 450px;
+        height: 450px;
+        right: -180px;
+    }
+}
+
+
+
+@media screen and (max-*idth: 480px) {
+
+    .goals-contain*r {
+        padding: 0 10px;
+    }*
+    .goals-header,
+    .goals-for*-wrapper,
+    .goals-list-wrapper,*    .detail-card {
+        padding* 15px;
+        border-radius: 15px*
+    }
+
+    .goals-header h1 {
+   *    font-size: 1.4rem;
+    }
+
+

@@ -12,7 +12,6 @@ body{
     padding: 30px;
 }
 
-/* NAVBAR */
 .navbar{
     position: relative;
     z-index: 9999;
@@ -74,7 +73,7 @@ body{
 
 .nav-links a{
     text-decoration: none;
-    color: #fdfcfc;
+    color: black;
     font-size: 1rem;
     font-weight: 500;
     transition: 0.3s;
@@ -807,6 +806,166 @@ p{
     color: #666;
     line-height: 1.4;
 }
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .navbar {
+        padding: 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .navbar .logo .logo-img {
+        width: 180px !important;
+        min-width: 180px !important;
+        max-width: 180px !important;
+        height: auto !important;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    .nav-buttons {
+        gap: 10px;
+    }
+
+    .signup-btn,
+    .login-btn,
+    .more-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-menu {
+        width: 250px;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar .logo .logo-img {
+        width: 170px !important;
+        min-width: 170px !important;
+        max-width: 170px !important;
+        height: auto !important;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .signup-btn,
+    .login-btn,
+    .more-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .dropdown {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        max-width: 300px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .navbar {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .navbar .logo .logo-img {
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .signup-btn,
+    .login-btn,
+    .more-btn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .dropdown-menu {
+        max-width: 250px;
+        padding: 10px;
+    }
+
+    .dropdown-menu a {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
 
 
 

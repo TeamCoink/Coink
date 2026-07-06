@@ -2,33 +2,33 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
     height:100vh;
-     background:  #FFF2EB;
+    background:#FFF2EB;
 }
-
 
 .contenedorLogin{
     display:flex;
     justify-content:space-between;
-        background:  #FFF2EB;
     align-items:center;
     height:100vh;
-    padding:60px;
+    padding:40px 70px;
+    gap:60px;
+    overflow:hidden;
+    background:#FFF2EB;
 }
-
 
 .card{
-    width:400px;
-   background:  #ffffff;
+    width:380px;
+    flex-shrink:0;
+    background:#fff;
     padding:40px;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
-
 
 .logoArea{
     display:flex;
@@ -38,14 +38,13 @@ body{
 }
 
 .logoArea img{
-    width: 200px;
+    width:200px;
 }
 
 .logoArea span{
     font-weight:bold;
     color:#27ae60;
 }
-
 
 h1{
     font-size:22px;
@@ -65,7 +64,6 @@ h1{
 .rosa{
     color:#ff6fa5;
 }
-
 
 label{
     font-size:13px;
@@ -92,8 +90,8 @@ label{
     outline:none;
     width:100%;
     font-size:14px;
+    background:transparent;
 }
-
 
 .options{
     display:flex;
@@ -107,7 +105,6 @@ label{
     color:#ff6fa5;
     text-decoration:none;
 }
-
 
 .btn{
     width:100%;
@@ -124,14 +121,12 @@ label{
     background:#8bcf88;
 }
 
-
 .divider{
     text-align:center;
     margin:20px 0;
     font-size:13px;
     color:#777;
 }
-
 
 .social{
     display:flex;
@@ -150,8 +145,12 @@ label{
     gap:8px;
     cursor:pointer;
     font-size:13px;
+    transition:.3s;
 }
 
+.social button:hover{
+    background:#f8f8f8;
+}
 
 .register{
     margin-top:18px;
@@ -180,30 +179,32 @@ label{
     text-decoration:underline;
 }
 
-
 .info{
-    width:80%;
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
-
 }
 
 .info h2{
-    font-size:60px;
+    font-size:52px;
     font-weight:700;
-    line-height:1.2;
+    line-height:1.15;
+    margin-bottom:15px;
 }
 
 .info p{
-    color:#888;
-    margin-top:20px;
-    font: size 20px;
-
-
-.pig{
-    width:800px;
-    margin-top:25px;
+    color:#777;
+    font-size:20px;
+    margin-bottom:25px;
 }
 
+.pig{
+    width:430px;
+    max-width:100%;
+    height:auto;
+    display:block;
 }
 
 .alerta{
@@ -215,4 +216,68 @@ label{
     margin:15px 0;
     text-align:center;
     font-weight:bold;
+}
+
+@media(max-width:900px){
+
+    .contenedorLogin{
+        flex-direction:column;
+        justify-content:center;
+        height:auto;
+        padding:30px 20px;
+        gap:30px;
+    }
+
+    .card{
+        width:100%;
+        max-width:400px;
+    }
+
+    .info{
+        width:100%;
+    }
+
+    .info h2{
+        font-size:38px;
+    }
+
+    .info p{
+        font-size:17px;
+    }
+
+    .pig{
+        width:280px;
+    }
+}
+
+@media(max-width:480px){
+
+    .card{
+        padding:25px;
+    }
+
+    .logoArea img{
+        width:150px;
+    }
+
+    .info h2{
+        font-size:30px;
+    }
+
+    .info p{
+        font-size:15px;
+    }
+
+    .pig{
+        width:220px;
+    }
+
+    .social{
+        flex-direction:column;
+    }
+
+    .register{
+        flex-direction:column;
+        gap:3px;
+    }
 }
