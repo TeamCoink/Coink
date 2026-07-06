@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function triggerInput(idInput, event) {
     if (event.target.tagName !== 'BUTTON') {
         const input = document.getElementById(idInput);
-        input.value = ''; // <--- ESTO ES LA CLAVE: limpia el valor para permitir re-selección
+        input.value = ''; 
         input.click();
     }
 }
@@ -121,7 +121,7 @@ function iniciarRecorte(event, tipo) {
         const img = document.getElementById('imgRecorte');
         img.src = e.target.result;
         
-        // Destruir cualquier instancia previa antes de mostrar el modal
+       
         if (cropper) {
             cropper.destroy();
             cropper = null;
@@ -129,12 +129,12 @@ function iniciarRecorte(event, tipo) {
         
         document.getElementById('modalRecorte').style.display = 'block';
         
-        // Inicializar nuevo cropper
+     
         cropper = new Cropper(img, {
             aspectRatio: tipo === 'avatar' ? 1 : 2.5,
             viewMode: 1,
             ready: function() {
-                // Esto asegura que se ajuste bien al nuevo tamaño
+                
                 cropper.setData({ width: 500, height: 200 }); 
             }
         });
