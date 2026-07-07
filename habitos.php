@@ -59,6 +59,8 @@
         <p>La clave esta en la constancia. Dedica  <br>  unos minutos cada día a tus finanzas <br> y verás  como tu futuro cambia.</p>
     </div>
 
+    <div class="linea"></div>
+
     <div class="check-list">
         <ul>
             <p><i class="fa-solid fa-circle-check"></i> Más tranquilidad y menos estrés financiero</p>
@@ -67,6 +69,80 @@
             <p><i class="fa-solid fa-circle-check"></i> Libertad para alcanzar tus metas.</p>
         </ul>
     </div>
+</section>
+
+<div class="tittle">
+    <h2>Los 10 hábitos que transformaran tus finanzas</h2>
+</div>
+
+<section class="habit">
+
+    <div class="column1">
+        <div class="item">
+            <div class="numero">1</div>
+            <h3>Lleva un control de tus gastos</h3>
+        </div>
+        <p>Saber en que gasta tu dinero es el primer paso para tomar <br> decisiones inteligentes y evitar fugas de dinero</p>
+
+        <div class="item">
+            <div class="numero">2</div>
+            <h3>Vive por debajo de tus posibilidades</h3>
+        </div>
+        <p>Gasta menos de lo que ganas. Esto te permitirá ahorrar,<br> invertir y estar preparados para imprevistos</p>
+
+        <div class="item">
+            <div class="numero">3</div>
+            <h3>Ahorra primero, gasta después</h3>
+        </div>
+        <p>Aparta una parte de tu ingreso apenas lo recibas. <br> Págate a ti primero.</p>
+
+        <div class="item">
+            <div class="numero">4</div>
+            <h3>Crea metas financieras claras</h3>
+        </div>
+        <p>Tener objetivos te da dirección y motivación para <br> mantener buenos hábitos.</p>
+
+         <div class="item">
+            <div class="numero">5</div>
+            <h3>Construye un fondo de emergencia</h3>
+        </div>
+        <p>Cubre de 3 a 6 meses de tus gastos básicos para <br> estar preparado ante cualquier imprevisto.</p>
+        
+    </div>
+
+    <div class="column2">
+         <div class="item">
+            <div class="numero">6</div>
+            <h3>Lleva un control de tus gastos</h3>
+        </div>
+        <p>Usa el créditoa tu favor, no en tu contra. Paga a tiempo y evita endeudarte más.</p>
+
+         <div class="item">
+            <div class="numero">7</div>
+            <h3>Invierte en tu educación financiera</h3>
+        </div>
+        <p>Entre más aprendes, mejores decisiones tomas con tu dinero.</p>
+
+         <div class="item">
+            <div class="numero">8</div>
+            <h3>Revisa tu  progreso constantemente</h3>
+        </div>
+        <p>Evalúa tus hábitos y resultados cada mes. Ajusta lo necesario y sigue adelante.</p>
+
+         <div class="item">
+            <div class="numero">9</div>
+            <h3>Sé paciente y constante</h3>
+        </div>
+        <p>Los resultados no son inmediatos, pero la constancia siempre paga.</p>
+
+         <div class="item">
+            <div class="numero">10</div>
+            <h3>Disfruta  tu dinero sin culpa</h3>
+        </div>
+        <p>Usa tu dinero en lo que realmente te aporta felicidad y valor.</p>
+
+    </div>
+
 </section>
 
 
