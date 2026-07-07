@@ -174,6 +174,8 @@ input:focus { border-color: #ff4da3; }
 .signin-text a { color: #000; font-weight: 700; text-decoration: none; border-bottom: 2px solid #ff4da3; }
 
 
+
+
 @media screen and (max-width: 768px) {
 
     .goals-container {
@@ -294,4 +296,176 @@ input:focus { border-color: #ff4da3; }
         height: 500px;
         right: -200px;
     }
+
+
+@media (max-width: 1024px){
+
+    .main-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .form-card{
+        width: 420px;
+        max-width: 90%;
+    }
+
+    .brand-section{
+        order: 2;
+    }
+
+    .brand-content{
+        gap: 10px;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .illustration{
+        width: 180px;
+        max-width: 100%;
+    }
+
+    body{
+        padding: 20px;
+    }
 }
+
+
+
+
+@media (max-width:768px){
+
+    body{
+        padding: 20px 10px;
+    }
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .form-card{
+        width: 95%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .brand-section{
+        order: 2; /* manda la imagen abajo */
+    }
+
+    .brand-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo{
+        display: none; /* ocultar logo */
+    }
+
+    .illustration{
+        width: 180px;
+        max-width: 100%;
+    }
+}
+
+
+
+
+@media (max-width:480px){
+
+    .form-card{
+        width: 100%;
+        padding: 18px;
+    }
+
+    .illustration{
+        width: 150px;
+    }
+
+    h2{
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+
+
+
+@media (max-width:320px){
+
+    body{
+        padding: 10px;
+    }
+
+    .main-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .form-card{
+        width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .brand-section{
+        order: 2;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .illustration{
+        width: 120px;
+        max-width: 100%;
+    }
+
+    h2{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    label{
+        font-size: 12px;
+    }
+
+    input{
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .btn-submit{
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .social-icon{
+        width: 30px;
+        height: 30px;
+    }
+
+    .signin-text{
+        font-size: 11px;
+        text-align: center;
+    }
+}
+
+
+
+}
+

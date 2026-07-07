@@ -67,7 +67,7 @@
   <h2 class="developers-title">DEVELOPERS COINK</h2>
   <div class="cards">
     <!-- Card 1 -->
-    <div class="card pink">
+    <div class="card1 pink1">
       <img src="profile.png" alt="Dev">
       <h3>Nombre Apellido</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

@@ -233,6 +233,8 @@ footer{
 .developers{
   padding:3rem;
   text-align:center;
+  display:block;
+
 }
 
 .developers-title{
@@ -241,17 +243,26 @@ footer{
   margin-bottom:3rem;
 }
 
-.card.pink{
+.card-pink{
   border-top:6px solid #ff4081;
 }
 
-.card.green{
+.card-green{
   border-top:6px solid #2d6a4f;
 }
 
-.card.yellow{
+.card-yellow{
   border-top:6px solid #f4a300;
 }
+
+about us-cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:2rem;
+}
+
+
 
 .cta-row{
   display:flex;
