@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Coink</title>
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -77,7 +77,7 @@
         ?</h1><br>
         <p>Somos una plataforma de educación financiera que busca ayudarte a comprender el dinero, aprender a administrar tus ingresos y que puedas usar Coink como una  herramienta para mejorar tu vida, ofreciendote herramientas que te ayudaran a que veas como tu dinero crece de manera inteligente. </p>
 
-        <div id="knowmore"><button class="button3">Conoce más →</button></div>
+        <div id="knowmore"><button class="button3"><a href="about-us.php">Conoce más →</a></button></div>
 
     </div>
 
@@ -105,27 +105,52 @@
     
 </section>
 
-<section class="hero2">
-    <img src="img/planta2.jpg" alt="" height="620vh">
-    <div id="start"><button class="button4">Comienza Ya!</button></div>
+<section class="cta">
+
+    <div class="cta-image">
+        <img src="img/macetita.png" alt="Planta creciendo" width="520px">
+    </div>
+
+    <div class="cta-content">
+
+        <h1>
+            Únete hoy a <br>
+            Coink <span>e invierte</span> <br>
+            en ti mismo <br>
+            mañana.
+        </h1>
+
+        <p>
+            Empieza a construir ahora la vida financiera
+            que siempre has querido.
+        </p>
+
+        <a href="register.html" class="cta-btn">
+            ¡Comienza ya!
+        </a>
+
+    </div>
+
 </section>
 
 <section id="recursos">
     <h1>¡De <span class="c">C</span><span class="o">o</span><span class="i">i</span><span class="n">n</span><span class="k">k</span> para ti!</h1>
 
-    <div class="cards3">
-        <img src="img/mujer.jpg" alt="" width="350">
-        <div class="texto1">
-             <h3>Presupuesto y sus beneficios</h3><br>
-             <p>¡Descubre que es un presupuesto y <br> que beneficios trae consigo!</p> <br>
-             <p ><a href="" class="more-bttn">Ver más</a></p>
+    <div class="cards-container">
+
+         <div class="cards3">
+            <img src="img/mujer.jpg" alt="" width="350">
+            <div class="cards-texto">
+             <h3>¿Ahorrar o Invertir?  <br> Diferencias y como empezar</h3><br>
+             <p>Conoce las diferencias entre ahorrar e invertir y cual te conviene más</p> <br>
+             <p ><a href="diferencias.php" class="more-bttn">Ver más</a></p>
         </div>
       
     </div>
 
-    <div class="cards3">
-        <img src="img/hombtr.jpg" alt="" width="320">
-        <div class="texto2">
+    <div class="cards4">
+        <img src="img/hombtr.jpg" alt="" width="310">
+        <div class="cards-texto">
             <h3>¿Deseo o necesidad?</h3><br>
             <p>Identifica si tu siguiente compra  <br> es un deseo o una necesidad</p> <br>
             <p ><a href="" class="more-bttn">Ver más</a></p>
@@ -135,13 +160,15 @@
 
     <div class="cards3">
         <img src="img/hombre2.jpeg" alt="" width="350">
-        <div class="texto3">
-            <h3>Ahorro inteligente</h3><br>
-            <p>Aprende a ahorrar correctamente <br> y que metodos se ajustan a tí</p> <br>
-            <p ><a href="" class="more-bttn">Ver más</a></p>
+        <div class="cards-texto">
+            <h3>10 hábitos financieros que cambiaran tu vida</h3><br>
+            <p>Descubre los 10 hábitos de los que nadie habla para mejorar tus finanzas</p> <br>
+            <p ><a href="habitos.php" class="more-bttn">Ver más</a></p>
         </div>
        
     </div>
+    </div>
+   
 
 </section>
 
@@ -205,8 +232,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <footer class="footer">
   <div class="footer-container">
 
-    <h2 class="footer-logo">🐷 CoinK</h2>
-    <p class="footer-text">Ahorra inteligente, vive mejor 💰</p>
+   <div class="footer-logo">
+    <img src="img/123repetido.png" alt="Logo Coink">
+</div>
+
+<p class="footer-text">
+    Ahorra inteligente, vive mejor
+</p>
 
     <div class="footer-social">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -220,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   </div>
 </footer>
+
     
 </body>
 </html>

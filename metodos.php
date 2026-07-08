@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Métodos</title>
 
-    <link rel="stylesheet" href="style/metodos.css">
+
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/metodos.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -21,7 +22,7 @@
 
 </header>
     <!-- CONTENEDOR -->
-    <main class="container">
+    <main class="metodos-container">
 
         <!-- TITULO -->
         <div class="title">
@@ -29,7 +30,7 @@
         </div>
 
         <!-- TARJETAS -->
-        <section class="cards">
+        <section class="metodos-cards">
 
             <!-- CARD -->
             <label class="card">
@@ -127,5 +128,30 @@
     </main>
    <script src="javaScript/homepage.js"></script>
     <script src="javaScript/navbar-mobile.js"></script>
+
+    <footer class="footer">
+  <div class="footer-container">
+
+   <div class="footer-logo">
+    <img src="img/123repetido.png" alt="Logo Coink">
+</div>
+
+<p class="footer-text">
+    Ahorra inteligente, vive mejor
+</p>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 CoinK · Todos los derechos reservados
+    </p>
+
+  </div>
+</footer>
+
 </body>
 </html>
