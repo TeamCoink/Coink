@@ -175,297 +175,103 @@ input:focus { border-color: #ff4da3; }
 
 
 
-
-@media screen and (max-width: 768px) {
-
-    .goals-container {
-        margin: 15px auto;
-        padding: 0 12px;
-        gap: 15px;
+@media (max-width: 992px) {
+    .main-container {
+        width: 90%;
+        gap: 30px;
     }
 
-    .goals-header,
-    .goals-form-wrapper,
-    .goals-list-wrapper,
-    .detail-card {
+    .logo {
+        width: 180px;
+    }
+
+    .illustration {
+        max-width: 300px;
+    }
+
+    .form-card {
+        width: 380px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
         padding: 20px;
-        border-radius: 15px;
+        overflow-y: auto;
     }
 
-    .goals-header h1 {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-    .goals-header .subtitle {
-        font-size: 0.95rem;
-        text-align: center;
-    }
-
-    .counters {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .counter-total,
-    .counter-completed {
-        text-align: center;
-    }
-
-    .goals-form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .goals-form button {
-        width: 100%;
-    }
-
-    .goal-item {
-        padding: 12px 8px;
-        gap: 10px;
-    }
-
-    .goal-info {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .goal-title {
-        font-size: 0.95rem;
-    }
-
-    .goal-percentage {
-        font-size: 0.9rem;
-    }
-
-    .goal-amounts {
-        font-size: 0.8rem;
-    }
-
-    #detalleNombre {
-        font-size: 1.5rem;
-        word-break: break-word;
-    }
-
-    #detalleMontoTotal {
-        font-size: 1rem;
-    }
-
-    .progress-label-wrapper {
-        font-size: 0.85rem;
-    }
-
-    .amount-labels-row {
-        font-size: 0.85rem;
-        margin-bottom: 20px;
-    }
-
-    #formAbono {
-        flex-direction: column;
-    }
-
-    #inputAbono {
-        width: 100%;
-    }
-
-    #formAbono button {
-        width: 100%;
-    }
-
-    .back-link {
-        font-size: 1rem;
-    }
-
-    .btn-delete {
-        font-size: 1rem;
-    }
-
-    .waves {
-        height: 120px;
-    }
-
-    body::before {
-        width: 400px;
-        height: 400px;
-        left: -150px;
-    }
-
-    body::after {
-        width: 500px;
-        height: 500px;
-        right: -200px;
-    }
-
-
-@media (max-width: 1024px){
-
-    .main-container{
+    .main-container {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         gap: 25px;
-        width: 100%;
     }
 
-    .form-card{
-        width: 420px;
-        max-width: 90%;
+    .brand-section {
+        order: 1;
     }
 
-    .brand-section{
+    .form-card {
         order: 2;
-    }
-
-    .brand-content{
-        gap: 10px;
-    }
-
-    .logo{
-        display: none;
-    }
-
-    .illustration{
-        width: 180px;
-        max-width: 100%;
-    }
-
-    body{
-        padding: 20px;
-    }
-}
-
-
-
-
-@media (max-width:768px){
-
-    body{
-        padding: 20px 10px;
-    }
-
-    .main-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .form-card{
-        width: 95%;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
-    .brand-section{
-        order: 2; /* manda la imagen abajo */
-    }
-
-    .brand-content{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo{
-        display: none; /* ocultar logo */
-    }
-
-    .illustration{
-        width: 180px;
-        max-width: 100%;
-    }
-}
-
-
-
-
-@media (max-width:480px){
-
-    .form-card{
         width: 100%;
-        padding: 18px;
+        max-width: 420px;
     }
 
-    .illustration{
+    .logo {
         width: 150px;
     }
 
-    h2{
+    .illustration {
+        max-width: 220px;
+    }
+
+    h2 {
         font-size: 22px;
-        text-align: center;
     }
 }
 
-
-
-
-@media (max-width:320px){
-
-    body{
-        padding: 10px;
-    }
-
-    .main-container{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        width: 100%;
-    }
-
-    .form-card{
-        width: 100%;
-        padding: 15px;
+@media (max-width: 480px) {
+    .form-card {
+        padding: 25px 20px;
         border-radius: 15px;
     }
 
-    .brand-section{
-        order: 2;
+    h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 
-    .logo{
-        display: none;
-    }
-
-    .illustration{
-        width: 120px;
-        max-width: 100%;
-    }
-
-    h2{
-        font-size: 18px;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    label{
+    input {
         font-size: 12px;
+        padding: 10px 15px;
     }
 
-    input{
-        padding: 8px 12px;
-        font-size: 12px;
+    .input-wrapper i.icon-left + input {
+        padding-left: 42px;
     }
 
-    .btn-submit{
+    .btn-submit {
+        font-size: 14px;
         padding: 10px;
-        font-size: 13px;
     }
 
-    .social-icon{
-        width: 30px;
-        height: 30px;
+    .social-icon {
+        width: 35px;
+        height: 35px;
     }
 
-    .signin-text{
-        font-size: 11px;
-        text-align: center;
+    .logo {
+        width: 130px;
+    }
+
+    .illustration {
+        max-width: 180px;
+    }
+
+    .signin-text {
+        font-size: 12px;
     }
 }
 
 
-
-}
 

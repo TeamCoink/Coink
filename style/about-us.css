@@ -237,6 +237,8 @@ footer{
 
 }
 
+about us-cards
+
 .developers-title{
   color:#ff4081;
   font-size:2.5rem;
@@ -253,13 +255,6 @@ footer{
 
 .card-yellow{
   border-top:6px solid #f4a300;
-}
-
-about us-cards{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:2rem;
 }
 
 
