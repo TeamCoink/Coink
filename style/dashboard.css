@@ -56,6 +56,80 @@
     gap: 18px;
 }
 
+.presupuesto-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    border:2px solid #69C36B;
+
+    border-radius:20px;
+
+    padding:18px;
+
+    background:#fff;
+
+    box-shadow:0 8px 20px rgba(105,195,107,.12);
+
+    transition:.35s;
+
+}
+
+.presupuesto-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(105,195,107,.28);
+
+    border-color:#56B058;
+
+}
+
+.stat-icon{
+
+    transition:.35s;
+
+}
+
+.presupuesto-card:hover .stat-icon{
+
+    transform:scale(1.15) rotate(-8deg);
+
+}
+
+.mini-progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:#E9F7EA;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:12px 0;
+
+}
+
+.mini-progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:#69C36B;
+
+    transition:.6s;
+
+    transition:width .9s ease;
+
+}
+
 .mini-card{
     width: 100%;
     min-height: 95px;
@@ -1057,6 +1131,10 @@
         align-items: center;
     }
 
+}
+
+.coink-assistant img{
+    width: 250px;
 }
 
 @media (max-width: 768px){
