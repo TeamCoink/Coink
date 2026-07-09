@@ -223,6 +223,7 @@ body{
     .navbar{
         flex-direction: column;
         gap: 20px;
+        display: none;
     }
 
     .nav-links{
