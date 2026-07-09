@@ -138,6 +138,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
             </a>
 
+            <a href="register.html" class="login-mobile" style="background:#ffca28; color:#000; text-align:center;">
+                    Registrarse
+                </a>
+
         <?php endif; ?>
 
     </div>

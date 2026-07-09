@@ -51,7 +51,7 @@ $usuarioId = $_SESSION['usuario_id'];
         
         <div class="actions-container">
             <a href="php/logout.php" style="text-decoration:none;"><button class="btn-cerrar">Cerrar sesión</button></a>
-            <button onclick="document.getElementById('modalEditar').style.display='block'" class="btn-editar">Editar Perfil</button>
+           <button onclick="abrirModal()" class="btn-editar">Editar Perfil</button>
         </div>
 
         
@@ -78,6 +78,13 @@ document.addEventListener("DOMContentLoaded", function() {
     actualizarAvatar();
     actualizarPortada();
     cargarBiografia();
+
+    // En lugar de poner "Julio 2026" manualmente, usamos esto:
+const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+const fechaActual = new Date();
+const fechaTexto = meses[fechaActual.getMonth()] + " " + fechaActual.getFullYear();
+
+document.getElementById('userJoinDate').innerHTML = `<i class="fa-solid fa-calendar-days"></i> Se unió en ${fechaTexto}`;
     
    
     const nombreGuardado = localStorage.getItem("nombre_usuario_" + usuarioId);
@@ -218,6 +225,14 @@ function guardarTodo() {
     } catch (e) { console.error(e); }
 }
 
+function abrirModal() {
+  
+    document.getElementById('editName').value = document.querySelector('.username-title').textContent;
+    document.getElementById('editBio').value = document.getElementById('userBio').textContent.replace('Haz clic aquí para agregar una descripción...', '').trim();
+    
+   
+    document.getElementById('modalEditar').style.display = 'block';
+}
 
 </script>
 
