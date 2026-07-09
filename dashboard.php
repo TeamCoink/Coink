@@ -1,7 +1,3 @@
-<?php include 'components/navbar.php'; ?>
-<?php include 'components/navbar-mobile.php'; ?>
-
-
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -11,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 include("php/conexion.php");
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 
@@ -179,6 +175,34 @@ $dataGastos = $resultGastos->fetch_assoc();
 $totalGastado = $dataGastos['total'] ?? 0;
 $balance = $totalAhorro - $totalGastado;
 
+$sqlPresupuesto = "
+
+SELECT *
+
+FROM presupuestos
+
+WHERE usuario_id = ?
+
+LIMIT 1
+
+";
+
+$stmtPresupuesto =
+    $conn->prepare($sqlPresupuesto);
+
+$stmtPresupuesto->bind_param(
+    "i",
+    $usuarioId
+);
+
+$stmtPresupuesto->execute();
+
+$resultPresupuesto =
+    $stmtPresupuesto->get_result();
+
+$presupuesto =
+    $resultPresupuesto->fetch_assoc();
+
 
 
 $sqlGastosDia = "
@@ -202,9 +226,11 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
     $gastosPorDia[$fila['fecha']] = $fila['total'];
 }
-
-
 ?>
+
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -241,7 +267,6 @@ while($fila = $resultGastosDia->fetch_assoc()){
     
     <div class="left-cards">
 
-        <!-- Saldo actual -->
         <div class="mini-card pink">
 
             <div class="icon-box">
@@ -258,8 +283,6 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
         </div>
 
-
-        <!-- Total ahorrado -->
         <div class="mini-card green">
 
             <div class="icon-box">
@@ -323,6 +346,34 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
             </div>
         </div>
+
+        <div class="stat-card presupuesto-card">
+
+                <div class="stat-icon">
+
+                    📊
+
+                </div>
+
+                <div class="stat-info">
+
+                    <h3>Presupuesto</h3>
+
+                    <h2 id="presupuestoPorcentaje">
+
+                        <?php echo round($presupuesto["porcentaje"] ?? 0); ?>%
+
+                    </h2>
+                    
+                    <p id="presupuestoDisponible">
+
+                        Disponible:
+                        $<?php echo number_format($presupuesto["disponible"] ?? 0,2); ?>
+
+                    </p>
+
+                </div>
+            </div>
     </div>
 
 
@@ -343,40 +394,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="coink-assistant">
 
             <img
-                src="img/coink5.png"
+                src="img/coink3.png"
                 alt="Coink"
                 class="assistant-img">
-
-            <div class="assistant-card">
-
-                <h3 id="assistantTitle">
-
-                    Hola 👋
-
-                </h3>
-
-                <p id="assistantMessage">
-
-                    Estoy revisando tu presupuesto...
-
-                </p>
-
-                <div class="assistant-stars"
-                    id="assistantStars">
-
-                    ⭐⭐⭐⭐⭐
-
-                </div>
-
-                <button
-                    class="assistant-btn"
-                    onclick="window.location.href='presupuesto.php'">
-
-                    Ver análisis completo →
-
-                </button>
-
-            </div>
 
         </div>
 
@@ -396,6 +416,11 @@ while($fila = $resultGastosDia->fetch_assoc()){
             <a href="metas.php"
             class="dashboard-btn meta-btn">
                 🎯 Ver metas
+            </a>
+
+            <a href="presupuesto.php"
+            class="dashboard-btn ahorro-btn">
+                📋 Ver presupuesto
             </a>
 
         </div>
@@ -487,13 +512,28 @@ if(toast){
 
 }
 </script>
- <script src="javaScript/navbar-mobile.js"></script>
+<script src="javaScript/navbar-mobile.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
 
+const presupuesto = {
+
+    ingreso: <?php echo $presupuesto['ingreso'] ?? 0; ?>,
+
+    asignado: <?php echo $presupuesto['asignado'] ?? 0; ?>,
+
+    disponible: <?php echo $presupuesto['disponible'] ?? 0; ?>,
+
+    porcentaje: <?php echo $presupuesto['porcentaje'] ?? 0; ?>
+
+};
+console.log(presupuesto);
+</script>
+
+<script>
 const ctx = document.getElementById('savingsChart');
 
 const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 350);
@@ -724,8 +764,6 @@ function renderCalendar(){
     const daysInMonth =
         new Date(year, month + 1, 0).getDate();
  
-
-    // Encabezados días
     const diasSemana = [
         'L','M','M','J','V','S','D'
     ];
@@ -744,7 +782,6 @@ function renderCalendar(){
         calendar.appendChild(dayName);
     });
 
-    // Espacios vacíos
     for(let i = 0; i < firstDay; i++){
 
         const empty =
@@ -753,7 +790,6 @@ function renderCalendar(){
         calendar.appendChild(empty);
     }
 
-    // Días reales
     for(let day = 1; day <= daysInMonth; day++){
 
         const dayElement =
@@ -942,39 +978,33 @@ async function cargarDetalleDia(fecha){
 
     panel.innerHTML = html;
 }
-
 </script>
 
  <script src="javaScript/homepage.js"></script>
 
- <footer class="footer">
-  <div class="footer-container">
+    <footer class="footer">
+    <div class="footer-container">
 
-   <div class="footer-logo">
-    <img src="img/123repetido.png" alt="Logo Coink">
-</div>
-
-<p class="footer-text">
-    Ahorra inteligente, vive mejor
-</p>
-
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <div class="footer-logo">
+        <img src="img/123repetido.png" alt="Logo Coink">
     </div>
 
-    <p class="footer-copy">
-      © 2026 CoinK · Todos los derechos reservados
+    <p class="footer-text">
+        Ahorra inteligente, vive mejor
     </p>
 
-  </div>
-</footer>
+        <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
 
+        <p class="footer-copy">
+        © 2026 CoinK · Todos los derechos reservados
+        </p>
 
-
-</body>
-</html>
+    </div>
+    </footer>
 
 </body>
 </html>

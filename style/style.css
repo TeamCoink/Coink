@@ -174,124 +174,104 @@ input:focus { border-color: #ff4da3; }
 .signin-text a { color: #000; font-weight: 700; text-decoration: none; border-bottom: 2px solid #ff4da3; }
 
 
-@media screen and (max-width: 768px) {
 
-    .goals-container {
-        margin: 15px auto;
-        padding: 0 12px;
-        gap: 15px;
+@media (max-width: 992px) {
+    .main-container {
+        width: 90%;
+        gap: 30px;
     }
 
-    .goals-header,
-    .goals-form-wrapper,
-    .goals-list-wrapper,
-    .detail-card {
+    .logo {
+        width: 180px;
+    }
+
+    .illustration {
+        max-width: 300px;
+    }
+
+    .form-card {
+        width: 380px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
         padding: 20px;
+        overflow-y: auto;
+    }
+
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .brand-section {
+        order: 1;
+    }
+
+    .form-card {
+        order: 2;
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .illustration {
+        max-width: 220px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-card {
+        padding: 25px 20px;
         border-radius: 15px;
     }
 
-    .goals-header h1 {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-    .goals-header .subtitle {
-        font-size: 0.95rem;
-        text-align: center;
-    }
-
-    .counters {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .counter-total,
-    .counter-completed {
-        text-align: center;
-    }
-
-    .goals-form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .goals-form button {
-        width: 100%;
-    }
-
-    .goal-item {
-        padding: 12px 8px;
-        gap: 10px;
-    }
-
-    .goal-info {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .goal-title {
-        font-size: 0.95rem;
-    }
-
-    .goal-percentage {
-        font-size: 0.9rem;
-    }
-
-    .goal-amounts {
-        font-size: 0.8rem;
-    }
-
-    #detalleNombre {
-        font-size: 1.5rem;
-        word-break: break-word;
-    }
-
-    #detalleMontoTotal {
-        font-size: 1rem;
-    }
-
-    .progress-label-wrapper {
-        font-size: 0.85rem;
-    }
-
-    .amount-labels-row {
-        font-size: 0.85rem;
+    h2 {
+        font-size: 20px;
         margin-bottom: 20px;
     }
 
-    #formAbono {
-        flex-direction: column;
+    input {
+        font-size: 12px;
+        padding: 10px 15px;
     }
 
-    #inputAbono {
-        width: 100%;
+    .input-wrapper i.icon-left + input {
+        padding-left: 42px;
     }
 
-    #formAbono button {
-        width: 100%;
+    .btn-submit {
+        font-size: 14px;
+        padding: 10px;
     }
 
-    .back-link {
-        font-size: 1rem;
+    .social-icon {
+        width: 35px;
+        height: 35px;
     }
 
-    .btn-delete {
-        font-size: 1rem;
+    .logo {
+        width: 130px;
     }
 
-    .waves {
-        height: 120px;
+    .illustration {
+        max-width: 180px;
     }
 
-    body::before {
-        width: 400px;
-        height: 400px;
-        left: -150px;
-    }
-
-    body::after {
-        width: 500px;
-        height: 500px;
-        right: -200px;
+    .signin-text {
+        font-size: 12px;
     }
 }
+
+
+

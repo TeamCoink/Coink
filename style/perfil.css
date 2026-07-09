@@ -228,17 +228,17 @@ body {
     transform: scale(1.2) !important;
 }
 
-
+/* Asegúrate de añadir esto en el CSS de tu navbar (navbar.css o el principal) */
 #nav-avatar-img {
-    width: 35px; 
+    width: 35px; /* o el tamaño que tenga tu avatar */
     height: 35px;
     border-radius: 50%;
     object-fit: cover;
-    display: none; 
+    display: none; /* Empezamos oculto */
 }
 
 #nav-avatar-initials {
-    display: flex; 
+    display: flex; /* Empezamos visible */
     align-items: center;
     justify-content: center;
     width: 35px;
@@ -250,16 +250,16 @@ body {
 
 .actions-container {
     display: flex !important;
-    justify-content: flex-start !important; 
+    justify-content: flex-start !important; /* Cambiado de flex-end a flex-start */
     gap: 10px !important;
-    padding: 0 30px 20px 30px !important; 
+    padding: 0 30px 20px 30px !important; /* Mantiene el margen de 30px a la izquierda para alinear con el texto */
 }
 
-
+/* Forzar igualdad total en el contenedor actions-container */
 .actions-container .btn-cerrar, 
 .actions-container .btn-editar {
-    padding: 10px 0 !important;
-    width: 140px !important;   
+    padding: 10px 0 !important; /* Quitamos el padding horizontal lateral */
+    width: 140px !important;    /* Asignamos un ancho fijo igual para ambos */
     border-radius: 20px !important;
     font-size: 0.9rem !important;
     font-weight: bold !important;
@@ -272,7 +272,7 @@ body {
     box-sizing: border-box !important;
 }
 
-
+/* Colores específicos */
 .btn-cerrar {
     background-color: #14171a !important; 
     color: #FFFFFF !important;
@@ -284,11 +284,11 @@ body {
 }
 
 
-
+/* Estilo Glassmorphism para el modal */
 #modalEditar > div {
-  
+    /* Fondo semi-transparente */
     background: rgba(255, 255, 255, 0.7) !important;
-   
+    /* Efecto de desenfoque */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     
@@ -355,7 +355,7 @@ body {
 }
 
 
-
+/* Estilo para los detalles (ubicación y fecha) */
 .user-details {
     color: #657786;
     font-size: 0.85rem;
@@ -367,18 +367,19 @@ body {
 
 .user-details i {
     margin-right: 5px;
-    color: #1da1f2; 
+    color: #1da1f2; /* Un toque de color azul para los íconos */
 }
 
+/* Estilo para los "tags" (etiquetas) */
 .tags-container {
     margin: 10px 0 20px 30px;
     display: flex;
     gap: 8px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap; /* Para que si agregas muchas, bajen de línea */
 }
 
 .tag {
-    background: rgba(29, 161, 242, 0.1); 
+    background: rgba(29, 161, 242, 0.1); /* Fondo azul muy suave */
     color: #1da1f2;
     padding: 5px 14px;
     border-radius: 15px;
@@ -394,4 +395,8 @@ body {
 
 .user-details { color: #657786; font-size: 0.85rem; margin: 10px 0 15px 30px; display: flex; gap: 15px; }
 .tags-container { margin: 10px 0 20px 30px; display: flex; gap: 8px; flex-wrap: wrap; }
+
 .tag { background: #e1e8ed; color: #14171a; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
+
+.tag { background: #e1e8ed; color: #14171a; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
+

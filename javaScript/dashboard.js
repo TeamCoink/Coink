@@ -88,67 +88,43 @@ function animarPorcentaje(meta) {
   }, 30); 
   setTimeout(() => {
     circle.style.setProperty("--scale", meta / 100);
-    circle.querySelector("::before"); // activa el pseudo-elemento
+    circle.querySelector("::before"); 
   }, 100);
 }
 
 
-window.onload = () => {
-  animarPorcentaje(metaUsuario);
-};
+window.addEventListener("DOMContentLoaded", () => {
 
-function actualizarAsistente(){
+    animarPorcentaje(metaUsuario);
 
-    if(presupuesto.porcentaje<=60){
+    actualizarTarjetaPresupuesto();
 
-        assistantTitle.textContent=
-        "¡Excelente trabajo!";
+});
 
-        assistantMessage.textContent=
-        "Todavía tienes bastante dinero disponible para ahorrar.";
+function actualizarTarjetaPresupuesto(){
 
-        assistantStars.textContent=
-        "⭐⭐⭐⭐⭐";
+    const barra =
+        document.getElementById("miniProgressFill");
 
+    console.log("Barra:", barra);
+
+    console.log("Porcentaje:", presupuesto.porcentaje);
+
+    if(!barra){
+        console.log("NO encontró la barra");
+        return;
     }
 
-    else if(presupuesto.porcentaje<=80){
+    barra.style.width = presupuesto.porcentaje + "%";
 
-        assistantTitle.textContent=
-        "¡Vas muy bien!";
+    barra.style.height = "20px";
+barra.style.background = "red";
 
-        assistantMessage.textContent=
-        "Tu presupuesto sigue equilibrado, pero intenta guardar un poco más.";
-
-        assistantStars.textContent=
-        "⭐⭐⭐⭐";
-
-    }
-
-    else if(presupuesto.porcentaje<=100){
-
-        assistantTitle.textContent=
-        "Presupuesto ajustado";
-
-        assistantMessage.textContent=
-        "Ya has utilizado gran parte de tu ingreso este mes.";
-
-        assistantStars.textContent=
-        "⭐⭐⭐";
-
-    }
-
-    else{
-
-        assistantTitle.textContent=
-        "¡Cuidado!";
-
-        assistantMessage.textContent=
-        "Has sobrepasado tu presupuesto. Revisa tus gastos.";
-
-        assistantStars.textContent=
-        "⭐";
-
-    }
+    barra.style.background = "#69C36B";
 
 }
+
+console.log("Dashboard cargado");
+console.log(presupuesto);
+
+actualizarTarjetaPresupuesto();

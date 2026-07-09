@@ -11,9 +11,9 @@
 
     border-radius:35px;
 
-    padding:40px;
+    padding:50px;
 
-    margin-top:35px;
+    margin-top:25px;
 
     box-shadow:0 10px 25px rgba(0,0,0,.06);
 
@@ -180,7 +180,7 @@
 
 .categories-section{
 
-    margin-top:40px;
+    flex:2;
 
 }
 
@@ -212,9 +212,9 @@
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(2,1fr);
 
-    gap:25px;
+    gap:18px;
 
 }
 
@@ -1429,5 +1429,341 @@
     color:#555;
 
     line-height:1.5;
+
+}
+
+.budget-content{
+
+    display:flex;
+
+    gap:35px;
+
+    align-items:flex-start;
+
+    margin-top:30px;
+
+}
+
+.pie-section{
+
+    flex:1;
+
+    background:white;
+
+    border:2px solid #CFEFC5;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+.pie-info{
+
+    margin-top:20px;
+
+}
+
+.legend{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:10px 0;
+
+    font-weight:600;
+
+}
+
+.budget-layout{
+
+    display:flex;
+
+    gap:35px;
+
+    align-items:flex-start;
+
+    margin-top:35px;
+
+}
+
+.budget-chart-card{
+
+    flex:1;
+
+    background:white;
+
+    border:2px solid #B8E6A3;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:110px;
+
+    transition:.3s;
+
+}
+
+.budget-chart-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.budget-chart-card h3{
+
+    text-align:center;
+
+    color:#4E9F5A;
+
+    margin-bottom:20px;
+
+}
+
+#budgetPieChart{
+
+    max-width:250px;
+
+    margin:auto;
+
+}
+
+.budget-summary{
+
+    margin-top:25px;
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #EFEFEF;
+
+    font-size:15px;
+
+}
+
+.summary-row strong{
+
+    color:#4E9F5A;
+
+}
+
+
+@media (max-width:1024px){
+
+    .budget-header{
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+        padding:40px;
+    }
+
+    .budget-layout{
+        flex-direction:column;
+    }
+
+    .budget-chart-card{
+        position:relative;
+        top:0;
+        width:100%;
+    }
+
+    .budget-content{
+        flex-direction:column;
+    }
+
+    .categories-section{
+        width:100%;
+    }
+
+    .categories-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .summary-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .health-checks{
+        grid-template-columns:1fr;
+    }
+
+    .summary-header{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .budget-header{
+        padding:30px 20px;
+    }
+
+    .budget-title h1{
+        font-size:30px;
+    }
+
+    .budget-title p{
+        font-size:16px;
+    }
+
+    .budget-mascot img{
+        width:170px;
+    }
+
+    .income-card,
+    .summary-card,
+    .coink-health-card,
+    .budget-chart-card,
+    .budget-progress-card{
+
+        padding:25px;
+    }
+
+    .income-input{
+        width:100%;
+    }
+
+    .income-input input{
+        font-size:24px;
+    }
+
+    .continue-btn,
+    #saveBudget{
+        width:100%;
+        justify-content:center;
+    }
+
+    .categories-grid{
+        grid-template-columns:1fr;
+    }
+
+    .summary-grid{
+        grid-template-columns:1fr;
+    }
+
+    .health-header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .health-header img{
+        width:100px;
+    }
+
+    .health-stars{
+        font-size:32px;
+    }
+
+    .progress-header,
+    .progress-footer{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .coink-tip{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .tip-icon{
+        margin:auto;
+    }
+
+    #budgetPieChart{
+        max-width:240px;
+        margin:auto;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .budget-header{
+        border-radius:25px;
+        padding:20px;
+    }
+
+    .budget-title h1{
+        font-size:24px;
+    }
+
+    .budget-title p{
+        font-size:14px;
+    }
+
+    .section-title h2,
+    .summary-header h2,
+    .health-header h2,
+    .income-text h2{
+
+        font-size:24px;
+    }
+
+    .category-card{
+        padding:20px;
+    }
+
+    .category-icon{
+        width:60px;
+        height:60px;
+        font-size:28px;
+    }
+
+    .category-card h3{
+        font-size:18px;
+    }
+
+    .category-card input{
+        font-size:16px;
+    }
+
+    .summary-box h3{
+        font-size:28px;
+    }
+
+    .summary-row{
+        font-size:14px;
+    }
+
+    .health-item{
+        font-size:14px;
+    }
+
+    .recommendation{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .analysis-loading img,
+    .analysis-start img{
+        width:110px;
+    }
+
+    #budgetPieChart{
+        max-width:180px;
+    }
 
 }

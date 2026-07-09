@@ -185,6 +185,7 @@ footer {
 .mv-row .vision {
   flex: 1;                        
 }
+<<<<<<< HEAD
  
  
  
@@ -221,6 +222,45 @@ footer {
  
 .card:hover {
   transform: scale(1.05);
+=======
+
+.developers{
+  padding:3rem;
+  text-align:center;
+  display:block;
+
+}
+
+about us-cards
+
+.developers-title{
+  color:#ff4081;
+  font-size:2.5rem;
+  margin-bottom:3rem;
+}
+
+.card-pink{
+  border-top:6px solid #ff4081;
+}
+
+.card-green{
+  border-top:6px solid #2d6a4f;
+}
+
+.card-yellow{
+  border-top:6px solid #f4a300;
+}
+
+
+
+.cta-row{
+  display:flex;
+  justify-content:space-between;
+  gap:2rem;
+  padding:2rem;
+  background:#fdf2e9;
+  border-radius:20px;
+>>>>>>> 5e10ce8a94ba4bcf249b9de1d821353d968c8f96
 }
  
 /* Bordes intercalados */

@@ -14,33 +14,23 @@ const presupuesto = {
 
 };
 
-
-// Ingreso mensual
 const ingresoInput = document.getElementById("monthlyIncome");
 
-// Categorías
 const categoriesGrid = document.querySelector(".categories-grid");
 
-// Barra de progreso
 const progressFill = document.getElementById("progressFill");
 const progressPercentage = document.getElementById("progressPercentage");
 const assignedBudget = document.getElementById("assignedBudget");
 const remainingBudget = document.getElementById("remainingBudget");
 
-// Botón guardar
 const saveBudgetBtn = document.getElementById("saveBudget");
 
-// Estado
 const budgetStatus = document.getElementById("budgetStatus");
 
 const healthStars = document.getElementById("healthStars");
 const healthChecks = document.getElementById("healthChecks");
 const healthTitle = document.getElementById("healthTitle");
 const healthDescription = document.getElementById("healthDescription");
-
-/*==================================================
-            RESUMEN
-==================================================*/
 
 const incomeValue = document.getElementById("incomeValue");
 const spentValue = document.getElementById("spentValue");
@@ -61,10 +51,6 @@ const loadingText = document.getElementById("loadingText");
 const analysisWarning = document.getElementById("analysisWarning");
 
 const categoriesSection = document.getElementById("categoriesSection");
-
-/*==================================================
-            MODAL CATEGORÍAS
-==================================================*/
 
 const openModal = document.getElementById("openCategoryModal");
 const closeModal = document.getElementById("closeCategoryModal");
@@ -225,12 +211,6 @@ function eliminarCategoria(e){
 
 }
 
-
-
-/*==================================================
-                CATEGORÍAS
-==================================================*/
-
 function cargarCategoriasIniciales(){
 
     const cards = document.querySelectorAll(".category-card");
@@ -289,10 +269,6 @@ function escucharCategorias(){
 
 }
 
-/*==================================================
-                PRESUPUESTO
-==================================================*/
-
 function actualizarIngreso(){
 
     const ingreso = Number(ingresoInput.value) || 0;
@@ -337,6 +313,8 @@ function calcularPresupuesto(){
 
     }
 
+    actualizarPieChart();
+
 }
 
 function actualizarBarra(){
@@ -369,10 +347,6 @@ function actualizarBarra(){
     }
 
 }
-
-/*==================================================
-                DIAGNÓSTICO
-==================================================*/
 
 function actualizarDiagnostico(){
 
@@ -769,9 +743,6 @@ function mostrarRecomendaciones(lista){
     });
 
 }
-/*==================================================
-            RESUMEN
-==================================================*/
 
 function actualizarResumen(){
 
@@ -835,11 +806,6 @@ function actualizarResumen(){
     }
  }
 
-
-/*==================================================
-            BOTÓN CONTINUAR
-==================================================*/
-
 function iniciarBotonContinuar(){
 
     const continueBtn = document.querySelector(".continue-btn");
@@ -873,10 +839,6 @@ function iniciarBotonContinuar(){
     });
 
 }
-
-/*==================================================
-                LOCAL STORAGE
-==================================================*/
 
 function guardarLocalStorage(){
 
@@ -923,10 +885,6 @@ function cargarLocalStorage(){
 
 }
 
-/*==================================================
-                GUARDAR PRESUPUESTO
-==================================================*/
-
 function guardarPresupuesto(){
 
    
@@ -970,7 +928,8 @@ function guardarPresupuesto(){
             saveBudgetBtn.disabled = false;
 
             saveBudgetBtn.textContent =
-                " Guardar presupuesto";
+
+                 "Guardar presupuesto";
 
             saveBudgetBtn.style.background = "";
 
@@ -979,10 +938,6 @@ function guardarPresupuesto(){
     },1200);
 
 }
-
-/*==================================================
-            ANALIZAR CON COINK
-==================================================*/
 
 function analizarConCoink(){
 
@@ -1048,9 +1003,6 @@ function analizarConCoink(){
     },3000);
 }
 
-/*==================================================
-        CARGAR PRESUPUESTO DESDE PHP
-==================================================*/
 
 function cargarPresupuesto(){
 
@@ -1068,10 +1020,6 @@ function cargarPresupuesto(){
 
         const p = data.presupuesto;
 
-        //=========================
-        // Presupuesto principal
-        //=========================
-
         presupuesto.ingreso = Number(p.ingreso);
 
         presupuesto.asignado = Number(p.asignado);
@@ -1082,15 +1030,8 @@ function cargarPresupuesto(){
 
         presupuesto.categorias = p.categorias;
 
-        //=========================
-        // Mostrar ingreso
-        //=========================
-
         ingresoInput.value = presupuesto.ingreso;
 
-        //=========================
-        // Llenar categorías
-        //=========================
 
         const inputs = document.querySelectorAll(".category-amount");
 
@@ -1104,17 +1045,11 @@ function cargarPresupuesto(){
 
         });
 
-        //=========================
-        // Actualizar interfaz
-        //=========================
-
         actualizarBarra();
-
         actualizarResumen();
-
         actualizarDiagnostico();
-
         generarRecomendaciones();
+        actualizarPieChart();
 
     })
 
@@ -1126,9 +1061,144 @@ function cargarPresupuesto(){
 
 }
 
-/*==================================================
-                INICIALIZACIÓN
-==================================================*/
+let budgetChart = null;
+
+function actualizarPieChart(){
+
+    const labels = [];
+    const datos = [];
+
+    const colores = [
+        "#FFD76A",
+        "#B8E6A3",
+        "#A8D8FF",
+        "#F8C8D2",
+        "#D8B4F8",
+        "#FFBFA3",
+        "#B5EAD7",
+        "#C7CEEA",
+        "#FFEAA7",
+        "#FFDAC1"
+    ];
+
+    console.log("=== PIE CHART ===");
+    console.log(presupuesto.categorias);
+
+    presupuesto.categorias.forEach(categoria=>{
+
+
+        if(categoria.monto>0){
+
+            labels.push(categoria.nombre);
+
+            datos.push(categoria.monto);
+
+        }
+        
+
+    });
+
+    document.getElementById("pieIngreso").textContent =
+        "$" + presupuesto.ingreso.toFixed(2);
+
+    document.getElementById("pieAsignado").textContent =
+        "$" + presupuesto.asignado.toFixed(2);
+
+    document.getElementById("pieDisponible").textContent =
+        "$" + presupuesto.disponible.toFixed(2);
+
+    const canvas = document.getElementById("budgetPieChart");
+
+    if(!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+
+    if(budgetChart){
+
+        budgetChart.destroy();
+
+    }
+
+    budgetChart = new Chart(ctx,{
+
+        type:"doughnut",
+
+        data:{
+
+            labels:labels,
+
+            datasets:[{
+
+                data:datos,
+
+                backgroundColor:colores,
+
+                borderColor:"#fff",
+
+                borderWidth:3,
+
+                hoverOffset:10
+
+            }]
+
+        },
+
+        options:{
+
+            responsive:true,
+
+            cutout:"65%",
+
+            plugins:{
+
+                legend:{
+
+                    position:"bottom",
+
+                    labels:{
+
+                        usePointStyle:true,
+
+                        padding:18,
+
+                        font:{
+                            size:13
+                        }
+
+                    }
+
+                },
+
+                tooltip:{
+
+                    callbacks:{
+
+                        label:function(context){
+
+                            let total = context.dataset.data.reduce((a,b)=>a+b,0);
+
+                            let porcentaje =
+                                ((context.raw/total)*100).toFixed(1);
+
+                            return context.label +
+                            " - " +
+                            porcentaje +
+                            "% ($" +
+                            context.raw.toFixed(2)+")";
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+}
 
 cargarCategoriasIniciales();
 
@@ -1142,7 +1212,8 @@ ingresoInput.addEventListener("input", actualizarIngreso);
 
 saveBudgetBtn.addEventListener("click", guardarPresupuesto);
 
-analyzeBudget.addEventListener("click", analizarConCoink );
+analyzeBudget.addEventListener("click", analizarConCoink);
+
 
 calcularPresupuesto();
 
@@ -1153,3 +1224,9 @@ actualizarDiagnostico();
 generarRecomendaciones();
 
 cargarPresupuesto();
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    actualizarPieChart();
+
+});

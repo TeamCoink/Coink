@@ -1,5 +1,66 @@
- <?php include 'components/navbar.php'; ?>
- <?php include 'components/navbar-mobile.php'; ?>
+<?php
+session_start();
+
+include("php/conexion.php");
+
+if(!isset($_SESSION['usuario_id'])){
+    header("Location: login.html");
+    exit();
+}
+
+$usuarioId = $_SESSION['usuario_id'];
+
+$sqlPresupuesto = "
+SELECT *
+FROM presupuestos
+WHERE usuario_id = ?
+LIMIT 1
+";
+
+$stmtPresupuesto = $conn->prepare($sqlPresupuesto);
+$stmtPresupuesto->bind_param("i",$usuarioId);
+$stmtPresupuesto->execute();
+
+$resultPresupuesto = $stmtPresupuesto->get_result();
+
+$presupuesto = $resultPresupuesto->fetch_assoc();
+?>
+
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
+
+  <?php
+
+
+ $sqlPresupuesto = "
+
+SELECT *
+
+FROM presupuestos
+
+WHERE usuario_id = ?
+
+LIMIT 1
+
+";
+
+$stmtPresupuesto =
+$conn->prepare($sqlPresupuesto);
+
+$stmtPresupuesto->bind_param(
+    "i",
+    $usuarioId
+);
+
+$stmtPresupuesto->execute();
+
+$resultPresupuesto =
+$stmtPresupuesto->get_result();
+
+$presupuesto =
+$resultPresupuesto->fetch_assoc();
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,38 +95,7 @@
     </div>
 </section>
 
-<section class="income-section">
-
-    <div class="income-card">
-
-        <div class="income-text">
-
-            <h2>Ingreso mensual</h2>
-
-            <p>
-                Ingresa cuánto dinero recibes este mes.
-            </p>
-
-        </div>
-
-        <div class="income-input">
-
-            <span>$</span>
-
-           <input
-                type="number"
-                id="monthlyIncome"
-                placeholder="$0.00"
-                min="0">
-        </div>
-
-        <button class="continue-btn">
-            Continuar →
-        </button>
-
-    </div>
-
-    <div class="budget-progress-card">
+<div class="budget-progress-card">
 
         <div class="progress-header">
 
@@ -111,13 +141,44 @@
 
     </div>
 
+<section class="income-section">
+
+    <div class="income-card">
+
+        <div class="income-text">
+
+            <h2>Ingreso mensual</h2>
+
+            <p>
+                Ingresa cuánto dinero recibes este mes.
+            </p>
+
+        </div>
+
+        <div class="income-input">
+
+            <span>$</span>
+
+           <input
+                type="number"
+                id="monthlyIncome"
+                placeholder="$0.00"
+                min="0">
+        </div>
+
+        <button class="continue-btn">
+            Continuar →
+        </button>
+
+    </div>
+
 </section>
 
-<section id="categoriesSection" >
+<section id="categoriesSection">
 
     <div class="section-title">
 
-        <h2> Distribuye tu dinero</h2>
+        <h2>Distribuye tu dinero</h2>
 
         <p>
             Asigna cuánto deseas destinar a cada categoría.
@@ -125,95 +186,148 @@
 
     </div>
 
-    <div class="categories-grid"  id="categoriesGrid">
+    <div class="budget-layout">
 
-        <div class="category-card" data-category="Alimentación">
+        <div class="categories-container">
 
-            <div class="category-icon">🍔</div>
+            <div class="categories-grid" id="categoriesGrid">
 
-            <h3>Alimentación</h3>
+                <div class="category-card" data-category="Alimentación">
 
-            <input
-                type="number"
-                class="category-amount"
-                placeholder="$0.00"
-                min="0">
+                    <div class="category-icon">🍔</div>
+
+                    <h3>Alimentación</h3>
+
+                    <input
+                        type="number"
+                        class="category-amount"
+                        placeholder="$0.00"
+                        min="0">
+
+                </div>
+
+                <div class="category-card" data-category="Transporte">
+
+                    <div class="category-icon">🚌</div>
+
+                    <h3>Transporte</h3>
+
+                    <input
+                        type="number"
+                        class="category-amount"
+                        placeholder="$0.00"
+                        min="0">
+
+                </div>
+
+                <div class="category-card" data-category="Educación">
+
+                    <div class="category-icon">📚</div>
+
+                    <h3>Educación</h3>
+
+                    <input
+                        type="number"
+                        class="category-amount"
+                        placeholder="$0.00"
+                        min="0">
+
+                </div>
+
+                <div class="category-card" data-category="Entretenimiento">
+
+                    <div class="category-icon">🎮</div>
+
+                    <h3>Entretenimiento</h3>
+
+                    <input
+                        type="number"
+                        class="category-amount"
+                        placeholder="$0.00"
+                        min="0">
+
+                </div>
+
+                <div class="category-card" data-category="Ahorro">
+
+                    <div class="category-icon">💵</div>
+
+                    <h3>Ahorro</h3>
+
+                    <input
+                        type="number"
+                        class="category-amount"
+                        placeholder="$0.00"
+                        min="0">
+
+                </div>
+
+                <div class="add-category-card">
+
+                    <button id="openCategoryModal">
+
+                        ➕ Crear categoría
+
+                    </button>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="category-card" data-category="Transporte">
+        <div class="budget-chart-card">
 
-            <div class="category-icon">🚌</div>
+            <h3> Resumen del presupuesto</h3>
 
-            <h3>Transporte</h3>
+            <canvas id="budgetPieChart"></canvas>
 
-            <input
-                type="number"
-                class="category-amount"
-                placeholder="$0.00"
-                min="0">
+            <div class="budget-summary">
 
-        </div>
+                <div class="summary-row">
 
-        <div class="category-card" data-category="Educación">
+                    <span> Ingreso</span>
 
-            <div class="category-icon">📚</div>
+                    <strong id="pieIngreso">
+                        $0.00
+                    </strong>
 
-            <h3>Educación</h3>
+                </div>
 
-           <input
-                type="number"
-                class="category-amount"
-                placeholder="$0.00"
-                min="0">
+                <div class="summary-row">
 
-        </div>
+                    <span>🟨 Asignado</span>
 
-        <div class="category-card" data-category="Entretenimiento">
+                    <strong id="pieAsignado">
+                        $0.00
+                    </strong>
 
-            <div class="category-icon">🎮</div>
+                </div>
 
-            <h3>Entretenimiento</h3>
+                <div class="summary-row">
 
-           <input
-                type="number"
-                class="category-amount"
-                placeholder="$0.00"
-                min="0">
-        </div>
+                    <span>🟩 Disponible</span>
 
-        <div class="category-card" data-category="Ahorro">
+                    <strong id="pieDisponible">
+                        $0.00
+                    </strong>
 
-            <div class="category-icon">💵</div>
+                </div>
 
-            <h3>Ahorro</h3>
-
-            <input
-                type="number"
-                class="category-amount"
-                placeholder="$0.00"
-                min="0">
+            </div>
 
         </div>
 
-        <div class="add-category-card">
-
-            <button id="openCategoryModal">
-
-                ➕ Crear categoría
-
-            </button>
-
-        </div>
-
-    </div> 
-
+    </div>
 
     <div class="budget-save-section">
 
-       <button class="save-budget-btn" id="saveBudget">
+        <button
+            class="save-budget-btn"
+            id="saveBudget">
 
             <i class="fa-solid fa-floppy-disk"></i>
+
             Guardar presupuesto
 
         </button>
@@ -503,6 +617,7 @@
 
 </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="javaScript/presupuesto.js"></script>
     <script src="javaScript/navbar-mobile.js"></script>
     <script src="javaScript/homepage.js"></script>
