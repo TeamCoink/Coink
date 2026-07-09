@@ -232,8 +232,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <footer class="footer">
   <div class="footer-container">
 
-    <h2 class="footer-logo">🐷 CoinK</h2>
-    <p class="footer-text">Ahorra inteligente, vive mejor 💰</p>
+   <div class="footer-logo">
+    <img src="img/123repetido.png" alt="Logo Coink">
+</div>
+
+<p class="footer-text">
+    Ahorra inteligente, vive mejor
+</p>
 
     <div class="footer-social">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -247,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   </div>
 </footer>
+
     
 </body>
 </html>
