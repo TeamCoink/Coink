@@ -888,6 +888,45 @@ body{
         font-size: 1rem;
     }
 
+    .cta{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        margin: 60px auto;
+    }
+
+    .cta-image{
+        order: 1;
+    }
+
+    .cta-image img{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cta-content{
+        order: 2;
+        text-align: center;
+    }
+
+    .cta-content h1{
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .cta-content p{
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .cta-btn{
+        display: inline-block;
+        width: 180px;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
 
     /* beneficios */
     #beneficios h1{
@@ -898,13 +937,14 @@ body{
         margin: 0 auto 30px auto;
     }
 
-    .cards{
+    .cards-home{
         width: 90%;
         margin: 15px auto;
         display: block;
+        align-items: center;
     }
 
-    .cards img{
+    .cards-home img{
         width: 100%;
         height: auto;
     }
