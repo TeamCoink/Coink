@@ -505,7 +505,7 @@ body{
     gap: 0px;
 }
 
-.cards{
+.cards-home{
     padding: 15px;
 }
 
@@ -526,12 +526,12 @@ body{
     margin-bottom: 30px;
 }
 
-.cards img{
+.cards-home img{
     margin-bottom: 10px;
     border-radius: 10px;
 }
 
-.cards{
+.cards-home{
     width: 300px;
     text-align: justify;
     background-color: white;
@@ -547,7 +547,7 @@ body{
     transition:0.5s ease;
 }
 
-.cards:hover{
+.cards-home:hover{
     transform:translateY(-10px);
 }
 
