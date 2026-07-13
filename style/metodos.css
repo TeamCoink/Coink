@@ -352,12 +352,14 @@ body{
     .navbar{
         flex-direction: column;
         gap: 20px;
+        
     }
 
     .menu{
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
+       
     }
 
     .title{
@@ -380,10 +382,12 @@ a{
 
     .navbar{
         padding: 30px;
+       
     }
 
     .menu{
         gap: 25px;
+        
     }
 
     .container{
@@ -420,10 +424,12 @@ a{
         height: auto;
         gap: 20px;
         padding: 20px;
+        
     }
 
     .logo{
         width: 150px;
+       
     }
 
     .menu{
@@ -506,13 +512,21 @@ a{
 
 
 @media screen and (max-width: 480px) {
+    
+    .navbar{
+        display: none;
+    }
+
 
     .logo{
         width: 120px;
+        display: none;
+        
     }
 
     .menu a{
         font-size: 14px;
+        display: none;
     }
 
     .title{
