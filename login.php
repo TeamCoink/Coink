@@ -10,6 +10,14 @@
 
 <body>
 
+
+
+    <div class="botones-superiores">
+    <button class="boton-regresar" onclick="history.back()">
+        <i class="fa-solid fa-angles-left"></i>
+    </button>
+    </div>
+
 <main class="contenedorLogin">
 
     <section class="card">
@@ -23,11 +31,11 @@
 
         <?php if(isset($_GET['error'])): ?>
     <?php if($_GET['error'] == 'email'): ?>
-        <div class="alerta">❌ Correo incorrecto</div>
+        <div class="alerta"> Correo incorrecto</div>
     <?php endif; ?>
 
     <?php if($_GET['error'] == 'password'): ?>
-        <div class="alerta">❌ Contraseña incorrecta</div>
+        <div class="alerta"> Contraseña incorrecta</div>
     <?php endif; ?>
 <?php endif; ?>
 

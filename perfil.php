@@ -17,6 +17,13 @@ $usuarioId = $_SESSION['usuario_id'];
 </head>
 <body>
 
+ <div class="botones-superiores">
+    <button class="boton-regresar" onclick="history.back()">
+        <i class="fa-solid fa-angles-left"></i>
+    </button>
+    </div>
+
+
 <div class="perfil-container">
     <div class="card">
         <div class="portada-container" onclick="triggerInput('inputPortada', event)">
