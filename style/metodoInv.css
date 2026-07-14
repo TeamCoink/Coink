@@ -1034,6 +1034,224 @@ p{
 }
 
 
+@media screen and (max-width:425px){
+
+    body{
+        padding:15px;
+    }
+
+
+    .heroMH{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        margin-left:0;
+    }
+
+    .body2{
+        margin-right:0;
+    }
+
+    .etiqueta{
+        margin-left:0;
+        font-size:15px;
+        padding:12px 18px;
+    }
+
+    h1{
+        font-size:38px;
+        line-height:1.2;
+    }
+
+    h3{
+        font-size:20px;
+    }
+
+    p{
+        font-size:17px;
+        text-align:center;
+    }
+
+    .img2 img{
+        width:100%;
+        max-width:300px;
+        transform:none;
+        margin-top:20px;
+    }
+
+    .breadcrumb{
+        margin-left:0;
+        text-align:center;
+    }
+
+   
+
+    .container1{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .icon{
+        width:100%;
+        max-width:320px;
+        margin:15px 0;
+    }
+
+
+    .funcionamiento{
+        padding:25px 15px;
+    }
+
+    .funcionamiento h2{
+        font-size:28px;
+    }
+
+    .pasos{
+        flex-direction:column;
+        align-items:center;
+        gap:35px;
+    }
+
+    .linea{
+        display:none;
+    }
+
+    .paso{
+        width:100%;
+        max-width:280px;
+    }
+
+    .circulo{
+        width:110px;
+        height:110px;
+    }
+
+    .circulo img{
+        width: 120px;
+    }
+
+    .numero{
+         margin: -4px auto 15px;
+    }
+
+
+    #examples2{
+
+        display:flex;
+        flex-wrap:nowrap;
+
+        overflow-x:auto;
+        overflow-y:hidden;
+
+        gap:20px;
+
+        padding:15px 10px;
+
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+
+        scrollbar-width:none;
+
+        margin-left:0;
+    }
+
+    #examples2::-webkit-scrollbar{
+        display:none;
+    }
+
+    .ejemplos,
+    .ejemplos1,
+    .ejemplos3{
+
+        flex:0 0 82%;
+        max-width:82%;
+
+        scroll-snap-align:center;
+
+        margin-right:0;
+        margin-bottom:20px;
+    }
+
+    #examples2::after{
+        content:"";
+        min-width:15px;
+    }
+
+    .imagen2{
+        text-align:center;
+    }
+
+    .imagen2 img{
+        width:100%;
+        max-width:280px;
+        height:auto;
+    }
+
+    .sign1,
+    .sign2,
+    .result2{
+        display:none;
+    }
+
+
+    .tips-invertido{
+        padding:20px 0;
+    }
+
+    .tips-invertido h2{
+        font-size:26px;
+        text-align:center;
+    }
+
+    .tips-container{
+        margin:0;
+        gap:15px;
+    }
+
+    .tip-card{
+        width:100%;
+    }
+
+    .tip-text h3{
+        font-size:18px;
+    }
+
+    .tip-text p{
+        font-size:15px;
+        text-align:left;
+    }
+
+    .footer{
+        padding:20px;
+    }
+
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-logo img{
+        width:140px;
+        margin-top:0;
+    }
+
+    .footer-social{
+        justify-content:center;
+    }
+
+    .footer-social a{
+        margin-top:0;
+    }
+
+    .footer-text{
+        font-size:16px;
+    }
+
+}
+
+
+
+
 
 
 
