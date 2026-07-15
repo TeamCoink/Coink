@@ -9,7 +9,7 @@
 }
 
 body{
-    background: #FFF2EB;
+    background:#fff2f5 ;
     padding: 30px;
 }
 
@@ -913,7 +913,46 @@ body{
         height: auto;
     }
 
-   /*recursos*/
+   
+.cta{
+    flex-direction: column;
+    text-align: center;
+}
+
+.cta-content{
+    text-align: center ;
+    width: 100%;
+}
+
+.cta-content h1{
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+.cta-content p{
+    text-align: center;
+}
+
+.hero-content{
+    margin-left: 0 ;
+    margin-top: 0 ;
+}
+
+.hero-content h1{
+    text-align: center;
+
+    
+
+.cards-texto,
+.cards-texto p,
+.cards-texto h3{
+    text-align: center;
+}
+
+
+
+}
+
   
 }
 

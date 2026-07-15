@@ -1,5 +1,3 @@
-<?php include 'components/navbar.php'; ?>
-<?php include 'components/navbar-mobile.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +12,9 @@
     
 </head>
 <body>
+
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
 
  <section class="hero">
     <div class="hero-content">
