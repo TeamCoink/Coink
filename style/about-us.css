@@ -48,7 +48,8 @@ footer {
   align-items: center;      
   justify-content: space-between;
   padding: 3rem;
-  background: #ffe4ec;      
+  background: #ffe4ec;   
+  border-radius: 20px;   
 }
  
 .about-text {
@@ -185,96 +186,8 @@ footer {
 .mv-row .vision {
   flex: 1;                        
 }
-<<<<<<< HEAD
- 
- 
- 
-.developers {
-  padding: 3rem;
-  text-align: center;
-}
- 
-.developers-title {
-  color: #ff4081;      
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
- 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;                            
-}
- 
-.card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
- 
-.card img {
-  width: 80px;
-  border-radius: 20%;
-  margin-bottom: 1rem;
-}
- 
-.card:hover {
-  transform: scale(1.05);
-=======
-
-.developers{
-  padding:3rem;
-  text-align:center;
-  display:block;
-
-}
-
-about us-cards
-
-.developers-title{
-  color:#ff4081;
-  font-size:2.5rem;
-  margin-bottom:3rem;
-}
-
-.card-pink{
-  border-top:6px solid #ff4081;
-}
-
-.card-green{
-  border-top:6px solid #2d6a4f;
-}
-
-.card-yellow{
-  border-top:6px solid #f4a300;
-}
 
 
-
-.cta-row{
-  display:flex;
-  justify-content:space-between;
-  gap:2rem;
-  padding:2rem;
-  background:#fdf2e9;
-  border-radius:20px;
->>>>>>> 5e10ce8a94ba4bcf249b9de1d821353d968c8f96
-}
- 
-/* Bordes intercalados */
-.card.pink {
-  border-top: 6px solid #ff4081;
-}
- 
-.card.green {
-  border-top: 6px solid #2d6a4f;
-}
- 
-.card.yellow {
-  border-top: 6px solid #f4a300;
-}
 .cta-row {
   display: flex;
   justify-content: space-between;
