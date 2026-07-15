@@ -225,6 +225,7 @@ body{
     .navbar{
         flex-direction: column;
         gap: 20px;
+        display: none;
     }
 
     .nav-links{
@@ -848,6 +849,183 @@ p{
         padding: 12px;
         font-size: 0.9rem;
     }
+}
+
+@media screen and (max-width:425px){
+
+    body{
+        padding:15px;
+    }
+
+    .heroMH{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .imagen img{
+        width:100%;
+        max-width:300px;
+        transform:none;
+        margin-top:20px;
+    }
+
+    .etiqueta{
+        margin:20px auto;
+        display:inline-block;
+        font-size:15px;
+    }
+
+    h1{
+        font-size:35px;
+    }
+
+    h3{
+        font-size:20px;
+    }
+
+    p{
+        font-size:17px;
+        text-align:center;
+        margin-right:0;
+    }
+
+
+    .container1{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .icon{
+        width:100%;
+        max-width:320px;
+        margin:15px 0;
+    }
+
+
+    .funcionamiento{
+        padding:25px 15px;
+    }
+
+    .funcionamiento h2{
+        font-size:28px;
+    }
+
+    .pasos{
+        flex-direction:column;
+        align-items:center;
+        gap:35px;
+    }
+
+    .linea{
+        display:none;
+    }
+
+    .paso{
+        width:100%;
+        max-width:280px;
+    }
+
+    .circulo{
+        width:100px;
+        height:100px;
+    }
+
+    .circulo img{
+        width:90px;
+    }
+
+    .numero{
+        margin: -4px auto 15px;
+    }
+
+
+#examples2{
+    display: flex;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    gap: 20px;
+
+    padding: 15px 20px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+#examples2::-webkit-scrollbar{
+    display: none;
+}
+
+
+.sobrex{
+    flex: 0 0 82%;
+    max-width: 82%;
+
+    scroll-snap-align: center;
+
+    border-radius: 25px;
+}
+
+
+.imagen2 img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.sobrex{
+    width:auto;
+}   
+
+.sobrex{
+    transition: transform .3s ease;
+}
+
+.sobrex:hover{
+    transform: scale(.98);
+}
+
+
+    .sign1,
+    .sign2,
+    .sign3,
+    .sign4,
+    .result2{
+        display:none;
+    }
+
+
+    .tips-hormiga h2{
+        font-size:26px;
+        text-align:center;
+    }
+
+    .tips-container{
+        margin:0;
+        gap:20px;
+    }
+
+    .tip-card{
+        width:100%;
+    }
+
+
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-logo img,
+    .footer-social a{
+        margin-top:0;
+    }
+
 }
 
 

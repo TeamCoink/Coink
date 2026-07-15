@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,28 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos</title>
 
-    <!-- CSS -->
+   
     <link rel="stylesheet" href="style/contacto.css">
     <link rel="stylesheet" href="style/index.css">
-   
 
-    <!-- ICONOS -->
+    
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<button class="boton-regresar" onclick="history.back()">
-    <i class="fa-solid fa-angles-left"></i>
-</button>
+   
+    <div class="botones-superiores">
+    <button class="boton-regresar" onclick="history.back()">
+        <i class="fa-solid fa-angles-left"></i>
+    </button>
+    </div>
 
-    <!-- IZQUIERDA -->
+    
     <div class="left">
 
-        <!-- LOGO -->
         <img src="img/123repetido.png" class="logo">
 
         <h1>
@@ -38,10 +38,8 @@
 
         <p class="descripcion">
             ¿Tienes dudas, sugerencias o necesitas soporte?
-            Escríbenos y nuestro equipo te responderá pronto
+            Escríbenos y nuestro equipo te responderá pronto.
         </p>
-
-        <!-- INFO -->
 
         <div class="info">
 
@@ -82,12 +80,12 @@
 
         </div>
 
-        <!-- CERDITO -->
         <img src="" class="pig">
 
     </div>
 
     <!-- DERECHA -->
+
     <div class="right">
 
         <div class="formulario">
@@ -153,8 +151,6 @@
 
             </form>
 
-            <!-- REDES -->
-
             <div class="social">
 
                 <p>O escríbenos por</p>
@@ -162,11 +158,8 @@
                 <div class="social-icons">
 
                     <i class="fa-brands fa-whatsapp"></i>
-
                     <i class="fa-brands fa-facebook-messenger"></i>
-
                     <i class="fa-brands fa-instagram"></i>
-
                     <i class="fa-regular fa-envelope"></i>
 
                 </div>

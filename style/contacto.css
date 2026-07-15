@@ -25,42 +25,57 @@ body{
 }
 
 
-.boton-regresar{
-    width: 40px;
-    height: 40px;
 
-    background-color: #FFF2EB ; 
-    color: black; 
+
+.botones-superiores{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 1000;
+}
+
+.boton-regresar{
+    width: 60px;
+    height: 60px;
 
     border: none;
-    border-radius: 12px;
+    border-radius: 18px;
 
-    font-size: 30px;
-    font-weight: bold;
-
-    cursor: pointer;
+    background: linear-gradient(135deg,#fdc6d5,#fabece);
+    color: white;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    position: relative;
-    left: 20px; /* Mueve el botón a la derecha */
+    font-size: 24px;
 
-    transition: transform 0.2s ease,
-                border-radius 0.2s ease;
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(234,143,167,.35);
+
+    transition: all .3s ease;
 }
 
 .boton-regresar:hover{
-    transform: scale(1.1);
-    border-radius: 18px;
+    transform: translateY(-5px) scale(1.08);
+
+    box-shadow: 0 18px 35px rgba(234,143,167,.45);
+
+    background: linear-gradient(135deg,#fdc6d5,#fabece);
 }
 
 .boton-regresar:active{
-    transform: scale(0.95);
+    transform: scale(.95);
 }
 
+.boton-regresar i{
+    transition: transform .3s ease;
+}
 
+.boton-regresar:hover i{
+    transform: translateX(-4px);
+}
 
 
 /* IZQUIERDA */

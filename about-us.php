@@ -1,7 +1,7 @@
 <?php include 'components/navbar.php'; ?>
 <?php include 'components/navbar-mobile.php'; ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+ 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,7 +30,7 @@
 <section class="about">
   <!-- Aquí va tu sección About -->
 </section>
-
+ 
 <!-- Contenedor padre para Misión y Visión -->
 <div class="mv-row">
   <section class="mision">
@@ -46,7 +46,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section class="vision">
     <div class="vision-container">
       <!-- Imagen a la izquierda -->
@@ -61,47 +61,51 @@
     </div>
   </section>
 </div>
-
-
+ 
+ 
  <section class="developers">
-    <h2 class="developers-title">DEVELOPERS COINK</h2>
-
-    <div class="cards">
-
-        <div class="card card-pink">
-            <img src="profile.png" alt="Dev">
-            <h3>Nombre Apellido</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <div class="card card-green">
-            <img src="profile.png" alt="Dev">
-            <h3>Nombre Apellido</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <div class="card card-yellow">
-            <img src="profile.png" alt="Dev">
-            <h3>Nombre Apellido</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <div class="card card-pink">
-            <img src="profile.png" alt="Dev">
-            <h3>Nombre Apellido</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-        <div class="card card-green">
-            <img src="profile.png" alt="Dev">
-            <h3>Nombre Apellido</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-
-    </div> 
-
+  <h2 class="developers-title">DEVELOPERS COINK</h2>
+  <div class="cards">
+    <!-- Card 1 -->
+    <div class="card1 pink1">
+      <img src="profile.png" alt="Dev">
+      <h3>Nombre Apellido</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <!-- Card 2 -->
+    <div class="card green">
+      <img src="profile.png" alt="Dev">
+      <h3>Nombre Apellido</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <!-- Card 3 -->
+    <div class="card yellow">
+      <img src="profile.png" alt="Dev">
+      <h3>Nombre Apellido</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <!-- Card 4 -->
+    <div class="card pink">
+      <img src="profile.png" alt="Dev">
+      <h3>Nombre Apellido</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <!-- Card 5 -->
+    <div class="card green">
+      <img src="profile.png" alt="Dev">
+      <h3>Nombre Apellido</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <!-- Card 6 -->
+    <div class="card yellow">
+      <img src="profile.png" alt="Dev">
+      <h3>Nombre Apellido</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
 </section>
-
+ 
+ 
  <section class="cta-row">
   <!-- Bloque 1 -->
   <div class="cta-block">
@@ -113,7 +117,7 @@
       <img src="img/oink.png" alt="Piggy Bank">
     </div>
   </div>
-
+ 
   <!-- Bloque 2 -->
   <div class="cta-block reverse">
     <div class="cta-image">
@@ -125,39 +129,39 @@
     </div>
   </div>
 </section>
-
-
-
-
+ 
+ 
+ 
+ 
   <script src="script.js"></script>
   <script src="javaScript/homepage.js"></script>
-  
-
+ 
+ 
 <footer class="footer">
   <div class="footer-container">
-
+ 
    <div class="footer-logo">
     <img src="img/123repetido.png" alt="Logo Coink">
 </div>
-
+ 
 <p class="footer-text">
     Ahorra inteligente, vive mejor
 </p>
-
+ 
     <div class="footer-social">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-whatsapp"></i></a>
     </div>
-
+ 
     <p class="footer-copy">
       © 2026 CoinK · Todos los derechos reservados
     </p>
-
+ 
   </div>
 </footer>
-
-
+ 
+ 
  <script src="javaScript/navbar-mobile.js"></script>
 </body>
 </html>
