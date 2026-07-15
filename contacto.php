@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos</title>
 
-   
+   <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="style/contacto.css">
     <link rel="stylesheet" href="style/index.css">
 
@@ -17,14 +17,15 @@
 
 <body>
 
+   <a href="index.php" class="boton-regresar">
+    <i class="fa-solid fa-arrow-left-long"></i>
+   </a>
+
+
 <div class="container">
 
    
-    <div class="botones-superiores">
-    <button class="boton-regresar" onclick="history.back()">
-        <i class="fa-solid fa-angles-left"></i>
-    </button>
-    </div>
+   
 
     
     <div class="left">
