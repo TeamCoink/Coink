@@ -1556,7 +1556,7 @@
 
     #calendar{
 
-        gap: 4px;
+        gap: 2px;
     }
 
     .week-day{
@@ -1564,19 +1564,21 @@
         font-size: 12px;
     }
 
-    .day{
+   
+.day{
+    min-height: 35px;
+    border-radius: 8px;
+    padding: 2px;
+}
 
-        min-height: 42px;
+.day-number{
+    font-size: 10px;
+}
 
-        border-radius: 10px;
+.week-day{
+    font-size: 10px;
+}
 
-        padding: 3px;
-    }
-
-    .day-number{
-
-        font-size: 12px;
-    }
 
     .has-saving::after,
     .has-expense::after{

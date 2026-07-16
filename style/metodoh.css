@@ -906,6 +906,22 @@ p{
     scrollbar-width: none;
 }
 
+
+#example{
+    margin-left: 0;
+    text-align: center;
+}
+
+#example h2{
+    text-align: center;
+}
+
+#example p{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
 #examples::-webkit-scrollbar{
     display: none;
 }

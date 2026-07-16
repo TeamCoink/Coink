@@ -994,6 +994,19 @@ p{
         scrollbar-width:none;
     }
 
+    
+    #example2{
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    #example2 h2{
+        text-align: center;
+        font-size: 32px;
+    }
+
+
     #examples2::-webkit-scrollbar{
         display:none;
     }

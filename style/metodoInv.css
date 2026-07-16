@@ -1177,6 +1177,23 @@ p{
         min-width:15px;
     }
 
+    
+#example2{
+    margin-left: 0;
+    text-align: center;
+}
+
+#example2 h2{
+    text-align: center;
+}
+
+#example2 p{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
     .imagen2{
         text-align:center;
     }
