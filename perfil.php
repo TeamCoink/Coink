@@ -9,6 +9,7 @@ $usuarioId = $_SESSION['usuario_id'];
 <head>
     <meta charset="UTF-8">
     <title>Perfil - COINK</title>
+    <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/perfil.css">
@@ -16,6 +17,11 @@ $usuarioId = $_SESSION['usuario_id'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
 </head>
 <body>
+
+   <a href="index.php" class="boton-regresar">
+    <i class="fa-solid fa-arrow-left-long"></i>
+   </a>
+
 
 <div class="perfil-container">
     <div class="card">

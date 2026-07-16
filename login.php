@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Coink</title>
+    <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style/login.css">
 </head>
 
 <body>
+
+   <a href="index.php" class="boton-regresar">
+    <i class="fa-solid fa-arrow-left-long"></i>
+   </a>
+
 
 <main class="contenedorLogin">
 
@@ -23,11 +29,11 @@
 
         <?php if(isset($_GET['error'])): ?>
     <?php if($_GET['error'] == 'email'): ?>
-        <div class="alerta">❌ Correo incorrecto</div>
+        <div class="alerta"> Correo incorrecto</div>
     <?php endif; ?>
 
     <?php if($_GET['error'] == 'password'): ?>
-        <div class="alerta">❌ Contraseña incorrecta</div>
+        <div class="alerta"> Contraseña incorrecta</div>
     <?php endif; ?>
 <?php endif; ?>
 

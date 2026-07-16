@@ -15,6 +15,43 @@ body {
     overflow: hidden;
 }
 
+.boton-regresar{
+    position: fixed;
+    top: 40px;
+    left: 20px;
+
+    text-decoration: none; /* Quita la línea */
+}
+
+.boton-regresar{
+    position: fixed;
+    top: 20px;   
+    left: 25px;  
+
+    text-decoration: none;
+    z-index: 1000;
+}
+.boton-regresar i{
+    font-size: 32px;
+    color: #a8d5a2;
+    transition: transform .2s ease;
+}
+
+.boton-regresar:hover i{
+    transform: translateX(-5px);
+}
+
+.contenedorLogin{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:100vh;
+    padding:40px 70px;
+    gap:60px;
+    overflow:hidden;
+    background:#FFF2EB;
+}
+
 
 .bg-layer-pink {
     position: absolute;

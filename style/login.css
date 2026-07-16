@@ -10,6 +10,25 @@ body{
     background:#FFF2EB;
 }
 
+
+.boton-regresar{
+    position: fixed;
+    top: 40px;
+    left: 20px;
+
+    text-decoration: none; /* Quita la línea */
+}
+
+.boton-regresar i{
+    font-size: 32px;
+    color: #a8d5a2;
+    transition: transform .2s ease;
+}
+
+.boton-regresar:hover i{
+    transform: translateX(-5px);
+}
+
 .contenedorLogin{
     display:flex;
     justify-content:space-between;
@@ -280,4 +299,20 @@ label{
         flex-direction:column;
         gap:3px;
     }
+
+    
+.botones-superiores{
+    position: fixed;
+    top: 35px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.boton-regresar{
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
 }

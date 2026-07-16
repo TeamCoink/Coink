@@ -344,6 +344,9 @@ p{
 .habit {
     margin-top: 40px;
     display: flex;
+    gap: 80px ;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .tittle h2{
@@ -355,6 +358,11 @@ p{
 .column1
 .column2 p{
     text-align: justify;
+}
+
+.column1 p{
+    text-align: justify;
+    margin-left: 35px;
 }
 
 
@@ -379,5 +387,5 @@ p{
 .item{
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 15px;
 }

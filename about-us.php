@@ -8,6 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coink - Sobre Nosotros</title>
+  <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
   <link rel="stylesheet" href="style/about-us.css">
   <link rel="stylesheet" href="style/index.css">
   <link rel="stylesheet"
@@ -63,47 +64,7 @@
 </div>
  
  
- <section class="developers">
-  <h2 class="developers-title">DEVELOPERS COINK</h2>
-  <div class="cards">
-    <!-- Card 1 -->
-    <div class="card1 pink1">
-      <img src="profile.png" alt="Dev">
-      <h3>Nombre Apellido</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <!-- Card 2 -->
-    <div class="card green">
-      <img src="profile.png" alt="Dev">
-      <h3>Nombre Apellido</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <!-- Card 3 -->
-    <div class="card yellow">
-      <img src="profile.png" alt="Dev">
-      <h3>Nombre Apellido</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <!-- Card 4 -->
-    <div class="card pink">
-      <img src="profile.png" alt="Dev">
-      <h3>Nombre Apellido</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <!-- Card 5 -->
-    <div class="card green">
-      <img src="profile.png" alt="Dev">
-      <h3>Nombre Apellido</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <!-- Card 6 -->
-    <div class="card yellow">
-      <img src="profile.png" alt="Dev">
-      <h3>Nombre Apellido</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-  </div>
-</section>
+
  
  
  <section class="cta-row">

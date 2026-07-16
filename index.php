@@ -1,5 +1,3 @@
-<?php include 'components/navbar.php'; ?>
-<?php include 'components/navbar-mobile.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,12 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Coink</title>
+    <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
 </head>
 <body>
+
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
 
  <section class="hero">
     <div class="hero-content">
@@ -88,17 +91,17 @@
     <h1>Beneficios</h1>
     <div class="linea1"></div>
 
-    <div class="cards">
+    <div class="cards-home">
         <img src="img/agenda.jpg" alt="" width="270" height="187"><br>
         <p>Coink te brinda distintos métodos de ahorro que se ajustan a tus necesidades</p>
     </div>
 
-    <div class="cards">
+    <div class="cards-home">
         <img src="img/planta.jpg" alt="" width="270"><br>
         <p>Crea tus propias metas y compartelas con tus amigos y familia</p>
     </div>
 
-    <div class="cards">
+    <div class="cards-home">
         <img src="img/chart.jpg" alt="" width="270" height="189"><br>
         <p>Conoce el progreso diario y mensual de como llevas tus ahorros</p>
     </div>

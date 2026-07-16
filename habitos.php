@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10 hábitos que cambiaran tu vida</title>
+    <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="style/habitos.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -82,31 +83,31 @@
             <div class="numero">1</div>
             <h3>Lleva un control de tus gastos</h3>
         </div>
-        <p>Saber en que gasta tu dinero es el primer paso para tomar <br> decisiones inteligentes y evitar fugas de dinero</p>
+        <p>Saber en que gastas tu dinero es el primer <br> paso  para tomar  decisiones inteligentes y <br> evitar fugas de dinero</p>
 
         <div class="item">
             <div class="numero">2</div>
             <h3>Vive por debajo de tus posibilidades</h3>
         </div>
-        <p>Gasta menos de lo que ganas. Esto te permitirá ahorrar,<br> invertir y estar preparados para imprevistos</p>
+        <p>Gasta menos de lo que ganas. Esto te <br>  permitirá  ahorrar, invertir y estar <br> preparado para imprevistos</p>
 
         <div class="item">
             <div class="numero">3</div>
             <h3>Ahorra primero, gasta después</h3>
         </div>
-        <p>Aparta una parte de tu ingreso apenas lo recibas. <br> Págate a ti primero.</p>
+        <p>Aparta una parte de tu ingreso apenas  lo <br> recibas.  Págate a ti primero.</p>
 
         <div class="item">
             <div class="numero">4</div>
             <h3>Crea metas financieras claras</h3>
         </div>
-        <p>Tener objetivos te da dirección y motivación para <br> mantener buenos hábitos.</p>
+        <p>Tener objetivos te da dirección y motivación <br> para  mantener buenos hábitos.</p>
 
          <div class="item">
             <div class="numero">5</div>
             <h3>Construye un fondo de emergencia</h3>
         </div>
-        <p>Cubre de 3 a 6 meses de tus gastos básicos para <br> estar preparado ante cualquier imprevisto.</p>
+        <p>Cubre de 3 a 6 meses de tus gastos básicos <br> para  estar preparado ante cualquier imprevisto.</p>
         
     </div>
 

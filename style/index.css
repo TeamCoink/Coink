@@ -9,7 +9,7 @@
 }
 
 body{
-    background: #FFF2EB;
+    background:#fff2f5 ;
     padding: 30px;
 }
 
@@ -505,7 +505,7 @@ body{
     gap: 0px;
 }
 
-.cards{
+.cards-home{
     padding: 15px;
 }
 
@@ -526,12 +526,12 @@ body{
     margin-bottom: 30px;
 }
 
-.cards img{
+.cards-home img{
     margin-bottom: 10px;
     border-radius: 10px;
 }
 
-.cards{
+.cards-home{
     width: 300px;
     text-align: justify;
     background-color: white;
@@ -547,7 +547,7 @@ body{
     transition:0.5s ease;
 }
 
-.cards:hover{
+.cards-home:hover{
     transform:translateY(-10px);
 }
 
@@ -888,6 +888,45 @@ body{
         font-size: 1rem;
     }
 
+    .cta{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        margin: 60px auto;
+    }
+
+    .cta-image{
+        order: 1;
+    }
+
+    .cta-image img{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cta-content{
+        order: 2;
+        text-align: center;
+    }
+
+    .cta-content h1{
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .cta-content p{
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .cta-btn{
+        display: inline-block;
+        width: 180px;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
 
     /* beneficios */
     #beneficios h1{
@@ -898,13 +937,14 @@ body{
         margin: 0 auto 30px auto;
     }
 
-    .cards{
+    .cards-home{
         width: 90%;
         margin: 15px auto;
         display: block;
+        align-items: center;
     }
 
-    .cards img{
+    .cards-home img{
         width: 100%;
         height: auto;
     }
@@ -915,7 +955,46 @@ body{
         height: auto;
     }
 
-   /*recursos*/
+   
+.cta{
+    flex-direction: column;
+    text-align: center;
+}
+
+.cta-content{
+    text-align: center ;
+    width: 100%;
+}
+
+.cta-content h1{
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+.cta-content p{
+    text-align: center;
+}
+
+.hero-content{
+    margin-left: 0 ;
+    margin-top: 0 ;
+}
+
+.hero-content h1{
+    text-align: center;
+
+    
+
+.cards-texto,
+.cards-texto p,
+.cards-texto h3{
+    text-align: center;
+}
+
+
+
+}
+
   
 }
 
