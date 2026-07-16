@@ -14,6 +14,29 @@ body{
     overflow-y:auto;
 }
 
+
+.boton-regresar i{
+    font-size: 32px;
+    color: #a8d5a2;
+    transition: transform .2s ease;
+}
+
+.boton-regresar:hover i{
+    transform: translateX(-5px);
+}
+
+.contenedorLogin{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:100vh;
+    padding:40px 70px;
+    gap:60px;
+    overflow:hidden;
+    background:#FFF2EB;
+}
+
+
 .container{
     width:100%;
     max-width:1250px;
@@ -27,55 +50,7 @@ body{
 
 
 
-.botones-superiores{
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    z-index: 1000;
-}
 
-.boton-regresar{
-    width: 60px;
-    height: 60px;
-
-    border: none;
-    border-radius: 18px;
-
-    background: linear-gradient(135deg,#fdc6d5,#fabece);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 24px;
-
-    cursor: pointer;
-
-    box-shadow: 0 10px 25px rgba(234,143,167,.35);
-
-    transition: all .3s ease;
-}
-
-.boton-regresar:hover{
-    transform: translateY(-5px) scale(1.08);
-
-    box-shadow: 0 18px 35px rgba(234,143,167,.45);
-
-    background: linear-gradient(135deg,#fdc6d5,#fabece);
-}
-
-.boton-regresar:active{
-    transform: scale(.95);
-}
-
-.boton-regresar i{
-    transition: transform .3s ease;
-}
-
-.boton-regresar:hover i{
-    transform: translateX(-4px);
-}
 
 
 /* IZQUIERDA */

@@ -477,7 +477,7 @@ body::after {
 
 
 
-@media screen and (max-*idth: 480px) {
+@media screen and (max-width: 480px) {
 
     .goals-contain*r {
         padding: 0 10px;
@@ -485,12 +485,13 @@ body::after {
     .goals-header,
     .goals-for*-wrapper,
     .goals-list-wrapper,*    .detail-card {
-        padding* 15px;
-        border-radius: 15px*
+        padding: 15px;
+        border-radius: 15px;
     }
 
     .goals-header h1 {
-   *    font-size: 1.4rem;
+       font-size: 1.4rem;
     }
 
 
+ }
