@@ -1,130 +1,195 @@
 
-const ctxMensual = document.getElementById("graficoMensual").getContext("2d");
-const lineChart = new Chart(ctxMensual, {
-  type: "line",
-  data: {
-    labels: ["Ene", "Feb", "Mar", "Abr", "May", "Jun"],
-    datasets: [{
-      label: "Crecimiento de ahorro",
-      data: [0, 500, 1000, 1500, 1800, 2000],
-      borderColor: "#4caf50",
-      backgroundColor: "rgba(76,175,80,0.2)",
-      fill: true,
-      tension: 0.3   
-    }]
-  },
-  options: {
-    animation: {
-      duration: 1500,  
-      easing: "easeOutBounce" 
-    },
-    plugins: {
-      tooltip: {
-        enabled: true,
-        callbacks: {
-          label: function(context) {
-            return `$${context.parsed.y}`;
-          }
+const savingModal = document.getElementById("savingModal");
+const expenseModal = document.getElementById("expenseModal");
+
+const openSavingModal = document.getElementById("openSavingModal");
+const openExpenseModal = document.getElementById("openExpenseModal");
+
+const closeSavingModal = document.getElementById("closeSavingModal");
+const closeExpenseModal = document.getElementById("closeExpenseModal");
+
+const cancelSaving = document.getElementById("cancelSaving");
+const cancelExpense = document.getElementById("cancelExpense");
+
+const savingForm = document.getElementById("savingForm");
+const expenseForm = document.getElementById("expenseForm");
+
+
+function abrirModal(modal){
+
+    modal.classList.add("active");
+
+}
+
+
+function cerrarModal(modal){
+
+    modal.classList.remove("active");
+
+}
+
+
+openSavingModal.addEventListener("click",()=>{
+
+    document.getElementById("savingForm").reset();
+
+    document.querySelector("#savingForm input[type='date']").valueAsDate = new Date();
+
+    abrirModal(savingModal);
+
+});
+
+openExpenseModal.addEventListener("click",()=>{
+
+    document.getElementById("expenseForm").reset();
+
+    document.querySelector("#expenseForm input[type='date']").valueAsDate = new Date();
+
+    abrirModal(expenseModal);
+
+});
+
+
+closeSavingModal.addEventListener("click",()=>{
+
+    cerrarModal(savingModal);
+
+});
+
+closeExpenseModal.addEventListener("click",()=>{
+
+    cerrarModal(expenseModal);
+
+});
+
+
+cancelSaving.addEventListener("click",()=>{
+
+    cerrarModal(savingModal);
+
+});
+
+cancelExpense.addEventListener("click",()=>{
+
+    cerrarModal(expenseModal);
+
+});
+
+
+savingModal.addEventListener("click",(e)=>{
+
+    if(e.target===savingModal){
+
+        cerrarModal(savingModal);
+
+    }
+
+});
+
+expenseModal.addEventListener("click",(e)=>{
+
+    if(e.target===expenseModal){
+
+        cerrarModal(expenseModal);
+
+    }
+
+});
+
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        cerrarModal(savingModal);
+
+        cerrarModal(expenseModal);
+
+    }
+
+});
+
+savingForm.addEventListener("submit", guardarAhorro);
+
+async function guardarAhorro(e){
+
+    e.preventDefault();
+
+    const formData = new FormData(savingForm);
+
+    try{
+
+        const respuesta = await fetch(
+            "php/guardar-ahorro.php",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        const data = await respuesta.json();
+
+        if(data.success){
+
+            cerrarModal(savingModal);
+
+            window.location.href =
+                "dashboard.php?guardado=ahorro";
+
+        }else{
+
+            alert(data.mensaje);
+
         }
-      }
-    }
-  }
-});
 
+    }catch(error){
 
-setInterval(() => {
-  lineChart.data.datasets[0].data = [
-    Math.floor(Math.random() * 500),
-    Math.floor(Math.random() * 1000),
-    Math.floor(Math.random() * 1500),
-    Math.floor(Math.random() * 2000),
-    Math.floor(Math.random() * 2500),
-    Math.floor(Math.random() * 3000)
-  ];
-  lineChart.update();
-}, 5000);
+        console.error(error);
 
-
-
-const calendarioGrid = document.getElementById("calendarioGrid");
-for (let dia = 1; dia <= 30; dia++) {
-  const cell = document.createElement("div");
-  cell.innerText = dia;
-  cell.addEventListener("click", () => seleccionarDia(dia));
-  calendarioGrid.appendChild(cell);
-}
-
-function seleccionarDia(dia) {
-  
-  document.querySelectorAll(".calendario-grid div").forEach(c => c.classList.remove("selected"));
-  
-  const cell = [...document.querySelectorAll(".calendario-grid div")].find(c => c.innerText == dia);
-  cell.classList.add("selected");
-
-
-  if (dia === 15) {
-    document.getElementById("detalle-dia").innerText = "Ingresado: $100 | Gastado: $0 | Total: $100";
-  } else {
-    document.getElementById("detalle-dia").innerText = `Día ${dia}: No hay datos registrados.`;
-  }
-}
-
-
-const metaUsuario = 60; 
-
-function animarPorcentaje(meta) {
-  let porcentaje = 0;
-  const texto = document.getElementById("porcentajeTexto");
-  const circle = document.querySelector(".circle");
-
-  const intervalo = setInterval(() => {
-    porcentaje++;
-    texto.textContent = porcentaje + "% Ahorrado";
-
-   
-    if (porcentaje >= meta) {
-      clearInterval(intervalo);
-    }
-  }, 30); 
-  setTimeout(() => {
-    circle.style.setProperty("--scale", meta / 100);
-    circle.querySelector("::before"); 
-  }, 100);
-}
-
-
-window.addEventListener("DOMContentLoaded", () => {
-
-    animarPorcentaje(metaUsuario);
-
-    actualizarTarjetaPresupuesto();
-
-});
-
-function actualizarTarjetaPresupuesto(){
-
-    const barra =
-        document.getElementById("miniProgressFill");
-
-    console.log("Barra:", barra);
-
-    console.log("Porcentaje:", presupuesto.porcentaje);
-
-    if(!barra){
-        console.log("NO encontró la barra");
-        return;
     }
 
-    barra.style.width = presupuesto.porcentaje + "%";
+}
+savingForm.addEventListener(
+    "submit",
+    guardarAhorro
+);
 
-    barra.style.height = "20px";
-barra.style.background = "red";
 
-    barra.style.background = "#69C36B";
+async function guardarGasto(e){
+
+    e.preventDefault();
+
+    const formData = new FormData(expenseForm);
+
+    try{
+
+        const respuesta = await fetch(
+            "php/guardar-gasto.php",
+            {
+                method:"POST",
+                body:formData
+            }
+        );
+
+        const data = await respuesta.json();
+
+        if(data.success){
+
+            cerrarModal(expenseModal);
+
+            window.location.href="dashboard.php?guardado=gasto";
+
+        }else{
+
+            alert(data.mensaje);
+
+        }
+
+    }catch(error){
+
+        console.error(error);
+
+    }
 
 }
-
-console.log("Dashboard cargado");
-console.log(presupuesto);
-
-actualizarTarjetaPresupuesto();
+expenseForm.addEventListener("submit",guardarGasto);

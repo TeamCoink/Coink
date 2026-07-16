@@ -250,13 +250,13 @@ while($fila = $resultGastosDia->fetch_assoc()){
 <?php if($guardado == 'ahorro'): ?>
 
     <div class="toast" id="toast">
-        ✅ Ahorro guardado correctamente
+         Ahorro guardado correctamente
     </div>
 
 <?php elseif($guardado == 'gasto'): ?>
 
     <div class="toast" id="toast">
-        💸 Gasto registrado correctamente
+         Gasto registrado correctamente
     </div>
 
 <?php endif; ?>
@@ -403,15 +403,19 @@ while($fila = $resultGastosDia->fetch_assoc()){
       
         <div class="dashboard-buttons">
 
-            <a href="agregar-ahorro.php"
-            class="dashboard-btn ahorro-btn">
-                ➕ Agregar ahorro
-            </a>
+            <button
+                id="openSavingModal"
+                class="dashboard-btn ahorro-btn">
 
-            <a href="agregar-gasto.php"
+                ➕ Agregar ahorro
+            </button>
+
+           <button
+                id="openExpenseModal"
                 class="dashboard-btn gasto-btn">
+
                 💸 Agregar gasto
-            </a>
+            </button>
 
             <a href="metas.php"
             class="dashboard-btn meta-btn">
@@ -493,6 +497,169 @@ while($fila = $resultGastosDia->fetch_assoc()){
     </section>
 
 </section>
+
+
+
+<div class="modal-overlay" id="savingModal">
+
+    <div class="dashboard-modal">
+
+        <button class="close-modal" id="closeSavingModal">✖</button>
+
+        <img src="img/123repetido.png" class="modal-pig">
+
+        <h2>Nuevo ahorro</h2>
+
+        <p>Registra un nuevo ahorro.</p>
+
+        <form
+            id="savingForm">
+
+            <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre del ahorro"
+                required>
+
+            <select
+                name="categoria"
+                required>
+
+                <option value="">Categoría</option>
+
+                <option>Educación</option>
+
+                <option>Viaje</option>
+
+                <option>Emergencia</option>
+
+                <option>personal</option>
+
+                <option>Hogar</option>
+
+                <option>Otro</option>
+
+            </select>
+
+            <input
+                type="number"
+                name="monto"
+                placeholder="Monto"
+                step="0.01"
+                required>
+
+            <input
+                type="date"
+                name="fecha"
+                required>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelSaving">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                     Guardar
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div class="modal-overlay" id="expenseModal">
+
+    <div class="dashboard-modal expense">
+
+        <button class="close-modal" id="closeExpenseModal">✖</button>
+
+        <img src="img/123repetido.png" class="modal-pig">
+
+        <h2>Nuevo gasto</h2>
+
+        <p>Registra un nuevo gasto.</p>
+
+        <form
+            id="expenseForm">
+
+            <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre del gasto"
+                required>
+
+            <select
+                name="categoria"
+                required>
+
+                <option value="">Categoría</option>
+
+                <option>Alimentación</option>
+
+                <option>Transporte</option>
+
+                <option>Educación</option>
+
+                <option>Salud</option>
+
+                <option>Entretenimiento</option>
+
+                <option>Otro</option>
+
+            </select>
+
+            <input
+                type="number"
+                name="monto"
+                placeholder="Monto"
+                step="0.01"
+                required>
+
+            <input
+                type="date"
+                name="fecha"
+                required>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelExpense">
+
+                    Cancelar
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="expense-btn">
+
+                     Guardar
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
      
 <script>
 const toast = document.getElementById("toast");
@@ -512,8 +679,6 @@ if(toast){
 
 }
 </script>
-<script src="javaScript/navbar-mobile.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -565,7 +730,7 @@ new Chart(ctx, {
         datasets: [
 
             {
-                label: '💰 Ahorros',
+                label: ' Ahorros',
 
                 data: <?php echo json_encode($datosAhorro); ?>,
 
@@ -583,7 +748,7 @@ new Chart(ctx, {
             },
 
             {
-                label: '💸 Gastos',
+                label: ' Gastos',
 
                 data: <?php echo json_encode($datosGastos); ?>,
 
@@ -980,7 +1145,9 @@ async function cargarDetalleDia(fecha){
 }
 </script>
 
- <script src="javaScript/homepage.js"></script>
+<script src="javaScript/homepage.js"></script>
+<script src="javaScript/dashboard.js"></script>
+<script src="javaScript/navbar-mobile.js"></script>
 
     <footer class="footer">
     <div class="footer-container">
