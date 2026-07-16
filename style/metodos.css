@@ -517,6 +517,10 @@ a{
 
 
 @media screen and (max-width: 480px) {
+    .navbar{
+        display: none;
+    }
+
 
     .logo{
         width: 120px;
