@@ -382,7 +382,7 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
         <div class="chart-header">
             <h2>Resumen financiero</h2>
-            <p>Compara tus ahorros y gastos mes a mes 💰</p>
+            <p>Compara tus ahorros y gastos mes a mes </p>
         </div>
 
         <canvas id="savingsChart"></canvas>
