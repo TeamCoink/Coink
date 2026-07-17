@@ -3,38 +3,52 @@
 session_start();
 require 'conexion.php';
 
+header("Content-Type: application/json");
+
 if (!isset($_SESSION['usuario_id'])) {
 
-    header("Location: ../login.php");
+    echo json_encode([
+        "success" => false,
+        "mensaje" => "Sesión expirada."
+    ]);
+
     exit();
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $usuarioId =
-        $_SESSION['usuario_id'];
+    $usuarioId = $_SESSION['usuario_id'];
 
-    $nombre =
-        $_POST['nombre'];
+    $nombre = trim($_POST['nombre']);
+    $categoria = trim($_POST['categoria']);
+    $monto = floatval($_POST['monto']);
+    $fecha = $_POST['fecha'];
 
-    $categoria =
-        $_POST['categoria'];
+    if (empty($nombre) || empty($categoria) || $monto <= 0 || empty($fecha)) {
 
-    $monto =
-        $_POST['monto'];
+        echo json_encode([
+            "success" => false,
+            "mensaje" => "Faltan datos."
+        ]);
 
-    $fecha =
-        $_POST['fecha'];
+        exit();
+    }
 
-    $sql = "
-    INSERT INTO gastos
-    (usuario_id, nombre, categoria, monto, fecha)
+    $sql = "INSERT INTO gastos
+            (usuario_id, nombre, categoria, monto, fecha)
+            VALUES (?, ?, ?, ?, ?)";
 
-    VALUES (?, ?, ?, ?, ?)
-    ";
+    $stmt = $conn->prepare($sql);
 
-    $stmt =
-        $conn->prepare($sql);
+    if (!$stmt) {
+
+        echo json_encode([
+            "success" => false,
+            "mensaje" => $conn->error
+        ]);
+
+        exit();
+    }
 
     $stmt->bind_param(
         "issds",
@@ -45,11 +59,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $fecha
     );
 
-    if($stmt->execute()){
+    if ($stmt->execute()) {
 
-       header("Location: ../dashboard.php?guardado=gasto");
+        echo json_encode([
+            "success" => true,
+            "mensaje" => "Gasto guardado correctamente."
+        ]);
 
-        exit();
+    } else {
+
+        echo json_encode([
+            "success" => false,
+            "mensaje" => $stmt->error
+        ]);
     }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
