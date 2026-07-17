@@ -571,5 +571,16 @@ a{
     .text p{
         font-size: 0.85rem;
     }
+
+    
+.title{
+        margin-top: 100px;
+    }
+
+    .metodos-cards{
+        margin-top: 70px;
+    }
 }
+
+
 

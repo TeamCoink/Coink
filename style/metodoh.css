@@ -805,11 +805,17 @@ p{
         padding:15px;
     }
 
+    
+
+
+
     .heroMH{
         flex-direction: column;
         align-items: center;
         text-align: center;
         margin: 20px 0;
+         
+
     }
 
     .imagen img{
@@ -820,9 +826,10 @@ p{
     }
 
     .etiqueta{
-        margin:20px auto;
+        margin: 10px auto;
         display:inline-block;
         font-size:15px;
+        margin-top: 80px;
     }
 
     h1{
@@ -991,5 +998,3 @@ p{
     }
 
 }
-
-

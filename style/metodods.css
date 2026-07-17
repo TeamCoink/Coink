@@ -852,6 +852,11 @@ p{
 }
 
 @media screen and (max-width:425px){
+     .navbar{
+        display: none;
+     }
+
+
 
     body{
         padding:15px;
@@ -875,6 +880,7 @@ p{
         margin:20px auto;
         display:inline-block;
         font-size:15px;
+        margin-top: 80px;
     }
 
     h1{
@@ -1052,6 +1058,35 @@ p{
     display: block;
     margin: 0 auto;
 }
+
+
+@media screen and (max-width:768px){
+
+    .perfil-container{
+        padding: 0 ;
+        min-height: auto ;
+        justify-content: flex-start ;
+        align-items: flex-start ;
+    }
+
+    .card{
+        width: 100% ;
+        max-width: 100% ;
+        border-radius: 15px ;
+    }
+
+    .portada-container{
+        height: 80px ;
+    }
+
+    .avatar-wrapper{
+        width: 90px ;
+        height: 90px ;
+        margin: -45px 0 15px 20px ;
+    }
+
+}
+
 
 
 }

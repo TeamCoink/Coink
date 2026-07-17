@@ -259,6 +259,8 @@
 .logout-mobile,
 .login-mobile{
 
+    margin-bottom: 12px;
+
     display: flex;
 
     justify-content: center;
