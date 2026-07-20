@@ -1,0 +1,497 @@
+
+body {
+    background-color: #FFF3EB; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0; 
+}
+
+
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 80px;
+    left: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(180, 240, 200, 0.35) 0%, rgba(180, 240, 200, 0) 70%);
+    border-radius: 20%;
+    z-index: -1;
+}
+
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -250px;
+    right: -150px;
+    width: 900px;
+    height: 900px;
+    background:
+        radial-gradient(circle at center, rgba(160, 225, 185, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at center, rgba(130, 210, 165, 0.25) 0%, transparent 70%);
+    border-radius: 20%;
+    z-index: -1;
+}
+
+.goals-container {
+    max-width: 700px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px; 
+}
+
+
+.goals-header, 
+.goals-form-wrapper, 
+.goals-list-wrapper,
+.detail-card {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 0px #EFE3DB; 
+    box-sizing: border-box;
+}
+
+
+.goals-header h1 {
+    color: #E633AA;
+    font-size: 2.5rem;
+    margin: 0 0 5px 0;
+}
+
+.goals-header .subtitle {
+    color: #E633AA;
+    font-size: 1.1rem;
+    margin: 0 0 25px 0;
+    opacity: 0.8;
+}
+
+
+.counters {
+    display: flex;
+    gap: 15px;
+}
+
+.counter-total {
+    background-color: #FFBCE4;
+    color: #D6128B;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.counter-completed {
+    background-color: #E2E2E2;
+    color: #555555;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+
+.goals-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-inputs {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-inputs input, #inputAbono {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #FFAEE2; 
+    border-radius: 20px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+.goals-form button, #formAbono button {
+    background: linear-gradient(to right, #E60087, #FA4BB1);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(230, 0, 135, 0.15);
+}
+
+
+.goals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 10px;
+    border-bottom: 1px solid #FBEAF4;
+    transition: background 0.2s;
+    border-radius: 12px;
+}
+
+.goal-item:hover {
+    background-color: #FFF9F5;
+}
+
+
+.checkbox-circle {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #E633AA;
+    border-radius: 20%;
+}
+
+.checkbox-circle.checked {
+    background-color: #E633AA;
+}
+
+.goal-content {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.goal-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.goal-title {
+    font-weight: bold;
+    color: #222222;
+}
+
+.goal-percentage {
+    color: #E633AA;
+    font-weight: bold;
+}
+
+
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #E0E0E0; 
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #E633AA; 
+    border-radius: 20px;
+    transition: width 0.4s ease;
+    width: 0%;
+}
+
+.goal-amounts {
+    font-size: 0.9rem;
+    color: #FA4BB1;
+    font-weight: bold;
+}
+
+
+.no-goals-msg {
+    text-align: center;
+    color: #E633AA;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+
+.back-link {
+    color: #E633AA;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+    transform: translateX(-4px); 
+}
+
+#detalleNombre {
+    color: #E633AA;
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+#detalleMontoTotal {
+    color: #666666;
+    margin: 0 0 25px 0;
+    font-size: 1.1rem;
+}
+
+.progress-label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.detail-bar-layout {
+    height: 16px;
+    margin-bottom: 12px;
+}
+
+.amount-labels-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+#detalleFalta {
+    color: #E633AA;
+}
+
+#formAbono {
+    display: flex;
+    gap: 15px;
+}
+
+
+.btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.4;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.btn-delete:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* Waves */
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px; 
+  z-index: 1; 
+  overflow: hidden;
+}
+.waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px; 
+  z-index: 1; 
+  overflow: hidden;
+}
+.waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.goals-container {
+    max-width: 700px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    z-index: 2; 
+}
+
+.waves {
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: 0; 
+  overflow: hidden;
+}
+.waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .goals-container {
+        max-width: 90%;
+    }
+
+    .goals-header,
+    .goals-form-wrapper,
+    .goals-list-wrapper,
+    .detail-card {
+        padding: 25px 30px;
+    }
+
+    .goals-header h1 {
+        font-size: 2rem;
+    }
+
+    .goals-form {
+        gap: 10px;
+    }
+
+    #detalleNombre {
+        font-size: 1.8rem;
+    }
+
+    .waves {
+        height: 180px;
+    }
+
+    body::before {
+        width: 500px;
+        height: 500px;
+    }
+
+    body::after {
+        width: 700px;
+        height: 700px;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .goals-container {
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .goals-header,
+    .goals-form-wrapper,
+    .goals-list-wrapper,
+    .detail-card {
+        padding: 20px;
+    }
+
+    .goals-header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+
+    .counters {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .goals-form,
+    #formAbono {
+        flex-direction: column;
+    }
+
+    .goals-form button,
+    #formAbono button {
+        width: 100%;
+    }
+
+    .goal-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .goal-title,
+    .goal-percentage {
+        text-align: left;
+    }
+
+    #detalleNombre {
+        font-size: 1.5rem;
+    }
+
+    #detalleMontoTotal {
+        font-size: 1rem;
+    }
+
+    .progress-label-wrapper,
+    .amount-labels-row {
+        font-size: 0.85rem;
+    }
+
+    .waves {
+        height: 120px;
+    }
+
+    body::before {
+        width: 350px;
+        height: 350px;
+        left: -120px;
+    }
+
+    body::after {
+        width: 450px;
+        height: 450px;
+        right: -180px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    .goals-contain*r {
+        padding: 0 10px;
+    }*
+    .goals-header,
+    .goals-for*-wrapper,
+    .goals-list-wrapper,*    .detail-card {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .goals-header h1 {
+       font-size: 1.4rem;
+    }
+
+
+ }

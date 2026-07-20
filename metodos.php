@@ -1,0 +1,158 @@
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos</title>
+    <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/metodos.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- FUENTE -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+</header>
+    <!-- CONTENEDOR -->
+    <main class="metodos-container">
+
+        <!-- TITULO -->
+        <div class="title">
+            <h1>MÉTODOS</h1>
+        </div>
+
+        <!-- TARJETAS -->
+        <section class="metodos-cards">
+
+            <!-- CARD -->
+            <label class="card">
+
+                <input type="radio" name="metodo">
+
+                <div class="card-box">
+
+                    <a href="metodoh.php">
+                        <img src="img/HORMIGA 3.png">
+                    </a>
+
+                     <h3>Hormiga</h3>
+
+                </div>
+
+            </label>
+
+            <!-- CARD -->
+            <label class="card">
+
+                <input type="radio" name="metodo">
+                
+                <div class="card-box">
+
+                    <a href="dmetas.php">
+                        <img src="img/META 2.png">
+                    </a>
+                    
+
+                    <h3>METAS</h3>
+
+                </div>
+
+            </label>
+
+            <!-- CARD -->
+            <label class="card">
+
+                <input type="radio" name="metodo">
+
+                <div class="card-box">
+
+                    <a href="metodoInv.php">
+                        <img src="img/img invertido.png">
+                    </a>
+                    
+
+                    <h3>INVERTIDO</h3>
+
+                </div>
+
+            </label>
+
+            <!-- CARD -->
+            <label class="card">
+
+                <input type="radio" name="metodo">
+
+                <div class="card-box">
+
+                    <a href="metodods.php">
+                        <img src="img/img sobres.png">
+                    </a>
+                    
+
+                    <h3>SOBRES</h3>
+
+                </div>
+
+            </label>
+
+        </section>
+
+        <!-- RECORDATORIO -->
+        <section class="recordatorio">
+
+            <div class="icon">
+                🔔
+            </div>
+
+            <div class="text">
+
+                <h4>RECUERDA</h4>
+
+                <p>
+                    “Ahorrar no se trata de cuánto ganas,
+                    sino de cuánto decides guardar con propósito.”
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+   <script src="javaScript/homepage.js"></script>
+    <script src="javaScript/navbar-mobile.js"></script>
+
+    <footer class="footer">
+  <div class="footer-container">
+
+   <div class="footer-logo">
+    <img src="img/123repetido.png" alt="Logo Coink">
+</div>
+
+<p class="footer-text">
+    Ahorra inteligente, vive mejor
+</p>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 CoinK · Todos los derechos reservados
+    </p>
+
+  </div>
+</footer>
+
+</body>
+</html>

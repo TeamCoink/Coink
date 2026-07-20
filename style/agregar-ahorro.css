@@ -1,0 +1,254 @@
+body {
+  background-color: #ffede4;
+  font-family: 'Quicksand', sans-serif; /* fuente más bonita */
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor y cerdito encima de las waves */
+.formulario-ahorro {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 80px; /* bajamos el formulario */
+  gap: 40px;
+  position: relative;
+  z-index: 5; /* encima de las waves */
+}
+
+.contenedor-form {
+  background: #fff;
+  padding: 40px; /* más espacio interno */
+  border-radius: 20px; /* bordes más suaves */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Formulario */
+form h2 {
+  text-align: center;
+  color: #ff6fa1;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+form label {
+  display: block;
+  margin-top: 15px; /* más espacio entre etiquetas */
+  font-weight: bold;
+  color:#4caf50
+}
+
+form input {
+  width: 100%;
+  padding: 8px; /* más espacio dentro del input */
+  margin-top: 5px;
+  margin-bottom: 12px; /* más espacio entre inputs */
+  border: 2px solid #ff6fa1; /* contorno rosado */
+  border-radius: 20px; /* border-radius más suave */
+  font-size: 15px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.acciones{
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+/* AGREGAR */
+
+.btn.amarillo{
+
+    flex: 1;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 20px;
+
+    background: #FFE79C;
+
+    color: #6B5A20;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.btn.amarillo:hover{
+
+    background: #FFD96A;
+
+    transform: translateY(-3px);
+}
+
+/* CANCELAR */
+
+.btn.verde{
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    padding: 16px;
+
+    border-radius: 20px;
+
+    background: #D9EDBF;
+
+    color: #356B35;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: .3s ease;
+}
+
+.btn.verde:hover{
+
+    background: #CBE7AB;
+
+    transform: translateY(-3px);
+}
+
+.btn.verde a{
+
+    text-decoration: none;
+
+    color: inherit;
+
+    width: 100%;
+}
+
+/* Cerdito */
+.cerdito {
+  display: flex;
+  align-items: flex-end; /* lo baja respecto al formulario */
+  margin-top: 140px;      /* espacio extra para que quede más abajo */
+}
+
+.cerdito img {
+  max-width: 450px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+/* Waves */
+
+.waves{
+
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 320px;
+
+    z-index: -1;
+
+    overflow: hidden;
+}
+
+.waves svg{
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+
+  .formulario-ahorro,
+  .formulario-gasto {
+    flex-direction: column;   
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  /* Formularios */
+  .contenedor-form {
+    padding: 20px;           
+    max-width: 90%;           
+  }
+
+  form h2 {
+    font-size: 20px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  form input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Botones */
+  .acciones {
+    flex-direction: column;   
+    gap: 10px;
+  }
+
+  .btn.amarillo,
+  .btn.verde,
+  .btn-gasto,
+  .btn-cancelar {
+    width: 100%;             
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  /* Imagen cerdito/gasto */
+  .cerdito img{
+    max-width: 250px;        
+    margin-top: 20px;
+  }
+
+  /* Waves */
+  .waves {
+    height: 200px;            
+  }
+}
+
+@media (max-width: 480px) {
+  form h2 {
+    font-size: 18px;
+  }
+
+  .contenedor-form {
+    padding: 15px;
+  }
+
+  .cerdito img,
+  .gasto-img img {
+    max-width: 200px;
+  }
+}

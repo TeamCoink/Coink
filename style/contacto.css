@@ -1,0 +1,482 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color:#FFF2EB;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    overflow-y:auto;
+}
+
+
+.boton-regresar i{
+    font-size: 32px;
+    color: #a8d5a2;
+    transition: transform .2s ease;
+}
+
+.boton-regresar:hover i{
+    transform: translateX(-5px);
+}
+
+.contenedorLogin{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:100vh;
+    padding:40px 70px;
+    gap:60px;
+    overflow:hidden;
+    background:#FFF2EB;
+}
+
+
+.container{
+    width:100%;
+    max-width:1250px;
+    background-color: #FFF2EB ;
+    display:flex;
+    border-radius: 20px;
+   
+    overflow:hidden;
+}
+
+
+
+
+
+
+
+/* IZQUIERDA */
+
+
+.left{
+    width:50%;
+    padding:60px;
+    position:relative;
+}
+
+.logo{
+    width:250px;
+    display: flex;
+    
+    
+   
+   
+}
+
+.left h1{
+    font-size:48px;
+    gap: 30px;
+    margin-bottom:20px;
+    color:#111;
+}
+
+.left span{
+    color:#ff2f92;
+}
+
+.descripcion{
+    width:500px;
+    font-size:18px;
+    line-height:30px;
+    color:#333;
+    margin-bottom:40px;
+}
+
+/* INFO */
+
+.info{
+    display:flex;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.icon{
+    width:80px;
+    height:80px;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    margin-right:20px;
+}
+
+.green{
+    background:#dff7c7;
+    color:#58b84d;
+}
+
+.yellow{
+    background:#ffe89d;
+    color:#e4ad00;
+}
+
+.pink{
+    background:#ffd9e2;
+    color:#ff4f8d;
+}
+
+.info h3{
+    font-size:24px;
+    margin-bottom:8px;
+    color:#333;
+}
+
+.info p{
+    font-size:20px;
+    color:#59b84d;
+    font-weight:bold;
+}
+
+/* CERDITO */
+
+.pig{
+    width:350px;
+    position:absolute;
+    bottom:0;
+    left:40px;
+    
+}
+
+/* DERECHA */
+
+.right{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.formulario{
+    width: 600px;
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    margin: 20px;
+    margin-right:500 px;
+}
+
+/* TITULO */
+
+.titulo{
+    display:flex;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.circle{
+    width:65px;
+    height:65px;
+    border-radius:20%;
+    background:#ffe6ef;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#ff4f8d;
+    font-size:28px;
+    margin-right:20px;
+}
+
+.titulo h2{
+    font-size:38px;
+    color:#222;
+}
+
+.titulo p{
+    margin-top:5px;
+    color:#555;
+    font-size:14px;
+}
+
+/* INPUTS */
+
+label{
+    display:block;
+    margin-bottom:10px;
+    margin-top:15px;
+    font-weight:bold;
+    color:#222;
+}
+
+.input-box{
+    width:100%;
+    height:58px;
+    border:2px solid  #ccc;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    padding:0 15px;
+    margin-bottom:20px;
+}
+
+.input-box i{
+    margin-right:10px;
+    color:#444;
+}
+
+.input-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:16px;
+}
+
+.double{
+    display:flex;
+    gap:20px;
+}
+
+.mini{
+    width:100%;
+}
+
+textarea{
+    width:100%;
+    height:150px;
+    border:2px solid #ccc;
+    border-radius:20px;
+    padding:15px;
+    resize:none;
+    outline:none;
+    font-size:16px;
+}
+
+/* BOTON */
+
+.btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:20px;
+    background:#b8dca7;
+    margin-top:25px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#a5d28e;
+}
+
+/* REDES */
+
+.social{
+    margin-top:30px;
+    text-align:center;
+}
+
+.social p{
+    margin-bottom:20px;
+    text-align: center;
+    font-weight:bold;
+    color:#333;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-icons i{
+    width:50px;
+    height:50px;
+    background:#f3f3f3;
+    border-radius:20%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.fa-whatsapp{
+    color:#25D366;
+}
+
+.fa-facebook-messenger{
+    color:#1877F2;
+}
+
+.fa-instagram{
+    color:#E1306C;
+}
+
+.fa-envelope{
+    color:#666;
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left,
+    .right{
+        width: 100%;
+    }
+
+    .left{
+        padding: 40px;
+        text-align: center;
+    }
+
+    .logo{
+        margin: 0 auto 20px;
+    }
+
+    .descripcion{
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto 40px;
+    }
+
+    .info{
+        justify-content: center;
+        text-align: left;
+    }
+
+    .pig{
+        position: static;
+        display: block;
+        margin: 30px auto 0;
+        width: 300px;
+    }
+
+    .formulario{
+        width: 90%;
+        max-width: 700px;
+        margin: 30px auto;
+    }
+
+    .left h1{
+        font-size: 40px;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    body{
+        padding: 15px;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .left,
+    .right{
+        width: 100%;
+    }
+
+    .left{
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo{
+        width: 180px;
+        margin: 0 auto 20px;
+    }
+
+    .left h1{
+        font-size: 32px;
+    }
+
+    .descripcion{
+        width: 100%;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .info{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .icon{
+        margin-right: 0;
+        width: 65px;
+        height: 65px;
+        font-size: 24px;
+    }
+
+    .info h3{
+        font-size: 20px;
+    }
+
+    .info p{
+        font-size: 16px;
+    }
+
+    .pig{
+        position: static;
+        width: 220px;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .formulario{
+        width: 100%;
+        padding: 25px;
+        margin: 10px;
+    }
+
+    .titulo{
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .titulo h2{
+        font-size: 28px;
+    }
+
+    .double{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .circle{
+        margin-right: 0;
+    }
+
+    
+.botones-superiores{
+    top: 15px;
+    left: 15px;
+}
+
+.boton-regresar{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+
+    .social-icons{
+        flex-wrap: wrap;
+    }
+}
+
+
+
