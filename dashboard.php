@@ -271,11 +271,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card pink">
 
             <div class="icon-box">
-<<<<<<< HEAD
+
                 <span class="icon"><img src="img/balance.png"></span>
-=======
-                <span class="icon">💸</span>
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
             </div>
 
             <div class="card-info">
@@ -291,11 +289,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card green">
 
             <div class="icon-box">
-<<<<<<< HEAD
+
                 <span class="icon"><img src="img/bolsa-de-dinero.png"></span>
-=======
-                <span class="icon">💰</span>
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
             </div>
 
             <div class="card-info">
@@ -313,11 +309,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card yellow">
 
             <div class="icon-box">
-<<<<<<< HEAD
+
                 <span class="icon"><img src="img/gasto.png"></span>
-=======
-                <span class="icon">💸</span>
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
             </div>
 
             <div class="card-info">
@@ -334,11 +328,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card pastel">
 
             <div class="icon-box">
-<<<<<<< HEAD
+
                 <span class="icon"><img src="img/objetivo.png"></span>
-=======
-                <span class="icon">🌴</span>
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
             </div>
 
             <div class="card-info">
@@ -368,11 +360,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
                 <div class="stat-icon">
 
-<<<<<<< HEAD
+
                     <img src="img/grafico.png" alt="Estadística">
-=======
-                    📊
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
 
                 </div>
 
@@ -428,40 +418,34 @@ while($fila = $resultGastosDia->fetch_assoc()){
                 id="openSavingModal"
                 class="dashboard-btn ahorro-btn">
 
-<<<<<<< HEAD
+
                 <img src="img/mas.png"> Agregar ahorro
-=======
-                ➕ Agregar ahorro
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
             </button>
 
            <button
                 id="openExpenseModal"
                 class="dashboard-btn gasto-btn">
 
-<<<<<<< HEAD
+
                 <img src="img/lletera.png">Agregar gasto
-=======
-                💸 Agregar gasto
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
             </button>
 
             <a href="metas.php"
             class="dashboard-btn meta-btn">
-<<<<<<< HEAD
+
                 <img src="img/object.png"> Ver metas
-=======
-                🎯 Ver metas
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
             </a>
 
             <a href="presupuesto.php"
             class="dashboard-btn ahorro-btn">
-<<<<<<< HEAD
+
                 <img src="img/porta.png"> Ver presupuesto
-=======
-                📋 Ver presupuesto
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
+              
+
             </a>
 
         </div>
@@ -479,11 +463,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
                 <div>
 
-<<<<<<< HEAD
+
                     <h2>Calendario de ahorro </h2>
-=======
-                    <h2>Calendario de ahorro 📅</h2>
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
 
                     <p>Consulta tus movimientos diarios</p>
 
@@ -520,11 +502,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
                     <div class="calendar-placeholder">
 
                         <div class="placeholder-icon">
-<<<<<<< HEAD
+
                             <img src="img/calendario.png" alt="Icono">
-=======
-                            📅
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
                         </div>
 
                         <h3>Selecciona un día</h3>
