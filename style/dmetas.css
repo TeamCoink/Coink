@@ -753,6 +753,10 @@ p{
 
 @media screen and (max-width: 480px) {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     .navbar {
         padding: 15px;
     }
@@ -836,6 +840,7 @@ p{
         padding:15px;
     }
 
+<<<<<<< HEAD
     .navbar{
         display:flex;
         flex-direction:column;
@@ -843,6 +848,9 @@ p{
         padding:20px;
         gap:18px;
     }
+=======
+    
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 
     .logo .logo-img{
         width:180px !important;
@@ -850,9 +858,13 @@ p{
     }
 
 
+<<<<<<< HEAD
     .nav-links{
         display:none;
     }
+=======
+  
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 
     .nav-buttons{
         display:flex;
@@ -886,7 +898,12 @@ p{
         display:flex;
         flex-direction:column;
         text-align:center;
+<<<<<<< HEAD
         margin:20px 0;
+=======
+        margin: 50px 0 20px;
+        margin-top: 50px;
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     }
 
     .body2{
@@ -897,6 +914,10 @@ p{
         margin:0 auto 20px;
         display:inline-block;
         font-size:15px;
+<<<<<<< HEAD
+=======
+        margin-top: 100px;
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     }
 
     h1{

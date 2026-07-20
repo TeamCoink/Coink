@@ -7,9 +7,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Ahorro</title>
+<<<<<<< HEAD
     <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="style/agregar-ahorro.css">
     <link rel="stylesheet" href="style/index.css">
+=======
+  
+    <link rel="stylesheet" href="style/agregar-ahorro.css">
+    <link rel="stylesheet" href="style/index.css">
+    
+    
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">

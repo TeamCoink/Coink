@@ -852,6 +852,14 @@ p{
 }
 
 @media screen and (max-width:425px){
+<<<<<<< HEAD
+=======
+     .navbar{
+        display: none;
+     }
+
+
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 
     body{
         padding:15px;
@@ -875,6 +883,10 @@ p{
         margin:20px auto;
         display:inline-block;
         font-size:15px;
+<<<<<<< HEAD
+=======
+        margin-top: 80px;
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     }
 
     h1{
@@ -1054,6 +1066,38 @@ p{
 }
 
 
+<<<<<<< HEAD
+=======
+@media screen and (max-width:768px){
+
+    .perfil-container{
+        padding: 0 ;
+        min-height: auto ;
+        justify-content: flex-start ;
+        align-items: flex-start ;
+    }
+
+    .card{
+        width: 100% ;
+        max-width: 100% ;
+        border-radius: 15px ;
+    }
+
+    .portada-container{
+        height: 80px ;
+    }
+
+    .avatar-wrapper{
+        width: 90px ;
+        height: 90px ;
+        margin: -45px 0 15px 20px ;
+    }
+
+}
+
+
+
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 }
 
 
