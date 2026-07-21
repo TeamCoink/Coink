@@ -1056,8 +1056,11 @@ p{
         margin-left:0;
         font-size:15px;
         padding:12px 18px;
+<<<<<<< HEAD
+=======
         margin-top:80px;
         text-align:center;
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     }
 
     h1{
@@ -1084,7 +1087,10 @@ p{
     .breadcrumb{
         margin-left:0;
         text-align:center;
+<<<<<<< HEAD
+=======
         margin-top:50px;
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     }
 
    
@@ -1181,7 +1187,11 @@ p{
     }
 
     
+<<<<<<< HEAD
+#example2{
+=======
     #example2{
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     margin-left: 0;
     text-align: center;
 }

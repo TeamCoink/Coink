@@ -852,11 +852,14 @@ p{
 }
 
 @media screen and (max-width:425px){
+<<<<<<< HEAD
+=======
      .navbar{
         display: none;
      }
 
 
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 
     body{
         padding:15px;
@@ -880,7 +883,10 @@ p{
         margin:20px auto;
         display:inline-block;
         font-size:15px;
+<<<<<<< HEAD
+=======
         margin-top: 80px;
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     }
 
     h1{
@@ -1060,6 +1066,8 @@ p{
 }
 
 
+<<<<<<< HEAD
+=======
 @media screen and (max-width:768px){
 
     .perfil-container{
@@ -1089,6 +1097,7 @@ p{
 
 
 
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 }
 
 

@@ -58,7 +58,11 @@
 
       <div class="floating-card card-1">
 
+<<<<<<< HEAD
+          Metas ilimitadas
+=======
          🎯 Metas ilimitadas
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 
          <span>
                Organiza tus objetivos
@@ -72,7 +76,11 @@
 
       <div class="floating-card card-2">
 
+<<<<<<< HEAD
+          Premium
+=======
          💎 Premium
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 
          <span>
                Plan más elegido

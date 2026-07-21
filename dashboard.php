@@ -271,7 +271,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card pink">
 
             <div class="icon-box">
-                <span class="icon">💸</span>
+
+                <span class="icon"><img src="img/balance.png"></span>
+
             </div>
 
             <div class="card-info">
@@ -287,7 +289,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card green">
 
             <div class="icon-box">
-                <span class="icon">💰</span>
+
+                <span class="icon"><img src="img/bolsa-de-dinero.png"></span>
+
             </div>
 
             <div class="card-info">
@@ -305,7 +309,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card yellow">
 
             <div class="icon-box">
-                <span class="icon">💸</span>
+
+                <span class="icon"><img src="img/gasto.png"></span>
+
             </div>
 
             <div class="card-info">
@@ -322,7 +328,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card pastel">
 
             <div class="icon-box">
-                <span class="icon">🌴</span>
+
+                <span class="icon"><img src="img/objetivo.png"></span>
+
             </div>
 
             <div class="card-info">
@@ -352,7 +360,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
                 <div class="stat-icon">
 
-                    📊
+
+                    <img src="img/grafico.png" alt="Estadística">
+
 
                 </div>
 
@@ -408,24 +418,34 @@ while($fila = $resultGastosDia->fetch_assoc()){
                 id="openSavingModal"
                 class="dashboard-btn ahorro-btn">
 
-                ➕ Agregar ahorro
+
+                <img src="img/mas.png"> Agregar ahorro
+
             </button>
 
            <button
                 id="openExpenseModal"
                 class="dashboard-btn gasto-btn">
 
-                💸 Agregar gasto
+
+                <img src="img/lletera.png">Agregar gasto
+
             </button>
 
             <a href="metas.php"
             class="dashboard-btn meta-btn">
-                🎯 Ver metas
+
+                <img src="img/object.png"> Ver metas
+
             </a>
 
             <a href="presupuesto.php"
             class="dashboard-btn ahorro-btn">
-                📋 Ver presupuesto
+
+                <img src="img/porta.png"> Ver presupuesto
+
+              
+
             </a>
 
         </div>
@@ -443,7 +463,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
                 <div>
 
-                    <h2>Calendario de ahorro 📅</h2>
+
+                    <h2>Calendario de ahorro </h2>
+
 
                     <p>Consulta tus movimientos diarios</p>
 
@@ -480,7 +502,9 @@ while($fila = $resultGastosDia->fetch_assoc()){
                     <div class="calendar-placeholder">
 
                         <div class="placeholder-icon">
-                            📅
+
+                            <img src="img/calendario.png" alt="Icono">
+
                         </div>
 
                         <h3>Selecciona un día</h3>
