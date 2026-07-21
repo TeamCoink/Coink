@@ -1448,6 +1448,10 @@
         width:100%;
     }
 
+    .dashboard-modal{
+    margin-top: 60px;
+}
+
    
 .right-panel{
     display:flex;
@@ -1703,6 +1707,10 @@
         gap: 10px;
 
         text-align: center;
+    }
+
+     .metas{
+        margin-top: 50px;
     }
 }
 
