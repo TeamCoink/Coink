@@ -7,36 +7,56 @@ body {
     display: block !important;
 }
 
-.boton-regresar{
-    position: fixed;
-    top: 20px;   
-    left: 25px;  
 
-    text-decoration: none;
+.botones-superiores{
+    position: fixed;
+    top: 20px;
+    left: 20px;
     z-index: 1000;
 }
 
+.boton-regresar{
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg,#ffd6e2,#f8b7ca);
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    box-shadow: 0 5px 15px rgba(248,183,202,.35);
+
+    transition: all .25s ease;
+}
+
+.boton-regresar:hover{
+    background: linear-gradient(135deg,#ffd6e2,#f8b7ca);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(255,124,167,.40);
+}
+
+.boton-regresar:active{
+    transform: scale(.95);
+}
+
 .boton-regresar i{
-    font-size: 32px;
-    color: #a8d5a2;
-    transition: transform .2s ease;
+    transition: .25s;
 }
 
 .boton-regresar:hover i{
-    transform: translateX(-5px);
+    transform: translateX(-3px);
 }
-
-.contenedorLogin{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    height:100vh;
-    padding:40px 70px;
-    gap:60px;
-    overflow:hidden;
-    background:#FFF2EB;
-}
-
 
 .perfil-container {
     display: flex !important;
@@ -437,54 +457,62 @@ body {
 @media screen and (max-width:768px){
 
     .perfil-container{
-        padding: 0 !important;
-        min-height: auto !important;
-        align-items: flex-start !important;
+        padding: 0 ;
+        min-height: auto ;
+        align-items: flex-start ;
     }
 
     .portada-container{
-        height: 70px !important;
+        height: 70px ;
     }
 
     .card{
-        width: 100% !important;
-        margin: 0 !important;
-        border-radius: 15px !important;
+        width: 100% ;
+        margin: 0 ;
+        border-radius: 15px ;
     }
 
 }
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+}
+=======
+
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+>>>>>>> a404632b81aacb282e8f850048edb5e33702b2a0
 
 @media screen and (max-width: 425px){
 
     .portada-container{
-        height: 120px !important;
+        height: 120px ;
     }
 
     .avatar-wrapper{
-        width: 80px !important;
-        height: 80px !important;
-         margin: -30px 0 10px 20px !important;
+        width: 80px ;
+        height: 80px ;
+         margin: -30px 0 10px 20px ;
     }
 
     #iniciales{
-        font-size: 1.8rem !important;
+        font-size: 1.8rem;
     }
 
     .username-title{
-        font-size: 1.1rem !important;
+        font-size: 1.1rem ;
     }
 
     .user-bio{
-        font-size: 0.85rem !important;
+        font-size: 0.85rem ;
     }
 
     .social-footer{
-        padding: 15px 10px !important;
+        padding: 15px 10px ;
     }
 
     .social-footer a{
-        font-size: 1.2rem !important;
+        font-size: 1.2rem ;
     }
 
 }

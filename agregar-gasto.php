@@ -9,7 +9,11 @@
           content="width=device-width, initial-scale=1.0">
 
     <title>Agregar gasto</title>
+<<<<<<< HEAD
+    <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
+=======
     
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 
     <link rel="stylesheet"
           href="style/index.css">

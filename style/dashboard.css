@@ -407,6 +407,17 @@
 
     align-items: center;
 
+    gap: 18px;
+}
+
+.calendar-navigation button{
+    width: 52px;
+    height: 52px;
+
+    border: none;
+
+    border-radius: 18px;
+
     gap: 10px;
 }
 
@@ -418,11 +429,15 @@
 
     border-radius: 50%;
 
+
     background: #D9EDBF;
 
     cursor: pointer;
 
+
+    font-size: 22px;
     font-size: 16px;
+
 
     transition: .3s ease;
 }
@@ -1448,6 +1463,10 @@
         width:100%;
     }
 
+    .dashboard-modal{
+    margin-top: 60px;
+}
+
    
 .right-panel{
     display:flex;
@@ -1704,6 +1723,10 @@
 
         text-align: center;
     }
+
+     .metas{
+        margin-top: 50px;
+    }
 }
 
 @media (max-width: 480px){
@@ -1916,6 +1939,56 @@
 
         text-align: center;
     }
+ 
+}
+
+
+.dashboard-btn img {
+    width: 20px;      
+    height: 20px;     
+    vertical-align: middle; 
+    margin-right: 8px;
+}
+
+
+
+.mini-card .icon img {
+    width: 32px;           
+    height: 32px;          
+    object-fit: contain;    
+    display: block;         
+}
+
+
+.mini-card .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.stat-icon img {
+    width: 24px;         
+    height: 24px;
+    display: block;      
+    object-fit: contain;
+}
+
+
+.placeholder-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.placeholder-icon img {
+    width: 200px;         
+    height: 100px;
+    object-fit: contain; 
+    display: block;
+}
+
 
     
   .calendar-card{
@@ -1932,4 +2005,5 @@
         min-width: 100px;
     }
 
-}
+
+

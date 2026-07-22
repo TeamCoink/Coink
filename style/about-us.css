@@ -59,8 +59,12 @@ footer {
   align-items: center;      
   justify-content: space-between;
   padding: 3rem;
+<<<<<<< HEAD
+  background: #ffe4ec;      
+=======
   background: #ffe4ec;  
   border-radius: 20px;    
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
 }
  
 .about-text {
