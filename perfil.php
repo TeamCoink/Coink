@@ -22,7 +22,6 @@ $usuarioId = $_SESSION['usuario_id'];
     <i class="fa-solid fa-arrow-left-long"></i>
    </a>
 
-
 <div class="perfil-container">
     <div class="card">
         <div class="portada-container" onclick="triggerInput('inputPortada', event)">
