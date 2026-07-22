@@ -117,7 +117,7 @@ body {
 .avatar-container {
     width: 100% !important;
     height: 100% !important;
-    border-radius: 50% !important; /* Completamente redondo */
+    border-radius: 50% !important; 
     overflow: hidden !important;
     background: #e1e8ed !important;
     border: 4px solid #FFFFFF !important;
@@ -139,7 +139,7 @@ body {
     justify-content: center !important;
     width: 100% !important;
     height: 100% !important;
-    background: linear-gradient(to bottom, #BA68E6, #E167B9) !important; /* Degradado de iniciales */
+    background: linear-gradient(to bottom, #BA68E6, #E167B9) !important; 
     color: #FFFFFF !important;
     font-size: 2.2rem !important;
     font-weight: bold !important;
@@ -278,17 +278,17 @@ body {
     transform: scale(1.2) !important;
 }
 
-/* Asegúrate de añadir esto en el CSS de tu navbar (navbar.css o el principal) */
+
 #nav-avatar-img {
-    width: 35px; /* o el tamaño que tenga tu avatar */
+    width: 35px; 
     height: 35px;
     border-radius: 50%;
     object-fit: cover;
-    display: none; /* Empezamos oculto */
+    display: none; 
 }
 
 #nav-avatar-initials {
-    display: flex; /* Empezamos visible */
+    display: flex; 
     align-items: center;
     justify-content: center;
     width: 35px;
@@ -300,16 +300,16 @@ body {
 
 .actions-container {
     display: flex !important;
-    justify-content: flex-start !important; /* Cambiado de flex-end a flex-start */
+    justify-content: flex-start !important; 
     gap: 10px !important;
-    padding: 0 30px 20px 30px !important; /* Mantiene el margen de 30px a la izquierda para alinear con el texto */
+    padding: 0 30px 20px 30px !important; 
 }
 
-/* Forzar igualdad total en el contenedor actions-container */
+
 .actions-container .btn-cerrar, 
 .actions-container .btn-editar {
-    padding: 10px 0 !important; /* Quitamos el padding horizontal lateral */
-    width: 140px !important;    /* Asignamos un ancho fijo igual para ambos */
+    padding: 10px 0 !important; 
+    width: 140px !important;    
     border-radius: 20px !important;
     font-size: 0.9rem !important;
     font-weight: bold !important;
@@ -322,7 +322,7 @@ body {
     box-sizing: border-box !important;
 }
 
-/* Colores específicos */
+
 .btn-cerrar {
     background-color: #14171a !important; 
     color: #FFFFFF !important;
@@ -334,11 +334,11 @@ body {
 }
 
 
-/* Estilo Glassmorphism para el modal */
+
 #modalEditar > div {
-    /* Fondo semi-transparente */
+
     background: rgba(255, 255, 255, 0.7) !important;
-    /* Efecto de desenfoque */
+    
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     
@@ -405,7 +405,7 @@ body {
 }
 
 
-/* Estilo para los detalles (ubicación y fecha) */
+
 .user-details {
     color: #657786;
     font-size: 0.85rem;
@@ -417,19 +417,19 @@ body {
 
 .user-details i {
     margin-right: 5px;
-    color: #1da1f2; /* Un toque de color azul para los íconos */
+    color: #1da1f2; 
 }
 
-/* Estilo para los "tags" (etiquetas) */
+
 .tags-container {
     margin: 10px 0 20px 30px;
     display: flex;
     gap: 8px;
-    flex-wrap: wrap; /* Para que si agregas muchas, bajen de línea */
+    flex-wrap: wrap; 
 }
 
 .tag {
-    background: rgba(29, 161, 242, 0.1); /* Fondo azul muy suave */
+    background: rgba(29, 161, 242, 0.1); 
     color: #1da1f2;
     padding: 5px 14px;
     border-radius: 15px;
@@ -473,15 +473,7 @@ body {
     }
 
 }
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-}
-=======
-
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
->>>>>>> a404632b81aacb282e8f850048edb5e33702b2a0
 
 @media screen and (max-width: 425px){
 
@@ -516,3 +508,46 @@ body {
     }
 
 }
+
+
+
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.modal-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+
+.btn-guardar {
+    background-color: #111;
+    color: #fff;
+}
+
+.btn-guardar:hover {
+    background-color: #333;
+    transform: translateY(-1px);
+}
+
+
+.btn-cancelar {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.btn-cancelar:hover {
+    background-color: #e5e7eb;
+}
+
+

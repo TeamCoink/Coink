@@ -294,7 +294,7 @@ body{
 }
 
 .footer-text{
-  font-size:18px;
+  font-size:20px;
   color:#444;
   font-weight:500;
 }
@@ -571,10 +571,10 @@ a{
     .text p{
         font-size: 0.85rem;
     }
-<<<<<<< HEAD
+
 }
 
-=======
+
 
     
 .title{
@@ -584,8 +584,8 @@ a{
     .metodos-cards{
         margin-top: 70px;
     }
-}
 
 
 
->>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
+
+

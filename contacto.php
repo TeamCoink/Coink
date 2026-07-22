@@ -152,21 +152,7 @@
 
             </form>
 
-            <div class="social">
-
-                <p>O escríbenos por</p>
-
-                <div class="social-icons">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-facebook-messenger"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-regular fa-envelope"></i>
-
-                </div>
-
-            </div>
-
+           
         </div>
 
     </div>

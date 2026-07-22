@@ -149,10 +149,10 @@ body{
 /* DERECHA */
 
 .right{
-    width:50%;
+   width:200%;
+    padding:10px;
     display:flex;
     justify-content:center;
-    align-items:center;
 }
 
 .formulario{
@@ -162,10 +162,9 @@ body{
     padding:40px;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
     margin: 20px;
-    margin-right:500 px;
+    margin-right: 500px;
 }
 
-/* TITULO */
 
 .titulo{
     display:flex;
@@ -329,6 +328,7 @@ textarea{
     .left,
     .right{
         width: 100%;
+        height: 100%;
     }
 
     .left{
@@ -359,9 +359,10 @@ textarea{
     }
 
     .formulario{
-        width: 90%;
-        max-width: 700px;
-        margin: 30px auto;
+         width:95%;
+    max-width:500px;
+    margin:30px auto;
+    padding:25px;
     }
 
     .left h1{
@@ -371,125 +372,60 @@ textarea{
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px){
 
     body{
-        padding: 15px;
+        padding:15px;
     }
 
     .container{
-        flex-direction: column;
+        flex-direction:column;
     }
 
-    
+    .left,
     .right{
-        width: 100%;
-         transform: translateX(-30px);
-         max-width: 500px;
-         margin-left: -20px;
-
-    }
-
-    .left{
-       
         width:100%;
         padding:20px;
-        text-align:center;
-         transform: translateX(-20px);
-    }
-
+        transform:none;
+        margin:0;
     }
 
     .logo{
-        width: 180px;
-        margin: 0 auto 20px;
-    }
-
-    .left h1{
-        font-size: 32px;
+        width:180px;
+        margin:0 auto 20px;
     }
 
     .descripcion{
-        width: 100%;
-        font-size: 16px;
-        line-height: 26px;
-    }
-
-    .info{
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .icon{
-        margin-right: 0;
-        width: 65px;
-        height: 65px;
-        font-size: 24px;
-    }
-
-    .info h3{
-        font-size: 20px;
-    }
-
-    .info p{
-        font-size: 16px;
+        width:100%;
     }
 
     .pig{
-        position: static;
-        width: 220px;
-        margin: 20px auto;
-        display: block;
+        position:static;
+        width:220px;
+        margin:20px auto;
     }
 
     .formulario{
-       
-     flex-direction: column;
-     margin: 10px auto;
-        padding: 25px;
-        margin-left: 50px;
+        width:95%;
+        max-width:1000px;
+        margin:30px auto;
+        padding:25px;
     }
-
-    
 
     .titulo{
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-    }
-
-    .titulo h2{
-        font-size: 28px;
+        flex-direction:column;
+        text-align:center;
     }
 
     .double{
-        flex-direction: column;
-        gap: 0;
+        flex-direction:column;
     }
-
-    .circle{
-        margin-right: 0;
-    }
-
-    
-.botones-superiores{
-    top: 15px;
-    left: 15px;
-    }
-
-.boton-regresar{
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 15px;
-    }
-
 
     .social-icons{
-        flex-wrap: wrap;
+        flex-wrap:wrap;
     }
 
-
-
-
+    .titulo h2{
+    font-size: 24px;
+}
+}
