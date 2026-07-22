@@ -514,7 +514,9 @@ body{
 
 #hero-content{
 
-    text-align:center;
+    text-align:justify;
+    margin: 10px;
+    font-size: 17px;
 
 }
 
@@ -532,7 +534,7 @@ body{
 
 .post-info{
 
-    justify-content:center;
+    justify-content:justify;
     flex-wrap:wrap;
     gap:20px;
 
@@ -541,7 +543,7 @@ body{
 #hero-content p{
 
     line-height:1.8;
-    font-size:16px;
+    font-size:20px;
 
 }
 
@@ -559,7 +561,8 @@ body{
 .comparison,
 .choice{
 
-    text-align:center;
+    text-align: justify;
+    margin: 12px;
 
 }
 
@@ -583,18 +586,100 @@ body{
 
 }
 
+.comparison-mobile{
+
+    display:none;
+}
+
+.table-container{
+
+    display:none;
+
+}
+
+.comparison-mobile{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin-top:30px;
+
+}
+
+.compare-card{
+
+    background:#fff;
+    border:2px solid #f8b3c2;
+    border-radius:25px;
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.compare-card h3{
+
+    color:#eb396b;
+    text-align:center;
+    margin-bottom:25px;
+    font-size: 23px;
+
+}
+
+.compare-item{
+
+    border-bottom:1px solid #eee;
+    padding:15px 0;
+
+}
+
+.compare-item:last-child{
+
+    border:none;
+
+}
+
+.compare-item strong{
+
+    color:#186e0c;
+    display:block;
+    margin-bottom:8px;
+    font-size: 20px;
+
+}
+
+.compare-item p{
+
+    margin:0;
+    line-height:1.7;
+
+}
+
+
 .function,
 .example{
 
+    display:flex;
     flex-direction:column;
+    
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:25px;
+    border-radius:25px;
+    width:100%;
+    max-width:100%;
+
+    padding:30px;
+    margin-right:0;
+
 
 }
 
 .function img,
 .example img{
 
+    order:-1;
+    margin-bottom:20px;
     width:150px;
 
 }

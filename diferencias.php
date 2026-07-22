@@ -171,6 +171,72 @@
 
 </section>
 
+<div class="comparison-mobile">
+
+    <div class="compare-card">
+
+        <h3><i class="fa-solid fa-coins"></i> Ahorrar</h3>
+
+        <div class="compare-item">
+            <strong>Objetivo</strong>
+            <p>Guardar dinero</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Riesgo</strong>
+            <p>Bajo o nulo</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Liquidez</strong>
+            <p>Alta</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Tiempo</strong>
+            <p>Corto plazo</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Ejemplos</strong>
+            <p>Cuenta de ahorro<br>Alcancía<br>Fondo de emergencia</p>
+        </div>
+
+    </div>
+
+    <div class="compare-card">
+
+        <h3><i class="fa-solid fa-chart-line"></i> Invertir</h3>
+
+        <div class="compare-item">
+            <strong>Objetivo</strong>
+            <p>Hacer crecer tu dinero</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Riesgo</strong>
+            <p>Medio o alto</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Liquidez</strong>
+            <p>Media o baja</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Tiempo</strong>
+            <p>Mediano y largo plazo</p>
+        </div>
+
+        <div class="compare-item">
+            <strong>Ejemplos</strong>
+            <p>Acciones<br>ETFs<br>Fondos de inversión<br>Bienes raíces</p>
+        </div>
+
+    </div>
+
+</div>
+
 <section class="choice">
     <h2>4- ¿Por qué no ambos?</h2>
 
