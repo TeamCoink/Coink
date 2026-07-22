@@ -64,7 +64,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
             <?php else: ?>
 
-                <h3>Bienvenido 🐷</h3>
+                <h3>Bienvenido </h3>
 
                 <p>Inicia sesión para comenzar</p>
 
@@ -101,10 +101,7 @@ if (session_status() === PHP_SESSION_NONE) {
             Dashboard
         </a>
 
-        <a href="planes.php">
-            <i class="fa-solid fa-crown"></i>
-            Planes
-        </a>
+       
 
         <?php if(isset($_SESSION['usuario_id'])): ?>
 
