@@ -154,9 +154,9 @@
     <div class="cards4">
         <img src="img/hombtr.jpg" alt="" width="310">
         <div class="cards-texto">
-            <h3>¿Deseo o necesidad?</h3><br>
-            <p>Identifica si tu siguiente compra  <br> es un deseo o una necesidad</p> <br>
-            <p ><a href="" class="more-bttn">Ver más</a></p>
+            <h3>Como crear un fondo <br> de emergencia paso a paso</h3><br>
+            <p>Tener un fondo de emergencia <br> puede marcar la diferencia en <br> tu vida diaria</p> <br>
+            <p ><a href="fondo.php" class="more-bttn">Ver más</a></p>
         </div>
         
     </div>
