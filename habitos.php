@@ -45,7 +45,7 @@
     <p>Mejorar tus finanzas no depende de ganar más dinero, sino de desarrollar hábitos saludables y mantenerlos con constancia. Pequeñas acciones diaras pueden tener un gran impacto en tu vida.</p>
 
     <div id="hero-image">
-        <img src="img/heroV.png" alt="" height="380px" width="1285px">
+        <img src="img/heroV.png" alt="" >
     </div>
 
     <p>No necesitas ganar más dinero para tener unas finanzas sanas, sino desarrollar buenos hábitos con el dinero que ya  tienes. Aquí te compartimos 10 hábitos clave que pueedes empezar a aplicar hoy mismo y que transforran tu  vida financiera.</p> <br>
@@ -78,69 +78,143 @@
 
 <section class="habit">
 
-    <div class="column1">
+    <div class="habit-card">
+
         <div class="item">
             <div class="numero">1</div>
+
             <h3>Lleva un control de tus gastos</h3>
         </div>
-        <p>Registra cada gasto que realizas para conocer en qué usas tu dinero y mejorar tus decisiones financieras diariamente.</p>
+
+        <p>
+            Registra cada gasto que realizas para conocer en qué usas tu dinero y mejorar tus decisiones financieras diariamente.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
 
         <div class="item">
             <div class="numero">2</div>
+
             <h3>Vive por debajo de tus posibilidades</h3>
         </div>
-        <p>Gasta menos de lo que ganas para ahorrar con tranquilidad, evitar deudas innecesarias y fortalecer tu estabilidad financiera.</p>
+
+        <p>
+            Gasta menos de lo que ganas para ahorrar con tranquilidad, evitar deudas innecesarias y fortalecer tu estabilidad financiera.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
 
         <div class="item">
             <div class="numero">3</div>
+
             <h3>Ahorra primero, gasta después</h3>
         </div>
-        <p>Separa una parte de tu ingreso apenas lo recibas para crear el hábito de ahorrar de manera constante.</p>
+
+        <p>
+           Separa una parte de tu ingreso apenas lo recibas para crear el hábito de ahorrar de manera constante.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
 
         <div class="item">
             <div class="numero">4</div>
+
             <h3>Crea metas financieras claras</h3>
         </div>
-        <p>Define objetivos específicos y alcanzables que te motiven a mantener buenos hábitos y administrar mejor tu dinero.</p>
 
-         <div class="item">
-            <div class="numero">5</div>
-            <h3>Construye un fondo de emergencia</h3>
-        </div>
-        <p>Ahorra entre tres y seis meses de gastos básicos para afrontar imprevistos sin afectar tu estabilidad económica.</p>
-        
+        <p>
+           Define objetivos específicos y alcanzables que te motiven a mantener buenos hábitos y administrar mejor tu dinero.
+        </p>
+
     </div>
 
-    <div class="column2">
-         <div class="item">
-            <div class="numero">6</div>
-            <h3>Lleva un control de tus gastos</h3>
-        </div>
-        <p>Utiliza el crédito de forma responsable, paga a tiempo y evita adquirir deudas que no puedas cubrir fácilmente.</p>
+    <div class="habit-card">
 
-         <div class="item">
+        <div class="item">
+            <div class="numero">5</div>
+
+            <h3>Construye un fondo de emergencia</h3>
+        </div>
+
+        <p>
+            Ahorra entre tres y seis meses de gastos básicos para afrontar imprevistos sin afectar tu estabilidad económica.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
+
+        <div class="item">
+            <div class="numero">6</div>
+
+            <h3>Usa el crédito responsablemente</h3>
+        </div>
+
+        <p>
+            Utiliza el crédito de forma responsable, paga a tiempo y evita adquirir deudas que no puedas cubrir fácilmente.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
+
+        <div class="item">
             <div class="numero">7</div>
+
             <h3>Invierte en tu educación financiera</h3>
         </div>
-        <p>Aprender sobre finanzas personales te ayudará a tomar mejores decisiones y aprovechar mejor cada oportunidad económica.</p>
 
-         <div class="item">
+        <p>
+           Aprender sobre finanzas personales te ayudará a tomar mejores decisiones y aprovechar mejor cada oportunidad económica.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
+
+        <div class="item">
             <div class="numero">8</div>
+
             <h3>Revisa tu  progreso constantemente</h3>
         </div>
-        <p>Evalúa tus avances cada mes, identifica oportunidades de mejora y ajusta tus hábitos para seguir alcanzando tus metas.</p>
 
-         <div class="item">
+        <p>
+            Evalúa tus avances cada mes, identifica oportunidades de mejora y ajusta tus hábitos para seguir alcanzando tus metas.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
+
+        <div class="item">
             <div class="numero">9</div>
+
             <h3>Sé paciente y constante</h3>
         </div>
-        <p>Los resultados financieros requieren tiempo, disciplina y perseverancia para construir una base económica sólida y duradera.</p>
 
-         <div class="item">
+        <p>
+            Los resultados financieros requieren tiempo, disciplina y perseverancia para construir una base económica sólida y duradera.
+        </p>
+
+    </div>
+
+    <div class="habit-card">
+
+        <div class="item">
             <div class="numero">10</div>
+            
             <h3>Disfruta  tu dinero sin culpa</h3>
         </div>
-        <p>Destina parte de tu dinero a experiencias que disfrutes, siempre manteniendo un equilibrio con tus objetivos financieros.</p>
+
+        <p>
+           >Destina parte de tu dinero a experiencias que disfrutes, siempre manteniendo un equilibrio con tus objetivos financieros.
+        </p>
 
     </div>
 

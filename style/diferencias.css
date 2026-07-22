@@ -489,3 +489,268 @@ tbody td:first-child{
 .advice p{
     color: #313131;
 }
+
+
+
+@media (max-width:768px){
+
+body{
+
+    padding:18px;
+
+}
+
+
+
+.breadcrumb{
+
+    flex-wrap:wrap;
+    gap:6px;
+    font-size:14px;
+
+}
+
+
+
+#hero-content{
+
+    text-align:center;
+
+}
+
+#hero-content h1{
+
+    font-size:36px;
+
+}
+
+.text-down p{
+
+    font-size:22px;
+
+}
+
+.post-info{
+
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+
+}
+
+#hero-content p{
+
+    line-height:1.8;
+    font-size:16px;
+
+}
+
+#hero-image img{
+
+    width:100%;
+    height:auto;
+    border-radius:20px;
+
+}
+
+
+#save-meaning,
+#invest-meaning,
+.comparison,
+.choice{
+
+    text-align:center;
+
+}
+
+#save-meaning h2,
+#invest-meaning h2,
+.comparison h2,
+.choice h2{
+
+    font-size:30px;
+
+}
+
+
+
+.section2{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin:40px 0;
+
+}
+
+.function,
+.example{
+
+    flex-direction:column;
+    text-align:center;
+    padding:25px;
+
+}
+
+.function img,
+.example img{
+
+    width:150px;
+
+}
+
+.text,
+.ex-text{
+
+    width:100%;
+
+}
+
+.text ul{
+
+    padding-left:0;
+    list-style-position:inside;
+
+}
+
+
+
+.table-container{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    min-width:650px;
+
+}
+
+
+
+.cards{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+
+}
+
+.card{
+
+    width:100%;
+
+    padding:25px;
+
+}
+
+.cards img{
+
+    width:170px;
+
+}
+
+
+
+.advice{
+
+    display:flex;
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:25px;
+
+    padding:35px 25px;
+
+}
+
+.ad-image img{
+
+    width:180px;
+
+}
+
+.ad-img2{
+
+    display:none;
+
+}
+
+.ad-text h4{
+
+    font-size:28px;
+
+}
+
+.ad-text p{
+
+    line-height:1.8;
+
+}
+
+.ad-text br{
+
+    display:none;
+
+}
+
+}
+
+@media (max-width:425px){
+
+#hero-content h1{
+
+    font-size:30px;
+
+}
+
+.text-down p{
+
+    font-size:20px;
+
+}
+
+#save-meaning h2,
+#invest-meaning h2,
+.comparison h2,
+.choice h2{
+
+    font-size:25px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.card h4{
+
+    font-size:20px;
+
+}
+
+.ad-text h4{
+
+    font-size:23px;
+
+}
+
+.function img,
+.example img{
+
+    width:130px;
+
+}
+
+.ad-image img{
+
+    width:150px;
+
+}
+
+}
