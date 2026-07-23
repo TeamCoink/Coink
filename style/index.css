@@ -70,7 +70,7 @@ body{
 .nav-links{
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 100px;
 }
 
 .nav-links a{
@@ -102,7 +102,8 @@ body{
 .nav-buttons{
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 40px;
+    margin-right: 50px;
 }
 
 .signup-btn{
@@ -552,14 +553,26 @@ body{
 }
 
 
-.cards4{
-    margin-top: 25px;
-}
+
 
 
 .cards4 .more-bttn{
    
-    margin-top: 25px;
+    margin-top: 2px;
+}
+
+.cards4 h3{
+    margin-top: -8px;
+}
+
+.cards4
+.cards-texto h3{
+    margin-top: -7px;
+}
+
+.cards4
+.cards-text p{
+    margin-top: -20px;
 }
 
 
@@ -845,9 +858,15 @@ body{
     }
 
     .hero-image img{
+
         max-width: 320px;
         margin-bottom: 2px;
         margin-top: 100px;
+
+
+        margin-top: 40px;
+        width: 410px;
+        margin-bottom: -80px;
 
     }
 

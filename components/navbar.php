@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <ul class="nav-links">
             <li><a href="metodos.php"><i class="fa-solid fa-graduation-cap"></i> Aprender</a></li>
-            <li><a href="contacto.php"><i class="fa-regular fa-message"></i> Contactanos</a></li>
+           
             <li><a href="about-us.php"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
         </ul>
 
@@ -46,7 +46,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </button>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="dashboard.php"><i class="fa-solid fa-chart-area"></i>Dashboard</a>
-                    <a href="planes.php"><i class="fa-solid fa-money-bill"></i> Planes</a>
+                    
                      <a href="presupuesto.php"><i class="fa-solid fa-piggy-bank"></i>Presupuesto</a>
 
                 </div>

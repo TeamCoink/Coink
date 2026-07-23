@@ -489,3 +489,421 @@ tbody td:first-child{
 .advice p{
     color: #313131;
 }
+
+.comparison-mobile{
+
+    display:none;
+}
+
+
+
+@media (max-width:768px){
+
+body{
+
+    padding:18px;
+
+}
+
+
+
+.breadcrumb{
+
+    flex-wrap:wrap;
+    gap:6px;
+    font-size:14px;
+
+}
+
+
+
+#hero-content{
+
+    text-align:justify;
+    margin: 10px;
+    font-size: 17px;
+
+}
+
+#hero-content h1{
+
+    font-size:36px;
+
+}
+
+.text-down p{
+
+    font-size:22px;
+
+}
+
+.post-info{
+
+    justify-content:justify;
+    flex-wrap:wrap;
+    gap:20px;
+
+}
+
+#hero-content p{
+
+    line-height:1.8;
+    font-size:20px;
+
+}
+
+#hero-image img{
+
+    width:100%;
+    height:auto;
+    border-radius:20px;
+
+}
+
+
+#save-meaning,
+#invest-meaning,
+.comparison,
+.choice{
+
+    text-align: justify;
+    margin: 12px;
+
+}
+
+#save-meaning h2,
+#invest-meaning h2,
+.comparison h2,
+.choice h2{
+
+    font-size:30px;
+
+}
+
+
+
+.section2{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin:40px 0;
+
+}
+
+
+
+.table-container{
+
+    display:none;
+
+}
+
+.comparison-mobile{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin-top:30px;
+
+}
+
+.compare-card{
+
+    background:#fff;
+    border:2px solid #f8b3c2;
+    border-radius:25px;
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.compare-card h3{
+
+    color:#eb396b;
+    text-align:center;
+    margin-bottom:25px;
+    font-size: 23px;
+
+}
+
+.compare-item{
+
+    border-bottom:1px solid #eee;
+    padding:15px 0;
+
+}
+
+.compare-item:last-child{
+
+    border:none;
+
+}
+
+.compare-item strong{
+
+    color:#186e0c;
+    display:block;
+    margin-bottom:8px;
+    font-size: 20px;
+
+}
+
+.compare-item p{
+
+    margin:0;
+    line-height:1.7;
+
+}
+
+
+.function,
+.example{
+
+    display:flex;
+    flex-direction:column;
+    
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border-radius:25px;
+    width:100%;
+    max-width:100%;
+
+    padding:30px;
+    margin-right:0;
+
+
+}
+
+.function img,
+.example img{
+
+    order:-1;
+    margin-bottom:20px;
+    width:150px;
+
+}
+
+.text,
+.ex-text{
+
+    width:100%;
+
+}
+
+.text ul{
+
+    padding-left:0;
+    list-style-position:inside;
+
+}
+
+
+
+.table-container{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    min-width:650px;
+
+}
+
+
+
+.cards{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+
+}
+
+.card{
+
+    width:100%;
+
+    padding:25px;
+
+}
+
+.cards img{
+
+    width:170px;
+
+}
+
+
+
+.advice{
+
+    display:flex;
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:25px;
+
+    padding:35px 25px;
+
+}
+
+.ad-image img{
+
+    width:180px;
+
+}
+
+.ad-img2{
+
+    display:none;
+
+}
+
+.ad-text h4{
+
+    font-size:28px;
+
+}
+
+.ad-text p{
+
+    line-height:1.8;
+
+}
+
+.ad-text br{
+
+    display:none;
+
+}
+
+}
+
+@media (max-width:425px){
+
+#hero-content h1{
+
+    font-size:30px;
+
+}
+
+.text-down p{
+
+    font-size:20px;
+
+}
+
+#save-meaning h2,
+#invest-meaning h2,
+.comparison h2,
+.choice h2{
+
+    font-size:25px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.card h4{
+
+    font-size:20px;
+
+}
+
+.ad-text h4{
+
+    font-size:23px;
+
+}
+
+.function img,
+.example img{
+
+    width:130px;
+
+}
+
+.ad-image img{
+
+    width:150px;
+
+}
+
+}
+
+    .footer{
+  width:100%;
+  background:#ffe4ec;
+  padding:15px 40px;
+  margin-top:40px;
+  border-radius:30px;
+}
+
+.footer-logo{
+  font-size:2rem;
+  color:#ff4081;
+  margin-bottom:.5rem;
+}
+
+.footer-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.footer-logo img{
+  width:170px;
+  height:auto;
+  margin-top:45px;
+}
+
+.footer-text{
+  font-size:18px;
+  color:#444;
+  font-weight:500;
+}
+
+.footer-social{
+  display:flex;
+  gap:12px;
+}
+
+.footer-social a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#ff4081;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  transition:.3s;
+  margin-top:45px;
+}
+
+.footer-social a:hover{
+  background:#e60073;
+  transform:scale(1.1);
+}
+
+.footer-copy{
+  width:100%;
+  text-align:center;
+  margin-top:15px;
+  color:#666;
+  font-size:14px;
+}

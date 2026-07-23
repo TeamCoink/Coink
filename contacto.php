@@ -50,7 +50,7 @@
 
             <div>
                 <h3>Correo electrónico</h3>
-                <p>proyecto@coink.com</p>
+                <p>CoinkExpo-2027@outlook.es</p>
             </div>
 
         </div>
@@ -63,24 +63,12 @@
 
             <div>
                 <h3>Teléfono</h3>
-                <p>+503 7019-2828</p>
+                <p>(+503) 6303-5530</p>
             </div>
 
         </div>
 
-        <div class="info">
-
-            <div class="icon pink">
-                <i class="fa-regular fa-comments"></i>
-            </div>
-
-            <div>
-                <h3>Chat en vivo</h3>
-                <p>Disponible en la app y web</p>
-            </div>
-
-        </div>
-
+       
         <img src="" class="pig">
 
     </div>
@@ -153,6 +141,11 @@
             </form>
 
            
+<<<<<<< HEAD
+=======
+            </div>
+
+>>>>>>> 152a1d90e932b6f5b54e1587fa22f3bac1a1ef70
         </div>
 
     </div>

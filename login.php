@@ -80,17 +80,7 @@
 
 
 
-            <p class="divider">O continua con</p>
-
-            <div class="social">
-                <button>
-                   <i class="fa-brands fa-google"></i> Google
-                </button>
-                <button>
-                    <i class="fa-brands fa-apple"></i> Apple
-                </button>
-            </div>
-
+          
             
             <div class="register">
              <span>¿No tienes cuenta?</span>
