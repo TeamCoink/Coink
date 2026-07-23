@@ -238,14 +238,19 @@
     Ahorra inteligente, vive mejor
 </p>
 
- 
+<p class="footer-text2">
+    Save Smart, Save with Coink.
+</p>
 
+   
     <p class="footer-copy">
       © 2026 CoinK · Todos los derechos reservados
     </p>
 
   </div>
 </footer>
+
+
 
 
 </body>

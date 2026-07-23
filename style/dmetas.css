@@ -687,66 +687,96 @@ p{
   color: #ff4081;
   margin-bottom: 0.5rem;
 }
-.footer{
-    background:#ffe4ec;
-    padding:15px 40px;
-    margin-top:40px;
-    border-radius: 30px;
+ .footer{
+  width:100%;
+  background:#ffe4ec;
+  padding:15px 40px;
+  margin-top:40px;
+  border-radius:30px;
+}
+
+.footer-logo{
+  font-size:2rem;
+  color:#ff4081;
+  margin-bottom:.5rem;
 }
 
 .footer-container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:20px;
-
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
 }
 
 .footer-logo img{
-    width:170px;
-    height:auto;
-    margin-top:45px; 
+  width:250px;
+  height:auto;
+  margin-top:45px;
 }
 
 .footer-text{
-    font-size:20px;
-    color:#444;
-    margin:0;
-    font-weight:500;
+  font-size:20px;
+  color:#444;
+  font-weight:500;
+  text-align: center;
+  flex: 1;
+  margin-top: -50px;
+  
 }
 
+.footer-text{
+position:absolute;
+
+left:50%;
+transform:translateX(-50%);
+
+}
+
+
+
+.footer-text2{
+  font-size:20px;
+  color:#444;
+  font-weight:500;
+  margin-left:350px; 
+  margin-top:40px;  
+}
+
+
 .footer-social{
-    display:flex;
-    gap:12px;
+  display:flex;
+  gap:12px;
 }
 
 .footer-social a{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:#ff4081;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    transition:.3s;
-    margin-top:45px; 
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#ff4081;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  transition:.3s;
+  margin-top:45px;
 }
 
 .footer-social a:hover{
-    background:#e60073;
-    transform:scale(1.1);
+  background:#e60073;
+  transform:scale(1.1);
 }
 
 .footer-copy{
-    width:100%;
-    text-align:center;
-    margin-top:15px;
-    color:#666;
-    font-size:14px;
+  width:100%;
+  text-align:center;
+  margin-top:  -70px;
+  color:#666;
+  font-size:14px;
 }
+   
+
 
 
 

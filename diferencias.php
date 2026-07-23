@@ -305,12 +305,11 @@
     Ahorra inteligente, vive mejor
 </p>
 
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-    </div>
+<p class="footer-text2">
+    Save Smart, Save with Coink.
+</p>
 
+   
     <p class="footer-copy">
       © 2026 CoinK · Todos los derechos reservados
     </p>

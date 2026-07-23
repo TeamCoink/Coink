@@ -258,7 +258,7 @@
     <script src="javaScript/homepage.js"></script>
     <script src="javaScript/navbar-mobile.js"></script>
 
-    <footer class="footer">
+ <footer class="footer">
   <div class="footer-container">
 
    <div class="footer-logo">
@@ -267,6 +267,10 @@
 
 <p class="footer-text">
     Ahorra inteligente, vive mejor
+</p>
+
+<p class="footer-text2">
+    Save Smart, Save with Coink.
 </p>
 
    

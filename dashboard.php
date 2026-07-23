@@ -1174,25 +1174,28 @@ async function cargarDetalleDia(fecha){
 <script src="javaScript/dashboard.js"></script>
 <script src="javaScript/navbar-mobile.js"></script>
 
-    <footer class="footer">
-    <div class="footer-container">
+   <footer class="footer">
+  <div class="footer-container">
 
-    <div class="footer-logo">
-        <img src="img/123repetido.png" alt="Logo Coink">
-    </div>
+   <div class="footer-logo">
+    <img src="img/123repetido.png" alt="Logo Coink">
+</div>
 
-    <p class="footer-text">
-        Ahorra inteligente, vive mejor
+<p class="footer-text">
+    Ahorra inteligente, vive mejor
+</p>
+
+<p class="footer-text2">
+    Save Smart, Save with Coink.
+</p>
+
+   
+    <p class="footer-copy">
+      © 2026 CoinK · Todos los derechos reservados
     </p>
 
-     
-
-        <p class="footer-copy">
-        © 2026 CoinK · Todos los derechos reservados
-        </p>
-
-    </div>
-    </footer>
+  </div>
+</footer>
 
 </body>
 </html>
