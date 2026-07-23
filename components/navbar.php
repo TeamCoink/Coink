@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <ul class="nav-links">
             <li><a href="metodos.php"><i class="fa-solid fa-graduation-cap"></i> Aprender</a></li>
-            <li><a href="contacto.php"><i class="fa-regular fa-message"></i> Contactanos</a></li>
+           
             <li><a href="about-us.php"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
         </ul>
 
