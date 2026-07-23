@@ -553,14 +553,26 @@ body{
 }
 
 
-.cards4{
-    margin-top: 25px;
-}
+
 
 
 .cards4 .more-bttn{
    
-    margin-top: 25px;
+    margin-top: 2px;
+}
+
+.cards4 h3{
+    margin-top: -8px;
+}
+
+.cards4
+.cards-texto h3{
+    margin-top: -7px;
+}
+
+.cards4
+.cards-text p{
+    margin-top: -20px;
 }
 
 
@@ -846,8 +858,14 @@ body{
     }
 
     .hero-image img{
+<<<<<<< HEAD
         max-width: 280px;
         margin-bottom: 2px;
+=======
+        margin-top: 40px;
+        width: 410px;
+        margin-bottom: -80px;
+>>>>>>> 8f2dafe8f4688003a7fb2f73beedbd22d3e1d672
     }
 
     .hero-buttons{
