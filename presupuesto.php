@@ -105,7 +105,7 @@ $resultPresupuesto->fetch_assoc();
                 <h3>Estado del presupuesto</h3>
 
                 <p>
-                    Distribución actual de tu presupuesto mensual.
+                    Distribución actual de tu presupuesto.
                 </p>
 
             </div>
@@ -148,10 +148,10 @@ $resultPresupuesto->fetch_assoc();
 
         <div class="income-text">
 
-            <h2>Ingreso mensual</h2>
+            <h2>Tu ingreso</h2>
 
             <p>
-                Ingresa cuánto dinero recibes este mes.
+                Ingresa cuánto dinero recibes.
             </p>
 
         </div>

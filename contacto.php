@@ -50,7 +50,7 @@
 
             <div>
                 <h3>Correo electrónico</h3>
-                <p>proyecto@coink.com</p>
+                <p>CoinkExpo-2027@outlook.es</p>
             </div>
 
         </div>
@@ -63,7 +63,7 @@
 
             <div>
                 <h3>Teléfono</h3>
-                <p>+503 7019-2828</p>
+                <p>+503 6303-5530</p>
             </div>
 
         </div>
@@ -85,7 +85,7 @@
 
     </div>
 
-    <!-- DERECHA -->
+    
 
     <div class="right">
 
@@ -107,13 +107,17 @@
 
             </div>
 
-            <form id="contactForm">
+           <form id="contactForm" action="php/enviar-contacto.php" method="POST">
 
                 <label>Correo electrónico</label>
 
                 <div class="input-box">
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" required>
+
+                    <input
+                        type="email"
+                        name="correo"
+                        required>
                 </div>
 
                 <div class="double">
@@ -123,8 +127,14 @@
                         <label>Nombre</label>
 
                         <div class="input-box">
+
                             <i class="fa-solid fa-user"></i>
-                            <input type="text" required>
+
+                            <input
+                                type="text"
+                                name="nombre"
+                                required>
+
                         </div>
 
                     </div>
@@ -134,7 +144,12 @@
                         <label>Asunto</label>
 
                         <div class="input-box">
-                            <input type="text" required>
+
+                            <input
+                                type="text"
+                                name="asunto"
+                                required>
+
                         </div>
 
                     </div>
@@ -143,11 +158,19 @@
 
                 <label>Mensaje</label>
 
-                <textarea required></textarea>
+                <textarea
+                    name="mensaje"
+                    required>
+                </textarea>
 
-                <button type="submit" class="btn">
+                <button
+                    type="submit"
+                    class="btn">
+
                     <i class="fa-regular fa-paper-plane"></i>
+
                     Enviar mensaje
+
                 </button>
 
             </form>

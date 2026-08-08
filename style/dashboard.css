@@ -168,6 +168,7 @@
 
 .icon{
     font-size: 1.8rem;
+    color:#1f1f1f;
 }
 
 
@@ -793,6 +794,39 @@
     font-size: 17px;
 }
 
+
+.expense-item{
+
+    border-left: 6px solid #ff5757;
+
+    background: #ffecec;
+
+}
+
+.expense-item:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(244,166,184,.25);
+
+}
+
+.expense-icon{
+
+    background: #fc9a9a;
+
+    color: #0c0c0c;
+
+}
+
+.expense-amount{
+
+    background: #fc9a9a;
+
+    color: white;
+
+}
+
 .total-day{
 
     margin-top: 24px;
@@ -934,9 +968,7 @@
     font-size:14px;
 }
 
-/*======================================
-            MODALES DASHBOARD
-======================================*/
+
 
 .modal-overlay{
 
@@ -1001,6 +1033,70 @@
 .dashboard-modal:not(.expense){
 
     border:4px solid #D9EDBF;
+
+}
+
+.history-content{
+
+    margin-top:25px;
+
+    max-height:450px;
+
+    overflow-y:auto;
+
+}
+
+.history-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 20px;
+
+    border-bottom:1px solid #EFEFEF;
+
+}
+
+.history-left h4{
+
+    color:#356B35;
+
+    margin-bottom:5px;
+
+}
+
+.history-left span{
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+.history-money{
+
+    background:#D9EDBF;
+
+    color:#356B35;
+
+    padding:10px 18px;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+}
+
+.empty-history{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    color:#777;
 
 }
 
@@ -1222,7 +1318,139 @@
 
     font-family:inherit;
 
+}/* ========= Overlay ========= */
+
+.history-modal-overlay{
+
+    position: fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.35);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
 }
+
+/* Cuando se abre */
+
+.history-modal-overlay.active{
+
+    display:flex;
+
+}
+
+
+
+.history-modal{
+
+    position:relative;
+
+    width:650px;
+
+    max-width:90%;
+
+    max-height:80vh;
+
+    overflow:hidden;
+
+    background:white;
+
+    border:4px solid #D9EDBF;
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+    animation:modalPop .3s ease;
+
+    position:relative;
+
+}
+
+.close-history{
+
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #F8C8D2;
+
+    color: #7D5360;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.close-history:hover{
+
+    background: #F4A6B8;
+
+    transform: rotate(90deg) scale(1.05);
+
+}
+
+.close-history:hover{
+
+    transform:rotate(90deg);
+
+    background:#F4A6B8;
+
+}
+
+
+.expense-history-modal{
+
+    border-color: #F8C8D2;
+
+}
+
+.expense-history-item{
+
+    background: #FFF8FA;
+
+    border-color: #F8DCE3;
+
+}
+
+.expense-history-item .history-left h4{
+
+    color: #9A5365;
+
+}
+
+.expense-history-money{
+
+    background: #F8C8D2;
+
+    color: #9A5365;
+
+}
+
 
 
 @media  (max-width: 1024px){

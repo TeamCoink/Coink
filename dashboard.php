@@ -226,6 +226,33 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
     $gastosPorDia[$fila['fecha']] = $fila['total'];
 }
+
+$sqlHistorialAhorros = "
+SELECT nombre, categoria, monto, fecha
+FROM ahorros
+WHERE usuario_id = ?
+ORDER BY fecha DESC
+";
+
+$stmtHistorialAhorros = $conn->prepare($sqlHistorialAhorros);
+$stmtHistorialAhorros->bind_param("i", $usuarioId);
+$stmtHistorialAhorros->execute();
+
+$historialAhorros = $stmtHistorialAhorros->get_result();
+
+$sqlHistorialGastos = "
+SELECT nombre, categoria, monto, fecha
+FROM gastos
+WHERE usuario_id = ?
+ORDER BY fecha DESC
+";
+
+$stmtHistorialGastos = $conn->prepare($sqlHistorialGastos);
+$stmtHistorialGastos->bind_param("i", $usuarioId);
+$stmtHistorialGastos->execute();
+
+$historialGastos = $stmtHistorialGastos->get_result();
+
 ?>
 
 <?php include 'components/navbar.php'; ?>
@@ -271,7 +298,7 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card pink">
 
             <div class="icon-box">
-                <span class="icon">💸</span>
+                <span class="icon"><i class="fa-solid fa-money-bills"></i></span>
             </div>
 
             <div class="card-info">
@@ -284,10 +311,10 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
         </div>
 
-        <div class="mini-card green">
+        <div class="mini-card green" id="openHistorySavings">
 
             <div class="icon-box">
-                <span class="icon">💰</span>
+                <span class="icon"><i class="fa-solid fa-piggy-bank"></i></span>
             </div>
 
             <div class="card-info">
@@ -302,10 +329,10 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
 
      
-        <div class="mini-card yellow">
+        <div class="mini-card yellow" id="openHistoryExpenses">
 
             <div class="icon-box">
-                <span class="icon">💸</span>
+                <span class="icon"><i class="fa-solid fa-wallet"></i></span>
             </div>
 
             <div class="card-info">
@@ -322,7 +349,7 @@ while($fila = $resultGastosDia->fetch_assoc()){
         <div class="mini-card pastel">
 
             <div class="icon-box">
-                <span class="icon">🌴</span>
+                <span class="icon"><i class="fa-solid fa-bullseye"></i></span>
             </div>
 
             <div class="card-info">
@@ -352,7 +379,7 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
                 <div class="stat-icon">
 
-                    📊
+                    <i class="fa-solid fa-chart-pie"></i>
 
                 </div>
 
@@ -408,24 +435,24 @@ while($fila = $resultGastosDia->fetch_assoc()){
                 id="openSavingModal"
                 class="dashboard-btn ahorro-btn">
 
-                ➕ Agregar ahorro
+                 Agregar ahorro
             </button>
 
            <button
                 id="openExpenseModal"
                 class="dashboard-btn gasto-btn">
 
-                💸 Agregar gasto
+                Agregar gasto
             </button>
 
             <a href="metas.php"
             class="dashboard-btn meta-btn">
-                🎯 Ver metas
+                 Ver metas
             </a>
 
             <a href="presupuesto.php"
             class="dashboard-btn ahorro-btn">
-                📋 Ver presupuesto
+                 Ver presupuesto
             </a>
 
         </div>
@@ -443,7 +470,7 @@ while($fila = $resultGastosDia->fetch_assoc()){
 
                 <div>
 
-                    <h2>Calendario de ahorro 📅</h2>
+                    <h2>Calendario de ahorro </h2>
 
                     <p>Consulta tus movimientos diarios</p>
 
@@ -480,7 +507,7 @@ while($fila = $resultGastosDia->fetch_assoc()){
                     <div class="calendar-placeholder">
 
                         <div class="placeholder-icon">
-                            📅
+                            <i class="fa-solid fa-calendar-days"></i>
                         </div>
 
                         <h3>Selecciona un día</h3>
@@ -661,6 +688,139 @@ while($fila = $resultGastosDia->fetch_assoc()){
     </div>
 
 </div>
+
+<div class="history-modal-overlay" id="historySavingsModal">
+
+    <div class="history-modal">
+
+        <button class="close-history" id="closeHistorySavings">
+            ✖
+        </button>
+
+        <h2> Tus ahorros</h2>
+
+        <div class="history-content">
+
+            <?php if($historialAhorros->num_rows > 0): ?>
+
+                <?php while($ahorro = $historialAhorros->fetch_assoc()): ?>
+
+                    <div class="history-item">
+
+                        <div class="history-left">
+
+                            <h4>
+                                💰 <?php echo htmlspecialchars($ahorro["nombre"]); ?>
+                            </h4>
+
+                            <span>
+
+                                <?php echo htmlspecialchars($ahorro["categoria"]); ?>
+
+                                •
+
+                                <?php echo date("d/m/Y", strtotime($ahorro["fecha"])); ?>
+
+                            </span>
+
+                        </div>
+
+                        <div class="history-money">
+
+                            +$<?php echo number_format($ahorro["monto"],2); ?>
+
+                        </div>
+
+                    </div>
+
+                <?php endwhile; ?>
+
+            <?php else: ?>
+
+                <div class="empty-history">
+
+                    <h3>No hay ahorros registrados</h3>
+
+                    <p>
+                        Comienza agregando tu primer ahorro 
+                    </p>
+
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="history-modal-overlay" id="historyExpensesModal">
+
+    <div class="history-modal expense-history-modal">
+
+        <button class="close-history" id="closeHistoryExpenses">
+            ✖
+        </button>
+
+        <h2> Tus gastos</h2>
+
+        <div class="history-content">
+
+            <?php if($historialGastos->num_rows > 0): ?>
+
+                <?php while($gasto = $historialGastos->fetch_assoc()): ?>
+
+                    <div class="history-item expense-history-item">
+
+                        <div class="history-left">
+
+                            <h4>
+                                 <?php echo htmlspecialchars($gasto["nombre"]); ?>
+                            </h4>
+
+                            <span>
+
+                                <?php echo htmlspecialchars($gasto["categoria"]); ?>
+
+                                •
+
+                                <?php echo date("d/m/Y", strtotime($gasto["fecha"])); ?>
+
+                            </span>
+
+                        </div>
+
+                        <div class="history-money expense-history-money">
+
+                            -$<?php echo number_format($gasto["monto"],2); ?>
+
+                        </div>
+
+                    </div>
+
+                <?php endwhile; ?>
+
+            <?php else: ?>
+
+                <div class="empty-history">
+
+                    <h3>No hay gastos registrados</h3>
+
+                    <p>
+                        Todavía no has registrado ningún gasto
+                    </p>
+
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+    </div>
+
+</div>
+
      
 <script>
 const toast = document.getElementById("toast");
@@ -979,8 +1139,8 @@ function renderCalendar(){
             dayElement.classList.add('has-both');
 
             dayElement.title =
-                `💰 Ahorro: $${ahorro}
-        💸 Gasto: $${gasto}`;
+                ` Ahorro: $${ahorro}
+         Gasto: $${gasto}`;
 
         }
         else if(ahorro){
@@ -988,7 +1148,7 @@ function renderCalendar(){
             dayElement.classList.add('has-saving');
 
             dayElement.title =
-                `💰 Ahorro: $${ahorro}`;
+                ` Ahorro: $${ahorro}`;
 
         }
         else if(gasto){
@@ -996,7 +1156,7 @@ function renderCalendar(){
             dayElement.classList.add('has-expense');
 
             dayElement.title =
-                `💸 Gasto: $${gasto}`;
+                ` Gasto: $${gasto}`;
         }
                 dayElement.innerHTML = `
                     <div class="day-number">
@@ -1057,14 +1217,14 @@ async function cargarDetalleDia(fecha){
         <div class="empty-day">
 
             <div class="empty-icon">
-                📅
+                <i class="fa-solid fa-calendar-days"></i>
             </div>
 
             <h3>Sin movimientos</h3>
 
             <p>
                 No registraste ahorros ni gastos
-                este día 🐷
+                este día 
             </p>
 
         </div>
@@ -1079,7 +1239,7 @@ async function cargarDetalleDia(fecha){
         <div class="details-header">
 
             <h3>
-                💰 Movimientos 
+                 Movimientos 
             </h3>
 
             <div class="selected-date">
@@ -1097,35 +1257,35 @@ async function cargarDetalleDia(fecha){
             total -= parseFloat(item.monto);
         }
 
-        html += `
-            <div class="saving-item">
+       html += `
+        <div class="saving-item ${item.tipo === 'gasto' ? 'expense-item' : 'saving-item'}">
 
-                <div class="saving-left">
+            <div class="saving-left">
 
-                    <div class="saving-icon">
-                        ${item.tipo === 'ahorro' ? '💰' : '💸'}
-                    </div>
-
-                    <div class="saving-info">
-
-                        <div class="saving-name">
-                            ${item.nombre}
-                        </div>
-
-                        <div class="saving-category">
-                            ${item.categoria}
-                        </div>
-
-                    </div>
-
+                <div class="saving-icon ${item.tipo === 'gasto' ? 'expense-icon' : ''}">
+                    ${item.tipo === 'ahorro' ? '<i class="fa-solid fa-piggy-bank"></i>' : '<i class="fa-solid fa-wallet"></i>'}
                 </div>
 
-                <div class="saving-amount">
-                   ${item.tipo === 'ahorro' ? '+' : '-'}$${parseFloat(item.monto).toFixed(2)}
+                <div class="saving-info">
+
+                    <div class="saving-name">
+                        ${item.nombre}
+                    </div>
+
+                    <div class="saving-category">
+                        ${item.categoria}
+                    </div>
+
                 </div>
 
             </div>
-        `;
+
+            <div class="saving-amount ${item.tipo === 'gasto' ? 'expense-amount' : ''}">
+                ${item.tipo === 'ahorro' ? '+' : '-'}$${parseFloat(item.monto).toFixed(2)}
+            </div>
+
+        </div>
+    `;
     });
 
     html += `

@@ -1,3 +1,4 @@
+console.log("Dashboard.js cargado");
 
 const savingModal = document.getElementById("savingModal");
 const expenseModal = document.getElementById("expenseModal");
@@ -193,3 +194,48 @@ async function guardarGasto(e){
 
 }
 expenseForm.addEventListener("submit",guardarGasto);
+
+
+const openHistorySavings =
+document.getElementById("openHistorySavings");
+
+const historySavingsModal =
+document.getElementById("historySavingsModal");
+
+const closeHistorySavings =
+document.getElementById("closeHistorySavings");
+
+openHistorySavings.addEventListener("click", () => {
+
+    historySavingsModal.classList.add("active");
+
+});
+
+closeHistorySavings.addEventListener("click", () => {
+
+    historySavingsModal.classList.remove("active");
+
+});
+
+const openHistoryExpenses =
+document.getElementById("openHistoryExpenses");
+
+const historyExpensesModal =
+document.getElementById("historyExpensesModal");
+
+const closeHistoryExpenses =
+document.getElementById("closeHistoryExpenses");
+
+
+openHistoryExpenses.addEventListener("click", () => {
+
+    historyExpensesModal.classList.add("active");
+
+});
+
+
+closeHistoryExpenses.addEventListener("click", () => {
+
+    historyExpensesModal.classList.remove("active");
+
+});
