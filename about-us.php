@@ -8,7 +8,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coink - Sobre Nosotros</title>
+
   <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
+
+    <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
+  
+  
+
   <link rel="stylesheet" href="style/about-us.css">
   <link rel="stylesheet" href="style/index.css">
   <link rel="stylesheet"
@@ -98,30 +104,30 @@
   <script src="javaScript/homepage.js"></script>
  
  
+
 <footer class="footer">
   <div class="footer-container">
- 
+
    <div class="footer-logo">
     <img src="img/123repetido.png" alt="Logo Coink">
 </div>
- 
+
 <p class="footer-text">
     Ahorra inteligente, vive mejor
 </p>
- 
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-    </div>
- 
+
+<p class="footer-text2">
+    Save Smart, Save with Coink.
+</p>
+
+   
     <p class="footer-copy">
       © 2026 CoinK · Todos los derechos reservados
     </p>
- 
+
   </div>
 </footer>
- 
+
  
  <script src="javaScript/navbar-mobile.js"></script>
 </body>

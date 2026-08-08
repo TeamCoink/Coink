@@ -58,7 +58,9 @@
 
       <div class="floating-card card-1">
 
-         🎯 Metas ilimitadas
+
+          Metas ilimitadas
+
 
          <span>
                Organiza tus objetivos
@@ -72,7 +74,9 @@
 
       <div class="floating-card card-2">
 
-         💎 Premium
+
+          Premium
+
 
          <span>
                Plan más elegido

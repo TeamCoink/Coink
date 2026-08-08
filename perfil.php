@@ -22,7 +22,6 @@ $usuarioId = $_SESSION['usuario_id'];
     <i class="fa-solid fa-arrow-left-long"></i>
    </a>
 
-
 <div class="perfil-container">
     <div class="card">
         <div class="portada-container" onclick="triggerInput('inputPortada', event)">
@@ -46,7 +45,7 @@ $usuarioId = $_SESSION['usuario_id'];
         <p class="user-bio" id="userBio">Haz clic aquí para agregar una descripción...</p>
                    
         <div class="user-details">
-    <span id="userLocation"><i class="fa-solid fa-location-dot"></i> El Salvador</span>
+    
     <span id="userJoinDate"><i class="fa-solid fa-calendar-days"></i> Se unió en Julio 2026</span>
 </div>
 
@@ -201,16 +200,19 @@ function guardarTodo() {
             localStorage.setItem("nombre_usuario_" + usuarioId, nameInput.value);
             document.querySelector('.username-title').textContent = nameInput.value;
         }
+
         const bioInput = document.getElementById('editBio');
-        if (bioInput && bioInput.value.trim() !== "") {
-            localStorage.setItem(KEY_BIO, bioInput.value);
-            document.getElementById("userBio").textContent = bioInput.value;
+        if (bioInput) {
+            const nuevaBio = bioInput.value.trim();
+            if (nuevaBio !== "") {
+                localStorage.setItem(KEY_BIO, nuevaBio);
+                document.getElementById("userBio").textContent = nuevaBio;
+            } else {
+                localStorage.removeItem(KEY_BIO);
+                document.getElementById("userBio").textContent = "Haz clic aquí para agregar una descripción...";
+            }
         }
-        const locInput = document.getElementById('editLocation');
-        if (locInput) {
-            localStorage.setItem("ubicacion_" + usuarioId, locInput.value);
-            document.getElementById('userLocation').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${locInput.value}`;
-        }
+
         const tagsInput = document.getElementById('editTags');
         const container = document.getElementById('tagsContainer');
         if (container) {
@@ -225,20 +227,37 @@ function guardarTodo() {
                         container.appendChild(span);
                     }
                 });
-            } else { localStorage.removeItem(KEY_TAGS); }
+            } else { 
+                localStorage.removeItem(KEY_TAGS); 
+            }
         }
         document.getElementById('modalEditar').style.display = 'none';
-    } catch (e) { console.error(e); }
+    } catch (e) { 
+        console.error(e); 
+    }
 }
 
 function abrirModal() {
-  
     document.getElementById('editName').value = document.querySelector('.username-title').textContent;
-    document.getElementById('editBio').value = document.getElementById('userBio').textContent.replace('Haz clic aquí para agregar una descripción...', '').trim();
     
-   
+    const bioActual = document.getElementById('userBio').textContent;
+    if (bioActual.includes('Haz clic aquí')) {
+        document.getElementById('editBio').value = '';
+    } else {
+        document.getElementById('editBio').value = bioActual;
+    }
+    
+    const tagsGuardadas = localStorage.getItem(KEY_TAGS);
+    if (tagsGuardadas) {
+        document.getElementById('editTags').value = tagsGuardadas;
+    } else {
+        document.getElementById('editTags').value = '';
+    }
+
     document.getElementById('modalEditar').style.display = 'block';
 }
+
+
 
 </script>
 
@@ -248,10 +267,12 @@ function abrirModal() {
     <h3>Editar Perfil</h3>
     <input type="text" id="editName" placeholder="Tu nombre">
     <textarea id="editBio" placeholder="Tu bio"></textarea>
-    <input type="text" id="editLocation" placeholder="Tu ubicación (ej: El Salvador)">
+    
 <textarea id="editTags" placeholder="Tus intereses (separados por coma, ej: Diseño, Dev, COINK)"></textarea>
-   <button onclick="guardarTodo()" class="btn-guardar">Guardar</button>
-    <button onclick="document.getElementById('modalEditar').style.display='none'">Cancelar</button>
+<div class="modal-buttons">
+    <button onclick="guardarTodo()" class="btn-guardar">Guardar</button>
+    <button onclick="document.getElementById('modalEditar').style.display='none'" class="btn-cancelar">Cancelar</button>
+</div>
   </div>
 </div>
 

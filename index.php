@@ -154,9 +154,9 @@
     <div class="cards4">
         <img src="img/hombtr.jpg" alt="" width="310">
         <div class="cards-texto">
-            <h3>¿Deseo o necesidad?</h3><br>
-            <p>Identifica si tu siguiente compra  <br> es un deseo o una necesidad</p> <br>
-            <p ><a href="" class="more-bttn">Ver más</a></p>
+            <h3>Como crear un fondo <br> de emergencia paso a paso</h3><br>
+            <p>Tener un fondo de emergencia <br> puede marcar la diferencia en <br> tu vida diaria</p> <br>
+            <p ><a href="fondo.php" class="more-bttn">Ver más</a></p>
         </div>
         
     </div>
@@ -243,12 +243,11 @@ document.addEventListener("DOMContentLoaded", function() {
     Ahorra inteligente, vive mejor
 </p>
 
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-    </div>
+<p class="footer-text2">
+    Save Smart, Save with Coink.
+</p>
 
+   
     <p class="footer-copy">
       © 2026 CoinK · Todos los derechos reservados
     </p>

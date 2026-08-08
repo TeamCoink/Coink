@@ -1,38 +1,181 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 include("php/conexion.php");
 
-if(!isset($_SESSION['usuario_id'])){
-    header("Location: login.html");
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.php");
     exit();
 }
 
 $usuarioId = $_SESSION['usuario_id'];
+$nombreUsuario = $_SESSION['nombre'];
 
-$sqlPresupuesto = "
-SELECT *
-FROM presupuestos
+
+$guardado = $_GET['guardado'] ?? '';
+
+
+
+$sqlAhorro = "
+SELECT SUM(monto) AS total
+FROM ahorros
 WHERE usuario_id = ?
+";
+
+$stmtAhorro = $conn->prepare($sqlAhorro);
+$stmtAhorro->bind_param("i", $usuarioId);
+$stmtAhorro->execute();
+
+$resultAhorro = $stmtAhorro->get_result();
+$dataAhorro = $resultAhorro->fetch_assoc();
+
+$totalAhorro = $dataAhorro['total'] ?? 0;
+
+
+
+
+$sqlMetas = "
+SELECT COUNT(*) AS total_metas
+FROM metas
+WHERE usuario_id = ?
+";
+
+$stmtMetas = $conn->prepare($sqlMetas);
+$stmtMetas->bind_param("i", $usuarioId);
+$stmtMetas->execute();
+
+$resultMetas = $stmtMetas->get_result();
+$dataMetas = $resultMetas->fetch_assoc();
+
+$totalMetas = $dataMetas['total_metas'];
+
+
+
+$sqlMetaTop = "
+SELECT nombre, objetivo, actual,
+(actual / objetivo * 100) AS porcentaje
+FROM metas
+WHERE usuario_id = ?
+ORDER BY porcentaje DESC
 LIMIT 1
 ";
 
-$stmtPresupuesto = $conn->prepare($sqlPresupuesto);
-$stmtPresupuesto->bind_param("i",$usuarioId);
-$stmtPresupuesto->execute();
+$stmtTop = $conn->prepare($sqlMetaTop);
+$stmtTop->bind_param("i", $usuarioId);
+$stmtTop->execute();
 
-$resultPresupuesto = $stmtPresupuesto->get_result();
-
-$presupuesto = $resultPresupuesto->fetch_assoc();
-?>
-
-<?php include 'components/navbar.php'; ?>
-<?php include 'components/navbar-mobile.php'; ?>
-
-  <?php
+$resultTop = $stmtTop->get_result();
+$metaTop = $resultTop->fetch_assoc();
 
 
- $sqlPresupuesto = "
+$sqlGrafica = "
+SELECT 
+    MONTH(fecha) AS mes,
+    SUM(monto) AS total
+FROM ahorros
+WHERE usuario_id = ?
+GROUP BY MONTH(fecha)
+ORDER BY MONTH(fecha)
+";
+
+$stmtGrafica = $conn->prepare($sqlGrafica);
+$stmtGrafica->bind_param("i", $usuarioId);
+$stmtGrafica->execute();
+
+$resultGrafica = $stmtGrafica->get_result();
+
+$meses = [
+    "Ene", "Feb", "Mar", "Abr",
+    "May", "Jun", "Jul", "Ago",
+    "Sep", "Oct", "Nov", "Dic"
+];
+
+$datosAhorro = array_fill(0, 12, 0);
+
+while($fila = $resultGrafica->fetch_assoc()){
+
+    $indice = $fila['mes'] - 1;
+
+    $datosAhorro[$indice] = $fila['total'];
+}
+
+
+
+$sqlGraficaGastos = "
+SELECT
+    MONTH(fecha) AS mes,
+    SUM(monto) AS total
+FROM gastos
+WHERE usuario_id = ?
+GROUP BY MONTH(fecha)
+ORDER BY MONTH(fecha)
+";
+
+$stmtGraficaGastos = $conn->prepare($sqlGraficaGastos);
+$stmtGraficaGastos->bind_param("i", $usuarioId);
+$stmtGraficaGastos->execute();
+
+$resultGraficaGastos =
+    $stmtGraficaGastos->get_result();
+
+$datosGastos =
+    array_fill(0, 12, 0);
+
+while($fila =
+    $resultGraficaGastos->fetch_assoc()){
+
+    $indice = $fila['mes'] - 1;
+
+    $datosGastos[$indice] =
+        $fila['total'];
+}
+
+
+
+
+$sqlCalendario = "
+SELECT 
+    DATE(fecha) AS fecha,
+    SUM(monto) AS total
+FROM ahorros
+WHERE usuario_id = ?
+GROUP BY DATE(fecha)
+";
+
+$stmtCalendario = $conn->prepare($sqlCalendario);
+$stmtCalendario->bind_param("i", $usuarioId);
+$stmtCalendario->execute();
+
+$resultCalendario = $stmtCalendario->get_result();
+
+$ahorrosPorDia = [];
+
+while($fila = $resultCalendario->fetch_assoc()){
+
+    $ahorrosPorDia[$fila['fecha']] = $fila['total'];
+}
+
+
+$sqlGastos = "
+SELECT SUM(monto) AS total
+FROM gastos
+WHERE usuario_id = ?
+";
+
+$stmtGastos = $conn->prepare($sqlGastos);
+$stmtGastos->bind_param("i", $usuarioId);
+$stmtGastos->execute();
+
+$resultGastos = $stmtGastos->get_result();
+$dataGastos = $resultGastos->fetch_assoc();
+
+$totalGastado = $dataGastos['total'] ?? 0;
+$balance = $totalAhorro - $totalGastado;
+
+$sqlPresupuesto = "
 
 SELECT *
 
@@ -45,7 +188,7 @@ LIMIT 1
 ";
 
 $stmtPresupuesto =
-$conn->prepare($sqlPresupuesto);
+    $conn->prepare($sqlPresupuesto);
 
 $stmtPresupuesto->bind_param(
     "i",
@@ -55,11 +198,39 @@ $stmtPresupuesto->bind_param(
 $stmtPresupuesto->execute();
 
 $resultPresupuesto =
-$stmtPresupuesto->get_result();
+    $stmtPresupuesto->get_result();
 
 $presupuesto =
-$resultPresupuesto->fetch_assoc();
+    $resultPresupuesto->fetch_assoc();
+
+
+
+$sqlGastosDia = "
+SELECT
+    DATE(fecha) AS fecha,
+    SUM(monto) AS total
+FROM gastos
+WHERE usuario_id = ?
+GROUP BY DATE(fecha)
+";
+
+$stmtGastosDia = $conn->prepare($sqlGastosDia);
+$stmtGastosDia->bind_param("i", $usuarioId);
+$stmtGastosDia->execute();
+
+$resultGastosDia = $stmtGastosDia->get_result();
+
+$gastosPorDia = [];
+
+while($fila = $resultGastosDia->fetch_assoc()){
+
+    $gastosPorDia[$fila['fecha']] = $fila['total'];
+}
 ?>
+
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/navbar-mobile.php'; ?>
+
 
 
 <!DOCTYPE html>
@@ -68,7 +239,11 @@ $resultPresupuesto->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presupuesto</title>
+
     <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
+
+      <link rel="shortcut icon" href="img/favicon_io/favicon-32x32.png" type="image/x-icon">
+
     <link rel="stylesheet" href="style/presupuesto.css">
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet"

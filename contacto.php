@@ -63,6 +63,7 @@
 
             <div>
                 <h3>Teléfono</h3>
+<<<<<<< HEAD
                 <p>+503 6303-5530</p>
             </div>
 
@@ -77,10 +78,14 @@
             <div>
                 <h3>Chat en vivo</h3>
                 <p>Disponible en la app y web</p>
+=======
+                <p>(+503) 6303-5530</p>
+>>>>>>> 12aef4139a51ec6b88eff9e91e88707a4b55a8f6
             </div>
 
         </div>
 
+       
         <img src="" class="pig">
 
     </div>
@@ -175,21 +180,12 @@
 
             </form>
 
-            <div class="social">
-
-                <p>O escríbenos por</p>
-
-                <div class="social-icons">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-facebook-messenger"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-regular fa-envelope"></i>
-
-                </div>
-
+           
+<<<<<<< HEAD
+=======
             </div>
 
+>>>>>>> 152a1d90e932b6f5b54e1587fa22f3bac1a1ef70
         </div>
 
     </div>

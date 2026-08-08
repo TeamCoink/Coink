@@ -259,6 +259,11 @@
 .logout-mobile,
 .login-mobile{
 
+<<<<<<< HEAD
+=======
+    margin-bottom: 12px;
+
+>>>>>>> 8c42eba49cc64b950874e4783468abb4fc1ea8b8
     display: flex;
 
     justify-content: center;
