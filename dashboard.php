@@ -528,300 +528,300 @@ $historialGastos = $stmtHistorialGastos->get_result();
 
 
 
-<div class="modal-overlay" id="savingModal">
+    <div class="modal-overlay" id="savingModal">
 
-    <div class="dashboard-modal">
+        <div class="dashboard-modal">
 
-        <button class="close-modal" id="closeSavingModal">✖</button>
+            <button class="close-modal" id="closeSavingModal">✖</button>
 
-        <img src="img/123repetido.png" class="modal-pig">
+            <img src="img/123repetido.png" class="modal-pig">
 
-        <h2>Nuevo ahorro</h2>
+            <h2>Nuevo ahorro</h2>
 
-        <p>Registra un nuevo ahorro.</p>
+            <p>Registra un nuevo ahorro.</p>
 
-        <form
-            id="savingForm">
+            <form
+                id="savingForm">
 
-            <input
-                type="text"
-                name="nombre"
-                placeholder="Nombre del ahorro"
-                required>
+                <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Nombre del ahorro"
+                    required>
 
-            <select
-                name="categoria"
-                required>
+                <select
+                    name="categoria"
+                    required>
 
-                <option value="">Categoría</option>
+                    <option value="">Categoría</option>
 
-                <option>Educación</option>
+                    <option>Educación</option>
 
-                <option>Viaje</option>
+                    <option>Viaje</option>
 
-                <option>Emergencia</option>
+                    <option>Emergencia</option>
 
-                <option>personal</option>
+                    <option>personal</option>
 
-                <option>Hogar</option>
+                    <option>Hogar</option>
 
-                <option>Otro</option>
+                    <option>Otro</option>
 
-            </select>
+                </select>
 
-            <input
-                type="number"
-                name="monto"
-                placeholder="Monto"
-                step="0.01"
-                required>
+                <input
+                    type="number"
+                    name="monto"
+                    placeholder="Monto"
+                    step="0.01"
+                    required>
 
-            <input
-                type="date"
-                name="fecha"
-                required>
+                <input
+                    type="date"
+                    name="fecha"
+                    required>
 
-            <div class="modal-buttons">
+                <div class="modal-buttons">
 
-                <button
-                    type="button"
-                    class="cancel-btn"
-                    id="cancelSaving">
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelSaving">
 
-                    Cancelar
+                        Cancelar
 
-                </button>
+                    </button>
 
-                <button
-                    type="submit"
-                    class="save-btn">
+                    <button
+                        type="submit"
+                        class="save-btn">
 
-                     Guardar
+                        Guardar
 
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<div class="modal-overlay" id="expenseModal">
-
-    <div class="dashboard-modal expense">
-
-        <button class="close-modal" id="closeExpenseModal">✖</button>
-
-        <img src="img/123repetido.png" class="modal-pig">
-
-        <h2>Nuevo gasto</h2>
-
-        <p>Registra un nuevo gasto.</p>
-
-        <form
-            id="expenseForm">
-
-            <input
-                type="text"
-                name="nombre"
-                placeholder="Nombre del gasto"
-                required>
-
-            <select
-                name="categoria"
-                required>
-
-                <option value="">Categoría</option>
-
-                <option>Alimentación</option>
-
-                <option>Transporte</option>
-
-                <option>Educación</option>
-
-                <option>Salud</option>
-
-                <option>Entretenimiento</option>
-
-                <option>Otro</option>
-
-            </select>
-
-            <input
-                type="number"
-                name="monto"
-                placeholder="Monto"
-                step="0.01"
-                required>
-
-            <input
-                type="date"
-                name="fecha"
-                required>
-
-            <div class="modal-buttons">
-
-                <button
-                    type="button"
-                    class="cancel-btn"
-                    id="cancelExpense">
-
-                    Cancelar
-
-                </button>
-
-                <button
-                    type="submit"
-                    class="expense-btn">
-
-                     Guardar
-
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
-
-<div class="history-modal-overlay" id="historySavingsModal">
-
-    <div class="history-modal">
-
-        <button class="close-history" id="closeHistorySavings">
-            ✖
-        </button>
-
-        <h2> Tus ahorros</h2>
-
-        <div class="history-content">
-
-            <?php if($historialAhorros->num_rows > 0): ?>
-
-                <?php while($ahorro = $historialAhorros->fetch_assoc()): ?>
-
-                    <div class="history-item">
-
-                        <div class="history-left">
-
-                            <h4>
-                                💰 <?php echo htmlspecialchars($ahorro["nombre"]); ?>
-                            </h4>
-
-                            <span>
-
-                                <?php echo htmlspecialchars($ahorro["categoria"]); ?>
-
-                                •
-
-                                <?php echo date("d/m/Y", strtotime($ahorro["fecha"])); ?>
-
-                            </span>
-
-                        </div>
-
-                        <div class="history-money">
-
-                            +$<?php echo number_format($ahorro["monto"],2); ?>
-
-                        </div>
-
-                    </div>
-
-                <?php endwhile; ?>
-
-            <?php else: ?>
-
-                <div class="empty-history">
-
-                    <h3>No hay ahorros registrados</h3>
-
-                    <p>
-                        Comienza agregando tu primer ahorro 
-                    </p>
+                    </button>
 
                 </div>
 
-            <?php endif; ?>
+            </form>
 
         </div>
 
     </div>
 
-</div>
 
-<div class="history-modal-overlay" id="historyExpensesModal">
+    <div class="modal-overlay" id="expenseModal">
 
-    <div class="history-modal expense-history-modal">
+        <div class="dashboard-modal expense">
 
-        <button class="close-history" id="closeHistoryExpenses">
-            ✖
-        </button>
+            <button class="close-modal" id="closeExpenseModal">✖</button>
 
-        <h2> Tus gastos</h2>
+            <img src="img/123repetido.png" class="modal-pig">
 
-        <div class="history-content">
+            <h2>Nuevo gasto</h2>
 
-            <?php if($historialGastos->num_rows > 0): ?>
+            <p>Registra un nuevo gasto.</p>
 
-                <?php while($gasto = $historialGastos->fetch_assoc()): ?>
+            <form
+                id="expenseForm">
 
-                    <div class="history-item expense-history-item">
+                <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Nombre del gasto"
+                    required>
 
-                        <div class="history-left">
+                <select
+                    name="categoria"
+                    required>
 
-                            <h4>
-                                 <?php echo htmlspecialchars($gasto["nombre"]); ?>
-                            </h4>
+                    <option value="">Categoría</option>
 
-                            <span>
+                    <option>Alimentación</option>
 
-                                <?php echo htmlspecialchars($gasto["categoria"]); ?>
+                    <option>Transporte</option>
 
-                                •
+                    <option>Educación</option>
 
-                                <?php echo date("d/m/Y", strtotime($gasto["fecha"])); ?>
+                    <option>Salud</option>
 
-                            </span>
+                    <option>Entretenimiento</option>
 
-                        </div>
+                    <option>Otro</option>
 
-                        <div class="history-money expense-history-money">
+                </select>
 
-                            -$<?php echo number_format($gasto["monto"],2); ?>
+                <input
+                    type="number"
+                    name="monto"
+                    placeholder="Monto"
+                    step="0.01"
+                    required>
 
-                        </div>
+                <input
+                    type="date"
+                    name="fecha"
+                    required>
 
-                    </div>
+                <div class="modal-buttons">
 
-                <?php endwhile; ?>
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelExpense">
 
-            <?php else: ?>
+                        Cancelar
 
-                <div class="empty-history">
+                    </button>
 
-                    <h3>No hay gastos registrados</h3>
+                    <button
+                        type="submit"
+                        class="expense-btn">
 
-                    <p>
-                        Todavía no has registrado ningún gasto
-                    </p>
+                        Guardar
+
+                    </button>
 
                 </div>
 
-            <?php endif; ?>
+            </form>
 
         </div>
 
     </div>
 
-</div>
+    <div class="history-modal-overlay" id="historySavingsModal">
 
-     
+        <div class="history-modal">
+
+            <button class="close-history" id="closeHistorySavings">
+                ✖
+            </button>
+
+            <h2> Tus ahorros</h2>
+
+            <div class="history-content">
+
+                <?php if($historialAhorros->num_rows > 0): ?>
+
+                    <?php while($ahorro = $historialAhorros->fetch_assoc()): ?>
+
+                        <div class="history-item">
+
+                            <div class="history-left">
+
+                                <h4>
+                                    💰 <?php echo htmlspecialchars($ahorro["nombre"]); ?>
+                                </h4>
+
+                                <span>
+
+                                    <?php echo htmlspecialchars($ahorro["categoria"]); ?>
+
+                                    •
+
+                                    <?php echo date("d/m/Y", strtotime($ahorro["fecha"])); ?>
+
+                                </span>
+
+                            </div>
+
+                            <div class="history-money">
+
+                                +$<?php echo number_format($ahorro["monto"],2); ?>
+
+                            </div>
+
+                        </div>
+
+                    <?php endwhile; ?>
+
+                <?php else: ?>
+
+                    <div class="empty-history">
+
+                        <h3>No hay ahorros registrados</h3>
+
+                        <p>
+                            Comienza agregando tu primer ahorro 
+                        </p>
+
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="history-modal-overlay" id="historyExpensesModal">
+
+        <div class="history-modal expense-history-modal">
+
+            <button class="close-history" id="closeHistoryExpenses">
+                ✖
+            </button>
+
+            <h2> Tus gastos</h2>
+
+            <div class="history-content">
+
+                <?php if($historialGastos->num_rows > 0): ?>
+
+                    <?php while($gasto = $historialGastos->fetch_assoc()): ?>
+
+                        <div class="history-item expense-history-item">
+
+                            <div class="history-left">
+
+                                <h4>
+                                    <?php echo htmlspecialchars($gasto["nombre"]); ?>
+                                </h4>
+
+                                <span>
+
+                                    <?php echo htmlspecialchars($gasto["categoria"]); ?>
+
+                                    •
+
+                                    <?php echo date("d/m/Y", strtotime($gasto["fecha"])); ?>
+
+                                </span>
+
+                            </div>
+
+                            <div class="history-money expense-history-money">
+
+                                -$<?php echo number_format($gasto["monto"],2); ?>
+
+                            </div>
+
+                        </div>
+
+                    <?php endwhile; ?>
+
+                <?php else: ?>
+
+                    <div class="empty-history">
+
+                        <h3>No hay gastos registrados</h3>
+
+                        <p>
+                            Todavía no has registrado ningún gasto
+                        </p>
+
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        
 <script>
 const toast = document.getElementById("toast");
 
